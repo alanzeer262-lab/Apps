@@ -103,6 +103,8 @@ Before approving a video:
 
 ### Phase B — Runway audio to synchronized video
 
+**Canonical upload location:** Store Runway-generated MP3s in `public/audio/lesson-XX/` using a two-digit lesson number. For Lesson 1, use exactly `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. Number multiple parts in playback order (`part-01.mp3`, `part-02.mp3`, etc.). Do not put narration in the repository root or mix audio from different lessons. GitHub Actions must validate these paths and run Whisper transcription in the workflow.
+
 6. **Receive and verify the generated narration**
    - Locate the audio files for the specified lesson in the supplied files or agreed repository.
    - Confirm which files are approved, their order, their actual durations, and their technical readability.
@@ -111,6 +113,7 @@ Before approving a video:
    - If there are multiple plausible versions, corrupted files, or a material mismatch with the approved script, stop and ask one focused question or report the specific mismatch. Do not guess which audio is approved.
 
 7. **Transcribe the exact approved audio**
+   - Run Whisper (`faster-whisper`) inside GitHub Actions on the exact audio that will be used in the video; no separate manual/local transcription step.
    - Produce a timestamped transcript from the exact audio that will be used in the video.
    - Preserve what was actually spoken. Review uncertain automatic-transcription passages against the audio.
    - Compare the transcript with the approved script and full Android lesson. Flag omitted or altered essential content; do not hide the omission by adjusting visuals.
