@@ -131,7 +131,7 @@ def main():
     output=[]
     for i,scene in enumerate(scenes):
         output.append({"id":int(scene.get("id",i+1)),"title":scene.get("title",f"Scene {i+1}"),"caption":scene.get("caption",""),"status":scene.get("status",""),"code":scene.get("code",[]),"output":scene.get("output",[]),"prompt":scene.get("prompt"),"errorCode":scene.get("errorCode"),"errorOutput":scene.get("errorOutput"),"errorPrompt":scene.get("errorPrompt"),"correctedCode":scene.get("correctedCode"),"start":round(boundaries[i],3),"end":round(boundaries[i+1],3),"transcriptTopicMatch":round(chosen[i]["score"],3)})
-    payload={"generated":True,"method":"whisper-transcript-topic-boundaries","model":"tiny.en","durationSeconds":round(total,3),"part2StartSeconds":round(durations[0],3),"audioTracks":[{"src":"/"+p.relative_to(ROOT).as_posix(),"start":round(offsets[i],3)} for i,p in enumerate(AUDIO_FILES)],"scenes":output}
+    payload={"generated":True,"method":"whisper-transcript-topic-boundaries","model":"tiny.en","durationSeconds":round(total,3),"part2StartSeconds":round(durations[0],3),"audioTracks":[{"src":p.relative_to(ROOT / "public").as_posix(),"start":round(offsets[i],3)} for i,p in enumerate(AUDIO_FILES)],"scenes":output}
     ALIGNMENT.write_text(json.dumps(payload,indent=2)+"\n",encoding="utf-8")
     print(f"Wrote transcript and {len(output)} transcript-derived scenes; duration {total:.3f}s")
 if __name__=="__main__":
