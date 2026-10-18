@@ -22,6 +22,12 @@ Teach like a patient personal tutor sitting beside a beginner. The learner shoul
 14. **Narration and visuals must agree exactly.** The spoken code, editor code, output, and cue anchors must refer to the same example.
 15. **Do not fake validation.** A successful render proves the build completed, not that the lesson is pedagogically good or fully synchronized. Review the rendered video from beginning to end.
 
+
+
+## Mandatory major-topic transition rule
+
+At every major conceptual move, the teacher must briefly close the previous idea and announce/name the next topic before teaching it, or clearly introduce the new topic at its start. Where useful, explain why the next concept matters. Apply this in the approved script and transcript/frame manifest, not as a post-production patch. Example: error correction → comments.
+
 ## Review checklist
 - Can a beginner explain the main idea after watching?
 - Is every new term explained when first introduced?
