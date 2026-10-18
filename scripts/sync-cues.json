@@ -4,35 +4,43 @@
   "scenes": [
     {
       "id": 1,
-      "anchor": "Welcome to PyLearn today we're going to write our very first Python program"
+      "anchor": "Welcome to PyLearn today we're going to write our very first Python program",
+      "outputAnchor": "There it is the computer displayed our message"
     },
     {
       "id": 2,
-      "anchor": "Our first program displayed words"
+      "anchor": "Our first program displayed words",
+      "outputAnchor": "First we see the greeting then we see the number five"
     },
     {
       "id": 3,
-      "anchor": "Now notice something interesting"
+      "anchor": "Now notice something interesting",
+      "outputAnchor": "On the screen the results look the same"
     },
     {
       "id": 4,
-      "anchor": "Let's look more closely at strings"
+      "anchor": "Let's look more closely at strings",
+      "outputAnchor": "Python cannot understand this line as written so it reports a syntax error"
     },
     {
       "id": 5,
-      "anchor": "Sometimes we want to explain what our code is doing"
+      "anchor": "Sometimes we want to explain what our code is doing",
+      "outputAnchor": "The second line is code so Python executes it and displays the message"
     },
     {
       "id": 6,
-      "anchor": "Let's make our program more personal"
+      "anchor": "Let's make our program more personal",
+      "outputAnchor": "Python replaces name with the value stored in name"
     },
     {
       "id": 7,
-      "anchor": "Let's change just the name and run the program again"
+      "anchor": "Let's change just the name and run the program again",
+      "outputAnchor": "Notice what changed the name in the message updated automatically"
     },
     {
       "id": 8,
-      "anchor": "The value inside the braces does not have to be text"
+      "anchor": "The value inside the braces does not have to be text",
+      "outputAnchor": "Here hours is the number six and the f string includes it in a sentence"
     },
     {
       "id": 9,
@@ -40,15 +48,18 @@
     },
     {
       "id": 10,
-      "anchor": "When we call add tip with forty it adds ten and hands the number fifty back"
+      "anchor": "When we call add tip with forty it adds ten and hands the number fifty back",
+      "outputAnchor": "The output is fifty for one person and one hundred for a table of two"
     },
     {
       "id": 11,
-      "anchor": "Now let's try show total"
+      "anchor": "Now let's try show total",
+      "outputAnchor": "It prints fifty so we can see the answer"
     },
     {
       "id": 12,
-      "anchor": "When code does not work try this routine"
+      "anchor": "When code does not work try this routine",
+      "outputAnchor": "Here the problem was one missing quotation mark"
     },
     {
       "id": 13,
