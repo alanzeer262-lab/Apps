@@ -191,6 +191,29 @@ def main() -> None:
             "start": round(start, 3),
             "end": round(end, 3),
         }
+        code_anchor = cue_by_id[entry["id"]].get("codeAnchor")
+        if code_anchor:
+            scene_words = tokens(entry["anchor"])
+            code_words = tokens(code_anchor)
+            if scene_words[:len(code_words)] == code_words:
+                timing["codeAt"] = round(start, 3)
+            else:
+                code_match = align_anchor(code_anchor, words, cursor=0, min_time=start + 0.3, max_time=end - 0.25)
+                if code_match["score"] < confidence_floor:
+                    raise RuntimeError("Low-confidence code anchor for scene " + str(entry["id"]) + ": " + repr(code_anchor) + " matched " + repr(code_match["matched"]))
+                timing["codeAt"] = round(code_match["start"] + 0.1, 3)
+                timing["codeMatched"] = code_match["matched"]
+                timing["codeConfidence"] = round(code_match["score"], 3)
+                print("  code scene " + str(entry["id"]) + ": " + str(timing["codeAt"]) + "s")
+        fix_anchor = cue_by_id[entry["id"]].get("fixAnchor")
+        if fix_anchor:
+            fix_match = align_anchor(fix_anchor, words, cursor=0, min_time=start + 1.0, max_time=end - 0.25)
+            if fix_match["score"] < confidence_floor:
+                raise RuntimeError("Low-confidence correction anchor for scene " + str(entry["id"]) + ": " + repr(fix_anchor) + " matched " + repr(fix_match["matched"]))
+            timing["fixAt"] = round(fix_match["start"] + 0.1, 3)
+            timing["fixMatched"] = fix_match["matched"]
+            timing["fixConfidence"] = round(fix_match["score"], 3)
+            print("  correction scene " + str(entry["id"]) + ": " + str(timing["fixAt"]) + "s")
         output_anchor = cue_by_id[entry["id"]].get("outputAnchor")
         if output_anchor:
             output_match = align_anchor(
