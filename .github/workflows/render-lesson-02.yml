@@ -37,6 +37,10 @@ jobs:
         run: npm run check
       - name: Render complete Lesson 02 MP4
         run: npx remotion render src/index.ts PyLearnLesson02 out/lesson-02-variables-and-data-types.mp4
+      - name: Install FFmpeg for MP4 verification
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - name: Verify rendered MP4
         run: |
           test -s out/lesson-02-variables-and-data-types.mp4
