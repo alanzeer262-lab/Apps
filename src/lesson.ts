@@ -3,9 +3,9 @@ import alignmentJson from "./generated-alignment.json";
 type GeneratedScene = {
   id: number; title: string; caption: string; status: string;
   start: number; end: number; transcriptTopicMatch?: number;
-  code: string[]; output: string[]; prompt?: string;
-  errorCode?: string[]; errorOutput?: string[]; errorPrompt?: string;
-  correctedCode?: string[];
+  code: string[]; output: string[]; prompt?: string | null;
+  errorCode?: string[] | null; errorOutput?: string[] | null; errorPrompt?: string | null;
+  correctedCode?: string[] | null;
 };
 const generatedAlignment = alignmentJson as {
   generated: boolean; durationSeconds: number; part2StartSeconds: number;
