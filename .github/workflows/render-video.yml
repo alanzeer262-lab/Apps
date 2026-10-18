@@ -31,10 +31,14 @@ jobs:
         run: npm run check
       - name: Render MP4
         run: npm run render
-      - name: Upload rendered video
+      - name: Upload video, transcript, and alignment artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: pylearn-first-program
-          path: out/pylearn-first-program.mp4
+          name: pylearn-lesson-01-render
+          path: |
+            out/pylearn-first-program.mp4
+            out/lesson-01/transcript.json
+            out/lesson-01/transcript.txt
+            src/generated-alignment.json
           if-no-files-found: error
           retention-days: 7
