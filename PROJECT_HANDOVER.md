@@ -128,3 +128,11 @@ The connected Runway workspace's recent-assets list and task lookups confirm the
 - Combined audio duration: 401.844535 seconds (about 6 minutes 42 seconds), within the 6–8 minute target.
 - Runway reported 398 credits remaining after submission. The generation itself succeeded.
 - Important remaining blocker: the MP3 URLs were returned, but the available runtime could not download the signed files to commit copies into `public/audio/`. The original files remain untouched. The revised MP3s are not yet committed to GitHub and must be downloaded/imported before alignment or rendering can proceed. The links are signed and may expire; the Runway task IDs and asset names are recorded so the assets can be located in the Runway library if needed.
+
+
+## Workflow lock — continue established synchronized pipeline (2026-10-18)
+- Do not invent a second rendering workflow or replace the repository pipeline with a one-off local assembly.
+- The canonical production process remains: committed narration assets → `scripts/align_narration.py` with real word timestamps → alignment validation → `npm run check` → `npm run render` via GitHub Actions → download and review the run-specific artifact.
+- The local file `PyLearn_Lesson_01_First_Program_Draft.mp4` is a separate 395.53-second draft and is not evidence that the canonical GitHub workflow was run or that the current revised narration is synchronized. Do not promote it as the canonical output.
+- The two latest revised Noah narration tasks are present in Runway, but the repository's active workflow still references the older committed audio and 14-scene source. Do not mix revised audio with old cues/source. Before the next canonical render, retrieve and commit the revised audio assets, validate revised cue anchors against the audio, and switch the lesson source/cues together in a reviewed commit.
+- Keep all durable production changes in this repository and continue from the current `main`; never recreate the workflow from scratch. Mark the video complete only after the canonical workflow succeeds and the full artifact has been reviewed.
