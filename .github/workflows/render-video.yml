@@ -21,10 +21,8 @@ jobs:
         run: npm install
       - name: Verify uploaded narration assets exist
         run: |
-          test -f "public/audio/Agent Voiceover - Welcome to PyLearn_ I'm glad you're here_ In this lesson, we're going to write a t.mp3"
-          test -f "public/audio/Agent Voiceover - Now it's your turn_ Change the name to your own name_ Before you run the program,.mp3"
-          cp "public/audio/Agent Voiceover - Welcome to PyLearn_ I'm glad you're here_ In this lesson, we're going to write a t.mp3" public/audio/PyLearn_Video_01_Narration_Part_1.mp3
-          cp "public/audio/Agent Voiceover - Now it's your turn_ Change the name to your own name_ Before you run the program,.mp3" public/audio/PyLearn_Video_01_Narration_Part_2.mp3
+          test -f public/audio/lesson-01/part-01.mp3
+          test -f public/audio/lesson-01/part-02.mp3
       - name: Install narration alignment dependencies
         run: python -m pip install --disable-pip-version-check -r scripts/requirements-alignment.txt
       - name: Align visuals to spoken narration
