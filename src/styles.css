@@ -9,6 +9,7 @@ h1 { margin:0; font-size:55px; line-height:1.08; letter-spacing:-2px; font-weigh
 .subtitle { color:#9fb0c7; font-size:23px; margin:12px 0 0; }
 .workspace { display:grid; grid-template-columns:1.08fr .92fr; gap:24px; margin-top:30px; position:relative; z-index:1; }
 .code-panel,.output-panel { height:390px; background:rgba(16,29,48,.96); border:1px solid #24364f; border-radius:22px; overflow:hidden; box-shadow:0 22px 65px rgba(0,0,0,.2); }
+.code-panel { position:relative; }
 .panel-header { height:58px; display:flex; align-items:center; gap:14px; padding:0 22px; background:rgba(255,255,255,.025); border-bottom:1px solid #24364f; color:#9fb0c7; font-size:13px; font-weight:700; letter-spacing:1.3px; }
 .traffic { display:flex; gap:7px; margin-right:5px; }.traffic i { width:10px; height:10px; border-radius:50%; background:#fb7185; }.traffic i:nth-child(2){background:#fbbf24}.traffic i:nth-child(3){background:#86efac}
 .file-type { margin-left:auto; color:#5eead4; font-size:11px; }.code-content { position:relative; padding:14px 20px 12px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:19px; line-height:1.38; overflow:hidden; }
