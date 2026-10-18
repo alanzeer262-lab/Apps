@@ -1,0 +1,218 @@
+{
+  "title": "Variables and Data Types",
+  "subtitle": "Give values names. Understand their types. Convert with confidence.",
+  "lessonLabel": "PYTHON BASICS  •  LESSON 02",
+  "durationSeconds": 518.08,
+  "fps": 30,
+  "narration": [
+    {
+      "src": "audio/lesson-02/Runway_timeline_export_audio_540f76fd-8eb9-4824-b57c-e6ebc0723cf8.mp3",
+      "start": 0
+    }
+  ],
+  "scenes": [
+    {
+      "id": 1,
+      "title": "A program needs to remember information",
+      "caption": "A program needs to remember information",
+      "status": "RUNNING",
+      "start": 0,
+      "end": 39.22,
+      "code": [
+        "name = \"Ada\"",
+        "hours = 6",
+        "goal = \"Data Analyst\""
+      ],
+      "output": [
+        "Learner profile ready"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 0.8,
+      "outputAt": 2
+    },
+    {
+      "id": 2,
+      "title": "Assigning and changing a value",
+      "caption": "Assigning and changing a value",
+      "status": "RUNNING",
+      "start": 39.22,
+      "end": 94.3,
+      "code": [
+        "name = \"Ada\"",
+        "print(name)"
+      ],
+      "output": [
+        "Ada"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 40.02,
+      "outputAt": 41.22
+    },
+    {
+      "id": 3,
+      "title": "Values have different types",
+      "caption": "Values have different types",
+      "status": "RUNNING",
+      "start": 94.3,
+      "end": 151.74,
+      "code": [
+        "name = \"Ada\"",
+        "age = 36",
+        "price = 19.99",
+        "is_student = True"
+      ],
+      "output": [
+        "str",
+        "int",
+        "float",
+        "bool"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 95.1,
+      "outputAt": 96.3
+    },
+    {
+      "id": 4,
+      "title": "Ask Python with type()",
+      "caption": "Ask Python with type()",
+      "status": "RUNNING",
+      "start": 151.74,
+      "end": 198.86,
+      "code": [
+        "print(type(name))",
+        "print(type(age))",
+        "print(type(price))",
+        "print(type(is_student))"
+      ],
+      "output": [
+        "<class 'str'>",
+        "<class 'int'>",
+        "<class 'float'>",
+        "<class 'bool'>"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 152.54,
+      "outputAt": 153.74
+    },
+    {
+      "id": 5,
+      "title": "The same characters, different behavior",
+      "caption": "The same characters, different behavior",
+      "status": "RUNNING",
+      "start": 198.86,
+      "end": 237.64,
+      "code": [
+        "print(21 * 2)",
+        "print(\"21\" * 2)"
+      ],
+      "output": [
+        "42",
+        "2121"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 199.66,
+      "outputAt": 200.86
+    },
+    {
+      "id": 6,
+      "title": "Convert a value when its meaning changes",
+      "caption": "Convert a value when its meaning changes",
+      "status": "RUNNING",
+      "start": 237.64,
+      "end": 309.58,
+      "code": [
+        "age_text = \"21\"",
+        "age = int(age_text)",
+        "print(age + 1)"
+      ],
+      "output": [
+        "22"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 238.44,
+      "outputAt": 239.64
+    },
+    {
+      "id": 7,
+      "title": "Choose clear variable names",
+      "caption": "Choose clear variable names",
+      "status": "RUNNING",
+      "start": 309.58,
+      "end": 347.84,
+      "code": [
+        "price = 19.99",
+        "study_hours = 6",
+        "learner_goal = \"Data Analyst\""
+      ],
+      "output": [
+        "Clear names make code easier to read"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 310.38,
+      "outputAt": 311.58
+    },
+    {
+      "id": 8,
+      "title": "Predict, then test",
+      "caption": "Predict, then test",
+      "status": "PREDICT",
+      "start": 347.84,
+      "end": 395.6,
+      "code": [
+        "value = \"25\"",
+        "number = int(value)",
+        "print(number * 2)"
+      ],
+      "output": [
+        "50"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 348.64,
+      "outputAt": 349.84
+    },
+    {
+      "id": 9,
+      "title": "Your turn: build a learner profile",
+      "caption": "Your turn: build a learner profile",
+      "status": "PRACTICE",
+      "start": 395.6,
+      "end": 443.9,
+      "code": [
+        "name = \"Ada\"",
+        "study_hours = \"6\"",
+        "goal = \"Data Analyst\"",
+        "hours = int(study_hours)",
+        "print(hours * 4)"
+      ],
+      "output": [
+        "24"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 396.4,
+      "outputAt": 397.6
+    },
+    {
+      "id": 10,
+      "title": "Recap: variables and types",
+      "caption": "Recap: variables and types",
+      "status": "RUNNING",
+      "start": 443.9,
+      "end": 518.08,
+      "code": [
+        "name = \"Ada\"",
+        "age = 36",
+        "price = 19.99",
+        "is_student = True"
+      ],
+      "output": [
+        "Variables store values",
+        "Values have types",
+        "Convert suitable values",
+        "Choose clear names"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 444.7,
+      "outputAt": 445.9
+    }
+  ]
+}
