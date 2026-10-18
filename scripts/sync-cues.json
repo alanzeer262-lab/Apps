@@ -30,7 +30,7 @@
     {
       "id": 6,
       "anchor": "Let's make our program more personal",
-      "outputAnchor": "Python replaces name with the value stored in name"
+      "outputAnchor": "Python replaces name with the value stored in name and goal with the value stored in goal"
     },
     {
       "id": 7,
@@ -67,7 +67,8 @@
     },
     {
       "id": 14,
-      "anchor": "Let's connect what we learned"
+      "anchor": "Let's connect what we learned",
+      "outputAnchor": "Your first Python program is complete"
     }
   ]
 }
