@@ -24,7 +24,7 @@ export const PyLearnVideo: React.FC = () => {
   const localFrame = Math.max(0, frame - Math.round(scene.start * fps));
   const fade = interpolate(localFrame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
   const elapsed = Math.floor(seconds);
-  const showOutput = seconds >= scene.start + Math.min(8, (scene.end - scene.start) * 0.22);
+  const showOutput = seconds >= (scene.outputAt ?? scene.start);
 
   return (
     <AbsoluteFill style={{ background: colors.bg, color: colors.text, fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", padding: 66, overflow: "hidden" }}>
