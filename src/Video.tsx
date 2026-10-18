@@ -25,6 +25,8 @@ export const PyLearnVideo: React.FC = () => {
   const fade = interpolate(localFrame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
   const elapsed = Math.floor(seconds);
   const showOutput = seconds >= (scene.outputAt ?? scene.start);
+  const showCode = seconds >= (scene.codeAt ?? scene.start);
+  const codeLines = scene.correctedCode && scene.fixAt !== undefined && seconds >= scene.fixAt ? scene.correctedCode : scene.code;
 
   return (
     <AbsoluteFill style={{ background: colors.bg, color: colors.text, fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", padding: 66, overflow: "hidden" }}>
@@ -49,7 +51,7 @@ export const PyLearnVideo: React.FC = () => {
         <section className="code-panel">
           <div className="panel-header"><div className="traffic"><i /><i /><i /></div><span>main.py</span><span className="file-type">PYTHON</span></div>
           <div className="code-content">
-            {scene.code.map((line, i) => (
+            {showCode && codeLines.map((line, i) => (
               <div className="code-row" key={i}>
                 <span className="line-number">{String(i + 1).padStart(2, " ")}</span>
                 <span className="code-line">{line ? syntaxLine(line) : " "}</span>
@@ -60,11 +62,13 @@ export const PyLearnVideo: React.FC = () => {
           <div className="code-hint"><span className="hint-dot" /> Code stays connected as the lesson progresses</div>
         </section>
 
-        <section className="output-panel" style={{ opacity: showOutput ? 1 : 0.5 }}>
+        <section className="output-panel">
           <div className="panel-header"><span className="terminal-icon">›_</span><span>OUTPUT</span><span className="running">● {scene.status}</span></div>
           <div className="output-content">
             {scene.prompt ? <div className="output-prompt">{scene.prompt}</div> : <div className="output-prompt">$ python main.py</div>}
-            {scene.output.length ? scene.output.map((line, i) => <div className={scene.id === 10 ? "output-line final-line" : "output-line"} key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
+            <div style={{ opacity: showOutput ? 1 : 0 }}>
+              {scene.output.length ? scene.output.map((line, i) => <div className={scene.id === 10 ? "output-line final-line" : "output-line"} key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
+            </div>
           </div>
         </section>
       </div>
