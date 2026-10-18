@@ -19,14 +19,19 @@ They are played consecutively at their measured durations. Do not speed up or st
 
 ## Run locally
 
-Requirements: Node.js 20+ and npm.
+Requirements: Node.js 20+, npm, Python 3.10+, and pip.
+
+Install dependencies and generate narration timings before opening the preview or rendering:
 
 ```bash
 npm install
+python -m pip install -r scripts/requirements-alignment.txt
+npm run align
+npm run check
 npm run studio
 ```
 
-Render the lesson:
+Render the lesson after alignment succeeds:
 
 ```bash
 npm run render
@@ -54,15 +59,12 @@ This repository is separate from the PyLearn Android app.
 
 ## First render checklist
 
-1. Download the narration ZIP from the project conversation and extract it on your device.
-2. In this repository, open the `public/audio` folder. If it does not exist in the GitHub file view, create the folder by uploading a file into that path.
-3. Upload both MP3 files with these exact names (capitalization and underscores matter):
-   - `PyLearn_Video_01_Narration_Part_1.mp3`
-   - `PyLearn_Video_01_Narration_Part_2.mp3`
-4. Confirm the files appear at `public/audio/PyLearn_Video_01_Narration_Part_1.mp3` and `public/audio/PyLearn_Video_01_Narration_Part_2.mp3` in the repository.
-5. Open **Actions → Render PyLearn lesson video → Run workflow** and start the workflow from the default branch.
-6. When the run finishes, open the run and download the `pylearn-first-program` artifact. It contains the rendered MP4.
-7. Watch the whole video once before publishing. Check that the audio is present, scene changes follow the narration, and code/output examples are readable.
+1. Confirm both MP3 files are present under `public/audio/`.
+2. Open **Actions → Render PyLearn lesson video → Run workflow** and start the workflow from the default branch.
+3. Review the **Align visuals to spoken narration** log. It must find every scene anchor and output anchor with acceptable confidence.
+4. If alignment fails, update the phrase in `scripts/sync-cues.json` to match the actual recording. Do not add guessed timestamps.
+5. When the run finishes, download the `pylearn-first-program` artifact.
+6. Review the rendered video at each printed anchor timestamp, especially code changes and output reveals, before publishing.
 
 ### If the render fails
 
