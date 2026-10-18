@@ -6,6 +6,20 @@ These instructions apply to **every AI agent, coding agent, or assistant** worki
 
 Create accurate, polished PyLearn teaching videos from the **canonical lesson content** in the PyLearn app repository. Work end-to-end where tools and required assets are available, preserve progress in GitHub, and report honestly what is and is not complete.
 
+## Explicit production ownership — mandatory
+
+Use this ownership table for every lesson. **“Me” means the AI assistant; “You” means the user.** This division is intentional and overrides any vague wording elsewhere in these instructions.
+
+| Stage | Owner |
+|---|---|
+| Validate audio and generate transcript with timestamps | Automated workflow |
+| Create scene splits, code screens, and visual timing | AI assistant |
+| Prepare the lesson-specific video render setup | AI assistant |
+| Render and inspect the complete MP4 | AI assistant |
+| Review the finished video and provide feedback/approval | User |
+
+After the automated audio-validation workflow succeeds, the assistant must retrieve and inspect its transcript artifact, build the scene plan, implement the lesson-specific render setup, render the complete MP4, inspect it, fix defects, and publish the verified output before asking the user to review. Do not ask the user to build scenes, implement rendering code, or run the render. The user's final responsibility is reviewing the finished video. Keep this ownership table consistent in the production workflow and each lesson status document.
+
 ## Non-negotiable rules
 
 1. **Canonical source first.** Read the full relevant lesson from `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`. Do not invent lesson objectives or silently omit core teaching content. The source lesson is authoritative for concepts, code, outputs, and exercises.
