@@ -7,6 +7,7 @@ No proportional scaling or guessed storyboard timings are used.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from difflib import SequenceMatcher
@@ -17,7 +18,7 @@ from faster_whisper import WhisperModel
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "public" / "audio"
-CUES_PATH = ROOT / "scripts" / "sync-cues.json"
+CUES_PATH = Path(os.environ.get("PYLEARN_SYNC_CUES", str(ROOT / "scripts" / "sync-cues.json")))
 OUTPUT_PATH = ROOT / "src" / "generated-alignment.json"
 AUDIO_FILES = [
     AUDIO_DIR / "PyLearn_Video_01_Narration_Part_1.mp3",
@@ -166,8 +167,9 @@ def main() -> None:
         print(f"Scene {cue['id']:02d}: {match['start']:.2f}s "
               f"(confidence {match['score']:.2f}) — {match['matched']}")
 
-    if len(aligned) != 14:
-        raise RuntimeError(f"Expected 14 scene anchors, got {len(aligned)}")
+    expected_scene_count = len(cues["scenes"])
+    if len(aligned) != expected_scene_count:
+        raise RuntimeError(f"Expected {expected_scene_count} scene anchors, got {len(aligned)}")
     if aligned[0]["anchorStart"] > 3.0:
         raise RuntimeError("First scene anchor is unusually late; inspect the narration/cues.")
     starts = [0.0] + [entry["anchorStart"] for entry in aligned[1:]]
