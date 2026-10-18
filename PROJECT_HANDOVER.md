@@ -84,3 +84,9 @@ The connected Runway workspace's recent-assets list and task lookups confirm the
 - Additional short clip tasks were also found in the same Runway workspace on 2026-10-16, including `print_1` task `011c67de-1a5e-4f85-8e8f-7509bc3d82a6`, `print_7` task `cb10cf49-3d1c-4b99-9278-ea9fdf6a496c`, and `numbers_4` task `95f3c280-bfea-4e65-b398-75f8f2034d39`.
 - Drafted `scripts/sync-cues.revised-draft.json` for the revised nine-scene script. It is intentionally separate from the active `scripts/sync-cues.json`; do not activate it or run alignment against the old narration. Once the revised narration is approved and generated, validate each anchor against its transcript, then switch cues and update `src/lesson.ts` to the nine-scene storyboard before rendering.
 - No new speech was generated and no Runway credits were spent during this investigation.
+
+## Revised cue draft and safe alignment switch
+- Added `scripts/sync-cues.revised-draft.json` (commit `65f42a7ae66bc749db599e5e0b68b96e7f59b3a4`) with draft anchor phrases for the revised nine-scene script. It is not yet validated against audio.
+- Updated `scripts/align_narration.py` (commit `bac69a442d136e7c823af1f465335d0cfef2950a`) to accept an optional `PYLEARN_SYNC_CUES` environment variable and validate the number of aligned scenes against the selected cue file. Default behavior remains the existing 14-scene `scripts/sync-cues.json`.
+- Keep using the default cue file for the current baseline. Do not run the revised draft against the old MP3s. Once revised narration is approved/generated, use `PYLEARN_SYNC_CUES=scripts/sync-cues.revised-draft.json` to test alignment, then update `src/lesson.ts` to the nine-scene storyboard before rendering.
+- Voice/model/speed settings were not present in the original Runway task metadata. No new audio was generated and no credits were spent during this work.
