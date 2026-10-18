@@ -28,7 +28,8 @@ AUDIO_FILES = [
 def audio_duration(path: Path) -> float:
     with av.open(str(path)) as container:
         if container.duration is not None:
-            return float(container.duration * av.time_base)
+            # PyAV container.duration is expressed in AV_TIME_BASE units (microseconds).
+            return float(container.duration / av.time_base)
         stream = next((s for s in container.streams if s.type == "audio"), None)
         if stream is None or stream.duration is None or stream.time_base is None:
             raise RuntimeError(f"Cannot measure audio duration: {path.name}")
