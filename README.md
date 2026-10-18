@@ -4,7 +4,7 @@ A reusable Remotion + React + TypeScript production template for narrated Python
 
 ## First lesson: Your First Python Program
 
-The visuals are aligned to the actual recorded narration. Before rendering, the workflow transcribes both MP3s with word timestamps, matches scene boundaries, code appearances, output reveals, and intentional error/correction states to spoken phrases. The narration is never sped up, stretched, or proportionally scaled to storyboard timestamps.
+The workflow transcribes the actual recorded narration with Whisper word timestamps. Scene boundaries are generated from transcript sentence boundaries and matched in order to the approved lesson storyboard's own titles, code, outputs, and captions. It does not use the legacy hand-authored `sync-cues.json` as the timing source, and never scales a storyboard timeline proportionally to fit the audio.
 
 ### Add the narration files
 
@@ -55,7 +55,7 @@ The scene captions are instructional summaries, not word-for-word subtitles. Sce
 
 ## GitHub Actions
 
-Use Actions → Render PyLearn lesson video → Run workflow. The approved Runway MP3s must exist at `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. GitHub Actions runs Whisper transcription during the workflow. The workflow uploads the MP4, timestamped Whisper transcript (`transcript.json` and `transcript.txt`), and generated scene alignment as the `pylearn-lesson-01-render` artifact for seven days.
+Use Actions → Render PyLearn lesson video → Run workflow. The approved Runway MP3s must exist at `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. GitHub Actions runs Whisper transcription during the workflow. The workflow always uploads the timestamped Whisper transcript and generated scene manifest as the `pylearn-lesson-01-transcript` diagnostic artifact. It uploads the MP4 and scene manifest as `pylearn-lesson-01-render` only after a successful render.
 
 This repository is separate from the PyLearn Android app.
 
@@ -72,5 +72,5 @@ This repository is separate from the PyLearn Android app.
 
 - If the narration check fails, one or both MP3 files are missing or their names/paths do not match exactly.
 - If the type-check fails, open the failed workflow log and fix the reported TypeScript error before trying again.
-- If rendering succeeds but a scene feels early or late, adjust that scene's `start` / `end` values in `src/lesson.ts`. Scene times are scaled from the storyboard's 435-second outline to the measured 411.768-second narration; do not change audio playback speed.
+- If rendering succeeds but a scene feels early or late, adjust that scene's `start` / `end` values in `src/lesson.ts`. Scene boundaries are generated from the transcript's measured word timestamps; do not edit guessed times or change audio playback speed.
 - The MP4 has not been considered verified until the downloaded artifact has been watched from beginning to end.
