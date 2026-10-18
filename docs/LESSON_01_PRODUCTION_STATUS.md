@@ -12,8 +12,8 @@
 - [x] Build 38 completed successfully.
 - [x] Render artifact retrieved and MP4 metadata checked.
 - [x] Sample frames inspected.
-- [ ] Publish the MP4 to `public/videos/final/lesson-01-first-python-program.mp4`.
-- [ ] Verify the permanent repository file and record its direct link.
+- [x] Publish the MP4 to `public/videos/final/lesson-01-first-python-program.mp4`.
+- [x] Verify the permanent repository file exists on `main` and record its direct link: https://github.com/mohamedalnazeer262-coder/pylearn-video-studio./blob/main/public/videos/final/lesson-01-first-python-program.mp4
 
 ## Important
 Build 38 is the approved Lesson 1 render. Preserve it as the known-good output. Do not rerender Lesson 1 unnecessarily, and do not use Lesson 1 assets when rendering Lesson 2. The final-output publication step is not complete until the MP4 is present at the permanent path above.
