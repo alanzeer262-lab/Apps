@@ -23,8 +23,9 @@
     {
       "id": 4,
       "anchor": "Let's look more closely at strings",
-      "outputAnchor": "Python cannot understand this line as written so it reports a syntax error",
-      "codeAnchor": "Here name and message each hold a string"
+      "outputAnchor": "Python accepts either single quotes or double quotes",
+      "codeAnchor": "Here name and message each hold a string",
+      "errorAnchor": "Now let's deliberately make a small mistake in a separate example"
     },
     {
       "id": 5,
@@ -70,9 +71,10 @@
     {
       "id": 12,
       "anchor": "When code does not work try this routine",
-      "outputAnchor": "Here the problem was one missing quotation mark",
+      "outputAnchor": "Then change one thing and run the program again",
       "codeAnchor": "When code does not work try this routine",
-      "fixAnchor": "Then change one thing and run the program again"
+      "fixAnchor": "Then change one thing and run the program again",
+      "errorAnchor": "First read the error type"
     },
     {
       "id": 13,
