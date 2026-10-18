@@ -1,0 +1,53 @@
+name: Publish approved Lesson 1 render
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Download the exact approved Build 38 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: pylearn-lesson-01-render
+          path: downloaded-build-38
+          repository: mohamedalnazeer262-coder/pylearn-video-studio.
+          run-id: 39146694927
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify and publish the MP4 without rerendering
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE="$(find downloaded-build-38 -type f -name 'pylearn-first-program.mp4' -print -quit)"
+          test -n "$SOURCE"
+          test -s "$SOURCE"
+          mkdir -p public/videos/final
+          cp "$SOURCE" public/videos/final/lesson-01-first-python-program.mp4
+          file public/videos/final/lesson-01-first-python-program.mp4
+          test -s public/videos/final/lesson-01-first-python-program.mp4
+
+      - name: Commit permanent video file
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/videos/final/lesson-01-first-python-program.mp4
+          if git diff --cached --quiet; then
+            echo "The published file is already identical; no commit is needed."
+          else
+            git commit -m "Publish approved Lesson 1 Build 38 video"
+            git push origin main
+          fi
