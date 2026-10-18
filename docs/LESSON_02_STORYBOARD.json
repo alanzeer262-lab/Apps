@@ -1,0 +1,72 @@
+{
+  "lesson": 2,
+  "title": "Variables and Data Types",
+  "status": "draft-awaiting-source-and-narration",
+  "visualContinuity": "Reuse Lesson 1's editor, output panel, typography, palette, and teacher delivery.",
+  "syncPolicy": "Generate scene timing from approved recorded narration using the existing transcript alignment workflow. Never invent timestamps or stretch audio.",
+  "scenes": [
+    {
+      "id": 1,
+      "title": "Give a value a name",
+      "spokenAnchor": "The output is Sam.",
+      "code": ["name = \"Sam\"", "print(name)"],
+      "output": ["Sam"],
+      "visualBeats": ["Highlight variable name", "Highlight assigned string value", "Reveal print line", "Run and show output"],
+      "caption": "A variable gives a value a name."
+    },
+    {
+      "id": 2,
+      "title": "Use the variable again",
+      "spokenAnchor": "We changed the value in one place.",
+      "code": ["name = \"Sam\"", "print(f\"Hello, {name}!\")"],
+      "output": ["Hello, Sam!", "Hello, Ada!"],
+      "visualBeats": ["Reveal f-string", "Pause for prediction", "Run Sam version", "Change only assignment to Ada", "Run again"],
+      "caption": "Change the value; reuse the same code."
+    },
+    {
+      "id": 3,
+      "title": "Numbers are values too",
+      "spokenAnchor": "The values themselves have different kinds.",
+      "code": ["name = \"Ada\"", "age = 12", "height = 1.5", "print(name)", "print(age)", "print(height)"],
+      "output": ["Ada", "12", "1.5"],
+      "visualBeats": ["Reveal string assignment", "Reveal integer assignment", "Reveal float assignment", "Run and show matching outputs"],
+      "caption": "Text and numbers are different kinds of values."
+    },
+    {
+      "id": 4,
+      "title": "Four common kinds of values",
+      "spokenAnchor": "For now, notice the clues.",
+      "code": ["name = \"Ada\"", "age = 12", "height = 1.5", "is_learning = True"],
+      "output": [],
+      "visualBeats": ["Highlight str", "Highlight int", "Highlight float", "Highlight bool and True"],
+      "caption": "Recognize strings, integers, floats, and Booleans."
+    },
+    {
+      "id": 5,
+      "title": "Ask Python about a type",
+      "spokenAnchor": "The results match what we just learned.",
+      "code": ["print(type(name))", "print(type(age))", "print(type(height))", "print(type(is_learning))"],
+      "output": ["<class 'str'>", "<class 'int'>", "<class 'float'>", "<class 'bool'>"],
+      "visualBeats": ["Run type checks", "Reveal one output line at a time", "Pair each output with its type label"],
+      "caption": "Use type() to inspect a value."
+    },
+    {
+      "id": 6,
+      "title": "Your turn",
+      "spokenAnchor": "Try changing the age yourself.",
+      "code": ["age = 12", "print(age)"],
+      "output": [],
+      "visualBeats": ["Show prediction question", "Hold for learner thinking", "Do not reveal answer during the challenge"],
+      "caption": "Predict what changes before you run the code."
+    },
+    {
+      "id": 7,
+      "title": "Recap and close",
+      "spokenAnchor": "Nice work!",
+      "code": [],
+      "output": [],
+      "visualBeats": ["Recap variable assignment", "Highlight four value types", "Show end card for about three seconds after narration"],
+      "caption": "Variables and Data Types — Complete"
+    }
+  ]
+}
