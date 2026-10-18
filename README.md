@@ -49,7 +49,7 @@ Output: `out/pylearn-first-program.mp4`.
 - `src/styles.css`: visual theme.
 - `public/audio/`: narration assets.
 
-The scene captions are instructional on-screen summaries, not word-for-word subtitles. Before publishing, review the full render for scene/audio synchronization and adjust scene timings if needed. The output panel illustrates expected results from the script; the intentional syntax-error demonstration is described in the storyboard but should show genuine interpreter output in a production capture.
+The scene captions are instructional summaries, not word-for-word subtitles. Scene changes and output reveals are aligned to speech anchors, but code still appears as a complete scene example rather than being typed character-by-character. Review the full render before publishing; the output panel currently illustrates expected results, and the intentional syntax-error demonstration should be checked carefully.
 
 ## GitHub Actions
 
