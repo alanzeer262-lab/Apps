@@ -1,6 +1,6 @@
 name: Render PyLearn lesson video
 
-on:
+"on":
   workflow_dispatch:
 
 permissions:
