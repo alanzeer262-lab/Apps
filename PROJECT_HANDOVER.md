@@ -66,3 +66,12 @@ Start by reading this file and inspecting the latest repository files and Action
 - Do not replace the current voice just for novelty. First establish whether its original voice/settings can be regenerated. Do not claim a preset voice is the same voice without evidence.
 - The current audio files are still the old narration. The revised script and delivery guide are not yet implemented in the MP4, and the old cue anchors do not match the revised script.
 - Next: identify the source/settings for the existing narration if available; prepare and regenerate/record the revised narration in chunks with natural pace and prosody; then update exact cue phrases, align, render, and review the full video. Do not spend voice-generation credits or silently change voice identity without user approval.
+
+## Original narration-generation provenance correction (2026-10-18)
+- User clarified that the assistant generated the narration using Runway text-to-speech, then supplied direct audio links; the user downloaded those clips and provided the recordings for the video assembly.
+- Recovered prior assistant response included three Runway-hosted clips:
+  - `print_1` — Welcome, 6.08 seconds: https://dnznrvs05pmza.cloudfront.net/text_to_speech/d7d8ade2-2e96-4051-9410-fe69c72b4c16/PyLearn_L01_print_1_mp3.mp3
+  - `print_7` — Explain the output, 2.96 seconds: https://dnznrvs05pmza.cloudfront.net/text_to_speech/fb1c2a5e-96cc-4ab5-a103-14fe291ae0c3/PyLearn_L01_print_7_mp3.mp3
+  - `numbers_4` — Run the calculation, 2.00 seconds: https://dnznrvs05pmza.cloudfront.net/text_to_speech/1ed6d842-27f7-43c5-9c2e-8bc498ea3ec5/PyLearn_L01_numbers_4_mp3.mp3
+- The links were described as Runway-generated audio artifacts and may expire. This establishes Runway as the generation route for these clips; it does not by itself identify the exact voice/model/settings or prove that all narration segments used identical settings.
+- Do not ask the user again which tool was used. When preparing the revised patient-tutor narration, first inspect existing audio files and available project history for voice/model details. Preserve the current voice as far as the available Runway settings permit. Do not claim exact voice identity without evidence or generate/replace clips without the user's approval.
