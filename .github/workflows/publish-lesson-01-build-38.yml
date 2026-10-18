@@ -2,6 +2,11 @@ name: Publish approved Lesson 1 render
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/publish-lesson-01-build-38.yml'
 
 permissions:
   actions: read
