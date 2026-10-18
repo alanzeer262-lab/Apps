@@ -205,6 +205,15 @@ def main() -> None:
                 timing["codeMatched"] = code_match["matched"]
                 timing["codeConfidence"] = round(code_match["score"], 3)
                 print("  code scene " + str(entry["id"]) + ": " + str(timing["codeAt"]) + "s")
+        error_anchor = cue_by_id[entry["id"]].get("errorAnchor")
+        if error_anchor:
+            error_match = align_anchor(error_anchor, words, cursor=0, min_time=start + 1.0, max_time=end - 0.25)
+            if error_match["score"] < confidence_floor:
+                raise RuntimeError("Low-confidence error anchor for scene " + str(entry["id"]) + ": " + repr(error_anchor) + " matched " + repr(error_match["matched"]))
+            timing["errorAt"] = round(error_match["start"] + 0.1, 3)
+            timing["errorMatched"] = error_match["matched"]
+            timing["errorConfidence"] = round(error_match["score"], 3)
+            print("  error scene " + str(entry["id"]) + ": " + str(timing["errorAt"]) + "s")
         fix_anchor = cue_by_id[entry["id"]].get("fixAnchor")
         if fix_anchor:
             fix_match = align_anchor(fix_anchor, words, cursor=0, min_time=start + 1.0, max_time=end - 0.25)
