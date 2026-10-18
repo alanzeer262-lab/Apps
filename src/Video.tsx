@@ -23,7 +23,8 @@ export const PyLearnVideo: React.FC = () => {
   const scene = lesson.scenes.find((s) => seconds >= s.start && seconds < s.end) ?? lesson.scenes[lesson.scenes.length - 1];
   const localFrame = Math.max(0, frame - Math.round(scene.start * fps));
   const fade = interpolate(localFrame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
-  const elapsed = Math.floor(seconds);\n  const totalSeconds = Math.ceil(lesson.durationSeconds);\n  const durationLabel = `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
+  const elapsed = Math.floor(seconds);
+  const totalSeconds = Math.ceil(lesson.durationSeconds);\n  const durationLabel = `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
   const showError = scene.errorAt !== undefined && seconds >= scene.errorAt && !(scene.fixAt !== undefined && seconds >= scene.fixAt);
   const showOutput = showError || seconds >= (scene.outputAt ?? scene.start);
   const showCode = seconds >= (scene.codeAt ?? scene.start);
