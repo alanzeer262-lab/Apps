@@ -59,3 +59,10 @@ Start by reading this file and inspecting the latest repository files and Action
 - Added `docs/LESSON_01_REVISED_PATIENT_TUTOR_SCRIPT.md` (commit `ada124009d35656fc6f9eca307e4617d13886a1b`). It narrows Lesson 01 to the first program, `print()`, simple calculations, text/quotes, comments, a beginner-level variable/f-string example, and basic debugging. It deliberately moves the deep `print()` vs `return` / functions / `None` explanation out of the first video.
 - **Next required work:** adapt `src/lesson.ts`, `scripts/sync-cues.json`, and visual timing to the revised script; record/regenerate the two narration tracks in the same teacher voice, then run alignment and render. Do not render the old MP3s as if they represented the new script. Check that generated alignment matches the new narration. Review the full resulting video before declaring the pilot successful.
 - After user approves the teaching style, revise these pilot rules based on the review and reuse them for the next lesson to avoid repeated editing.
+
+## Narration delivery refinement (2026-10-18)
+- User confirmed that voice identity is secondary; the key issue is that tune, pace variation, emphasis, and pauses should follow the spoken meaning.
+- Added `docs/NARRATION_DELIVERY_GUIDE.md` (commit `191a083eeee86722c1b1d75deb0fea7053be6f10`). It defines scene-by-scene delivery intent, purposeful pauses, meaningful emphasis, and acceptance criteria.
+- Do not replace the current voice just for novelty. First establish whether its original voice/settings can be regenerated. Do not claim a preset voice is the same voice without evidence.
+- The current audio files are still the old narration. The revised script and delivery guide are not yet implemented in the MP4, and the old cue anchors do not match the revised script.
+- Next: identify the source/settings for the existing narration if available; prepare and regenerate/record the revised narration in chunks with natural pace and prosody; then update exact cue phrases, align, render, and review the full video. Do not spend voice-generation credits or silently change voice identity without user approval.
