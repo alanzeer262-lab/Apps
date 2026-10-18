@@ -51,3 +51,11 @@ Target: an INTJ-like teaching style, interpreted as composed, analytical, precis
 - Asset URL returned by Runway: https://dnznrvs05pmza.cloudfront.net/text_to_speech/36bce141-28b6-4f3d-9e60-cb960cee963a/PyLearn_Lesson_01___Calm_Analytical_Voice_Audition_Noah_v1.mp3
 - Credits reported remaining at generation: 41; Runway indicated low credits.
 - Do not generate the full lesson until the revised script is ready and the user confirms to proceed.
+
+
+## Full revised narration generation — submitted 2026-10-18
+Both chunks were submitted using the approved voice settings: Noah, `eleven_multilingual_v2`, speed `0.90`, language `en`. No pause markers or spoken stage directions were included.
+- Part 1 — scenes 1–6; 3,492 characters; estimated 70 credits; task ID `5890fe18-15be-4e91-a6a5-e6583a278fcf`; last observed status RUNNING (98%); final asset URL pending.
+- Part 2 — scenes 7–9; 1,579 characters; estimated 32 credits; task ID `ea274edf-db56-4c42-9ba2-d3e8ee264349`; last observed status RUNNING (72%); final asset URL pending.
+- Submitted through Runway workspace `Moh` (workspace ID `70442037`). Reported remaining balance after both submissions: 398 credits.
+- Do not rely on either output until both tasks succeed and the audio URLs/durations are verified. Then preserve the original MP3s, save revised files under distinct names, and continue with isolated alignment and a separate composition.
