@@ -1,8 +1,18 @@
+import alignmentJson from "./generated-alignment.json";
+
+const generatedAlignment = alignmentJson as {
+  generated: boolean;
+  durationSeconds: number;
+  part2StartSeconds: number;
+  scenes: { id: number; start: number; end: number; outputAt?: number }[];
+};
+
 export type LessonScene = {
   id: number;
   title: string;
   start: number;
   end: number;
+  outputAt?: number;
   code: string[];
   output: string[];
   prompt?: string;
@@ -10,21 +20,18 @@ export type LessonScene = {
   status: string;
 };
 
-const scale = 411.768 / 435;
-
 export const lesson = {
   title: "Your First Python Program",
   subtitle: "Write it. Run it. Understand it.",
   lessonLabel: "PYTHON BASICS  •  LESSON 01",
-  durationSeconds: 411.768,
+  durationSeconds: generatedAlignment.durationSeconds,
   fps: 30,
   // Copy the two supplied narration MP3s into public/audio/ before rendering.
   narration: [
     { src: "/audio/PyLearn_Video_01_Narration_Part_1.mp3", start: 0 },
-    { src: "/audio/PyLearn_Video_01_Narration_Part_2.mp3", start: 173.871 },
+    { src: "/audio/PyLearn_Video_01_Narration_Part_2.mp3", start: generatedAlignment.part2StartSeconds },
   ],
-  // Times below follow the storyboard's 7:15 structure and are scaled to the
-  // measured narration length (6:51.768), preserving the original audio speed.
+  // Scene boundaries and output reveals are generated from timestamped spoken anchors.
   scenes: [
     { id: 1, title: "Your first conversation", start: 0, end: 48, code: ['print("Hello, I\'m Python.")'], output: ["Hello, I'm Python."], caption: "Write a line. Run it. Observe what happens.", status: "PROGRAM COMPLETE" },
     { id: 2, title: "Python can calculate", start: 48, end: 85, code: ['print("Hello!")', "print(2 + 3)"], output: ["Hello!", "5"], prompt: "What do you predict?", caption: "print() can display text and calculation results.", status: "OUTPUT REVEALED" },
@@ -40,7 +47,16 @@ export const lesson = {
     { id: 12, title: "A calm approach to debugging", start: 345, end: 377, code: ['print("Welcome to Python")'], output: ["Welcome to Python"], prompt: "Fix: add the missing closing quote, then run again.", caption: "Read the error. Check the line. Change one thing. Run again.", status: "ERROR FIXED" },
     { id: 13, title: "Your turn", start: 377, end: 408, code: ['name = "Your name"', 'goal = "Your learning goal"', "hours = 0  # weekly study hours", "", "# Add three friendly f-string messages"], output: [], prompt: "Build your own introduction. Predict before you run.", caption: "Use variables and f-strings to introduce yourself.", status: "YOUR TURN" },
     { id: 14, title: "Connect today's ideas", start: 408, end: 435, code: ['print("Hello!")', 'message = "Python is fun"  # a string', 'print(f"Hello, {name}!")', "# print shows; return hands a value back"], output: ["Your First Python Program — Complete", "Next: Variables and Data Types"], caption: "You have the foundations. Next: variables and data types.", status: "LESSON COMPLETE" },
-  ].map((scene) => ({ ...scene, start: scene.start * scale, end: scene.end * scale })) as LessonScene[],
+  ].map((scene) => {
+    if (!generatedAlignment.generated) {
+      throw new Error("Narration alignment has not been generated. Run scripts/align_narration.py before rendering.");
+    }
+    const timing = generatedAlignment.scenes.find((entry) => entry.id === scene.id);
+    if (!timing) {
+      throw new Error("Missing audio alignment for scene " + scene.id + ". Refusing to render guessed timing.");
+    }
+    return { ...scene, start: timing.start, end: timing.end, outputAt: timing.outputAt };
+  }) as LessonScene[],
 };
 
 export const narrationDurationSeconds = 411.768;
