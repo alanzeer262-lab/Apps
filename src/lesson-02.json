@@ -36,7 +36,7 @@
       "caption": "Assignment stores a value under a variable name",
       "status": "RUNNING",
       "start": 39.22,
-      "end": 94.3,
+      "end": 56,
       "code": [
         "name = \"Ada\"",
         "print(name)"
@@ -47,6 +47,43 @@
       "prompt": "$ python main.py",
       "codeAt": 40.08,
       "outputAt": 42.06
+    },
+    {
+      "id": 2,
+      "title": "Assigning and changing a value",
+      "caption": "Assignment stores a value under a variable name",
+      "status": "RUNNING",
+      "start": 56,
+      "end": 72,
+      "code": [
+        "name = \"Sam\"",
+        "print(name)"
+      ],
+      "output": [
+        "Sam"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 56,
+      "outputAt": 58
+    },
+    {
+      "id": 2,
+      "title": "Assigning and changing a value",
+      "caption": "Assignment stores a value under a variable name",
+      "status": "RUNNING",
+      "start": 72,
+      "end": 94.3,
+      "code": [
+        "name = \"Ada\"",
+        "name = \"Sam\"",
+        "print(name)"
+      ],
+      "output": [
+        "Sam"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 72,
+      "outputAt": 74
     },
     {
       "id": 3,
