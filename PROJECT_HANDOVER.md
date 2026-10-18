@@ -119,3 +119,12 @@ The connected Runway workspace's recent-assets list and task lookups confirm the
 - Part 1 task ID: `5890fe18-15be-4e91-a6a5-e6583a278fcf` (latest check: RUNNING at 98%).
 - Part 2 task ID: `ea274edf-db56-4c42-9ba2-d3e8ee264349` (latest check: RUNNING at 72%).
 - Runway reported 398 credits remaining after both submissions (102 credits consumed). These tasks have not yet returned final audio URLs. Do not mark the audio committed or activate the revised renderer until both tasks succeed, their MP3s are downloaded and committed, and actual durations are verified.
+
+
+## Revised narration generated successfully (2026-10-18)
+- Both narration chunks completed in Runway workspace `Moh` (workspace ID `70442037`), using Noah / `eleven_multilingual_v2` / speed `0.90` / English.
+- Part 1 (scenes 1–6): task `5890fe18-15be-4e91-a6a5-e6583a278fcf`; duration 274.181224 seconds; asset URL: https://dnznrvs05pmza.cloudfront.net/text_to_speech/da79bf60-e88d-4c18-b43a-fa80482caf84/PyLearn_Lesson_01_Revised_Narration_Part_1___Noah.mp3
+- Part 2 (scenes 7–9): task `ea274edf-db56-4c42-9ba2-d3e8ee264349`; duration 127.663311 seconds; asset URL: https://dnznrvs05pmza.cloudfront.net/text_to_speech/2c4f563f-14d0-4940-98f3-59614bed4a91/PyLearn_Lesson_01_Revised_Narration_Part_2___Noah.mp3
+- Combined audio duration: 401.844535 seconds (about 6 minutes 42 seconds), within the 6–8 minute target.
+- Runway reported 398 credits remaining after submission. The generation itself succeeded.
+- Important remaining blocker: the MP3 URLs were returned, but the available runtime could not download the signed files to commit copies into `public/audio/`. The original files remain untouched. The revised MP3s are not yet committed to GitHub and must be downloaded/imported before alignment or rendering can proceed. The links are signed and may expire; the Runway task IDs and asset names are recorded so the assets can be located in the Runway library if needed.
