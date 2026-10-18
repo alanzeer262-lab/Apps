@@ -160,8 +160,9 @@
         "print(f\"Hello, {name}!\")"
       ],
       "output": [
-        "Your First Python Program — Complete",
-        "Next: Variables and Data Types"
+        "Hello, I\u0027m Python.",
+        "5",
+        "Hello, Sam!"
       ],
       "caption": "You wrote code, ran it, observed the result, and made a change.",
       "status": "LESSON COMPLETE"
