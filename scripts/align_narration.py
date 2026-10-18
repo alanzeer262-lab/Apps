@@ -21,8 +21,8 @@ AUDIO_DIR = ROOT / "public" / "audio"
 CUES_PATH = Path(os.environ.get("PYLEARN_SYNC_CUES", str(ROOT / "scripts" / "sync-cues.json")))
 OUTPUT_PATH = Path(os.environ.get("PYLEARN_ALIGNMENT_OUTPUT", str(ROOT / "src" / "generated-alignment.json")))
 _DEFAULT_AUDIO_FILES = [
-    "public/audio/PyLearn_Video_01_Narration_Part_1.mp3",
-    "public/audio/PyLearn_Video_01_Narration_Part_2.mp3",
+    "public/audio/lesson-01/part-01.mp3",
+    "public/audio/lesson-01/part-02.mp3",
 ]
 _AUDIO_FILE_VALUES = [value.strip() for value in os.environ.get("PYLEARN_AUDIO_FILES", ",".join(_DEFAULT_AUDIO_FILES)).split(",") if value.strip()]
 AUDIO_FILES = [Path(value) if Path(value).is_absolute() else ROOT / value for value in _AUDIO_FILE_VALUES]
