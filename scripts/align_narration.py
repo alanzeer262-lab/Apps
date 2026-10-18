@@ -78,28 +78,38 @@ def main():
     TRANSCRIPT_TEXT.write_text("\n".join(f"[{w['start']:.3f}-{w['end']:.3f}] {w['text']}" for w in words)+"\n",encoding="utf-8")
     starts=sentence_starts(words)
     if len(starts)<len(scenes): raise RuntimeError(f"Transcript has only {len(starts)} sentence candidates for {len(scenes)} lesson scenes.")
-    chosen=[]; cursor=0
-    for ix,scene in enumerate(scenes):
-        if ix==0:
-            chosen.append({"index":0,"score":1.0}); cursor=1; continue
+    # Scene 1 begins at the first spoken word. Every later boundary must be at
+    # least 8 seconds after the previous boundary and leave 8 seconds per scene.
+    # This prevents a strong topic match near the opening from collapsing Scene 1.
+    chosen=[{"index":0,"score":1.0}]
+    cursor=1
+    for ix,scene in enumerate(scenes[1:], start=1):
         terms=scene_terms(scene)
         remaining=len(scenes)-ix-1
-        max_candidate=len(starts)-1-remaining
+        previous_time=words[starts[chosen[-1]["index"]]]["start"] if ix > 1 else 0.0
+        earliest_time=previous_time+8.0
+        latest_time=total-8.0*(remaining+1)
         candidates=[]
-        for pos in range(cursor,max_candidate+1):
+        for pos in range(cursor,len(starts)):
             word_i=starts[pos]
+            candidate_time=words[word_i]["start"]
+            if candidate_time < earliest_time:
+                continue
+            if candidate_time > latest_time:
+                break
             score=score_candidate(words,word_i,terms,len(words))
-            # Candidate should follow the previous scene and favor actual topic vocabulary.
             candidates.append((score,pos))
-        if not candidates: raise RuntimeError(f"No ordered transcript boundary available for scene {ix+1}.")
+        if not candidates:
+            raise RuntimeError(f"No transcript boundary at least 8 seconds from adjacent scenes for scene {ix+1} ({scene.get('title','untitled')}); inspect narration/storyboard ordering.")
         score,pos=max(candidates,key=lambda x:(x[0],-x[1]))
         if score < 0.08:
             raise RuntimeError(f"Could not locate scene {ix+1} ({scene.get('title','untitled')}) in the transcript using its lesson content. Best content match {score:.3f}; refusing guessed timing.")
-        chosen.append({"index":pos,"score":score}); cursor=pos+1
+        chosen.append({"index":pos,"score":score})
+        cursor=pos+1
         print(f"Scene {ix+1:02d} topic match {score:.2f}: {scene.get('title','')}")
     boundaries=[0.0]+[words[starts[c["index"]]]["start"] for c in chosen[1:]]+[total]
     if any(boundaries[i+1]-boundaries[i] < 8 for i in range(len(boundaries)-1)):
-        raise RuntimeError("A transcript-derived scene is shorter than 8 seconds; inspect narration or storyboard.")
+        raise RuntimeError("Internal alignment error: minimum scene duration constraint was not respected.")
     output=[]
     for i,scene in enumerate(scenes):
         output.append({"id":int(scene.get("id",i+1)),"title":scene.get("title",f"Scene {i+1}"),"caption":scene.get("caption",""),"status":scene.get("status",""),"code":scene.get("code",[]),"output":scene.get("output",[]),"prompt":scene.get("prompt"),"errorCode":scene.get("errorCode"),"errorOutput":scene.get("errorOutput"),"errorPrompt":scene.get("errorPrompt"),"correctedCode":scene.get("correctedCode"),"start":round(boundaries[i],3),"end":round(boundaries[i+1],3),"transcriptTopicMatch":round(chosen[i]["score"],3)})
