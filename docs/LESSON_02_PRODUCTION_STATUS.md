@@ -7,16 +7,16 @@ Updated: 2026-10-18
 | Stage | Owner | Status |
 |---|---|---|
 | Validate audio and generate transcript with timestamps | Automated workflow | **Complete** — run #3 succeeded |
-| Create the scene splits, code screens, and visual timing | Me (assistant) | **In progress** — first-pass timeline exists; needs review against transcript/script and implementation |
-| Prepare the Lesson 2 video render setup | Me (assistant) | **Pending** |
-| Render and inspect the complete MP4 | Me (assistant) | **Pending** |
+| Create the scene splits, code screens, and visual timing | Me (assistant) | **In progress** — 11-scene timeline aligned to transcript phrase timestamps; requires final render inspection |
+| Prepare the Lesson 2 video render setup | Me (assistant) | **Implemented** — isolated `PyLearnLesson02` composition and dedicated workflow; build validation in progress |
+| Render and inspect the complete MP4 | Me (assistant) | **In progress** — GitHub Actions render run #4 is running; full MP4 inspection still required |
 | Review the finished video | You (user) | **Not ready yet** — handoff only after I render, inspect, and publish the video |
 
 **Responsibility rule:** The assistant owns scene design, code/visual timing, render implementation, rendering, and technical inspection. The user should only be asked to review the finished video and give feedback/approval, not to build the scenes or run the render.
 
 ## Current production state
 
-**Audio validation and transcription succeeded; dedicated video rendering remains in progress.**
+**Audio validation and transcription succeeded; the dedicated Lesson 02 render workflow is running.**
 
 - Audio: `public/audio/lesson-02/Runway_timeline_export_audio_540f76fd-8eb9-4824-b57c-e6ebc0723cf8.mp3`
 - GitHub blob SHA observed: `7188e341c602fb738ca40264527066f6158483b9`
@@ -25,7 +25,11 @@ Updated: 2026-10-18
 - Workflow run: [Validate Lesson 02 narration #3](https://github.com/mohamedalnazeer262-coder/pylearn-video-studio./actions/runs/39153413307)
 - Result: Success; artifact `pylearn-lesson-02-audio-validation` (artifact ID `12146500060`)
 - Transcript artifact includes `transcript.json` with word-level start/end timestamps and `transcript.txt`.
-- First-pass timeline: `docs/LESSON_02_TRANSCRIPT_TIMELINE.json`
+- Transcript-aligned 11-scene timeline: `docs/LESSON_02_TRANSCRIPT_TIMELINE.json` (scene boundaries checked against phrase timestamps in the actual transcript)
+- Dedicated Remotion configuration: `src/lesson-02.json`
+- Shared renderer now accepts lesson-specific data; Lesson 1 keeps its existing default configuration.
+- Dedicated render workflow: `.github/workflows/render-lesson-02.yml`
+- Current render run: [Render PyLearn Lesson 02 #4](https://github.com/mohamedalnazeer262-coder/pylearn-video-studio./actions/runs/39154061227) — in progress.
 
 The automatic transcript has likely recognition errors in Python terms and example words. I must correct the interpretation against the canonical narration script without altering the user's recorded audio. The current ten-scene timeline is only a first pass and must be checked before the render is considered ready.
 
