@@ -74,3 +74,12 @@ This repository is separate from the PyLearn Android app.
 - If the type-check fails, open the failed workflow log and fix the reported TypeScript error before trying again.
 - If rendering succeeds but a scene feels early or late, adjust that scene's `start` / `end` values in `src/lesson.ts`. Scene boundaries are generated from the transcript's measured word timestamps; do not edit guessed times or change audio playback speed.
 - The MP4 has not been considered verified until the downloaded artifact has been watched from beginning to end.
+
+
+## Required pre-frame production gate
+
+Follow `docs/VIDEO_PRODUCTION_STANDARD.md` for every lesson. Before the frame-making tool runs, prepare and approve a timestamped transcript from the approved narration and a frame-production manifest specifying ordered beats, spoken anchors, code/output states, actions, captions, and transitions. Review the generated frames before rendering the MP4.
+
+The canonical lesson source is in the separate PyLearn Android app repository. Example: `content/python-basics/modules/01-first-program.md`; verify and record the exact source repository, branch/commit, and path for each lesson rather than assuming this path is universal.
+
+Keep one approved visual style consistent within a course. A new course such as Data Analysis may have a different style approved at course level, then reuse it consistently. Run #25 is the approved technical baseline for the current course.
