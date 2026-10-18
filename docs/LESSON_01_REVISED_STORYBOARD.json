@@ -1,0 +1,177 @@
+{
+  "title": "Your First Python Program",
+  "subtitle": "Write it. Run it. Understand it.",
+  "lessonLabel": "PYTHON BASICS  •  LESSON 01",
+  "targetDurationSeconds": {
+    "minimum": 360,
+    "maximum": 480
+  },
+  "narration": {
+    "voice": "Noah",
+    "model": "eleven_multilingual_v2",
+    "speed": 0.9,
+    "language": "en",
+    "files": [
+      "public/audio/revised_narration_part_1.mp3",
+      "public/audio/revised_narration_part_2.mp3"
+    ],
+    "note": "Use only spoken text from docs/LESSON_01_FINAL_NARRATION_TEXT.md. Never send headings or stage directions to TTS. Add longer silence in the edit."
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "title": "Your First Python Program",
+      "code": [
+        "print(\"Hello, I'm Python.\")"
+      ],
+      "output": [
+        "Hello, I'm Python."
+      ],
+      "caption": "Write a line. Run it. Observe what happens.",
+      "status": "FIRST PROGRAM",
+      "prompt": "What message do you expect to see?"
+    },
+    {
+      "id": 2,
+      "title": "Python Can Calculate",
+      "code": [
+        "print(\"Hello!\")",
+        "print(2 + 3)"
+      ],
+      "output": [
+        "Hello!",
+        "5"
+      ],
+      "caption": "print() can display text and calculation results.",
+      "status": "CALCULATION",
+      "prompt": "What number do you predict?"
+    },
+    {
+      "id": 3,
+      "title": "Numbers and Text",
+      "code": [
+        "print(10)",
+        "print(\"10\")"
+      ],
+      "output": [
+        "10",
+        "10"
+      ],
+      "caption": "Quotation marks tell Python that a value is text.",
+      "status": "COMPARE VALUES",
+      "prompt": "Will the output look different?"
+    },
+    {
+      "id": 4,
+      "title": "Matching Quotation Marks",
+      "code": [
+        "print('Hello')",
+        "print(\"Hello\")"
+      ],
+      "output": [
+        "Hello",
+        "Hello"
+      ],
+      "errorCode": [
+        "print(\"Hello)"
+      ],
+      "errorOutput": [
+        "SyntaxError"
+      ],
+      "errorPrompt": "SyntaxError: string is missing a closing quote",
+      "correctedCode": [
+        "print(\"Hello\")"
+      ],
+      "caption": "The opening and closing quotation marks must match.",
+      "status": "CHECK THE QUOTES"
+    },
+    {
+      "id": 5,
+      "title": "Comments Are Notes",
+      "code": [
+        "# This is a note for people",
+        "print(\"The code still runs.\")"
+      ],
+      "output": [
+        "The code still runs."
+      ],
+      "caption": "Comments begin with # and do not appear in program output.",
+      "status": "COMMENT IGNORED"
+    },
+    {
+      "id": 6,
+      "title": "Make the Message Personal",
+      "code": [
+        "name = \"Ada\"",
+        "",
+        "print(f\"Hello, {name}!\")"
+      ],
+      "output": [
+        "Hello, Ada!"
+      ],
+      "caption": "A variable stores a value that the program can use.",
+      "status": "PERSONALIZED",
+      "prompt": "Notice the f prefix and the curly braces."
+    },
+    {
+      "id": 7,
+      "title": "Your Turn",
+      "code": [
+        "name = \"Alex\"",
+        "",
+        "print(f\"Hello, {name}!\")"
+      ],
+      "output": [
+        "Hello, Alex!"
+      ],
+      "caption": "Change the name, predict the result, and run your code.",
+      "status": "YOUR TURN",
+      "prompt": "Replace Alex with your own name."
+    },
+    {
+      "id": 8,
+      "title": "Fix One Thing at a Time",
+      "code": [
+        "print(\"Welcome to Python)"
+      ],
+      "correctedCode": [
+        "print(\"Welcome to Python\")"
+      ],
+      "errorCode": [
+        "print(\"Welcome to Python)"
+      ],
+      "output": [
+        "Welcome to Python"
+      ],
+      "errorOutput": [
+        "SyntaxError"
+      ],
+      "errorPrompt": "SyntaxError: string is missing a closing quote",
+      "caption": "Read the error. Check the line. Change one thing. Run again.",
+      "status": "ERROR FIXED"
+    },
+    {
+      "id": 9,
+      "title": "What You Have Learned",
+      "code": [
+        "print(\"Hello, I'm Python.\")",
+        "print(2 + 3)",
+        "name = \"Sam\"",
+        "print(f\"Hello, {name}!\")"
+      ],
+      "output": [
+        "Your First Python Program — Complete",
+        "Next: Variables and Data Types"
+      ],
+      "caption": "You wrote code, ran it, observed the result, and made a change.",
+      "status": "LESSON COMPLETE"
+    }
+  ],
+  "activationRules": [
+    "Do not replace the current 14-scene lesson until all revised audio files are committed.",
+    "Generate alignment using PYLEARN_SYNC_CUES=scripts/sync-cues.revised-draft.json and PYLEARN_ALIGNMENT_OUTPUT=src/generated-alignment.revised.json.",
+    "Use PYLEARN_AUDIO_FILES with the exact revised audio file paths.",
+    "Validate every cue match, scene order, error/fix order, output timing, TypeScript check, and full MP4 playback.",
+    "The current active lesson and its workflow must continue using the original two MP3 files and default cue file until the revised render is ready."
+  ]
+}
