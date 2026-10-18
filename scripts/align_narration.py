@@ -125,7 +125,7 @@ def main():
         start, end = boundaries[i], boundaries[i+1]
         aligned = {"id":int(scene.get("id",i+1)), "title":scene.get("title",f"Scene {i+1}"), "caption":scene.get("caption",""), "status":scene.get("status",""), "code":scene.get("code",[]), "output":scene.get("output",[]), "prompt":scene.get("prompt"), "errorCode":scene.get("errorCode"), "errorOutput":scene.get("errorOutput"), "errorPrompt":scene.get("errorPrompt"), "correctedCode":scene.get("correctedCode"), "start":round(start,3), "end":round(end,3), "transcriptTopicMatch":1.0}
         # Align code, output, and error/fix transitions to their own spoken cues.
-        for cue_key, field_name in [("codeAnchor","codeAt"),("outputAnchor","outputAt"),("errorAnchor","errorAt"),("fixAnchor","fixAt")]:
+        for cue_key, field_name in [("codeAnchor","codeAt"),("outputAnchor","outputAt"),("errorAnchor","errorAt"),("fixAnchor","fixAt"),("completionAnchor","completionAt")]:
             phrase = cue.get(cue_key)
             if not phrase:
                 continue
