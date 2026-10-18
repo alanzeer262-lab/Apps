@@ -24,9 +24,12 @@ export const PyLearnVideo: React.FC = () => {
   const localFrame = Math.max(0, frame - Math.round(scene.start * fps));
   const fade = interpolate(localFrame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
   const elapsed = Math.floor(seconds);
-  const showOutput = seconds >= (scene.outputAt ?? scene.start);
+  const showError = scene.errorAt !== undefined && seconds >= scene.errorAt && !(scene.fixAt !== undefined && seconds >= scene.fixAt);
+  const showOutput = showError || seconds >= (scene.outputAt ?? scene.start);
   const showCode = seconds >= (scene.codeAt ?? scene.start);
-  const codeLines = scene.correctedCode && scene.fixAt !== undefined && seconds >= scene.fixAt ? scene.correctedCode : scene.code;
+  const codeLines = showError && scene.errorCode ? scene.errorCode : scene.correctedCode && scene.fixAt !== undefined && seconds >= scene.fixAt ? scene.correctedCode : scene.code;
+  const outputLines = showError && scene.errorOutput ? scene.errorOutput : scene.output;
+  const outputPrompt = showError && scene.errorPrompt ? scene.errorPrompt : scene.prompt ?? "$ python main.py";
 
   return (
     <AbsoluteFill style={{ background: colors.bg, color: colors.text, fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", padding: 66, overflow: "hidden" }}>
@@ -65,9 +68,9 @@ export const PyLearnVideo: React.FC = () => {
         <section className="output-panel">
           <div className="panel-header"><span className="terminal-icon">›_</span><span>OUTPUT</span><span className="running">● {scene.status}</span></div>
           <div className="output-content">
-            {scene.prompt ? <div className="output-prompt">{scene.prompt}</div> : <div className="output-prompt">$ python main.py</div>}
+            <div className="output-prompt">{outputPrompt}</div>
             <div style={{ opacity: showOutput ? 1 : 0 }}>
-              {scene.output.length ? scene.output.map((line, i) => <div className={scene.id === 10 ? "output-line final-line" : "output-line"} key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
+              {outputLines.length ? outputLines.map((line, i) => <div className={scene.id === 10 ? "output-line final-line" : "output-line"} key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
             </div>
           </div>
         </section>
