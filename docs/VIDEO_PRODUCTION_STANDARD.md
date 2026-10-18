@@ -179,3 +179,35 @@ Report these items clearly:
 - Do not ask the user to repeat these production rules.
 - Ask only for genuinely missing decisions or ambiguous source assets.
 - Make the smallest safe repository changes, preserve working assets, and report what was actually changed and verified.
+
+
+## Mandatory pre-render frame-production package (all lessons)
+
+This is a process gate, not an optional per-scene correction. Before building the MP4, prepare and approve a frame-production package from the approved script and actual approved narration. The transcript and manifest must be ready for the frame-making tool before it generates frames; video rendering comes later.
+
+### Exact app lesson source
+- Read the complete Android lesson from the separate PyLearn app repository, not from an old video script or storyboard.
+- Known Python Foundations example: `content/python-basics/modules/01-first-program.md`. Resolve and verify the exact path for the requested lesson from the app repository tree; do not assume this path applies to every lesson or course.
+- Record app repository URL, branch/commit, exact lesson path, title, and any track/metadata file used in the lesson manifest. If the path cannot be verified, stop rather than guess.
+- The video-studio repository is separate from the Android app repository. Its `docs/` files are production documents, not canonical lesson content.
+
+### Transcript and frame-manifest gate
+1. Approve the script, then use the exact approved Runway audio as the timing source.
+2. Produce a clean, timestamped transcript from that audio, preserving what was actually spoken and word/phrase timestamps. Compare it with the approved script and flag omissions, additions, duplicated sections, or mismatches.
+3. Convert the transcript into a frame-production manifest consumable by the frame-making tool. Every ordered beat/frame must specify: ID; transcript start/end or exact spoken anchor; narration span; teaching purpose; scene title; visible code state; expected output; caption/on-screen text; action (typing/run/reveal/error/fix/practice); and transition in/out.
+4. Include actual spoken anchors for every major scene transition and code/output/error/fix reveal. Never invent timestamps.
+5. Validate ordering, lesson coverage, missing/duplicate beats, readable hold time, code/output correctness, the true opening, and the complete ending.
+6. Save versioned lesson-specific transcript and manifest files. Review and approve them before frame generation. Review generated frames before building the MP4.
+7. If source details or anchors are missing or ambiguous, stop and fix the transcript/manifest. Do not hide a process failure with isolated timestamp patches.
+
+### Mandatory major-topic transitions
+At every major conceptual move, the teacher must either conclude the previous topic and announce the next, or explicitly name the new topic before teaching it. Preferred sequence: brief conclusion → clear transition (“Now let's move to…”) → why the next topic matters → new demonstration. Apply this to the script, transcript, frame manifest, and final playback review. Do not add long transitions between every small step.
+
+### Course-level visual style lock
+- Keep the approved visual style consistent across every lesson in the same course: branding, typography, palette, layout, editor/output or other course-specific panels, animation language, captions, and transitions.
+- Do not redesign the style for individual lessons or use a design change to fix a local timing/content issue. Correct scene content and timing within the existing course style.
+- A new course may need a distinct style based on its teaching needs. For example, Data Analysis may need charts, tables, and data-inspection layouts rather than the Python-code editor-left/output-right layout. Approve that as a course-level design decision, then keep it consistent throughout that course.
+- Run #25 is the approved technical baseline for the current course. Preserve its alignment/rendering approach unless evidence identifies a specific defect requiring a targeted change.
+
+### Release gate
+Do not generate frames until the source lesson, approved script/audio, timestamped transcript, and frame manifest are validated. Do not render the MP4 until the generated frames have been reviewed. Do not approve a video based only on a successful build; inspect the opening, major transitions, code/output alignment, and ending in the actual render.
