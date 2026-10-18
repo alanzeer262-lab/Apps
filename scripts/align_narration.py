@@ -206,7 +206,7 @@ def main() -> None:
                     f"{output_match['score']:.3f} < {confidence_floor:.3f}; "
                     f"expected={output_anchor!r}; matched={output_match['matched']!r}."
                 )
-            timing["outputAt"] = round(output_match["end"] + 0.15, 3)
+            timing["outputAt"] = round(output_match["start"] + 0.1, 3)
             timing["outputAnchor"] = output_anchor
             timing["outputMatched"] = output_match["matched"]
             timing["outputConfidence"] = round(output_match["score"], 3)
