@@ -59,3 +59,12 @@ Both chunks were submitted using the approved voice settings: Noah, `eleven_mult
 - Part 2 — scenes 7–9; 1,579 characters; estimated 32 credits; task ID `ea274edf-db56-4c42-9ba2-d3e8ee264349`; last observed status RUNNING (72%); final asset URL pending.
 - Submitted through Runway workspace `Moh` (workspace ID `70442037`). Reported remaining balance after both submissions: 398 credits.
 - Do not rely on either output until both tasks succeed and the audio URLs/durations are verified. Then preserve the original MP3s, save revised files under distinct names, and continue with isolated alignment and a separate composition.
+
+
+## Revised full narration — generation completed 2026-10-18
+- Part 1 (scenes 1–6): task ID `5890fe18-15be-4e91-a6a5-e6583a278fcf`; Noah; `eleven_multilingual_v2`; speed 0.90; language en; duration 274.181224 s; asset name `PyLearn Lesson 01 Revised Narration Part 1 — Noah`.
+  URL: https://dnznrvs05pmza.cloudfront.net/text_to_speech/da79bf60-e88d-4c18-b43a-fa80482caf84/PyLearn_Lesson_01_Revised_Narration_Part_1___Noah.mp3
+- Part 2 (scenes 7–9): task ID `ea274edf-db56-4c42-9ba2-d3e8ee264349`; Noah; `eleven_multilingual_v2`; speed 0.90; language en; duration 127.663311 s; asset name `PyLearn Lesson 01 Revised Narration Part 2 — Noah`.
+  URL: https://dnznrvs05pmza.cloudfront.net/text_to_speech/2c4f563f-14d0-4940-98f3-59614bed4a91/PyLearn_Lesson_01_Revised_Narration_Part_2___Noah.mp3
+- Combined duration is 401.844535 s (~6:42), inside the requested 6–8 minute range.
+- The generation tasks succeeded. However, local download attempts failed because the signed URLs could not be fetched from the runtime. Do not claim the MP3 files are committed. Keep the original recordings and active renderer untouched until the revised files are available locally and committed.
