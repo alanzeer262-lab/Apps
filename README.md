@@ -55,7 +55,7 @@ The scene captions are instructional summaries, not word-for-word subtitles. Sce
 
 ## GitHub Actions
 
-Use Actions → Render PyLearn lesson video → Run workflow. The approved Runway MP3s must exist at `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. GitHub Actions runs Whisper transcription during the workflow. The workflow uploads the MP4 as an artifact for seven days.
+Use Actions → Render PyLearn lesson video → Run workflow. The approved Runway MP3s must exist at `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. GitHub Actions runs Whisper transcription during the workflow. The workflow uploads the MP4, timestamped Whisper transcript (`transcript.json` and `transcript.txt`), and generated scene alignment as the `pylearn-lesson-01-render` artifact for seven days.
 
 This repository is separate from the PyLearn Android app.
 
@@ -65,7 +65,7 @@ This repository is separate from the PyLearn Android app.
 2. Open **Actions → Render PyLearn lesson video → Run workflow** and start the workflow from the default branch.
 3. Review the **Align visuals to spoken narration** log. It must find every scene anchor and output anchor with acceptable confidence.
 4. If alignment fails, update the phrase in `scripts/sync-cues.json` to match the actual recording. Do not add guessed timestamps.
-5. When the run finishes, download the `pylearn-first-program` artifact.
+5. When the run finishes, download the `pylearn-lesson-01-render` artifact.
 6. Review the rendered video at each printed anchor timestamp, especially code changes and output reveals, before publishing.
 
 ### If the render fails
