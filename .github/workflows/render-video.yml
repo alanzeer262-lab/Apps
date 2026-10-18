@@ -24,26 +24,30 @@ jobs:
         run: npm install
       - name: Verify uploaded narration assets exist
         run: |
-          test -f public/audio/lesson-01/part-01.mp3
-          test -f public/audio/lesson-01/part-02.mp3
+          test -s public/audio/lesson-01/part-01.mp3
+          test -s public/audio/lesson-01/part-02.mp3
       - name: Install narration alignment dependencies
         run: python -m pip install --disable-pip-version-check -r scripts/requirements-alignment.txt
-      - name: Align visuals to spoken narration
+      - name: Transcribe narration and align visual cues
         run: python scripts/align_narration.py
-      - name: Type-check
-        run: npm run check
-      - name: Render MP4
-        run: npm run render
-      - name: Upload Whisper transcript for diagnosis
-        if: always()
+      - name: Prepare and validate transcript-bearing frame package
+        run: python scripts/prepare_frame_package.py
+      - name: Publish required frame-maker inputs BEFORE rendering
         uses: actions/upload-artifact@v4
         with:
-          name: pylearn-lesson-01-transcript
+          name: pylearn-lesson-01-frame-maker-inputs
           path: |
             out/lesson-01/transcript.json
             out/lesson-01/transcript.txt
-          if-no-files-found: warn
-          retention-days: 7
+            out/lesson-01/frame-production-package.json
+            src/generated-alignment.json
+            docs/LESSON_01_REVISED_STORYBOARD.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Type-check
+        run: npm run check
+      - name: Render MP4 only after transcript package passes
+        run: npm run render
       - name: Upload rendered video and alignment
         if: success()
         uses: actions/upload-artifact@v4
@@ -53,4 +57,15 @@ jobs:
             out/pylearn-first-program.mp4
             src/generated-alignment.json
           if-no-files-found: error
+          retention-days: 7
+      - name: Preserve transcript diagnostics on failure
+        if: failure() || cancelled()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pylearn-lesson-01-transcript-diagnostics
+          path: |
+            out/lesson-01/transcript.json
+            out/lesson-01/transcript.txt
+            out/lesson-01/frame-production-package.json
+          if-no-files-found: warn
           retention-days: 7
