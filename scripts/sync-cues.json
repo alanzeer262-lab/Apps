@@ -4,7 +4,7 @@
   "scenes": [
     {
       "id": 1,
-      "anchor": "Welcome to PyLearn today we're going to write our very first Python program",
+      "anchor": "In this lesson we're going to write a tiny Python program",
       "outputAnchor": "There it is the computer displayed our message",
       "codeAnchor": "Let's write our first line together"
     },
