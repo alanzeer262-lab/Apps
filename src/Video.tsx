@@ -17,6 +17,9 @@ function syntaxLine(line: string) {
 }
 
 export const PyLearnVideo: React.FC<{ lessonData?: typeof lesson }> = ({ lessonData = lesson }) => {
+  if (!lessonData.scenes.length) {
+    throw new Error("Transcript-derived scene manifest is missing for Lesson 01. Run scripts/align_narration.py before rendering Lesson 01.");
+  }
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const seconds = frame / fps;
