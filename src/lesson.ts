@@ -35,8 +35,8 @@ export const lesson = {
   fps: 30,
   // Audio durations and track offsets are measured by the alignment step.
   narration: [
-    { src: "/audio/PyLearn_Video_01_Narration_Part_1.mp3", start: 0 },
-    { src: "/audio/PyLearn_Video_01_Narration_Part_2.mp3", start: generatedAlignment.part2StartSeconds },
+    { src: "/audio/lesson-01/part-01.mp3", start: 0 },
+    { src: "/audio/lesson-01/part-02.mp3", start: generatedAlignment.part2StartSeconds },
   ],
   // Scene boundaries and output reveals are generated from timestamped spoken anchors.
   scenes: [
