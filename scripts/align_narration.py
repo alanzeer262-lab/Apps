@@ -90,7 +90,7 @@ def transcribe_tracks(model: WhisperModel, files: list[Path]) -> tuple[list[dict
     return words, offsets
 
 
-def align_anchor(anchor: str, words: list[dict], cursor: int) -> dict:
+def align_anchor(anchor: str, words: list[dict], cursor: int = 0, min_time: float = 0.0, max_time: float | None = None) -> dict:
     wanted = tokens(anchor)
     if not wanted:
         raise ValueError(f"Empty anchor: {anchor!r}")
@@ -108,6 +108,10 @@ def align_anchor(anchor: str, words: list[dict], cursor: int) -> dict:
             if end_i > len(words):
                 continue
             candidate_words = words[start_i:end_i]
+            if candidate_words[0]["start"] < min_time:
+                continue
+            if max_time is not None and candidate_words[-1]["end"] > max_time:
+                continue
             candidate = " ".join(w["token"] for w in candidate_words)
             ratio = SequenceMatcher(None, target, candidate).ratio()
             target_set = set(wanted)
@@ -176,16 +180,39 @@ def main() -> None:
             )
 
     scene_timings = []
+    cue_by_id = {int(cue["id"]): cue for cue in cues["scenes"]}
     for i, entry in enumerate(aligned):
         start = starts[i]
         end = starts[i + 1] if i + 1 < len(starts) else total_duration
         if end <= start:
             raise RuntimeError(f"Invalid scene interval for scene {entry['id']}")
-        scene_timings.append({
+        timing = {
             **entry,
             "start": round(start, 3),
             "end": round(end, 3),
-        })
+        }
+        output_anchor = cue_by_id[entry["id"]].get("outputAnchor")
+        if output_anchor:
+            output_match = align_anchor(
+                output_anchor,
+                words,
+                cursor=0,
+                min_time=start + 1.0,
+                max_time=end - 0.25,
+            )
+            if output_match["score"] < confidence_floor:
+                raise RuntimeError(
+                    f"Low-confidence output anchor for scene {entry['id']}: "
+                    f"{output_match['score']:.3f} < {confidence_floor:.3f}; "
+                    f"expected={output_anchor!r}; matched={output_match['matched']!r}."
+                )
+            timing["outputAt"] = round(output_match["end"] + 0.15, 3)
+            timing["outputAnchor"] = output_anchor
+            timing["outputMatched"] = output_match["matched"]
+            timing["outputConfidence"] = round(output_match["score"], 3)
+            print(f"  output scene {entry['id']:02d}: {timing['outputAt']:.2f}s "
+                  f"(confidence {output_match['score']:.2f})")
+        scene_timings.append(timing)
 
     payload = {
         "generated": True,
