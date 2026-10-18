@@ -4,15 +4,18 @@ Updated: 2026-10-18
 
 ## Current production state
 
-**Audio received; transcript validation is the next gate.** The user generated one complete Runway timeline-export MP3 and placed it in the correct lesson folder. Do not ask for split files or request regeneration.
+**Audio validation and transcription succeeded; dedicated video rendering remains in progress.**
 
 - Audio: `public/audio/lesson-02/Runway_timeline_export_audio_540f76fd-8eb9-4824-b57c-e6ebc0723cf8.mp3`
 - GitHub blob SHA observed: `7188e341c602fb738ca40264527066f6158483b9`
-- Repository listing reports 12,449,700 bytes.
-- Validation/transcription workflow: `.github/workflows/validate-lesson-02-audio.yml`
-- Expected transcript artifacts from that workflow: `out/lesson-02/transcript.json`, `out/lesson-02/transcript.txt`
+- Audio size: 12,449,700 bytes
+- Measured duration: **518.08 seconds (8:38.08)**
+- Workflow run: [Validate Lesson 02 narration #3](https://github.com/mohamedalnazeer262-coder/pylearn-video-studio./actions/runs/39153413307)
+- Result: Success; artifact `pylearn-lesson-02-audio-validation` (artifact ID `12146500060`)
+- Transcript artifact includes `transcript.json` with word-level start/end timestamps and `transcript.txt`.
+- Reviewed timeline draft: `docs/LESSON_02_TRANSCRIPT_TIMELINE.json`
 
-The duration, spoken content, word timestamps, and scene anchor positions have **not yet been measured/verified** in this status update. Do not invent timings. After the workflow runs, use its transcript to adapt the Lesson 02 storyboard and build a dedicated Lesson 02 Remotion composition. The current `.github/workflows/render-video.yml` and `scripts/align_narration.py` are hardcoded for Lesson 01; do not repurpose them in a way that risks Lesson 01.
+The automatic transcript has several likely recognition errors in Python terms and a few example words. Use the canonical narration script to correct the interpretation of those words; do not alter the user's audio or silently replace the recording. The current timeline marks ten scene ranges based on the observed spoken transitions. These are a first-pass visual plan and must be checked during render review.
 
 ## Canonical source verified
 
@@ -21,7 +24,7 @@ The duration, spoken content, word timestamps, and scene anchor positions have *
 - Source: `content/python-basics/modules/02-variables-types.md`
 - Source commit/blob observed during verification: `3732227f4ddacdf12312649ef95efffed9b075c0`
 
-The narration script covers variables as labels, assignment and reassignment, `str` / `int` / `float` / `bool`, `type()`, number-versus-string multiplication, conversions and invalid conversion, `snake_case`, the prediction example, learner-profile practice, recap, and the bridge to numbers and operators.
+The narration covers variables, assignment/reassignment, `str` / `int` / `float` / `bool`, `type()`, number-versus-string multiplication, conversions and invalid conversion, `snake_case`, a prediction example, learner-profile practice, recap, and the bridge to numbers and operators.
 
 ## Mandatory voice settings
 
@@ -35,17 +38,17 @@ The narration script covers variables as labels, assignment and reassignment, `s
 - Mandatory cross-agent procedure: `AGENTS.md`
 - Narration script: `docs/LESSON_02_NARRATION_SCRIPT.md`
 - Storyboard draft: `docs/LESSON_02_STORYBOARD.json`
+- Transcript-derived timeline draft: `docs/LESSON_02_TRANSCRIPT_TIMELINE.json`
 - Audio: `public/audio/lesson-02/Runway_timeline_export_audio_540f76fd-8eb9-4824-b57c-e6ebc0723cf8.mp3`
 
 ## Remaining steps — in order
 
-1. Run/verify the audio-validation workflow and inspect the actual transcript, duration, and word timestamps.
-2. Align scene boundaries to phrases actually spoken in this recording; do not invent timestamps or force the draft storyboard anchors if the recording differs.
-3. Complete a Lesson 02 storyboard and dedicated Remotion composition/configuration while preserving Lesson 01.
-4. Run type checks and render the complete Lesson 02 MP4.
-5. Inspect the full output for timing, code accuracy, text clipping, audio sync, and ending; fix and rerender defects.
-6. Publish the verified MP4 under `public/videos/final/` and update this status only when that is actually done.
+1. Build a dedicated Lesson 02 Remotion composition/configuration that consumes this lesson's own audio and timeline while leaving the Lesson 01 pipeline unchanged.
+2. Correct scene code/output and timing against the canonical script and transcript; ensure the code displayed matches the spoken example.
+3. Run type checks and render the complete Lesson 02 MP4.
+4. Inspect the full output for timing, code accuracy, text clipping, audio sync, and ending; fix and rerender defects.
+5. Publish the verified MP4 under `public/videos/final/` and update this status only when that is actually done.
 
 ## Honest completion criteria
 
-A committed script or a successful transcript job is not a finished video. Mark Lesson 02 complete only after the correct audio is transcribed, scenes are aligned, the full MP4 is rendered and inspected, and the verified final is published.
+A successful transcript job is not a finished video. Mark Lesson 02 complete only after the dedicated composition is built, the full MP4 is rendered and inspected, and the verified final is published.
