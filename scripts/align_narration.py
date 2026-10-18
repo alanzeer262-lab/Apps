@@ -238,7 +238,9 @@ def main() -> None:
                     f"{output_match['score']:.3f} < {confidence_floor:.3f}; "
                     f"expected={output_anchor!r}; matched={output_match['matched']!r}."
                 )
-            timing["outputAt"] = round(output_match["start"] + 0.1, 3)
+            output_edge = cue_by_id[entry["id"]].get("outputEdge", "start")
+            output_time = output_match["end"] if output_edge == "end" else output_match["start"]
+            timing["outputAt"] = round(output_time + 0.1, 3)
             timing["outputAnchor"] = output_anchor
             timing["outputMatched"] = output_match["matched"]
             timing["outputConfidence"] = round(output_match["score"], 3)
