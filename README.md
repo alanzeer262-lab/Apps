@@ -48,3 +48,22 @@ The scene captions are instructional on-screen summaries, not word-for-word subt
 Use Actions → Render PyLearn lesson video → Run workflow. The narration files must already exist under `public/audio/`. The workflow uploads the MP4 as an artifact for seven days.
 
 This repository is separate from the PyLearn Android app.
+
+## First render checklist
+
+1. Download the narration ZIP from the project conversation and extract it on your device.
+2. In this repository, open the `public/audio` folder. If it does not exist in the GitHub file view, create the folder by uploading a file into that path.
+3. Upload both MP3 files with these exact names (capitalization and underscores matter):
+   - `PyLearn_Video_01_Narration_Part_1.mp3`
+   - `PyLearn_Video_01_Narration_Part_2.mp3`
+4. Confirm the files appear at `public/audio/PyLearn_Video_01_Narration_Part_1.mp3` and `public/audio/PyLearn_Video_01_Narration_Part_2.mp3` in the repository.
+5. Open **Actions → Render PyLearn lesson video → Run workflow** and start the workflow from the default branch.
+6. When the run finishes, open the run and download the `pylearn-first-program` artifact. It contains the rendered MP4.
+7. Watch the whole video once before publishing. Check that the audio is present, scene changes follow the narration, and code/output examples are readable.
+
+### If the render fails
+
+- If the narration check fails, one or both MP3 files are missing or their names/paths do not match exactly.
+- If the type-check fails, open the failed workflow log and fix the reported TypeScript error before trying again.
+- If rendering succeeds but a scene feels early or late, adjust that scene's `start` / `end` values in `src/lesson.ts`. Scene times are scaled from the storyboard's 435-second outline to the measured 411.768-second narration; do not change audio playback speed.
+- The MP4 has not been considered verified until the downloaded artifact has been watched from beginning to end.
