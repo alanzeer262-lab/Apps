@@ -6,7 +6,7 @@ import "./styles.css";
 const colors = { bg: "#08111f", panel: "#101d30", border: "#24364f", text: "#f4f7fb", muted: "#9fb0c7", cyan: "#5eead4", yellow: "#fbbf24", green: "#86efac" };
 
 function syntaxLine(line: string) {
-  const parts = line.split(/("[^"]*"|'[^']*'|\\b(?:def|return|print|if|else|for|in|True|False|None)\\b|#[^$]*)/g);
+  const parts = line.split(/("[^"]*"|'[^']*'|\b(?:def|return|print|if|else|for|in|True|False|None)\b|#[^$]*)/g);
   return parts.map((part, i) => {
     let cls = "";
     if (/^".*"$|^'.*'$/.test(part)) cls = "syntax-string";
