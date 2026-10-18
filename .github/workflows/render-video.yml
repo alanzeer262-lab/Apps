@@ -20,12 +20,12 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm install
+      - name: Type-check
+        run: npm run check
       - name: Verify narration assets exist
         run: |
           test -f public/audio/PyLearn_Video_01_Narration_Part_1.mp3
           test -f public/audio/PyLearn_Video_01_Narration_Part_2.mp3
-      - name: Type-check
-        run: npm run check
       - name: Render MP4
         run: npm run render
       - name: Upload rendered video
