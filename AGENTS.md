@@ -172,3 +172,20 @@ This checklist is part of the production process for **every lesson**. It is req
 - [ ] All checklist items pass or any exception is explicitly documented and approved.
 - [ ] Publish the verified MP4 to `public/videos/final/` and update the production status.
 - [ ] Only then hand the video to the user for their final review. Keep assistant inspection and user approval as separate statuses.
+
+## Mandatory full-video quality review checklist
+
+This checklist applies to every lesson before it is marked ready or handed to the user. A successful render/build or valid MP4 is not evidence that the lesson is pedagogically correct.
+
+- [ ] Compare actual transcript and word/segment timestamps against canonical source and approved narration; confirm no missing/duplicated speech, cut-off sentences, or unexplained gaps.
+- [ ] Anchor each scene to actual spoken phrases and record narration anchor, time range, code, output, caption, and transition.
+- [ ] Verify every narrated change to a variable, value, example, or program state has a matching visual state at the right time.
+- [ ] Check code syntax and expected output, including types, conversions, errors, prediction exercises, and practice tasks; do not reveal answers before the narration.
+- [ ] Inspect the entire rendered MP4 from beginning to end. Sparse screenshots or a contact sheet alone are not enough.
+- [ ] Inspect every scene transition and meaningful code/output state; sample more densely around suspected defects.
+- [ ] Check for missing/stale states, blank or repeated frames, flicker, clipping, readability problems, layout changes, and audio/video misalignment.
+- [ ] Verify opening, recap, ending, audio continuity, and total duration.
+- [ ] Log defects with timestamp, expected state, actual state, and root cause. Fix the underlying issue; do not shift timestamps randomly or only patch the first reported example.
+- [ ] Rerender after content/timing changes and repeat relevant checks; after broad changes, review the whole lesson again.
+- [ ] Record render run/commit and the evidence actually inspected. If full inspection is impossible, disclose that and do not mark review passed.
+- [ ] Publish only after checks pass; record assistant inspection separately from user approval.
