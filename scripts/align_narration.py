@@ -74,7 +74,7 @@ def main():
     words.sort(key=lambda w:w["start"])
     if not words: raise RuntimeError("Whisper returned no words.")
     TRANSCRIPT_JSON.parent.mkdir(parents=True,exist_ok=True)
-    TRANSCRIPT_JSON.write_text(json.dumps({"generatedBy":"faster-whisper","model":"tiny.en","language":"en","durationSeconds":round(total,3),"audioFiles":[p.relative_to(ROOT).as_posix() for p in AUDIO_FILES],"words":words},indent=2)+"\n",encoding="utf-8")
+    TRANSCRIPT_JSON.write_text(json.dumps({"generatedBy":"faster-whisper","model":"tiny.en","language":"en","durationSeconds":round(total,3),"audioFiles":[p.relative_to(ROOT / "public").as_posix() for p in AUDIO_FILES],"words":words},indent=2)+"\n",encoding="utf-8")
     TRANSCRIPT_TEXT.write_text("\n".join(f"[{w['start']:.3f}-{w['end']:.3f}] {w['text']}" for w in words)+"\n",encoding="utf-8")
     starts=sentence_starts(words)
     if len(starts)<len(scenes): raise RuntimeError(f"Transcript has only {len(starts)} sentence candidates for {len(scenes)} lesson scenes.")
