@@ -16,15 +16,15 @@ function syntaxLine(line: string) {
   });
 }
 
-export const PyLearnVideo: React.FC = () => {
+export const PyLearnVideo: React.FC<{ lessonData?: typeof lesson }> = ({ lessonData = lesson }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const seconds = frame / fps;
-  const scene = lesson.scenes.find((s) => seconds >= s.start && seconds < s.end) ?? lesson.scenes[lesson.scenes.length - 1];
+  const scene = lessonData.scenes.find((s) => seconds >= s.start && seconds < s.end) ?? lessonData.scenes[lessonData.scenes.length - 1];
   const localFrame = Math.max(0, frame - Math.round(scene.start * fps));
   const fade = interpolate(localFrame, [0, 12], [0, 1], { extrapolateRight: "clamp" });
   const elapsed = Math.floor(seconds);
-  const totalSeconds = Math.ceil(lesson.durationSeconds);
+  const totalSeconds = Math.ceil(lessonData.durationSeconds);
   const durationLabel = `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
   const showError = scene.errorAt !== undefined && seconds >= scene.errorAt && !(scene.fixAt !== undefined && seconds >= scene.fixAt);
   const showCompletion = scene.completionAt !== undefined && seconds >= scene.completionAt;
@@ -36,7 +36,7 @@ export const PyLearnVideo: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: colors.bg, color: colors.text, fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", padding: 66, overflow: "hidden" }}>
-      {lesson.narration.map((track) => (
+      {lessonData.narration.map((track) => (
         <Sequence key={track.src} from={Math.round(track.start * fps)}>
           <Audio src={staticFile(track.src.replace(/^\//, ""))} />
         </Sequence>
@@ -44,13 +44,13 @@ export const PyLearnVideo: React.FC = () => {
       <div className="glow glow-one" /><div className="glow glow-two" />
       <div className="topbar">
         <div className="brand"><span className="brand-mark">Py</span><span>PyLearn</span></div>
-        <div className="lesson-label">{lesson.lessonLabel}</div>
+        <div className="lesson-label">{lessonData.lessonLabel}</div>
       </div>
 
       <div className="heading" style={{ opacity: fade }}>
         <div className="eyebrow">LEARN BY DOING · SCENE {String(scene.id).padStart(2, "0")}</div>
         <h1>{scene.title}</h1>
-        <p className="subtitle">{lesson.subtitle}</p>
+        <p className="subtitle">{lessonData.subtitle}</p>
       </div>
 
       <div className="workspace" style={{ opacity: fade }}>
@@ -80,7 +80,7 @@ export const PyLearnVideo: React.FC = () => {
       </div>
 
       <div className="bottom-bar">
-        <div className="progress-track"><div className="progress-fill" style={{ width: `${Math.min(100, seconds / lesson.durationSeconds * 100)}%` }} /></div>
+        <div className="progress-track"><div className="progress-fill" style={{ width: `${Math.min(100, seconds / lessonData.durationSeconds * 100)}%` }} /></div>
         <div className="caption">{scene.caption}</div>
         <div className="footer-meta"><span>PYTHON FOUNDATIONS</span><span>{String(Math.floor(elapsed / 60)).padStart(2, "0")}:{String(elapsed % 60).padStart(2, "0")} / {durationLabel}</span></div>
       </div>
