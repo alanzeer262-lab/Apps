@@ -5,70 +5,85 @@
     {
       "id": 1,
       "anchor": "Welcome to PyLearn today we're going to write our very first Python program",
-      "outputAnchor": "There it is the computer displayed our message"
+      "outputAnchor": "There it is the computer displayed our message",
+      "codeAnchor": "Let's write our first line together"
     },
     {
       "id": 2,
       "anchor": "Our first program displayed words",
-      "outputAnchor": "First we see the greeting then we see the number five"
+      "outputAnchor": "First we see the greeting then we see the number five",
+      "codeAnchor": "The first line displays a greeting"
     },
     {
       "id": 3,
       "anchor": "Now notice something interesting",
-      "outputAnchor": "On the screen the results look the same"
+      "outputAnchor": "On the screen the results look the same",
+      "codeAnchor": "The first line contains the number ten"
     },
     {
       "id": 4,
       "anchor": "Let's look more closely at strings",
-      "outputAnchor": "Python cannot understand this line as written so it reports a syntax error"
+      "outputAnchor": "Python cannot understand this line as written so it reports a syntax error",
+      "codeAnchor": "Here name and message each hold a string"
     },
     {
       "id": 5,
       "anchor": "Sometimes we want to explain what our code is doing",
-      "outputAnchor": "The second line is code so Python executes it and displays the message"
+      "outputAnchor": "The second line is code so Python executes it and displays the message",
+      "codeAnchor": "Python lets us write a comment by starting it with the hash symbol"
     },
     {
       "id": 6,
       "anchor": "Let's make our program more personal",
-      "outputAnchor": "Python replaces name with the value stored in name and goal with the value stored in goal"
+      "outputAnchor": "Python replaces name with the value stored in name and goal with the value stored in goal",
+      "codeAnchor": "We have stored a name and a learning goal"
     },
     {
       "id": 7,
       "anchor": "Let's change just the name and run the program again",
-      "outputAnchor": "Notice what changed the name in the message updated automatically"
+      "outputAnchor": "Notice what changed the name in the message updated automatically",
+      "codeAnchor": "Let's change just the name and run the program again"
     },
     {
       "id": 8,
       "anchor": "The value inside the braces does not have to be text",
-      "outputAnchor": "Here hours is the number six and the f string includes it in a sentence"
+      "outputAnchor": "Here hours is the number six and the f string includes it in a sentence",
+      "codeAnchor": "The value inside the braces does not have to be text"
     },
     {
       "id": 9,
-      "anchor": "Now let's look at a difference that will matter as our programs get bigger"
+      "anchor": "Now let's look at a difference that will matter as our programs get bigger",
+      "codeAnchor": "Here are two functions that calculate the same total in different ways"
     },
     {
       "id": 10,
       "anchor": "When we call add tip with forty it adds ten and hands the number fifty back",
-      "outputAnchor": "The output is fifty for one person and one hundred for a table of two"
+      "outputAnchor": "The output is fifty for one person and one hundred for a table of two",
+      "codeAnchor": "When we call add tip with forty"
     },
     {
       "id": 11,
       "anchor": "Now let's try show total",
-      "outputAnchor": "It prints fifty so we can see the answer"
+      "outputAnchor": "It prints fifty so we can see the answer",
+      "codeAnchor": "Now let's try show total"
     },
     {
       "id": 12,
       "anchor": "When code does not work try this routine",
-      "outputAnchor": "Here the problem was one missing quotation mark"
+      "outputAnchor": "Here the problem was one missing quotation mark",
+      "codeAnchor": "When code does not work try this routine",
+      "fixAnchor": "Then change one thing and run the program again"
     },
     {
       "id": 13,
-      "anchor": "Now it's your turn"
+      "anchor": "Now it's your turn",
+      "codeAnchor": "Store your name in one variable"
     },
     {
       "id": 14,
       "anchor": "Let's connect what we learned",
-      "outputAnchor": "Your first Python program is complete"
+      "outputAnchor": "Your first Python program is complete",
+      "codeAnchor": "You used print to display information"
     }
   ]
 }
