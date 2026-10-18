@@ -1,0 +1,1 @@
+Place approved narration files in this folder, for example `lesson-01.mp3`. Then set `audioSrc: "/audio/lesson-01.mp3"` in `src/lesson.ts`. Keep the audio duration aligned with the composition duration; update `durationSeconds` and caption timestamps as needed.
