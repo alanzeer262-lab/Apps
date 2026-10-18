@@ -27,6 +27,7 @@ export const PyLearnVideo: React.FC = () => {
   const totalSeconds = Math.ceil(lesson.durationSeconds);
   const durationLabel = `${String(Math.floor(totalSeconds / 60)).padStart(2, "0")}:${String(totalSeconds % 60).padStart(2, "0")}`;
   const showError = scene.errorAt !== undefined && seconds >= scene.errorAt && !(scene.fixAt !== undefined && seconds >= scene.fixAt);
+  const showCompletion = scene.completionAt !== undefined && seconds >= scene.completionAt;
   const showOutput = showError || seconds >= (scene.outputAt ?? scene.start);
   const showCode = seconds >= (scene.codeAt ?? scene.start);
   const codeLines = showError && scene.errorCode ? scene.errorCode : scene.correctedCode && scene.fixAt !== undefined && seconds >= scene.fixAt ? scene.correctedCode : scene.code;
@@ -72,7 +73,7 @@ export const PyLearnVideo: React.FC = () => {
           <div className="output-content">
             <div className="output-prompt">{outputPrompt}</div>
             <div style={{ opacity: showOutput ? 1 : 0 }}>
-              {outputLines.length ? outputLines.map((line, i) => <div className={scene.id === 10 ? "output-line final-line" : "output-line"} key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
+              {showCompletion ? <div className="completion-card"><div className="completion-check">✓</div><div className="completion-title">Lesson Complete</div><div className="completion-next">Next: Variables and Data Types</div></div> : outputLines.length ? outputLines.map((line, i) => <div className="output-line" key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
             </div>
           </div>
         </section>
