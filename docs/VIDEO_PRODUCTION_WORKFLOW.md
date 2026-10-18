@@ -1,5 +1,19 @@
 # PyLearn Video Production Workflow
 
+## Explicit stage ownership — source of truth
+
+The word **Me** below means the AI assistant working in this repository. **You** means the user. Do not swap these responsibilities or ask the user to do the assistant's implementation work.
+
+| Stage | Who does it | Deliverable / handoff |
+|---|---|---|
+| Validate audio and generate transcript with timestamps | Automated workflow | Verified audio duration, transcript text, and word/segment timestamps as a downloadable artifact |
+| Create the scene splits, code screens, and visual timing | Me (assistant) | Lesson-specific scene timeline/storyboard grounded in the real transcript and canonical lesson |
+| Prepare the Lesson 2 video render setup | Me (assistant) | Lesson-isolated Remotion composition/configuration and render workflow, preserving Lesson 1 |
+| Render and inspect the complete MP4 | Me (assistant) | Full rendered MP4; technical and visual/audio checks; fix defects and rerender as needed |
+| Review the finished video | You (user) | Final human review and feedback/approval |
+
+**Important handoff:** The automated transcript is an input, not the finished storyboard. Once the validation workflow succeeds, I must retrieve and inspect its artifact, create the scene splits/code screens/timing, implement the Lesson 2 render setup, render the full MP4, and inspect it before asking you to review the finished video. You should not need to design scenes, write rendering code, or run the render yourself.
+
 ## Purpose
 Produce the PyLearn course videos in lesson order. Each lesson must be finished, rendered, checked, and placed in the final-output folder before the next lesson is treated as complete.
 
@@ -33,13 +47,14 @@ Keep final MP4s separate from narration audio, scripts, storyboards, intermediat
 4. Prepare that lesson's audio folder and document exact expected filenames.
 5. Give the user the script and exact audio paths so they can generate the narration in Runway and upload it.
 
-### 3. Validate audio and render
-1. Confirm the uploaded audio file, filename, duration, and that it belongs to the correct lesson.
-2. Transcribe/align the actual audio and derive timestamps from the recording. Never invent timings or reuse another lesson's audio.
-3. Build the storyboard and visual sequence around the actual narration and canonical lesson examples.
-4. Render using a lesson-specific configuration/workflow. Preserve the known-good Lesson 1 workflow as a fallback; do not run a Lesson 1 workflow with another lesson's audio.
-5. Inspect the rendered video and audio before publishing it to `public/videos/final/`.
-6. Update the production status and only then move to the next lesson.
+### 3. Validate, design, implement, render, inspect
+1. The automated workflow validates the uploaded audio and generates the transcript with timestamps.
+2. I retrieve and inspect the artifact, compare the transcript with the canonical script, and note recognition errors without changing the recorded audio.
+3. I create the scene splits, code screens, visual sequence, and timing based on the real recording and canonical examples.
+4. I implement a lesson-specific rendering setup. Preserve the known-good Lesson 1 workflow; never run a Lesson 1 workflow with another lesson's audio.
+5. I render the full MP4, inspect the complete output for code correctness, timing, text clipping, audio sync, and ending, and fix/rerender any defects.
+6. I publish the verified MP4 under `public/videos/final/`, update the status, and then hand the finished video to you for human review.
+7. You review the finished video and provide feedback or approval. Do not transfer implementation or rendering tasks to the user.
 
 ## Lesson completion checklist
 
@@ -47,21 +62,15 @@ Keep final MP4s separate from narration audio, scripts, storyboards, intermediat
 - [ ] Narration script verified
 - [ ] Mandatory voice header included; exact approved voice used
 - [ ] Correct lesson audio uploaded and validated
-- [ ] Timing/transcription based on the actual audio
-- [ ] Lesson-specific storyboard and rendering configuration used
-- [ ] Final MP4 rendered successfully
-- [ ] Video and audio playback inspected
+- [ ] Automated transcript and actual timestamps generated
+- [ ] Assistant created lesson-specific scene splits, code screens, and visual timing
+- [ ] Assistant prepared lesson-specific rendering configuration
+- [ ] Full MP4 rendered successfully by assistant
+- [ ] Assistant inspected full video and audio; defects fixed and rerendered if needed
 - [ ] Final MP4 stored at `public/videos/final/` with the agreed filename
 - [ ] Direct link and status recorded
-- [ ] Lesson marked **Complete**
-
-## Current status at time of documenting
-
-### Lesson 1 — First Python Program
-Previously reported as rendered successfully. The final MP4 still needs to be located and verified in the permanent final-output folder before this workflow can claim that the output is secured there.
-
-### Lesson 2 — Variables and Data Types
-A narration audio file has been uploaded to `public/audio/lesson-02/`. Its contents and duration have not yet been validated, and the final video has not yet been verified. The existing render workflow is Lesson 1-specific; Lesson 2 must use a separate or explicitly parameterized path so it cannot accidentally render with Lesson 1 assets.
+- [ ] Finished video handed to user for review
+- [ ] User review/approval recorded before calling the lesson approved
 
 ## Status reporting rules
-Report only verified outcomes. Clearly distinguish **audio uploaded**, **render started**, **render succeeded**, **video inspected**, and **final output published**. Never claim a video is complete until the final MP4 is verified and its final path/link is recorded.
+Report only verified outcomes. Clearly distinguish **audio uploaded**, **transcript generated**, **storyboard prepared**, **render setup prepared**, **render succeeded**, **assistant inspection passed**, **final output published**, and **user review/approval**. Never claim a video is complete until the final MP4 is verified and its final path/link is recorded.
