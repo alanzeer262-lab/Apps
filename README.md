@@ -4,7 +4,7 @@ A reusable Remotion + React + TypeScript production template for narrated Python
 
 ## First lesson: Your First Python Program
 
-The scene plan follows the approved 10-scene lesson script, preserving its continuous editor-and-output teaching style. The video is approximately 6 minutes 52 seconds because the two supplied narration MP3s total 411.768 seconds. The script's 7:15 estimate includes pauses and holds, so timings are scaled to the recorded narration rather than stretching the audio.
+The visuals are aligned to the actual recorded narration. Before rendering, the workflow transcribes both MP3s with word timestamps, matches each scene's spoken anchor phrase, and calculates scene boundaries from those matches. Output panels have their own spoken anchors. The narration is never sped up, stretched, or proportionally scaled to storyboard timestamps.
 
 ### Add the narration files
 
@@ -15,7 +15,7 @@ Copy the two existing narration files into `public/audio/` using these exact nam
 
 They are played consecutively at their measured durations. Do not speed up or stretch the narration. Keep each part's original audio quality.
 
-> The audio files are not included in this repository yet. Add them before rendering; otherwise Remotion cannot resolve the audio paths.
+> The narration files are committed under `public/audio/`. The workflow verifies both files before running alignment.
 
 ## Run locally
 
@@ -36,7 +36,10 @@ Output: `out/pylearn-first-program.mp4`.
 
 ## Lesson editing
 
-- `src/lesson.ts`: scene timings, code, output, prompt, and on-screen teaching captions.
+- `scripts/sync-cues.json`: spoken anchor phrases for scene changes and output reveals.
+- `scripts/align_narration.py`: timestamped transcription, fuzzy anchor matching, and timing validation. A missing/low-confidence anchor fails the build rather than using guessed timing.
+- `src/generated-alignment.json`: generated timing data consumed by the video. It is regenerated on each workflow run.
+- `src/lesson.ts`: scene content plus generated timing data, code, output, prompt, and on-screen teaching captions.
 - `src/Video.tsx`: reusable animation and visual layout.
 - `src/styles.css`: visual theme.
 - `public/audio/`: narration assets.
