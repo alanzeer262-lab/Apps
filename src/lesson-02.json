@@ -14,7 +14,7 @@
     {
       "id": 1,
       "title": "A program needs to remember information",
-      "caption": "A program needs to remember information",
+      "caption": "Variables give values names we can reuse",
       "status": "RUNNING",
       "start": 0,
       "end": 39.22,
@@ -24,16 +24,16 @@
         "goal = \"Data Analyst\""
       ],
       "output": [
-        "Learner profile ready"
+        "Learner profile"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 0.8,
-      "outputAt": 2
+      "codeAt": 24.6,
+      "outputAt": 27.32
     },
     {
       "id": 2,
       "title": "Assigning and changing a value",
-      "caption": "Assigning and changing a value",
+      "caption": "Assignment stores a value under a variable name",
       "status": "RUNNING",
       "start": 39.22,
       "end": 94.3,
@@ -45,13 +45,13 @@
         "Ada"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 40.02,
-      "outputAt": 41.22
+      "codeAt": 40.08,
+      "outputAt": 42.06
     },
     {
       "id": 3,
       "title": "Values have different types",
-      "caption": "Values have different types",
+      "caption": "str · int · float · bool",
       "status": "RUNNING",
       "start": 94.3,
       "end": 151.74,
@@ -68,13 +68,13 @@
         "bool"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 95.1,
-      "outputAt": 96.3
+      "codeAt": 100.86,
+      "outputAt": 102.92
     },
     {
       "id": 4,
       "title": "Ask Python with type()",
-      "caption": "Ask Python with type()",
+      "caption": "Use type() to inspect a value",
       "status": "RUNNING",
       "start": 151.74,
       "end": 198.86,
@@ -91,13 +91,13 @@
         "<class 'bool'>"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 152.54,
-      "outputAt": 153.74
+      "codeAt": 154.26,
+      "outputAt": 164.14
     },
     {
       "id": 5,
       "title": "The same characters, different behavior",
-      "caption": "The same characters, different behavior",
+      "caption": "Numbers multiply; strings repeat",
       "status": "RUNNING",
       "start": 198.86,
       "end": 237.64,
@@ -110,34 +110,53 @@
         "2121"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 199.66,
-      "outputAt": 200.86
+      "codeAt": 198.86,
+      "outputAt": 201.08
     },
     {
       "id": 6,
       "title": "Convert a value when its meaning changes",
-      "caption": "Convert a value when its meaning changes",
+      "caption": "Convert suitable text before arithmetic",
       "status": "RUNNING",
       "start": 237.64,
-      "end": 309.58,
+      "end": 278.02,
       "code": [
         "age_text = \"21\"",
         "age = int(age_text)",
-        "print(age + 1)"
+        "print(age + 1)",
+        "price = float(\"19.99\")",
+        "score_text = str(95)"
       ],
       "output": [
         "22"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 238.44,
-      "outputAt": 239.64
+      "codeAt": 237.64,
+      "outputAt": 257.3
     },
     {
       "id": 7,
-      "title": "Choose clear variable names",
-      "caption": "Choose clear variable names",
+      "title": "Invalid conversions raise errors",
+      "caption": "Conversion only works when the value fits the target type",
       "status": "RUNNING",
-      "start": 309.58,
+      "start": 278.02,
+      "end": 305.5,
+      "code": [
+        "age = int(\"hello\")"
+      ],
+      "output": [
+        "ValueError: invalid literal for int()"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 278.02,
+      "outputAt": 284
+    },
+    {
+      "id": 8,
+      "title": "Choose clear variable names",
+      "caption": "Use readable names and snake_case",
+      "status": "RUNNING",
+      "start": 305.5,
       "end": 347.84,
       "code": [
         "price = 19.99",
@@ -148,13 +167,13 @@
         "Clear names make code easier to read"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 310.38,
-      "outputAt": 311.58
+      "codeAt": 309.58,
+      "outputAt": 337.64
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "Predict, then test",
-      "caption": "Predict, then test",
+      "caption": "Predict the type, conversion, and output",
       "status": "PREDICT",
       "start": 347.84,
       "end": 395.6,
@@ -167,13 +186,13 @@
         "50"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 348.64,
-      "outputAt": 349.84
+      "codeAt": 350.12,
+      "outputAt": 376.14
     },
     {
-      "id": 9,
+      "id": 10,
       "title": "Your turn: build a learner profile",
-      "caption": "Your turn: build a learner profile",
+      "caption": "Inspect types, convert study hours, and calculate",
       "status": "PRACTICE",
       "start": 395.6,
       "end": 443.9,
@@ -181,20 +200,19 @@
         "name = \"Ada\"",
         "study_hours = \"6\"",
         "goal = \"Data Analyst\"",
-        "hours = int(study_hours)",
-        "print(hours * 4)"
+        "# Inspect types, convert, then calculate"
       ],
       "output": [
-        "24"
+        "Your task: calculate study hours × 4"
       ],
-      "prompt": "$ python main.py",
-      "codeAt": 396.4,
-      "outputAt": 397.6
+      "prompt": "$ your turn",
+      "codeAt": 395.6,
+      "outputAt": 398.42
     },
     {
-      "id": 10,
+      "id": 11,
       "title": "Recap: variables and types",
-      "caption": "Recap: variables and types",
+      "caption": "Name values, inspect types, convert carefully",
       "status": "RUNNING",
       "start": 443.9,
       "end": 518.08,
@@ -206,13 +224,13 @@
       ],
       "output": [
         "Variables store values",
-        "Values have types",
+        "Types affect behavior",
         "Convert suitable values",
         "Choose clear names"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 444.7,
-      "outputAt": 445.9
+      "codeAt": 443.9,
+      "outputAt": 445.34
     }
   ]
 }
