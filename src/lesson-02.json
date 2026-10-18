@@ -194,17 +194,36 @@
       "caption": "Use readable names and snake_case",
       "status": "RUNNING",
       "start": 305.5,
+      "end": 323.02,
+      "code": [
+        "x = 19.99",
+        "p = 19.99",
+        "price = 19.99"
+      ],
+      "output": [
+        "All three values are 19.99"
+      ],
+      "prompt": "$ python main.py",
+      "codeAt": 309.58,
+      "outputAt": 312.08
+    },
+    {
+      "id": 8,
+      "title": "Choose clear variable names",
+      "caption": "Use readable names and snake_case",
+      "status": "RUNNING",
+      "start": 323.02,
       "end": 347.84,
       "code": [
-        "price = 19.99",
-        "study_hours = 6",
-        "learner_goal = \"Data Analyst\""
+        "customer_name = \"Ada\"",
+        "item_price = 19.99",
+        "items_count = 3"
       ],
       "output": [
         "Clear names make code easier to read"
       ],
       "prompt": "$ python main.py",
-      "codeAt": 309.58,
+      "codeAt": 323.02,
       "outputAt": 337.64
     },
     {
@@ -216,15 +235,23 @@
       "end": 395.6,
       "code": [
         "value = \"25\"",
+        "print(value)",
+        "print(type(value))",
         "number = int(value)",
+        "print(number)",
+        "print(type(number))",
         "print(number * 2)"
       ],
       "output": [
+        "25",
+        "<class 'str'>",
+        "25",
+        "<class 'int'>",
         "50"
       ],
       "prompt": "$ python main.py",
       "codeAt": 350.12,
-      "outputAt": 376.14
+      "outputAt": 376.32
     },
     {
       "id": 10,
@@ -235,8 +262,9 @@
       "end": 443.9,
       "code": [
         "name = \"Ada\"",
+        "age = 25",
         "study_hours = \"6\"",
-        "goal = \"Data Analyst\"",
+        "is_beginner = True",
         "# Inspect types, convert, then calculate"
       ],
       "output": [
