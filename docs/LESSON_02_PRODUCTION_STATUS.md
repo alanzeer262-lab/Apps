@@ -2,23 +2,40 @@
 
 Updated: 2026-10-18
 
-## Current state
-- Lesson 01 recap fix verified in rendered Run #38.
-- Lesson 02 script draft: `docs/LESSON_02_VARIABLES_AND_DATA_TYPES_SCRIPT.md`
-- Lesson 02 storyboard draft: `docs/LESSON_02_STORYBOARD.json`
-- Draft commits:
-  - Script: `3d1846a05cdb4b905305ba5fc29675541672687b`
-  - Storyboard: `b2039f0561c9f4412418146d10f995c96cdc373d`
+## Current production state
 
-## Scope
-Variables and assignment, reusing/updating a variable, string/int/float/bool, `type()`, and a learner prediction. Preserve the Lesson 01 visual style and patient delivery. Keep the original reading lesson unchanged.
+**Current gate: narration audio.** The canonical source and narration script have been checked against each other. No Lesson 02 narration audio has been generated or added to this repository yet, so transcript alignment, measured scene timing, rendering, and final video review remain pending.
 
-## Production gate before rendering
-- Verify the draft against the canonical Lesson 02 reading source in the PyLearn app repository.
-- Approve/generate Lesson 02 narration using the user's specified ElevenLabs v3 voice ID. Do not substitute a different voice.
-- Place approved narration in lesson-specific paths, then adapt the workflow to accept a lesson selector and lesson-specific audio/storyboard rather than rendering Lesson 01 assets.
-- Run transcript alignment in GitHub, review the generated transcript/scene manifest, render the MP4, and inspect the entire video.
-- Do not render Lesson 01 audio as Lesson 02 narration. Do not invent timing values.
+## Canonical source verified
 
-## Status
-Script and storyboard are drafted and committed. No Lesson 02 narration assets are currently present in `public/audio`; therefore a synchronized Lesson 02 MP4 has not yet been rendered.
+- Repository: `mohamedalnazeer262-coder/Pylearn-build260`
+- Branch: `ccr-c7f6fdd7-xpzi3g`
+- Source: `content/python-basics/modules/02-variables-types.md`
+- Source commit/blob observed during verification: `3732227f4ddacdf12312649ef95efffed9b075c0`
+
+The narration script covers the source's key topics and examples: variables as labels, assignment and reassignment, `str` / `int` / `float` / `bool`, `type()`, number-versus-string multiplication, conversions and invalid conversion, `snake_case`, the prediction example, learner-profile practice, recap, and the bridge to numbers and operators. The original reading lesson remains unchanged.
+
+## Production artifacts
+
+- Mandatory cross-agent procedure: `AGENTS.md`
+- Narration script: `docs/LESSON_02_NARRATION_SCRIPT.md`
+- Earlier script draft: `docs/LESSON_02_VARIABLES_AND_DATA_TYPES_SCRIPT.md`
+- Storyboard draft: `docs/LESSON_02_STORYBOARD.json`
+
+## Required next steps — in order
+
+1. Generate narration using the user's **exact approved ElevenLabs v3 Kendrick voice ID**.
+2. Put the resulting approved audio in lesson-specific paths such as `public/audio/lesson-02/part-01.mp3` and `part-02.mp3`; confirm the files play and cover the complete script.
+3. Transcribe the actual Lesson 02 audio with Whisper/configured transcription; save transcript text and timestamps as artifacts.
+4. Derive and review scene boundaries from actual transcript phrases and timestamps. Do not invent timing values.
+5. Complete the connected storyboard and lesson-specific Remotion configuration.
+6. Preserve the Lesson 01 pipeline and its old alignment algorithm as a fallback; compare any new alignment approach against it using rendered results.
+7. Run checks, render the complete Lesson 02 MP4, inspect the entire video, fix defects, and rerender as needed.
+
+## Current blocker
+
+The speech tool available in this workspace exposes only preset voices; it does not accept the user's exact custom ElevenLabs voice ID. Its separate voice-library search is for Eleven v4, not the required ElevenLabs v3 voice. **Do not use either as a substitute.** The exact-voice audio generation step must use a route that supports the specified voice ID, or the approved audio must be supplied before production can continue through transcription and sync.
+
+## Honest completion criteria
+
+A committed script is not a finished video. A successful render is not a reviewed video. Mark Lesson 02 complete only after the correct voice audio is transcribed, scenes are timestamp-aligned, the full MP4 is rendered and inspected, and any defects are fixed.
