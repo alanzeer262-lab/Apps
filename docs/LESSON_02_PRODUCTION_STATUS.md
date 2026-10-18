@@ -15,6 +15,15 @@ Updated: 2026-10-18
 
 The narration script covers the source's key topics and examples: variables as labels, assignment and reassignment, `str` / `int` / `float` / `bool`, `type()`, number-versus-string multiplication, conversions and invalid conversion, `snake_case`, the prediction example, learner-profile practice, recap, and the bridge to numbers and operators. The original reading lesson remains unchanged.
 
+
+## Mandatory voice settings for every script and audio handoff
+
+- **Voice name:** Kendrick
+- **Model:** ElevenLabs v3
+- **Voice ID:** The exact approved custom Kendrick voice ID supplied/confirmed by the user; never invent it.
+- **Substitution:** Not allowed. Never use a preset or another voice.
+- Every narration script must show these settings at the top. The rule is now mandatory in `AGENTS.md` and applies to all future lessons and all split script parts.
+
 ## Production artifacts
 
 - Mandatory cross-agent procedure: `AGENTS.md`
