@@ -28,8 +28,8 @@ export const lesson = {
   durationSeconds: generatedAlignment.durationSeconds,
   fps: 30,
   narration: generatedAlignment.audioTracks ?? [
-    { src: "/audio/lesson-01/part-01.mp3", start: 0 },
-    { src: "/audio/lesson-01/part-02.mp3", start: generatedAlignment.part2StartSeconds },
+    { src: "audio/lesson-01/part-01.mp3", start: 0 },
+    { src: "audio/lesson-01/part-02.mp3", start: generatedAlignment.part2StartSeconds },
   ],
   scenes: generatedAlignment.scenes as LessonScene[],
 };
