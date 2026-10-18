@@ -59,4 +59,4 @@ export const lesson = {
   }) as LessonScene[],
 };
 
-export const narrationDurationSeconds = 411.768;
+export const narrationDurationSeconds = lesson.durationSeconds;
