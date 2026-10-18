@@ -23,7 +23,7 @@
     {
       "id": 4,
       "anchor": "Let's look more closely at strings",
-      "outputAnchor": "Python accepts either single quotes or double quotes",
+      "outputAnchor": "What matters is that the opening and closing quotes match",
       "codeAnchor": "Here name and message each hold a string",
       "errorAnchor": "Now let's deliberately make a small mistake in a separate example"
     },
@@ -37,7 +37,8 @@
       "id": 6,
       "anchor": "Let's make our program more personal",
       "outputAnchor": "Python replaces name with the value stored in name and goal with the value stored in goal",
-      "codeAnchor": "We have stored a name and a learning goal"
+      "codeAnchor": "We have stored a name and a learning goal",
+      "outputEdge": "end"
     },
     {
       "id": 7,
