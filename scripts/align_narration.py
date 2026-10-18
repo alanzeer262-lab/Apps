@@ -1,301 +1,112 @@
 #!/usr/bin/env python3
-"""Transcribe narration with word timestamps and align scene changes to spoken anchors.
+"""Transcribe narration and derive scene timing from transcript content + lesson manifest.
 
-The render is intentionally blocked if an anchor cannot be found confidently.
-No proportional scaling or guessed storyboard timings are used.
+No hand-authored phrase anchors are required. Scene boundaries are selected from
+transcript sentence starts using the lesson scene's own title, caption, code, and
+output vocabulary, in order. Timings always come from Whisper word timestamps.
 """
 from __future__ import annotations
-
-import json
-import os
-import re
-import sys
-from difflib import SequenceMatcher
+import json, re, sys
 from pathlib import Path
-
 import av
 from faster_whisper import WhisperModel
 
 ROOT = Path(__file__).resolve().parents[1]
-AUDIO_DIR = ROOT / "public" / "audio"
-CUES_PATH = Path(os.environ.get("PYLEARN_SYNC_CUES", str(ROOT / "scripts" / "sync-cues.json")))
-OUTPUT_PATH = Path(os.environ.get("PYLEARN_ALIGNMENT_OUTPUT", str(ROOT / "src" / "generated-alignment.json")))
-TRANSCRIPT_JSON_PATH = ROOT / "out" / "lesson-01" / "transcript.json"
-TRANSCRIPT_TEXT_PATH = ROOT / "out" / "lesson-01" / "transcript.txt"
-_DEFAULT_AUDIO_FILES = [
-    "public/audio/lesson-01/part-01.mp3",
-    "public/audio/lesson-01/part-02.mp3",
-]
-_AUDIO_FILE_VALUES = [value.strip() for value in os.environ.get("PYLEARN_AUDIO_FILES", ",".join(_DEFAULT_AUDIO_FILES)).split(",") if value.strip()]
-AUDIO_FILES = [Path(value) if Path(value).is_absolute() else ROOT / value for value in _AUDIO_FILE_VALUES]
-
-
-def audio_duration(path: Path) -> float:
-    with av.open(str(path)) as container:
-        if container.duration is not None:
-            # PyAV container.duration is expressed in AV_TIME_BASE units (microseconds).
-            return float(container.duration / av.time_base)
-        stream = next((s for s in container.streams if s.type == "audio"), None)
-        if stream is None or stream.duration is None or stream.time_base is None:
-            raise RuntimeError(f"Cannot measure audio duration: {path.name}")
-        return float(stream.duration * stream.time_base)
-
-
-def tokens(text: str) -> list[str]:
-    return re.findall(r"[a-z0-9]+", text.lower())
-
-
-def transcribe_tracks(model: WhisperModel, files: list[Path]) -> tuple[list[dict], list[float]]:
-    words: list[dict] = []
-    offsets: list[float] = []
-    offset = 0.0
-
-    for path in files:
-        if not path.is_file():
-            raise RuntimeError(f"Missing narration file: {path}")
-        offsets.append(offset)
-        duration = audio_duration(path)
-        print(f"Transcribing {path.name} ({duration:.3f}s) at timeline offset {offset:.3f}s")
-        segments, info = model.transcribe(
-            str(path),
-            language="en",
-            beam_size=5,
-            word_timestamps=True,
-            vad_filter=False,
-            condition_on_previous_text=True,
-        )
-        segment_count = 0
-        for segment in segments:
-            segment_count += 1
-            if segment.words:
-                for word in segment.words:
-                    word_tokens = tokens(word.word)
-                    if not word_tokens:
-                        continue
-                    words.append({
-                        "text": word.word.strip(),
-                        "token": " ".join(word_tokens),
-                        "start": offset + max(0.0, float(word.start)),
-                        "end": offset + min(duration, float(word.end)),
-                    })
+AUDIO_FILES = [ROOT / "public/audio/lesson-01/part-01.mp3", ROOT / "public/audio/lesson-01/part-02.mp3"]
+STORYBOARD = ROOT / "docs/LESSON_01_REVISED_STORYBOARD.json"
+TRANSCRIPT_JSON = ROOT / "out/lesson-01/transcript.json"
+TRANSCRIPT_TEXT = ROOT / "out/lesson-01/transcript.txt"
+ALIGNMENT = ROOT / "src/generated-alignment.json"
+TOKEN_RE = re.compile(r"[a-z0-9]+")
+def toks(s): return TOKEN_RE.findall(s.lower())
+def duration(path):
+    with av.open(str(path)) as c:
+        if c.duration is not None: return c.duration / av.time_base
+        st = next((x for x in c.streams if x.type == "audio"), None)
+        if st is None or st.duration is None or st.time_base is None: raise RuntimeError(f"Cannot measure audio duration: {path}")
+        return float(st.duration * st.time_base)
+def scene_terms(scene):
+    # Derive search vocabulary from the lesson's own authored teaching content.
+    text = " ".join([scene.get("title",""), scene.get("caption",""), scene.get("status",""), " ".join(scene.get("code",[])), " ".join(scene.get("output",[]))])
+    stop = set("the a an and or to of for in on is are it this that with your you we our what how do does can be as from by one line code python".split())
+    terms = [x for x in toks(text) if x not in stop and len(x) > 2]
+    # Preserve order while de-duplicating.
+    return list(dict.fromkeys(terms))
+def sentence_starts(words):
+    starts=[0]
+    for i,w in enumerate(words[:-1]):
+        raw=w["text"]
+        gap=words[i+1]["start"]-w["end"]
+        if (re.search(r"[.!?][\"'’)]?$",raw) and gap >= 0.08) or gap >= 0.85:
+            if i+1-starts[-1] >= 5: starts.append(i+1)
+    if len(words)-starts[-1] < 5 and len(starts)>1: starts.pop()
+    return starts
+def score_candidate(words, start_i, terms, end_limit):
+    # Score transcript words shortly after a candidate sentence start.
+    window=words[start_i:min(end_limit,start_i+45)]
+    if not window: return 0.0
+    observed={t for w in window for t in toks(w["text"])}
+    if not terms: return 0.0
+    return len(observed.intersection(terms))/len(set(terms))
+def main():
+    for p in AUDIO_FILES:
+        if not p.is_file(): raise RuntimeError(f"Missing narration file: {p.relative_to(ROOT)}")
+    storyboard=json.loads(STORYBOARD.read_text(encoding="utf-8"))
+    scenes=storyboard.get("scenes",[])
+    if not scenes: raise RuntimeError("Lesson storyboard contains no scenes.")
+    model=WhisperModel("tiny.en",device="cpu",compute_type="int8",cpu_threads=2,num_workers=1)
+    words=[]; offsets=[]; total=0.0; durations=[]
+    for path in AUDIO_FILES:
+        d=duration(path); durations.append(d); offsets.append(total)
+        print(f"Transcribing {path.relative_to(ROOT)} ({d:.3f}s), offset {total:.3f}s")
+        segments,info=model.transcribe(str(path),language="en",beam_size=5,word_timestamps=True,vad_filter=False,condition_on_previous_text=True)
+        count=0
+        for seg in segments:
+            count+=1
+            if seg.words:
+                for word in seg.words:
+                    text=word.word.strip()
+                    if toks(text): words.append({"text":text,"start":round(total+max(0,float(word.start)),3),"end":round(total+min(d,float(word.end)),3)})
             else:
-                # Defensive fallback; word_timestamps normally supplies words.
-                for token in tokens(segment.text):
-                    words.append({
-                        "text": token,
-                        "token": token,
-                        "start": offset + float(segment.start),
-                        "end": offset + float(segment.end),
-                    })
-        print(f"  language={info.language}, segments={segment_count}")
-        offset += duration
-
-    words.sort(key=lambda item: item["start"])
-    if not words:
-        raise RuntimeError("Transcription returned no words.")
-    return words, offsets
-
-
-def align_anchor(anchor: str, words: list[dict], cursor: int = 0, min_time: float = 0.0, max_time: float | None = None) -> dict:
-    wanted = tokens(anchor)
-    if not wanted:
-        raise ValueError(f"Empty anchor: {anchor!r}")
-
-    # Search windows near the expected phrase length; scoring is lexical, not
-    # proportional-to-runtime. The cursor prevents reusing an earlier phrase.
-    min_len = max(1, len(wanted) - 2)
-    max_len = len(wanted) + 3
-    target = " ".join(wanted)
-    best = None
-
-    for start_i in range(cursor, len(words)):
-        for window_len in range(min_len, max_len + 1):
-            end_i = start_i + window_len
-            if end_i > len(words):
-                continue
-            candidate_words = words[start_i:end_i]
-            if candidate_words[0]["start"] < min_time:
-                continue
-            if max_time is not None and candidate_words[-1]["end"] > max_time:
-                continue
-            candidate = " ".join(w["token"] for w in candidate_words)
-            ratio = SequenceMatcher(None, target, candidate).ratio()
-            target_set = set(wanted)
-            candidate_set = set(candidate.split())
-            overlap = len(target_set & candidate_set) / max(1, len(target_set))
-            score = 0.78 * ratio + 0.22 * overlap
-            if best is None or score > best["score"]:
-                best = {
-                    "startIndex": start_i,
-                    "endIndex": end_i,
-                    "start": candidate_words[0]["start"],
-                    "end": candidate_words[-1]["end"],
-                    "score": score,
-                    "matched": " ".join(w["text"] for w in candidate_words),
-                }
-
-    if best is None:
-        raise RuntimeError(f"No transcript window available for anchor: {anchor!r}")
-    return best
-
-
-def main() -> None:
-    cues = json.loads(CUES_PATH.read_text(encoding="utf-8"))
-    confidence_floor = float(cues.get("minimumConfidence", 0.62))
-    model_name = cues.get("model", "tiny.en")
-    print(f"Loading Whisper model {model_name!r} (CPU/int8)")
-    model = WhisperModel(model_name, device="cpu", compute_type="int8", cpu_threads=2, num_workers=1)
-    words, offsets = transcribe_tracks(model, AUDIO_FILES)
-    durations = [audio_duration(path) for path in AUDIO_FILES]
-    total_duration = sum(durations)
-
-    TRANSCRIPT_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
-    transcript_payload = {
-        "generatedBy": "faster-whisper (Whisper) in GitHub Actions",
-        "model": model_name,
-        "language": "en",
-        "durationSeconds": round(total_duration, 3),
-        "audioFiles": [path.relative_to(ROOT).as_posix() for path in AUDIO_FILES],
-        "words": words,
-    }
-    TRANSCRIPT_JSON_PATH.write_text(json.dumps(transcript_payload, indent=2) + "\n", encoding="utf-8")
-    transcript_lines = [f"[{word['start']:.3f}-{word['end']:.3f}] {word['text']}" for word in words]
-    TRANSCRIPT_TEXT_PATH.write_text("\n".join(transcript_lines) + "\n", encoding="utf-8")
-    print(f"Wrote {TRANSCRIPT_JSON_PATH.relative_to(ROOT)}")
-    print(f"Wrote {TRANSCRIPT_TEXT_PATH.relative_to(ROOT)}")
-
-    cursor = 0
-    aligned = []
-    for cue in cues["scenes"]:
-        match = align_anchor(cue["anchor"], words, cursor)
-        if match["score"] < confidence_floor:
-            raise RuntimeError(
-                f"Low-confidence sync anchor for scene {cue['id']}: "
-                f"{match['score']:.3f} < {confidence_floor:.3f}; "
-                f"expected={cue['anchor']!r}; matched={match['matched']!r}. "
-                "Update the cue to match the recording; do not guess a timestamp."
-            )
-        aligned.append({
-            "id": int(cue["id"]),
-            "anchor": cue["anchor"],
-            "matched": match["matched"],
-            "confidence": round(match["score"], 3),
-            "anchorStart": round(match["start"], 3),
-        })
-        cursor = max(match["startIndex"] + 1, match["endIndex"] - 2)
-        print(f"Scene {cue['id']:02d}: {match['start']:.2f}s "
-              f"(confidence {match['score']:.2f}) — {match['matched']}")
-
-    expected_scene_count = len(cues["scenes"])
-    if len(aligned) != expected_scene_count:
-        raise RuntimeError(f"Expected {expected_scene_count} scene anchors, got {len(aligned)}")
-    if aligned[0]["anchorStart"] > 3.0:
-        raise RuntimeError("First scene anchor is unusually late; inspect the narration/cues.")
-    starts = [0.0] + [entry["anchorStart"] for entry in aligned[1:]]
-    for i in range(1, len(starts)):
-        if starts[i] <= starts[i - 1]:
-            raise RuntimeError(f"Non-monotonic scene timing at scene {i + 1}")
-        if starts[i] - starts[i - 1] < 2.5:
-            raise RuntimeError(
-                f"Scene {i + 1} begins only {starts[i] - starts[i - 1]:.2f}s after "
-                f"scene {i}; review the matched anchor phrases."
-            )
-
-    scene_timings = []
-    cue_by_id = {int(cue["id"]): cue for cue in cues["scenes"]}
-    for i, entry in enumerate(aligned):
-        start = starts[i]
-        end = starts[i + 1] if i + 1 < len(starts) else total_duration
-        if end <= start:
-            raise RuntimeError(f"Invalid scene interval for scene {entry['id']}")
-        timing = {
-            **entry,
-            "start": round(start, 3),
-            "end": round(end, 3),
-        }
-        code_anchor = cue_by_id[entry["id"]].get("codeAnchor")
-        if code_anchor:
-            scene_words = tokens(entry["anchor"])
-            code_words = tokens(code_anchor)
-            if scene_words[:len(code_words)] == code_words:
-                timing["codeAt"] = round(start, 3)
-            else:
-                code_match = align_anchor(code_anchor, words, cursor=0, min_time=start + 0.3, max_time=end - 0.25)
-                if code_match["score"] < confidence_floor:
-                    raise RuntimeError("Low-confidence code anchor for scene " + str(entry["id"]) + ": " + repr(code_anchor) + " matched " + repr(code_match["matched"]))
-                timing["codeAt"] = round(code_match["start"] + 0.1, 3)
-                timing["codeMatched"] = code_match["matched"]
-                timing["codeConfidence"] = round(code_match["score"], 3)
-                print("  code scene " + str(entry["id"]) + ": " + str(timing["codeAt"]) + "s")
-        error_anchor = cue_by_id[entry["id"]].get("errorAnchor")
-        if error_anchor:
-            error_match = align_anchor(error_anchor, words, cursor=0, min_time=start + 1.0, max_time=end - 0.25)
-            if error_match["score"] < confidence_floor:
-                raise RuntimeError("Low-confidence error anchor for scene " + str(entry["id"]) + ": " + repr(error_anchor) + " matched " + repr(error_match["matched"]))
-            timing["errorAt"] = round(error_match["start"] + 0.1, 3)
-            timing["errorMatched"] = error_match["matched"]
-            timing["errorConfidence"] = round(error_match["score"], 3)
-            print("  error scene " + str(entry["id"]) + ": " + str(timing["errorAt"]) + "s")
-        fix_anchor = cue_by_id[entry["id"]].get("fixAnchor")
-        if fix_anchor:
-            fix_match = align_anchor(fix_anchor, words, cursor=0, min_time=start + 1.0, max_time=end - 0.25)
-            if fix_match["score"] < confidence_floor:
-                raise RuntimeError("Low-confidence correction anchor for scene " + str(entry["id"]) + ": " + repr(fix_anchor) + " matched " + repr(fix_match["matched"]))
-            timing["fixAt"] = round(fix_match["start"] + 0.1, 3)
-            timing["fixMatched"] = fix_match["matched"]
-            timing["fixConfidence"] = round(fix_match["score"], 3)
-            print("  correction scene " + str(entry["id"]) + ": " + str(timing["fixAt"]) + "s")
-        output_anchor = cue_by_id[entry["id"]].get("outputAnchor")
-        if output_anchor:
-            output_match = align_anchor(
-                output_anchor,
-                words,
-                cursor=0,
-                min_time=start + 1.0,
-                max_time=end - 0.25,
-            )
-            if output_match["score"] < confidence_floor:
-                raise RuntimeError(
-                    f"Low-confidence output anchor for scene {entry['id']}: "
-                    f"{output_match['score']:.3f} < {confidence_floor:.3f}; "
-                    f"expected={output_anchor!r}; matched={output_match['matched']!r}."
-                )
-            output_edge = cue_by_id[entry["id"]].get("outputEdge", "start")
-            output_time = output_match["end"] if output_edge == "end" else output_match["start"]
-            timing["outputAt"] = round(output_time + 0.1, 3)
-            timing["outputAnchor"] = output_anchor
-            timing["outputMatched"] = output_match["matched"]
-            timing["outputConfidence"] = round(output_match["score"], 3)
-            print(f"  output scene {entry['id']:02d}: {timing['outputAt']:.2f}s "
-                  f"(confidence {output_match['score']:.2f})")
-        for key in ("codeAt", "outputAt", "errorAt", "fixAt"):
-            if key in timing and not (start <= timing[key] < end):
-                raise RuntimeError("Event " + key + " for scene " + str(entry["id"]) + " falls outside its scene interval.")
-        if "errorAt" in timing and "fixAt" in timing and timing["fixAt"] <= timing["errorAt"]:
-            raise RuntimeError("Correction event occurs before the error in scene " + str(entry["id"]))
-        if "codeAt" in timing and "outputAt" in timing and timing["outputAt"] < timing["codeAt"]:
-            raise RuntimeError("Output is scheduled before code appears in scene " + str(entry["id"]))
-        scene_timings.append(timing)
-
-    payload = {
-        "generated": True,
-        "model": model_name,
-        "durationSeconds": round(total_duration, 3),
-        "part2StartSeconds": round(durations[0], 3),
-        "audioTracks": [
-            {"src": "/" + path.relative_to(ROOT).as_posix(), "start": round(offsets[index], 3)}
-            for index, path in enumerate(AUDIO_FILES)
-        ],
-        "scenes": scene_timings,
-    }
-    OUTPUT_PATH.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {OUTPUT_PATH.relative_to(ROOT)}")
-    print(f"Timeline duration: {total_duration:.3f}s; part 2 starts at {durations[0]:.3f}s")
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as exc:
-        print(f"ERROR: {exc}", file=sys.stderr)
-        sys.exit(1)
+                for t in toks(seg.text): words.append({"text":t,"start":round(total+float(seg.start),3),"end":round(total+float(seg.end),3)})
+        print(f"  {count} segments; language={info.language}")
+        total+=d
+    words.sort(key=lambda w:w["start"])
+    if not words: raise RuntimeError("Whisper returned no words.")
+    TRANSCRIPT_JSON.parent.mkdir(parents=True,exist_ok=True)
+    TRANSCRIPT_JSON.write_text(json.dumps({"generatedBy":"faster-whisper","model":"tiny.en","language":"en","durationSeconds":round(total,3),"audioFiles":[p.relative_to(ROOT).as_posix() for p in AUDIO_FILES],"words":words},indent=2)+"\n",encoding="utf-8")
+    TRANSCRIPT_TEXT.write_text("\n".join(f"[{w['start']:.3f}-{w['end']:.3f}] {w['text']}" for w in words)+"\n",encoding="utf-8")
+    starts=sentence_starts(words)
+    if len(starts)<len(scenes): raise RuntimeError(f"Transcript has only {len(starts)} sentence candidates for {len(scenes)} lesson scenes.")
+    chosen=[]; cursor=0
+    for ix,scene in enumerate(scenes):
+        if ix==0:
+            chosen.append({"index":0,"score":1.0}); cursor=1; continue
+        terms=scene_terms(scene)
+        remaining=len(scenes)-ix-1
+        max_candidate=len(starts)-1-remaining
+        candidates=[]
+        for pos in range(cursor,max_candidate+1):
+            word_i=starts[pos]
+            score=score_candidate(words,word_i,terms,len(words))
+            # Candidate should follow the previous scene and favor actual topic vocabulary.
+            candidates.append((score,pos))
+        if not candidates: raise RuntimeError(f"No ordered transcript boundary available for scene {ix+1}.")
+        score,pos=max(candidates,key=lambda x:(x[0],-x[1]))
+        if score < 0.08:
+            raise RuntimeError(f"Could not locate scene {ix+1} ({scene.get('title','untitled')}) in the transcript using its lesson content. Best content match {score:.3f}; refusing guessed timing.")
+        chosen.append({"index":pos,"score":score}); cursor=pos+1
+        print(f"Scene {ix+1:02d} topic match {score:.2f}: {scene.get('title','')}")
+    boundaries=[0.0]+[words[starts[c["index"]]]["start"] for c in chosen[1:]]+[total]
+    if any(boundaries[i+1]-boundaries[i] < 8 for i in range(len(boundaries)-1)):
+        raise RuntimeError("A transcript-derived scene is shorter than 8 seconds; inspect narration or storyboard.")
+    output=[]
+    for i,scene in enumerate(scenes):
+        output.append({"id":int(scene.get("id",i+1)),"title":scene.get("title",f"Scene {i+1}"),"caption":scene.get("caption",""),"status":scene.get("status",""),"code":scene.get("code",[]),"output":scene.get("output",[]),"prompt":scene.get("prompt"),"errorCode":scene.get("errorCode"),"errorOutput":scene.get("errorOutput"),"errorPrompt":scene.get("errorPrompt"),"correctedCode":scene.get("correctedCode"),"start":round(boundaries[i],3),"end":round(boundaries[i+1],3),"transcriptTopicMatch":round(chosen[i]["score"],3)})
+    payload={"generated":True,"method":"whisper-transcript-topic-boundaries","model":"tiny.en","durationSeconds":round(total,3),"part2StartSeconds":round(durations[0],3),"audioTracks":[{"src":"/"+p.relative_to(ROOT).as_posix(),"start":round(offsets[i],3)} for i,p in enumerate(AUDIO_FILES)],"scenes":output}
+    ALIGNMENT.write_text(json.dumps(payload,indent=2)+"\n",encoding="utf-8")
+    print(f"Wrote transcript and {len(output)} transcript-derived scenes; duration {total:.3f}s")
+if __name__=="__main__":
+    try: main()
+    except Exception as e:
+        print(f"ERROR: {e}",file=sys.stderr); sys.exit(1)
