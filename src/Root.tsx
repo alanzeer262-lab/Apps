@@ -9,7 +9,7 @@ export const RemotionRoot: React.FC = () => (
   <Composition
     id="PyLearnLesson"
     component={PyLearnVideo}
-    durationInFrames={lesson.durationSeconds * FPS}
+    durationInFrames={Math.ceil(lesson.durationSeconds * FPS)}
     fps={FPS}
     width={1920}
     height={1080}
