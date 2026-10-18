@@ -1,7 +1,7 @@
 {
   "model": "tiny.en",
   "minimumConfidence": 0.66,
-  "note": "DRAFT for the revised patient-tutor narration only. Do not replace scripts/sync-cues.json or run against the current old MP3s. Validate anchor phrases against newly generated narration before activating.",
+  "note": "DRAFT for the revised patient-tutor narration only. Scene 8 output anchor is narration text spoken immediately after the learner is asked to run the corrected code. Validate all anchors against the final recorded transcript before activating. Do not use the active 14-scene cues with revised audio or vice versa.",
   "scenes": [
     {
       "id": 1,
@@ -54,7 +54,7 @@
       "codeAnchor": "This line is missing its closing quotation mark",
       "errorAnchor": "When an error appears don't change lots of things at once",
       "fixAnchor": "Now it works",
-      "outputAnchor": "Welcome to Python"
+      "outputAnchor": "Now run it and check your prediction"
     },
     {
       "id": 9,
