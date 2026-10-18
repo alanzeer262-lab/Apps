@@ -136,3 +136,13 @@ The connected Runway workspace's recent-assets list and task lookups confirm the
 - The local file `PyLearn_Lesson_01_First_Program_Draft.mp4` is a separate 395.53-second draft and is not evidence that the canonical GitHub workflow was run or that the current revised narration is synchronized. Do not promote it as the canonical output.
 - The two latest revised Noah narration tasks are present in Runway, but the repository's active workflow still references the older committed audio and 14-scene source. Do not mix revised audio with old cues/source. Before the next canonical render, retrieve and commit the revised audio assets, validate revised cue anchors against the audio, and switch the lesson source/cues together in a reviewed commit.
 - Keep all durable production changes in this repository and continue from the current `main`; never recreate the workflow from scratch. Mark the video complete only after the canonical workflow succeeds and the full artifact has been reviewed.
+
+
+## Process clarifications for Lesson 2 onward
+
+- Run #25 (commit `fd07aa546e6ad5f0017d5119f802bf240c499a5c`) is the user's approved technical baseline for the current course. Preserve its alignment/rendering approach unless a specific defect is evidenced.
+- The timestamped transcript and frame-production manifest are required deliverables **before** the frame-making tool runs; frame review is required before MP4 rendering. This is a repeatable process gate, not ad hoc per-scene correction.
+- Record the exact source in the separate Android app repository for each lesson. Known example: `content/python-basics/modules/01-first-program.md`; verify the actual path, repository, branch/commit, and title for the requested lesson.
+- Major conceptual transitions must be explicitly taught and represented in the script, transcript, frame manifest, and playback review.
+- Visual style is locked for the duration of a course. Approve a different style only when starting a materially different course (for example, Data Analysis), then keep that style consistent across the course.
+- For Lesson 2, follow the updated standard in order: verify app source → approve script/audio → produce and validate transcript + frame manifest → generate/review frames → render/review full MP4.
