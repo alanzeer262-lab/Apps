@@ -137,3 +137,38 @@ The intended handoff is: **Assistant prepares source-verified script and folder 
 ## If blocked
 
 Do not quietly skip a gate. State the exact missing input/access, preserve completed work, and stop at that gate. Do not ask the user to repeat requirements already documented here.
+
+
+## Mandatory full-video quality review checklist
+
+This checklist is part of the production process for **every lesson**. It is required before any MP4 is marked ready or handed to the user. A successful render/build or valid MP4 file is not evidence that the lesson is pedagogically correct.
+
+### A. Transcript and coverage
+- [ ] Compare the actual audio transcript and word/segment timestamps against the canonical lesson and approved narration script.
+- [ ] Confirm every intended spoken section is present; identify omissions, duplicated narration, cut-off sentences, and unexplained gaps.
+- [ ] Verify scene boundaries against the actual phrase being spoken, not estimated script timings.
+
+### B. Scene-by-scene teaching accuracy
+- [ ] For every scene, record its narration anchor, start/end time, visible code, output, caption, and transition.
+- [ ] Check each example change explicitly: when the narrator changes a value/name/example, the corresponding visual state must also change.
+- [ ] Verify code is syntactically valid and matches the explanation; execute or independently calculate expected outputs where practical.
+- [ ] Confirm type labels, conversions, errors, predictions, practice tasks, and answers are shown at the right point and are accurate.
+- [ ] Preserve intentional prediction/practice pauses; do not reveal an answer before the narration does.
+
+### C. Full rendered video inspection
+- [ ] Inspect the entire rendered MP4 from beginning to end, not just a contact sheet or selected screenshots.
+- [ ] Inspect every scene boundary and each meaningful code/output state; use denser frame sampling around transitions or suspected defects.
+- [ ] Check for missing visual states, stale/repeated examples, blank frames, dropped/held frames, flicker, unexpected layout changes, clipping, and unreadable text.
+- [ ] Check narration/audio is audible and continuous, and visuals are aligned to the spoken words throughout.
+- [ ] Confirm opening, recap, ending/end card, and total audio/video duration are correct.
+
+### D. Fix, rerender, and prove the fix
+- [ ] Log each defect with timestamp, expected visual/audio state, actual state, and root cause.
+- [ ] Fix the underlying storyboard/configuration/renderer problem; do not patch timings randomly or only correct the first reported example.
+- [ ] Rerender after any content/timing change and repeat the relevant checks. Recheck the whole lesson after broad changes.
+- [ ] Record the exact render run/commit and evidence of the inspected output. If any section cannot be inspected, state the limitation and do not mark the video review as passed.
+
+### E. Release gate
+- [ ] All checklist items pass or any exception is explicitly documented and approved.
+- [ ] Publish the verified MP4 to `public/videos/final/` and update the production status.
+- [ ] Only then hand the video to the user for their final review. Keep assistant inspection and user approval as separate statuses.
