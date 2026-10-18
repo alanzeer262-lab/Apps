@@ -111,3 +111,11 @@ The connected Runway workspace's recent-assets list and task lookups confirm the
 - Last known balance is 41 credits; current estimate for full narration is about 102 credits, subject to Runway's actual chunk billing. Once sufficient credits are available, generate the two revised audio chunks, record task IDs/URLs/settings, commit them under distinct `revised_narration_*` filenames, align to `src/generated-alignment.revised.json`, implement a separate revised Remotion composition, render it as a separate artifact, and review the entire video before switching the primary workflow.
 
 - Text-only preflight completed after preparation: the narration is 909 words / 5,081 spoken characters, contains no literal `[pause]`, and all 32 cue anchor phrases appear in the narration text after punctuation/case normalization. This does **not** replace audio-based alignment validation; timing and recognition confidence still need to be checked against the actual generated MP3s.
+
+
+## Revised narration generation started in the 500-credit Runway workspace (2026-10-18)
+- Rechecked both linked Runway accounts/workspaces. `Primary` workspace ID `70216803` had 41 credits; `Moh` workspace ID `70442037` had 500 credits. The full narration was split at a scene boundary into two chunks estimated at 70 and 32 credits.
+- Submitted both complete chunks to the `Moh` workspace using the approved Noah voice, `eleven_multilingual_v2`, speed `0.90`, English. No `[pause]` markers or stage directions were sent.
+- Part 1 task ID: `5890fe18-15be-4e91-a6a5-e6583a278fcf` (latest check: RUNNING at 98%).
+- Part 2 task ID: `ea274edf-db56-4c42-9ba2-d3e8ee264349` (latest check: RUNNING at 72%).
+- Runway reported 398 credits remaining after both submissions (102 credits consumed). These tasks have not yet returned final audio URLs. Do not mark the audio committed or activate the revised renderer until both tasks succeed, their MP3s are downloaded and committed, and actual durations are verified.
