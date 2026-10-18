@@ -68,3 +68,17 @@ Both chunks were submitted using the approved voice settings: Noah, `eleven_mult
   URL: https://dnznrvs05pmza.cloudfront.net/text_to_speech/2c4f563f-14d0-4940-98f3-59614bed4a91/PyLearn_Lesson_01_Revised_Narration_Part_2___Noah.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMTQyMDRjN2NiOGZmMjM0ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MjQ2NDI1Mn0.89zOvOlounaBk0Z0F-PaFG6TUA5FEf80fEqvxV_e2pY
 - Combined duration is 401.844535 s (~6:42), inside the requested 6–8 minute range.
 - The generation tasks succeeded. However, local download attempts failed because the signed URLs could not be fetched from the runtime. Do not claim the MP3 files are committed. Keep the original recordings and active renderer untouched until the revised files are available locally and committed.
+
+
+## Follow-up correction — confident delivery and natural pauses (2026-10-18)
+User clarified that Noah is acceptable if the delivery is made more confident, without becoming excited or high-energy. The earlier full narration sounded shy and had unnatural pauses.
+
+Correction applied to the new generation:
+- Keep the same preset voice, Noah, and speed 0.90.
+- Use `eleven_v3` for a broader delivery range; do not add excited or theatrical delivery tags.
+- Flatten the script into continuous spoken paragraphs, removing blank-line/scene separators from the TTS input. This targets one likely source of overly long artificial pauses. Natural sentence punctuation remains.
+- Longer intentional silence belongs in the video edit, not in the spoken text.
+- First, a short pacing test was submitted: task ID `ceb92301-f5d5-4001-970e-ff9db1678a22`, model `eleven_multilingual_v2`, Noah, speed 0.90; this was a short test, not a full lesson deliverable.
+- Full revised Part 1 (scenes 1–6) submitted with Noah, `eleven_v3`, speed 0.90, language en; task ID `66e5a6a3-8114-4002-9998-d71bd640289b`. At submission, Runway reported 314 credits remaining.
+- Full revised Part 2 (scenes 7–9) submitted with Noah, `eleven_v3`, speed 0.90, language en; task ID `ba998ca2-88c2-48f8-97e0-89d8f7189b18`. At submission, Runway reported 282 credits remaining.
+- These tasks were accepted and were still pending in the last observed response. Do not claim they are finished until the task viewer reports completion. Once ready, listen to the test/full narration and compare for confident but restrained teaching delivery. Do not commit or activate new audio until output is available and checked.
