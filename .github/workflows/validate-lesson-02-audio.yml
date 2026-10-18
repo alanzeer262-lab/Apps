@@ -1,0 +1,73 @@
+name: Validate Lesson 02 narration
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'public/audio/lesson-02/**'
+      - '.github/workflows/validate-lesson-02-audio.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install audio analysis dependencies
+        run: python -m pip install --disable-pip-version-check av faster-whisper
+      - name: Verify and transcribe the single Runway audio file
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import av, json
+          from faster_whisper import WhisperModel
+          audio = Path("public/audio/lesson-02/Runway_timeline_export_audio_540f76fd-8eb9-4824-b57c-e6ebc0723cf8.mp3")
+          if not audio.is_file() or audio.stat().st_size == 0:
+              raise SystemExit(f"Missing or empty Lesson 02 audio: {audio}")
+          with av.open(str(audio)) as container:
+              duration = container.duration / av.time_base if container.duration else None
+          if not duration or duration <= 0:
+              raise SystemExit("Could not measure the uploaded audio duration.")
+          print(f"Audio file: {audio}")
+          print(f"Size bytes: {audio.stat().st_size}")
+          print(f"Measured duration seconds: {duration:.3f}")
+          model = WhisperModel("tiny.en", device="cpu", compute_type="int8", cpu_threads=2, num_workers=1)
+          segments, info = model.transcribe(str(audio), language="en", beam_size=5, word_timestamps=True, vad_filter=False)
+          words = []
+          transcript_lines = []
+          for seg in segments:
+              transcript_lines.append(f"[{seg.start:.3f}-{seg.end:.3f}] {seg.text.strip()}")
+              for word in (seg.words or []):
+                  if word.word.strip():
+                      words.append({"text": word.word.strip(), "start": round(float(word.start), 3), "end": round(float(word.end), 3)})
+          if not words:
+              raise SystemExit("Transcription produced no word timestamps.")
+          out = Path("out/lesson-02")
+          out.mkdir(parents=True, exist_ok=True)
+          (out / "transcript.txt").write_text("\n".join(transcript_lines) + "\n", encoding="utf-8")
+          (out / "transcript.json").write_text(json.dumps({
+              "audioFile": str(audio), "sizeBytes": audio.stat().st_size,
+              "durationSeconds": round(duration, 3), "language": info.language,
+              "generatedBy": "faster-whisper", "model": "tiny.en", "words": words
+          }, indent=2) + "\n", encoding="utf-8")
+          print(f"Detected language: {info.language}; words timestamped: {len(words)}")
+          print("Transcript saved to out/lesson-02/")
+          PY
+      - name: Upload measured audio and transcript
+        uses: actions/upload-artifact@v4
+        with:
+          name: pylearn-lesson-02-audio-validation
+          path: |
+            out/lesson-02/transcript.json
+            out/lesson-02/transcript.txt
+          if-no-files-found: error
+          retention-days: 14
