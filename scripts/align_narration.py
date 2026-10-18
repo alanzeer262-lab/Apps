@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "public" / "audio"
 CUES_PATH = Path(os.environ.get("PYLEARN_SYNC_CUES", str(ROOT / "scripts" / "sync-cues.json")))
 OUTPUT_PATH = Path(os.environ.get("PYLEARN_ALIGNMENT_OUTPUT", str(ROOT / "src" / "generated-alignment.json")))
+TRANSCRIPT_JSON_PATH = ROOT / "out" / "lesson-01" / "transcript.json"
+TRANSCRIPT_TEXT_PATH = ROOT / "out" / "lesson-01" / "transcript.txt"
 _DEFAULT_AUDIO_FILES = [
     "public/audio/lesson-01/part-01.mp3",
     "public/audio/lesson-01/part-02.mp3",
@@ -259,6 +261,21 @@ def main() -> None:
         if "codeAt" in timing and "outputAt" in timing and timing["outputAt"] < timing["codeAt"]:
             raise RuntimeError("Output is scheduled before code appears in scene " + str(entry["id"]))
         scene_timings.append(timing)
+
+    TRANSCRIPT_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+    transcript_payload = {
+        "generatedBy": "faster-whisper (Whisper) in GitHub Actions",
+        "model": model_name,
+        "language": "en",
+        "durationSeconds": round(total_duration, 3),
+        "audioFiles": [path.relative_to(ROOT).as_posix() for path in AUDIO_FILES],
+        "words": words,
+    }
+    TRANSCRIPT_JSON_PATH.write_text(json.dumps(transcript_payload, indent=2) + "\\n", encoding="utf-8")
+    transcript_lines = [f"[{word['start']:.3f}-{word['end']:.3f}] {word['text']}" for word in words]
+    TRANSCRIPT_TEXT_PATH.write_text("\\n".join(transcript_lines) + "\\n", encoding="utf-8")
+    print(f"Wrote {TRANSCRIPT_JSON_PATH.relative_to(ROOT)}")
+    print(f"Wrote {TRANSCRIPT_TEXT_PATH.relative_to(ROOT)}")
 
     payload = {
         "generated": True,
