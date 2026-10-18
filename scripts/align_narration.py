@@ -19,11 +19,13 @@ from faster_whisper import WhisperModel
 ROOT = Path(__file__).resolve().parents[1]
 AUDIO_DIR = ROOT / "public" / "audio"
 CUES_PATH = Path(os.environ.get("PYLEARN_SYNC_CUES", str(ROOT / "scripts" / "sync-cues.json")))
-OUTPUT_PATH = ROOT / "src" / "generated-alignment.json"
-AUDIO_FILES = [
-    AUDIO_DIR / "PyLearn_Video_01_Narration_Part_1.mp3",
-    AUDIO_DIR / "PyLearn_Video_01_Narration_Part_2.mp3",
+OUTPUT_PATH = Path(os.environ.get("PYLEARN_ALIGNMENT_OUTPUT", str(ROOT / "src" / "generated-alignment.json")))
+_DEFAULT_AUDIO_FILES = [
+    "public/audio/PyLearn_Video_01_Narration_Part_1.mp3",
+    "public/audio/PyLearn_Video_01_Narration_Part_2.mp3",
 ]
+_AUDIO_FILE_VALUES = [value.strip() for value in os.environ.get("PYLEARN_AUDIO_FILES", ",".join(_DEFAULT_AUDIO_FILES)).split(",") if value.strip()]
+AUDIO_FILES = [Path(value) if Path(value).is_absolute() else ROOT / value for value in _AUDIO_FILE_VALUES]
 
 
 def audio_duration(path: Path) -> float:
@@ -263,6 +265,10 @@ def main() -> None:
         "model": model_name,
         "durationSeconds": round(total_duration, 3),
         "part2StartSeconds": round(durations[0], 3),
+        "audioTracks": [
+            {"src": "/" + path.relative_to(ROOT).as_posix(), "start": round(offsets[index], 3)}
+            for index, path in enumerate(AUDIO_FILES)
+        ],
         "scenes": scene_timings,
     }
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
