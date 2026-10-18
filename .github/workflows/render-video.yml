@@ -9,7 +9,7 @@ permissions:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,14 +17,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install dependencies
+      - name: Install Node dependencies
         run: npm install
-      - name: Type-check
-        run: npm run check
       - name: Verify narration assets exist
         run: |
           test -f public/audio/PyLearn_Video_01_Narration_Part_1.mp3
           test -f public/audio/PyLearn_Video_01_Narration_Part_2.mp3
+      - name: Install narration alignment dependencies
+        run: python -m pip install --disable-pip-version-check -r scripts/requirements-alignment.txt
+      - name: Align visuals to spoken narration
+        run: python scripts/align_narration.py
+      - name: Type-check
+        run: npm run check
       - name: Render MP4
         run: npm run render
       - name: Upload rendered video
