@@ -244,6 +244,13 @@ def main() -> None:
             timing["outputConfidence"] = round(output_match["score"], 3)
             print(f"  output scene {entry['id']:02d}: {timing['outputAt']:.2f}s "
                   f"(confidence {output_match['score']:.2f})")
+        for key in ("codeAt", "outputAt", "errorAt", "fixAt"):
+            if key in timing and not (start <= timing[key] < end):
+                raise RuntimeError("Event " + key + " for scene " + str(entry["id"]) + " falls outside its scene interval.")
+        if "errorAt" in timing and "fixAt" in timing and timing["fixAt"] <= timing["errorAt"]:
+            raise RuntimeError("Correction event occurs before the error in scene " + str(entry["id"]))
+        if "codeAt" in timing and "outputAt" in timing and timing["outputAt"] < timing["codeAt"]:
+            raise RuntimeError("Output is scheduled before code appears in scene " + str(entry["id"]))
         scene_timings.append(timing)
 
     payload = {
