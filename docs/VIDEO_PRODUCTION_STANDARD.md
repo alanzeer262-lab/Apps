@@ -63,40 +63,89 @@ Before approving a video:
 
 ## Standard workflow for every lesson
 
-### 1. Inspect the inputs
-- Identify the exact approved audio file(s), their order, and their actual durations.
-- Inspect the lesson script, code examples, expected outputs, and any supplied assets.
-- Do not assume narration matches a previous script or storyboard.
-- If audio is missing, corrupt, ambiguous, or multiple versions exist without an obvious approved version, stop and ask one focused question.
+**Trigger:** The workflow begins the moment the user says, “We need to generate a video for Lesson X.” Start with Step 1 below. Do not assume narration already exists, and do not start from the rendering stage.
 
-### 2. Transcribe the actual audio
-- Generate a timestamped transcript from the exact audio files that will be rendered.
-- Preserve the actual spoken wording; do not silently rewrite it to fit existing cues.
-- Treat automatic transcription as a draft. Inspect low-confidence or unclear passages before using them to drive scenes.
-- Keep a transcript artifact with the lesson so decisions are traceable.
+### Phase A — Source lesson to approved script
 
-### 3. Build the storyboard from the transcript
-- Create scene boundaries from the actual narration's topic changes and teaching beats.
-- For each scene, define: scene ID, title/topic, narration start/end, on-screen code, expected output, captions/key takeaway, and any typing/run/error/fix events.
-- Use exact phrases from the transcript as anchors. Anchors must occur in the recording and be distinct enough to identify the intended moment.
-- Ensure the code and output shown are technically correct and match what is being explained.
-- Do not retain an old scene merely because it already exists in the codebase. Reuse only content that demonstrably matches the current narration.
-- If the narration and lesson content conflict, flag the conflict and resolve it before rendering; never invent a timestamp or silently change the lesson.
+1. **Identify the exact lesson in the Android app**
+   - Use the app repository and the specified lesson number/title to locate the actual lesson content.
+   - Read the entire lesson, including its explanations, code examples, expected output, exercises, prerequisites, and lesson-specific learning objectives.
+   - Check related lesson files or track metadata only as needed to understand context and the intended sequence.
+   - Record the exact source paths and lesson title so the script can be traced back to its source.
+   - Never substitute a similarly named lesson, an old video script, or an existing storyboard for the actual app lesson. If the correct source lesson cannot be identified or accessed, stop and ask for the missing source instead of guessing.
 
-### 4. Synchronize and validate
-- Derive timestamps from audio/transcript word timing, not proportional scaling or guessed values.
-- Validate scene order, non-overlapping boundaries, minimum scene duration, and that every code/output/error/fix event falls inside the right scene.
-- Check anchors across the whole transcript, not only the first failed anchor.
-- A low-confidence anchor must trigger review of the transcript/storyboard and correction of the source cue. Do not lower the confidence threshold just to make a build pass.
-- Prefer a transcript-driven scene manifest as the single source of truth, so the storyboard and timing cannot drift independently.
+2. **Analyze the lesson before writing**
+   - Extract the learning objective, learner starting point, key concepts, teaching order, code, expected output, and all essential explanations.
+   - Identify what the learner should understand at the end and which ideas need a demonstration.
+   - Preserve the app lesson's meaning and essential coverage. Do not add unsupported technical claims, skip important details, or change the lesson sequence just to make a shorter video.
+   - Keep video production separate from app editing: do not modify Android app content or app code as part of making the video.
 
-### 5. Render and quality-check
-- Run type checks and all available tests before rendering.
-- Render the full MP4 with the approved audio.
-- Verify the actual output exists, has a plausible duration, includes all audio tracks, and plays from beginning to end.
-- Review scene transitions, code typing, outputs, captions, audio/visual synchronization, and the ending. Check both the start and the later portions; do not infer success from a successful build alone.
-- If any check fails, fix the underlying source and rerun. Never report a video as finished if the render or review did not happen.
-- Preserve logs, transcript, storyboard/manifest, and the final MP4 or a clear artifact link.
+3. **Apply the agreed teacher standard**
+   - Use the teacher persona, voice, delivery, pacing, and teaching method defined in “The agreed teacher standard” above.
+   - Speak to one learner as a confident, experienced, patient tutor. Explain what the code does, why it works, and what the learner should notice.
+   - Teach one concept at a time. Use natural transitions, appropriate pauses, prediction prompts where useful, and step-by-step demonstrations.
+   - Keep all essential information from the source lesson. Remove only unnecessary repetition or filler—not teaching explanations.
+   - Include a complete opening that introduces the actual lesson and leads into its first concept; do not start with a middle section or assume the learner has heard another video.
+   - End with a concise recap of what was taught and a suitable next step, without introducing new concepts.
+
+4. **Create the production-ready script**
+   - Write natural spoken narration and a scene-by-scene visual plan together, so each visual action is motivated by the words being spoken.
+   - For each scene, specify its purpose, narration, on-screen text, code state, typing action, expected output, captions/key takeaway, and any run/prediction/error/fix action.
+   - Show code progressively as it is taught; do not reveal the final code or output before the teacher reaches that point.
+   - Check all code and outputs against the app lesson and Python behavior.
+   - Preserve the complete instructional sequence and ensure the script covers the whole lesson.
+   - Save the script and source references as lesson-specific artifacts in the video repository. Clearly distinguish the approved script from drafts.
+
+5. **Present the script for Runway narration**
+   - Give the user the final script in a format that can be copied into Runway, preserving the agreed voice and delivery instructions where supported.
+   - If the user's established workflow requires them to generate the audio in Runway, do not pretend to generate that audio yourself or move to video rendering before the audio is available.
+   - If a necessary choice is genuinely missing (for example, two conflicting lesson sources or two possible approved scripts), ask one focused question. Otherwise proceed without asking the user to repeat established requirements.
+
+### Phase B — Runway audio to synchronized video
+
+6. **Receive and verify the generated narration**
+   - Locate the audio files for the specified lesson in the supplied files or agreed repository.
+   - Confirm which files are approved, their order, their actual durations, and their technical readability.
+   - Listen to or transcribe the opening and ending of every part; verify that the first spoken words contain the true lesson opening and that the final part contains the complete ending.
+   - Check for missing sections, duplicated narration, abrupt cuts, accidental silence, or parts in the wrong order.
+   - If there are multiple plausible versions, corrupted files, or a material mismatch with the approved script, stop and ask one focused question or report the specific mismatch. Do not guess which audio is approved.
+
+7. **Transcribe the exact approved audio**
+   - Produce a timestamped transcript from the exact audio that will be used in the video.
+   - Preserve what was actually spoken. Review uncertain automatic-transcription passages against the audio.
+   - Compare the transcript with the approved script and full Android lesson. Flag omitted or altered essential content; do not hide the omission by adjusting visuals.
+   - Save the transcript as a lesson-specific artifact.
+
+8. **Build the storyboard and scene manifest from that audio**
+   - Derive scene boundaries from actual spoken words, concept changes, demonstrations, and teaching pauses.
+   - For every scene, record its ID, topic, narration start/end, transcript anchor, code state, typing events, run action, expected output, captions, and transition.
+   - Use exact, distinctive phrases that actually occur in the transcript as anchors. Check all anchors across the full recording.
+   - Generate timings from timestamped audio words. Never use guessed timestamps or proportional timing as a substitute.
+   - Do not reuse stale cues or an old storyboard just because they already exist. Reuse the visual design template only when appropriate; rebuild the lesson-specific content and timings.
+
+9. **Validate before rendering**
+   - Check that the scene sequence starts at the true beginning, follows the full narration, and ends at the actual conclusion.
+   - Check scene order, boundaries, overlaps, minimum duration, and anchor confidence.
+   - Confirm that typing, code completion, Run action, output, captions, pauses, and transitions occur at the correct narrated moments.
+   - Check Python syntax, behavior, and expected output. Ensure every essential concept from the app lesson is represented.
+   - If an anchor is low-confidence, inspect the transcript, audio, and cue. Correct the underlying source; never lower a threshold merely to force a successful build.
+   - Run type checks and available tests. Do not render until blocking validation errors are resolved.
+
+10. **Render the complete video**
+    - Render the full MP4 with the exact approved audio files in the verified order.
+    - Confirm the actual MP4 exists, can be opened, has a plausible duration, and includes all intended narration.
+    - Keep logs, transcript, scene manifest, synchronization data, and render output traceable to this lesson.
+
+11. **Review the entire rendered video**
+    - Watch/listen from the first frame and first spoken word through the final frame and final spoken word.
+    - Explicitly verify that the video does not begin partway through the audio, omit the opening, skip a scene, repeat a section, or cut off the ending.
+    - Check audio/visual sync, voice continuity, code typing, output timing, captions, transitions, readability, technical correctness, and full lesson coverage.
+    - A successful build log or a short preview is not sufficient. If a defect is found, fix its source and render/review again.
+
+12. **Deliver and report honestly**
+    - Provide the actual rendered MP4 or a verified link to it, plus the script, transcript, and storyboard/manifest where available.
+    - Report source lesson and paths; script status; audio filenames/order/durations; scene count; validation/test result; render result; what was reviewed; and any unresolved issues.
+    - Mark the video **complete and approved** only after the actual full render has been reviewed successfully. Otherwise state the exact blocker and the next action.
 
 ## Reusable template and design system
 
