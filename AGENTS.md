@@ -19,6 +19,22 @@ Create accurate, polished PyLearn teaching videos from the **canonical lesson co
 9. **Preserve existing work.** Do not break or overwrite the known-good Lesson 1 pipeline while building another lesson. Make focused changes, keep the working fallback, and commit meaningful progress.
 10. **Be honest and concrete.** Never say a file was created, a commit pushed, a build passed, or an MP4 reviewed unless that action actually succeeded. Include links/commit IDs and list blockers plainly. Do not make the user repeat instructions already written here.
 
+
+
+## Mandatory voice header in every narration script
+
+Every lesson narration script Markdown file must begin with a clearly visible voice-settings block before the lesson title or narration. This is mandatory, not optional, and must be included in every script part/chunk if the script is split across multiple files. Use this exact standard:
+
+> **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
+> - **Voice name:** Kendrick
+> - **Model:** ElevenLabs v3
+> - **Voice ID:** Use the exact approved custom Kendrick voice ID supplied/confirmed by the user. Never invent, guess, or silently omit it from a Runway handoff when the ID is available in the project context.
+> - **Voice substitution:** Not allowed. Do not replace Kendrick with another voice or a preset.
+> - **Consistency:** Keep the same voice identity throughout every part of the lesson.
+> - **Read-aloud rule:** Speak only narration text. Do not read production notes or instructions in square brackets aloud.
+
+The script author must verify this header before committing or sharing any script. If the exact voice ID is not available in repository/context, keep the required name and model explicit and flag the missing ID for confirmation; do not fabricate an ID. The production status and handoff README must repeat the same voice requirement where relevant. Update existing script files to include this header when touching them, and include it automatically in all newly created narration scripts and script chunks.
+
 ## Required production sequence for every lesson
 
 ### Gate 1 — Source and lesson plan
