@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+"""Transcribe narration with word timestamps and align scene changes to spoken anchors.
+
+The render is intentionally blocked if an anchor cannot be found confidently.
+No proportional scaling or guessed storyboard timings are used.
+"""
+from __future__ import annotations
+
+import json
+import re
+import sys
+from difflib import SequenceMatcher
+from pathlib import Path
+
+import av
+from faster_whisper import WhisperModel
+
+ROOT = Path(__file__).resolve().parents[1]
+AUDIO_DIR = ROOT / "public" / "audio"
+CUES_PATH = ROOT / "scripts" / "sync-cues.json"
+OUTPUT_PATH = ROOT / "src" / "generated-alignment.json"
+AUDIO_FILES = [
+    AUDIO_DIR / "PyLearn_Video_01_Narration_Part_1.mp3",
+    AUDIO_DIR / "PyLearn_Video_01_Narration_Part_2.mp3",
+]
+
+
+def audio_duration(path: Path) -> float:
+    with av.open(str(path)) as container:
+        if container.duration is not None:
+            return float(container.duration * av.time_base)
+        stream = next((s for s in container.streams if s.type == "audio"), None)
+        if stream is None or stream.duration is None or stream.time_base is None:
+            raise RuntimeError(f"Cannot measure audio duration: {path.name}")
+        return float(stream.duration * stream.time_base)
+
+
+def tokens(text: str) -> list[str]:
+    return re.findall(r"[a-z0-9]+", text.lower())
+
+
+def transcribe_tracks(model: WhisperModel, files: list[Path]) -> tuple[list[dict], list[float]]:
+    words: list[dict] = []
+    offsets: list[float] = []
+    offset = 0.0
+
+    for path in files:
+        if not path.is_file():
+            raise RuntimeError(f"Missing narration file: {path}")
+        offsets.append(offset)
+        duration = audio_duration(path)
+        print(f"Transcribing {path.name} ({duration:.3f}s) at timeline offset {offset:.3f}s")
+        segments, info = model.transcribe(
+            str(path),
+            language="en",
+            beam_size=5,
+            word_timestamps=True,
+            vad_filter=False,
+            condition_on_previous_text=True,
+        )
+        segment_count = 0
+        for segment in segments:
+            segment_count += 1
+            if segment.words:
+                for word in segment.words:
+                    word_tokens = tokens(word.word)
+                    if not word_tokens:
+                        continue
+                    words.append({
+                        "text": word.word.strip(),
+                        "token": " ".join(word_tokens),
+                        "start": offset + max(0.0, float(word.start)),
+                        "end": offset + min(duration, float(word.end)),
+                    })
+            else:
+                # Defensive fallback; word_timestamps normally supplies words.
+                for token in tokens(segment.text):
+                    words.append({
+                        "text": token,
+                        "token": token,
+                        "start": offset + float(segment.start),
+                        "end": offset + float(segment.end),
+                    })
+        print(f"  language={info.language}, segments={segment_count}")
+        offset += duration
+
+    words.sort(key=lambda item: item["start"])
+    if not words:
+        raise RuntimeError("Transcription returned no words.")
+    return words, offsets
+
+
+def align_anchor(anchor: str, words: list[dict], cursor: int) -> dict:
+    wanted = tokens(anchor)
+    if not wanted:
+        raise ValueError(f"Empty anchor: {anchor!r}")
+
+    # Search windows near the expected phrase length; scoring is lexical, not
+    # proportional-to-runtime. The cursor prevents reusing an earlier phrase.
+    min_len = max(1, len(wanted) - 2)
+    max_len = len(wanted) + 3
+    target = " ".join(wanted)
+    best = None
+
+    for start_i in range(cursor, len(words)):
+        for window_len in range(min_len, max_len + 1):
+            end_i = start_i + window_len
+            if end_i > len(words):
+                continue
+            candidate_words = words[start_i:end_i]
+            candidate = " ".join(w["token"] for w in candidate_words)
+            ratio = SequenceMatcher(None, target, candidate).ratio()
+            target_set = set(wanted)
+            candidate_set = set(candidate.split())
+            overlap = len(target_set & candidate_set) / max(1, len(target_set))
+            score = 0.78 * ratio + 0.22 * overlap
+            if best is None or score > best["score"]:
+                best = {
+                    "startIndex": start_i,
+                    "endIndex": end_i,
+                    "start": candidate_words[0]["start"],
+                    "end": candidate_words[-1]["end"],
+                    "score": score,
+                    "matched": " ".join(w["text"] for w in candidate_words),
+                }
+
+    if best is None:
+        raise RuntimeError(f"No transcript window available for anchor: {anchor!r}")
+    return best
+
+
+def main() -> None:
+    cues = json.loads(CUES_PATH.read_text(encoding="utf-8"))
+    confidence_floor = float(cues.get("minimumConfidence", 0.62))
+    model_name = cues.get("model", "tiny.en")
+    print(f"Loading Whisper model {model_name!r} (CPU/int8)")
+    model = WhisperModel(model_name, device="cpu", compute_type="int8", cpu_threads=2, num_workers=1)
+    words, offsets = transcribe_tracks(model, AUDIO_FILES)
+    durations = [audio_duration(path) for path in AUDIO_FILES]
+    total_duration = sum(durations)
+
+    cursor = 0
+    aligned = []
+    for cue in cues["scenes"]:
+        match = align_anchor(cue["anchor"], words, cursor)
+        if match["score"] < confidence_floor:
+            raise RuntimeError(
+                f"Low-confidence sync anchor for scene {cue['id']}: "
+                f"{match['score']:.3f} < {confidence_floor:.3f}; "
+                f"expected={cue['anchor']!r}; matched={match['matched']!r}. "
+                "Update the cue to match the recording; do not guess a timestamp."
+            )
+        aligned.append({
+            "id": int(cue["id"]),
+            "anchor": cue["anchor"],
+            "matched": match["matched"],
+            "confidence": round(match["score"], 3),
+            "anchorStart": round(match["start"], 3),
+        })
+        cursor = max(match["startIndex"] + 1, match["endIndex"] - 2)
+        print(f"Scene {cue['id']:02d}: {match['start']:.2f}s "
+              f"(confidence {match['score']:.2f}) — {match['matched']}")
+
+    if len(aligned) != 14:
+        raise RuntimeError(f"Expected 14 scene anchors, got {len(aligned)}")
+    if aligned[0]["anchorStart"] > 3.0:
+        raise RuntimeError("First scene anchor is unusually late; inspect the narration/cues.")
+    starts = [0.0] + [entry["anchorStart"] for entry in aligned[1:]]
+    for i in range(1, len(starts)):
+        if starts[i] <= starts[i - 1]:
+            raise RuntimeError(f"Non-monotonic scene timing at scene {i + 1}")
+        if starts[i] - starts[i - 1] < 2.5:
+            raise RuntimeError(
+                f"Scene {i + 1} begins only {starts[i] - starts[i - 1]:.2f}s after "
+                f"scene {i}; review the matched anchor phrases."
+            )
+
+    scene_timings = []
+    for i, entry in enumerate(aligned):
+        start = starts[i]
+        end = starts[i + 1] if i + 1 < len(starts) else total_duration
+        if end <= start:
+            raise RuntimeError(f"Invalid scene interval for scene {entry['id']}")
+        scene_timings.append({
+            **entry,
+            "start": round(start, 3),
+            "end": round(end, 3),
+        })
+
+    payload = {
+        "generated": True,
+        "model": model_name,
+        "durationSeconds": round(total_duration, 3),
+        "part2StartSeconds": round(durations[0], 3),
+        "scenes": scene_timings,
+    }
+    OUTPUT_PATH.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {OUTPUT_PATH.relative_to(ROOT)}")
+    print(f"Timeline duration: {total_duration:.3f}s; part 2 starts at {durations[0]:.3f}s")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
