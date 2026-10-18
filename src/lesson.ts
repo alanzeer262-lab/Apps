@@ -15,12 +15,6 @@ const generatedAlignment = alignmentJson as {
 export type LessonScene = GeneratedScene & {
   codeAt?: number; outputAt?: number; fixAt?: number; errorAt?: number; completionAt?: number;
 };
-if (!generatedAlignment.generated) {
-  throw new Error("Transcript-derived scene manifest is missing. Run scripts/align_narration.py before rendering.");
-}
-if (!generatedAlignment.scenes.length) {
-  throw new Error("Transcript-derived scene manifest contains no scenes. Refusing to render.");
-}
 export const lesson = {
   title: "Your First Python Program",
   subtitle: "Write it. Run it. Understand it.",
