@@ -1,7 +1,10 @@
 name: Render PyLearn lesson video
 
-"on":
+on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
