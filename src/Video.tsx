@@ -73,7 +73,7 @@ export const PyLearnVideo: React.FC = () => {
           <div className="output-content">
             <div className="output-prompt">{outputPrompt}</div>
             <div style={{ opacity: showOutput ? 1 : 0 }}>
-              {showCompletion ? <div className="completion-card"><div className="completion-check">✓</div><div className="completion-title">Lesson Complete</div><div className="completion-next">Next: Variables and Data Types</div></div> : outputLines.length ? outputLines.map((line, i) => <div className="output-line" key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}
+              {outputLines.length ? outputLines.map((line, i) => <div className="output-line" key={i}>{line}</div>) : <div className="waiting">Waiting for your code…</div>}{showCompletion && <div className="completion-card"><div className="completion-check">✓</div><div className="completion-title">Lesson Complete</div><div className="completion-next">Next: Variables and Data Types</div></div>}
             </div>
           </div>
         </section>
