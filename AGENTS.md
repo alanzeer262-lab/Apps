@@ -89,6 +89,21 @@ Create accurate, polished PyLearn teaching videos from the **canonical lesson co
 
 > Create the PyLearn video for **[LESSON NUMBER AND TITLE]**. First read these mandatory instructions in `AGENTS.md`. Read the full canonical lesson from `mohamedalnazeer262-coder/Pylearn-build260` on branch `ccr-c7f6fdd7-xpzi3g`. Follow every production gate in order: source verification, source-aligned narration script, exact approved ElevenLabs v3 Kendrick voice, lesson-specific audio, Whisper transcription of the actual audio, timestamp/phrase-driven alignment, connected storyboard, lesson-isolated Remotion implementation, checks, complete MP4 render, and full-video review. Never invent timestamps, substitute voices, reuse another lesson's audio, skip prerequisites, or claim unverified work is done. Preserve the known-good Lesson 1 path and old alignment algorithm as fallback; adopt a new alignment method only if rendered results are demonstrably better. Commit progress, link the artifacts, state blockers honestly, and give the user only the next action that is actually needed.
 
+
+## Standard behavior when the user says “start production”
+
+This phrase starts a standard, repeatable **script-preparation phase**. Do not jump to audio generation, rendering, or blockers before delivering the script.
+
+1. Read this file and the complete canonical lesson source.
+2. Check the existing script if one exists. Verify it against the source and revise only if needed; do not make a duplicate script unnecessarily.
+3. Prepare/verify the exact lesson audio folder in the video repo. For Lesson 02, use `public/audio/lesson-02/`. Include a README that tells the user exactly where to place the Runway-generated MP3 part files and what filenames the pipeline expects.
+4. Produce or verify the final narration script. Keep stage directions separate from spoken words. Ensure the script is suitable to paste into Runway, splitting it into clearly ordered chunks only if required by the tool's character limit. Never replace the approved voice with a preset voice.
+5. Commit any needed script/folder README changes.
+6. Give the user the script and direct GitHub link, state the exact audio filenames/folder, and stop for the user's Runway audio. **Do not ask the user to regenerate the process instructions or repeat the voice/workflow requirements.**
+7. When the user later places or uploads the audio, resume at audio validation/transcription. Transcribe the actual audio, align to real timestamps, then storyboard, implement, render, and inspect.
+
+The intended handoff is: **Assistant prepares source-verified script and folder → user sends script to Runway using the exact approved voice → user places returned audio in the documented lesson folder → assistant resumes production from the audio gate.** This handoff is normal workflow, not a production failure or an unexpected blocker.
+
 ## If blocked
 
 Do not quietly skip a gate. State the exact missing input/access, preserve completed work, and stop at that gate. Do not ask the user to repeat requirements already documented here.
