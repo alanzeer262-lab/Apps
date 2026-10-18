@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: pip
       - name: Install audio analysis dependencies
         run: python -m pip install --disable-pip-version-check av faster-whisper
       - name: Verify and transcribe the single Runway audio file
