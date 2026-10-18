@@ -8,14 +8,16 @@ The visuals are aligned to the actual recorded narration. Before rendering, the 
 
 ### Add the narration files
 
-Copy the two existing narration files into `public/audio/` using these exact names:
+Upload the Runway-generated MP3 files to the lesson-specific folder using these exact paths:
 
-- `PyLearn_Video_01_Narration_Part_1.mp3` (173.871 seconds)
-- `PyLearn_Video_01_Narration_Part_2.mp3` (237.897 seconds)
+- `public/audio/lesson-01/part-01.mp3` — first narration segment
+- `public/audio/lesson-01/part-02.mp3` — second narration segment
+
+For more segments, continue `part-03.mp3`, `part-04.mp3`, etc. in playback order. Keep only the approved narration for Lesson 1 in this folder.
 
 They are played consecutively at their measured durations. Do not speed up or stretch the narration. Keep each part's original audio quality.
 
-> The narration files are committed under `public/audio/`. The workflow verifies both files before running alignment.
+> GitHub Actions runs Whisper (`faster-whisper`) on these files during the workflow. Transcription and timing must happen in GitHub, not as a separate manual/local step.
 
 ## Run locally
 
@@ -53,13 +55,13 @@ The scene captions are instructional summaries, not word-for-word subtitles. Sce
 
 ## GitHub Actions
 
-Use Actions → Render PyLearn lesson video → Run workflow. The narration files must already exist under `public/audio/`. The workflow uploads the MP4 as an artifact for seven days.
+Use Actions → Render PyLearn lesson video → Run workflow. The approved Runway MP3s must exist at `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`. GitHub Actions runs Whisper transcription during the workflow. The workflow uploads the MP4 as an artifact for seven days.
 
 This repository is separate from the PyLearn Android app.
 
 ## First render checklist
 
-1. Confirm both MP3 files are present under `public/audio/`.
+1. Upload the MP3s to `public/audio/lesson-01/part-01.mp3` and `public/audio/lesson-01/part-02.mp3`.
 2. Open **Actions → Render PyLearn lesson video → Run workflow** and start the workflow from the default branch.
 3. Review the **Align visuals to spoken narration** log. It must find every scene anchor and output anchor with acceptable confidence.
 4. If alignment fails, update the phrase in `scripts/sync-cues.json` to match the actual recording. Do not add guessed timestamps.
