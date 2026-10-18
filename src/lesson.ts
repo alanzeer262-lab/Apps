@@ -13,7 +13,7 @@ const generatedAlignment = alignmentJson as {
   scenes: GeneratedScene[];
 };
 export type LessonScene = GeneratedScene & {
-  codeAt?: number; outputAt?: number; fixAt?: number; errorAt?: number;
+  codeAt?: number; outputAt?: number; fixAt?: number; errorAt?: number; completionAt?: number;
 };
 if (!generatedAlignment.generated) {
   throw new Error("Transcript-derived scene manifest is missing. Run scripts/align_narration.py before rendering.");
