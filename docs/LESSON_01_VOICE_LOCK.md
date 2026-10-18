@@ -24,3 +24,17 @@ The original narration was generated in Runway on 2026-10-16. The available task
 4. Do not regenerate the full narration until the user approves the pilot voice.
 5. Never overwrite the original narration MP3s; use distinct `revised_*` filenames.
 6. If the preset cannot reproduce the original sufficiently, stop and present the comparison rather than silently replacing the voice.
+
+## Audition generation v1
+- Status: submitted to Runway; the inline viewer is handling completion.
+- Task ID: `5a102e5f-b0e9-4650-91f2-a31f71446024`
+- Asset name: `PyLearn Lesson 01 — Voice Lock Audition Elias v1`
+- Voice preset: `Elias`
+- Model: `eleven_v3`
+- Speed: `0.92`
+- Language: `en`
+- Exact spoken text (including delivery tags):
+  > [warm, conversational] Welcome to PyLearn. I'm glad you're here. [pause] In this lesson, we're going to take our first steps with Python, one idea at a time. There's no need to rush. We'll write a little code, run it, and look carefully at what happens. [gentle emphasis] The goal isn't to memorize everything. It's to understand what each line is doing.
+- Credits reported remaining after submission: 54 (Runway indicated low credits).
+- Asset URL: pending task completion; append the final URL here before depending on the audio.
+- Important: this is a candidate audition, not confirmed to match the original teacher voice. Do not generate the full lesson until the user has listened and approved the voice.
