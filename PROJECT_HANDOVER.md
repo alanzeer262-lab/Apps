@@ -50,3 +50,12 @@ This currently anchors major scene and visual events; it does not necessarily an
 
 ## Instructions for the next ChatGPT conversation/agent
 Start by reading this file and inspecting the latest repository files and Actions run. Treat GitHub as the source of truth, not prior chat summaries. Continue from the latest commit; do not restart the project or ask the user to repeat known context. Be explicit about what is verified versus unverified. Prefer direct, minimal, targeted repository fixes and commit them when supported by logs. After each significant change, record the commit and current build status here.
+
+
+## Teaching-style pilot (2026-10-18)
+- User feedback: synchronization was working through the comments section, but the teacher felt rushed and overloaded the learner with too much information.
+- Latest confirmed successful technical baseline: workflow run #9, run ID `39109976390`, commit `649d4a678572a7cd5a9b9fc72ace90d9daf8bdc6`. Artifact `pylearn-first-program` was generated; SHA256 `c25c45aa777387e5d360a23a99aa9e9c3cb5c368d747facf9398264b00b21015`. This confirms build success, not full-video playback or pedagogical approval.
+- Added `docs/TEACHING_STYLE_RULES.md` (commit `435ca7c53290f33e532a457630142f80d0a4b303`) as a pilot standard, not yet final.
+- Added `docs/LESSON_01_REVISED_PATIENT_TUTOR_SCRIPT.md` (commit `ada124009d35656fc6f9eca307e4617d13886a1b`). It narrows Lesson 01 to the first program, `print()`, simple calculations, text/quotes, comments, a beginner-level variable/f-string example, and basic debugging. It deliberately moves the deep `print()` vs `return` / functions / `None` explanation out of the first video.
+- **Next required work:** adapt `src/lesson.ts`, `scripts/sync-cues.json`, and visual timing to the revised script; record/regenerate the two narration tracks in the same teacher voice, then run alignment and render. Do not render the old MP3s as if they represented the new script. Check that generated alignment matches the new narration. Review the full resulting video before declaring the pilot successful.
+- After user approves the teaching style, revise these pilot rules based on the review and reuse them for the next lesson to avoid repeated editing.
