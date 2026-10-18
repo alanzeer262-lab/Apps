@@ -1,4 +1,13 @@
 # PyLearn Video 02 — Narration Script
+
+> **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
+> - **Voice name:** Kendrick
+> - **Model:** ElevenLabs v3
+> - **Voice ID:** Use the exact approved custom Kendrick voice ID supplied/confirmed by the user. Do not guess or substitute another ID.
+> - **Voice substitution:** Not allowed. Do not use another voice or a preset.
+> - **Consistency:** Use the same voice identity for every part of this lesson.
+> - **Read-aloud rule:** Speak only the narration text. Do not read production notes in square brackets aloud.
+
 **Source of truth:** `content/python-basics/modules/02-variables-types.md` in `Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.
 **Purpose:** Spoken narration for recording. Bracketed directions are production notes and should not be read aloud.
 **Target:** Approximately 7–8 minutes at a calm teaching pace, including pauses.
