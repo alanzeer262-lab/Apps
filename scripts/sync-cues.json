@@ -1,0 +1,62 @@
+{
+  "model": "tiny.en",
+  "minimumConfidence": 0.62,
+  "scenes": [
+    {
+      "id": 1,
+      "anchor": "Welcome to PyLearn today we're going to write our very first Python program"
+    },
+    {
+      "id": 2,
+      "anchor": "Our first program displayed words"
+    },
+    {
+      "id": 3,
+      "anchor": "Now notice something interesting"
+    },
+    {
+      "id": 4,
+      "anchor": "Let's look more closely at strings"
+    },
+    {
+      "id": 5,
+      "anchor": "Sometimes we want to explain what our code is doing"
+    },
+    {
+      "id": 6,
+      "anchor": "Let's make our program more personal"
+    },
+    {
+      "id": 7,
+      "anchor": "Let's change just the name and run the program again"
+    },
+    {
+      "id": 8,
+      "anchor": "The value inside the braces does not have to be text"
+    },
+    {
+      "id": 9,
+      "anchor": "Now let's look at a difference that will matter as our programs get bigger"
+    },
+    {
+      "id": 10,
+      "anchor": "When we call add tip with forty it adds ten and hands the number fifty back"
+    },
+    {
+      "id": 11,
+      "anchor": "Now let's try show total"
+    },
+    {
+      "id": 12,
+      "anchor": "When code does not work try this routine"
+    },
+    {
+      "id": 13,
+      "anchor": "Now it's your turn"
+    },
+    {
+      "id": 14,
+      "anchor": "Let's connect what we learned"
+    }
+  ]
+}
