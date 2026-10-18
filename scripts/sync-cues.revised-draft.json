@@ -1,0 +1,66 @@
+{
+  "model": "tiny.en",
+  "minimumConfidence": 0.66,
+  "note": "DRAFT for the revised patient-tutor narration only. Do not replace scripts/sync-cues.json or run against the current old MP3s. Validate anchor phrases against newly generated narration before activating.",
+  "scenes": [
+    {
+      "id": 1,
+      "anchor": "Welcome to PyLearn I'm glad you're here",
+      "codeAnchor": "Let's build the line slowly",
+      "outputAnchor": "Here it is Hello I'm Python"
+    },
+    {
+      "id": 2,
+      "anchor": "Our first program displayed a message",
+      "codeAnchor": "This time we're giving it a small calculation",
+      "outputAnchor": "First we see the greeting on the next line we see five"
+    },
+    {
+      "id": 3,
+      "anchor": "Look at these two lines",
+      "codeAnchor": "The first has the number ten",
+      "outputAnchor": "On the screen both lines show ten"
+    },
+    {
+      "id": 4,
+      "anchor": "Let's look at quotation marks a little more closely",
+      "codeAnchor": "Python lets us use single quotes or double quotes around text",
+      "errorAnchor": "Now I'll make one small mistake in a separate example",
+      "fixAnchor": "Sometimes one small character is all that needs fixing",
+      "outputAnchor": "Python reports an error because it can't understand where the text ends"
+    },
+    {
+      "id": 5,
+      "anchor": "Sometimes we want to leave a note for ourselves",
+      "codeAnchor": "In Python a comment starts with the hash symbol",
+      "outputAnchor": "Notice the output the message appears but the comment does not"
+    },
+    {
+      "id": 6,
+      "anchor": "Let's make the message personal",
+      "codeAnchor": "First we store a name in a variable called name",
+      "outputAnchor": "Python puts Ada into the greeting",
+      "fixAnchor": "Now the greeting says Sam"
+    },
+    {
+      "id": 7,
+      "anchor": "Now it's your turn",
+      "codeAnchor": "Change the name to your own name",
+      "outputAnchor": "Now run it and check your prediction"
+    },
+    {
+      "id": 8,
+      "anchor": "Let's practice fixing the small mistake we saw earlier",
+      "codeAnchor": "This line is missing its closing quotation mark",
+      "errorAnchor": "When an error appears don't change lots of things at once",
+      "fixAnchor": "Now it works",
+      "outputAnchor": "Welcome to Python"
+    },
+    {
+      "id": 9,
+      "anchor": "Let's take a breath and review what you've done",
+      "codeAnchor": "You used print to display a message and a calculation",
+      "outputAnchor": "Your first Python program is complete"
+    }
+  ]
+}
