@@ -75,3 +75,12 @@ Start by reading this file and inspecting the latest repository files and Action
   - `numbers_4` — Run the calculation, 2.00 seconds: https://dnznrvs05pmza.cloudfront.net/text_to_speech/1ed6d842-27f7-43c5-9c2e-8bc498ea3ec5/PyLearn_L01_numbers_4_mp3.mp3
 - The links were described as Runway-generated audio artifacts and may expire. This establishes Runway as the generation route for these clips; it does not by itself identify the exact voice/model/settings or prove that all narration segments used identical settings.
 - Do not ask the user again which tool was used. When preparing the revised patient-tutor narration, first inspect existing audio files and available project history for voice/model details. Preserve the current voice as far as the available Runway settings permit. Do not claim exact voice identity without evidence or generate/replace clips without the user's approval.
+
+## Runway task records recovered (2026-10-18)
+The connected Runway workspace's recent-assets list and task lookups confirm these two full narration recordings were generated there on 2026-10-16:
+- Part 1 — task `db3f7d61-135b-41cd-88a5-ad1ba8ae3349`, duration 173.82458 seconds (2:53.8), asset name `PyLearn Video 01 Narration Part 1`.
+- Part 2 — task `89671605-058b-4369-a1af-02ed10dcf0c5`, duration 237.865215 seconds (3:57.9), asset name `PyLearn Video 01 Narration Part 2`.
+- The task records expose the asset URL, generic prompt/name, and duration only. They do **not** expose the original voice ID, model, speed, or prosody settings, so exact voice configuration remains unverified.
+- Additional short clip tasks were also found in the same Runway workspace on 2026-10-16, including `print_1` task `011c67de-1a5e-4f85-8e8f-7509bc3d82a6`, `print_7` task `cb10cf49-3d1c-4b99-9278-ea9fdf6a496c`, and `numbers_4` task `95f3c280-bfea-4e65-b398-75f8f2034d39`.
+- Drafted `scripts/sync-cues.revised-draft.json` for the revised nine-scene script. It is intentionally separate from the active `scripts/sync-cues.json`; do not activate it or run alignment against the old narration. Once the revised narration is approved and generated, validate each anchor against its transcript, then switch cues and update `src/lesson.ts` to the nine-scene storyboard before rendering.
+- No new speech was generated and no Runway credits were spent during this investigation.
