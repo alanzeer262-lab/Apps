@@ -60,7 +60,8 @@
       "id": 9,
       "anchor": "Let's take a breath and review what you've done",
       "codeAnchor": "You used print to display a message and a calculation",
-      "outputAnchor": "Your first Python program is complete"
+      "outputAnchor": "You used print to display a message and a calculation",
+      "completionAnchor": "Your first Python program is complete"
     }
   ]
 }
