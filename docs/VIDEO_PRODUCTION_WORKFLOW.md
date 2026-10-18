@@ -74,3 +74,35 @@ Keep final MP4s separate from narration audio, scripts, storyboards, intermediat
 
 ## Status reporting rules
 Report only verified outcomes. Clearly distinguish **audio uploaded**, **transcript generated**, **storyboard prepared**, **render setup prepared**, **render succeeded**, **assistant inspection passed**, **final output published**, and **user review/approval**. Never claim a video is complete until the final MP4 is verified and its final path/link is recorded.
+
+## Mandatory full-video quality review gate (every lesson)
+
+This release gate is required for every lesson. A successful render or valid MP4 does not prove the lesson is correct.
+
+### Transcript and coverage
+- [ ] Compare the actual audio transcript and word/segment timestamps against the canonical source and narration script.
+- [ ] Confirm no missing or duplicated spoken sections, cut-off sentences, or unexplained audio gaps.
+- [ ] Anchor scene boundaries to actual spoken phrases and timestamps.
+
+### Scene-by-scene accuracy
+- [ ] Track each scene's narration anchor, time range, code, output, caption, and transition.
+- [ ] Whenever narration changes a variable, value, example, or program state, verify the matching visual state appears at the right time.
+- [ ] Verify Python syntax and expected outputs, including types, conversions, errors, predictions, and practice exercises.
+- [ ] Preserve learner pauses and do not reveal answers before the narration does.
+
+### Inspect the complete rendered MP4
+- [ ] Inspect the entire video from beginning to end; a contact sheet or sparse screenshots alone are insufficient.
+- [ ] Inspect every scene transition and meaningful code/output state, with denser checks around suspected defects.
+- [ ] Check missing states, stale examples, blank or repeated frames, flicker, clipping, readability, and layout continuity.
+- [ ] Verify audio continuity, narration/visual alignment, opening, recap, ending, and total duration.
+
+### Defect log and rerender
+- [ ] Log each defect with timestamp, expected state, actual state, and root cause.
+- [ ] Fix the underlying storyboard/configuration/renderer issue; do not shift timestamps randomly or patch only the first reported example.
+- [ ] Rerender after any content or timing change and repeat relevant checks. After broad changes, recheck the entire lesson.
+- [ ] Record the render run/commit and what was actually inspected. If full inspection is not possible, disclose the limitation and do not mark review as passed.
+
+### Release gate
+- [ ] All checks pass, or any exception is explicitly documented and approved.
+- [ ] Publish the verified MP4 to `public/videos/final/` and update the production status.
+- [ ] Record assistant inspection separately from user review/approval. Do not hand off until assistant inspection passes.
