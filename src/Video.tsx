@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Audio, Sequence, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { lesson } from "./lesson";
 import "./styles.css";
 
@@ -30,7 +30,7 @@ export const PyLearnVideo: React.FC = () => {
     <AbsoluteFill style={{ background: colors.bg, color: colors.text, fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", padding: 66, overflow: "hidden" }}>
       {lesson.narration.map((track) => (
         <Sequence key={track.src} from={Math.round(track.start * fps)}>
-          <Audio src={track.src} />
+          <Audio src={staticFile(track.src.replace(/^\//, ""))} />
         </Sequence>
       ))}
       <div className="glow glow-one" /><div className="glow glow-two" />
