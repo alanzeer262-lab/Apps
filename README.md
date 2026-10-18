@@ -4,7 +4,7 @@ A reusable Remotion + React + TypeScript production template for narrated Python
 
 ## First lesson: Your First Python Program
 
-The visuals are aligned to the actual recorded narration. Before rendering, the workflow transcribes both MP3s with word timestamps, matches each scene's spoken anchor phrase, and calculates scene boundaries from those matches. Output panels have their own spoken anchors. The narration is never sped up, stretched, or proportionally scaled to storyboard timestamps.
+The visuals are aligned to the actual recorded narration. Before rendering, the workflow transcribes both MP3s with word timestamps, matches scene boundaries, code appearances, output reveals, and intentional error/correction states to spoken phrases. The narration is never sped up, stretched, or proportionally scaled to storyboard timestamps.
 
 ### Add the narration files
 
