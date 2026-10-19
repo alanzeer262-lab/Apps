@@ -98,7 +98,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Apply the agreed learner handoff consistently to this script: lesson video → practice video; practice video → exercise required to unlock next lesson, app practice optional.
+1. The agreed handoff is applied: lesson video → practice video; practice video → exercise required to unlock next lesson, app practice optional.
 2. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 03 — Numbers and Operators
@@ -151,7 +151,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The transformation example outputs `DATA, Python`, `data, python`, and `DATA, coding`.
 - The added comma-separated list example outputs `['python', ' pandas', ' pandas', ' machine learning']`, confirming that outer stripping does not trim every item.
 - Companion outputs were verified: cleaned text `data science, python`; split list `['data science', ' python']`; normalized search outputs `python` and `True`.
-- The scripts do not display a completed required exercise solution. Real PyLearn navigation still must be verified before production.
+- The scripts do not display a completed required exercise solution. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -178,7 +178,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The score and attendance conditions each output `True`, and their combined `and` condition outputs `True`.
 - The `or` and `not` examples output `True` and `False`; the readable condition example outputs `True`.
 - Companion temperature checks output `True`, `True`, and the combined condition `True`. Boundary results for 17, 18, 26, and 27 are respectively `False`, `True`, `True`, and `False`.
-- The examples do not reveal the completed required app exercise. Real PyLearn navigation still must be verified before production.
+- The examples do not reveal the completed required app exercise. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -208,7 +208,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The separate pages example outputs `3`, `45`, `18`, and `True`.
 - Companion examples output `4`, `510`, `85`, and `210`; indexing/slicing/appending output `95`, `[85, 210]`, and `[120, 85, 210, 95, 160]`.
 - The empty-list division risk is correctly explained; no division-by-zero sample is presented as a successful run.
-- The required exercise solution is not displayed. Real PyLearn navigation still must be verified before production.
+- The required exercise solution is not displayed. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -292,7 +292,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Frequency counting outputs `{'A': 3, 'B': 2, 'C': 1}`.
 - Companion dictionary outputs `The Little Prince` and `96`; tuple output is `The Hobbit: 310 pages`; set outputs `2` and `True`.
 - The lesson's example uses a set literal with a duplicate; Python collapses duplicate values as expected. The narration correctly warns not to rely on set order.
-- No completed required-exercise solution is shown. Real PyLearn navigation and production prerequisites remain unverified.
+- No completed required-exercise solution is shown. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -319,7 +319,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The script correctly distinguishes the function that prints from the function that returns.
 - Companion conversion outputs `1.5`; reused value outputs `Hours: 1.5` and `3.0`; print-only function example outputs `8` followed by `None`.
 - Empty-list behavior is explicitly described as an edge case rather than incorrectly presented as a successful average.
-- No completed required-exercise solution is shown. Real PyLearn navigation and production prerequisites remain unverified.
+- No completed required-exercise solution is shown. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -347,7 +347,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - `int("88")` outputs `88`; `int("oops")` raises `ValueError` as expected.
 - The safe-conversion example catches `ValueError`, then outputs `None` and `True`.
 - Companion comprehension outputs `[4, 8, 12]`; companion mean outputs `20`; `safe_int("42")` and `safe_int("oops")` output `42` and `None`.
-- The scripts do not complete the required safe-conversion exercise or expose its full solution. Real PyLearn navigation and production prerequisites remain unverified.
+- The scripts do not complete the required safe-conversion exercise or expose its full solution. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -386,9 +386,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 13 — Project 2: Study Time Calculator
 
@@ -412,9 +412,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 14 — Project 3: Clean My Learning Topics
 
@@ -440,9 +440,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 15 — Project 4: Score Summary
 
@@ -457,7 +457,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The threshold example outputs `True` for score 70 and threshold 70, correctly including the boundary.
 - The companion ratings example outputs count `4`, average `3.5`, highest `5`, and lowest `2`; its threshold example outputs `True`.
 - The scripts explain empty-list handling without inventing a specific empty-result structure that the canonical brief does not define.
-- Required app test values and the completed solution are not shown as solved output. Real PyLearn project-task navigation and production prerequisites remain unverified.
+- Required app test values and the completed solution are not shown as solved output. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -465,9 +465,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 16 — Project 5: Multi-Record Progress Analyzer
 
@@ -490,9 +490,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 17 — Project 6: Grade Distribution
 
@@ -507,7 +507,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The separate frequency-count example outputs `{'A': 2, 'B': 2, 'C': 1}`.
 - Companion speed example outputs `Medium`; its category frequency table outputs `{'Fast': 2, 'Medium': 2, 'Slow': 1}`.
 - The main script describes testing boundary pairs and checking that category counts sum to the number of inputs, without revealing the source's required example distribution.
-- The required grade-conversion and grade-counting functions are not implemented in the script. Real PyLearn project-task navigation and production prerequisites remain unverified.
+- The required grade-conversion and grade-counting functions are not implemented in the script. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -515,9 +515,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 18 — Project 7: Reusable Analysis Toolkit
 
@@ -531,7 +531,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Reusing `total_points([5, 10, 15])` and dividing by three outputs `10.0`.
 - Companion helper `total_pages([10, 20, 30])` outputs `60`; reuse with two inputs outputs `20` and `40`.
 - The scripts correctly distinguish the two required functions and emphasize clear inputs, useful return values, and explicit empty-case behavior.
-- The lesson does not invent the project's exact empty-case outputs or reveal the full required functions. Real PyLearn project-task navigation and production prerequisites remain unverified.
+- The lesson does not invent the project's exact empty-case outputs or reveal the full required functions. App UI footage is not required; use the agreed learner handoff.
 
 ### Remaining production gates
 
@@ -539,9 +539,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 19 — Project 8: Handle Imperfect Scores
 
@@ -565,9 +565,9 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required project task screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user.
+2. Use the agreed lesson-to-practice handoff; no app UI footage is required.
+3. When rendering is possible, watch the full video at normal speed and verify code/output synchronization.
 
 ## Lesson 20 — Mini Gradebook Capstone
 
