@@ -55,3 +55,10 @@ If you'd like extra hands-on practice, you can also try your code in the PyLearn
 - [ ] Keep the examples separate from the required app exercise.
 - [ ] Keep narration and visual directions separate.
 - [ ] Watch the full render before approval.
+
+
+## Production-critical rule — traceable transformation and truthful results
+- Show the sequence explicitly: **source/input → each meaningful transformation → final output**. Use the actual data and code from this script; keep transitions readable and in causal order. Do not jump-cut from input to a result without showing or explaining the operation that produced it.
+- Any result shown must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as schematic or omit the value.
+- For toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative success values, or output inconsistent with the code/data. Keep sample dataset, code, and displayed result synchronized.
+- For practice videos, use the script's own independent example and verify it. Do not reveal the required PyLearn exercise solution.
