@@ -6,6 +6,14 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/08-build-validate.md, branch ccr-c7f6fdd7-xpzi3g.
 **Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
 
+## Visual execution notes — make each decision visible
+
+Before Scene 1 output appears, show the four original scores in order: 88, 150, -1, 72. Move each through the 0–100 gate; only 88 and 72 should exit through the accepted lane. The final list must come from the displayed comprehension.
+
+In Scene 2, begin with the exact raw strings `["88", "oops", "", "72"]`. Animate each value through conversion first, then the range check. Show “oops” and the empty string entering the rejected lane with the reason “invalid number”; do not treat them as range failures. Reveal the printed lists only after the loop runs.
+
+In Scene 3, show 0 and 100 on the inclusive boundaries and -1 and 101 just outside them. The Boolean values must appear in the same order as the code. Use the validation gate to explain the result, not to decorate it.
+
 ## Scene 1 — Validation is a gate
 
 **Visual:** Show a short list of scores, then highlight values outside the allowed range.
