@@ -1,7 +1,7 @@
 # PyLearn Python Basics — Runway Script Index
 
 **Purpose:** Canonical index for full narrated scripts intended for Runway production.  
-**Review status:** Lesson-by-lesson source/content review and the two identified script corrections are complete. The user has confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled. App UI footage is not a prerequisite: use simple narration to direct learners to the next practice video, then tell them to complete the exercise to unlock the next lesson. Final rendered-video watch-through remains required. Track details in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
+**Review status:** Lesson-by-lesson source/content review and the two identified script corrections are complete. The user has confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled. The agreed lesson-to-practice and practice-to-exercise endings have now been applied across all 20 lesson scripts and all 20 practice scripts. App UI footage is not a prerequisite. Final rendered-video watch-through remains required. Track details in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
 **Curriculum source:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.  
 **Learner-flow rule:** Each lesson video ends by directing learners to watch the matching practice video and encouraging them to watch it. Each practice video ends by telling learners to complete the exercise to unlock the next lesson; trying the exercise in the PyLearn app is optional extra practice. Do not describe unbuilt app screens or invent navigation paths.
 
@@ -88,6 +88,8 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - [x] Separate guided-practice script file exists and is listed for each of the 20 modules.
 - [x] User confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled.
 - [x] Runnable code examples and stated outputs checked during the lesson-by-lesson review; final rendered-video synchronization checks remain pending.
-- [x] Lesson/practice ending flow defined without requiring unfinished app UI.
+- [x] Agreed lesson-to-practice handoff applied to all 20 lesson scripts.
+- [x] Agreed exercise-unlock ending applied to all 20 practice scripts; optional app practice is mentioned.
+- [x] No unfinished app UI or invented navigation is required.
 - [ ] Narration generated with the approved voice setup when production credits are available.
 - [ ] Every rendered video watched from beginning to end at normal speed before approval.
