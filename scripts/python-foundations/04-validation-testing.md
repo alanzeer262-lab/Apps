@@ -87,7 +87,7 @@ This example demonstrates the conversion failure safely. The full toolkit should
 
 ## Scene 4 — Read both sides of a failure
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Keep the function definition from Scene 1 in the editor. Run the expected-versus-actual comparison below it; show the two printed values before the assertion confirmation.
 
 **Narration:**
 
