@@ -111,16 +111,16 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 
 | # | Lesson | Script |
 |---:|---|---|
-| 01 | Debugging: Ask Smaller Questions | [Open script](../scripts/python-foundations/01-01-debugging.md) |
-| 02 | Files and CSV Records | [Open script](../scripts/python-foundations/02-02-files-csv.md) |
-| 03 | Organize a Growing Program | [Open script](../scripts/python-foundations/03-03-modules-organization.md) |
-| 04 | Validation and Testing | [Open script](../scripts/python-foundations/04-04-validation-testing.md) |
-| 05 | Think in Tables Before pandas | [Open script](../scripts/python-foundations/05-05-data-shaped-python.md) |
-| 06 | From Raw Records to a Reliable Report | [Open script](../scripts/python-foundations/06-06-analysis-ready-pipeline.md) |
-| 07 | Build: Load a Scores CSV | [Open script](../scripts/python-foundations/07-07-build-loader.md) |
-| 08 | Build: Validate Intake | [Open script](../scripts/python-foundations/08-08-build-validate.md) |
-| 09 | Build: Summary Report | [Open script](../scripts/python-foundations/09-09-build-summary.md) |
-| 10 | Build: Run the Pipeline | [Open script](../scripts/python-foundations/10-10-build-pipeline.md) |
+| 01 | Debugging: Ask Smaller Questions | [Open script](../scripts/python-foundations/01-debugging.md) |
+| 02 | Files and CSV Records | [Open script](../scripts/python-foundations/02-files-csv.md) |
+| 03 | Organize a Growing Program | [Open script](../scripts/python-foundations/03-modules-organization.md) |
+| 04 | Validation and Testing | [Open script](../scripts/python-foundations/04-validation-testing.md) |
+| 05 | Think in Tables Before pandas | [Open script](../scripts/python-foundations/05-data-shaped-python.md) |
+| 06 | From Raw Records to a Reliable Report | [Open script](../scripts/python-foundations/06-analysis-ready-pipeline.md) |
+| 07 | Build: Load a Scores CSV | [Open script](../scripts/python-foundations/07-build-loader.md) |
+| 08 | Build: Validate Intake | [Open script](../scripts/python-foundations/08-build-validate.md) |
+| 09 | Build: Summary Report | [Open script](../scripts/python-foundations/09-build-summary.md) |
+| 10 | Build: Run the Pipeline | [Open script](../scripts/python-foundations/10-build-pipeline.md) |
 | 11 | Learning Analytics Toolkit — Final Build | [Open script](../scripts/python-foundations/11-learning-analytics-toolkit-capstone.md) |
 
 ## Guided-practice companion scripts
