@@ -15,18 +15,20 @@
 A program that works once is not automatically trustworthy. Testing means checking behavior against results we already know. A test should be small, specific, repeatable, and tied to something important.
 
 **Code**
-    
-    def average_score(scores):
-            if not scores:
-                return 0.0
-            return sum(scores) / len(scores)
-    
-        assert average_score([10, 20]) == 15
-        print("Average test passed")
+```python
+def average_score(scores):
+    if not scores:
+        return 0.0
+    return sum(scores) / len(scores)
+
+assert average_score([10, 20]) == 15
+print("Average test passed")
+```
 
 **Expected output**
-    
-    Average test passed
+```text
+Average test passed
+```
 
 **Narration:**
 
@@ -41,15 +43,17 @@ An assert stops the program if its condition is false. If execution reaches the 
 A normal example is useful, but boundaries and empty input often expose bugs. We should check each behavior we care about.
 
 **Code**
-    
-    assert average_score([]) == 0.0
-        assert average_score([7]) == 7
-        assert average_score([0, 100]) == 50
-        print("Boundary tests passed")
+```python
+assert average_score([]) == 0.0
+assert average_score([7]) == 7
+assert average_score([0, 100]) == 50
+print("Boundary tests passed")
+```
 
 **Expected output**
-    
-    Boundary tests passed
+```text
+Boundary tests passed
+```
 
 **Narration:**
 
@@ -64,16 +68,18 @@ These tests check an empty list, a single value, and a wide range. The expected 
 Testing should include invalid values too. Suppose a score arrives as text and contains a word instead of digits. The program should report that row as invalid, not crash halfway through the report.
 
 **Code**
-    
-    raw_score = "oops"
-        try:
-            score = int(raw_score)
-        except ValueError:
-            print("Invalid score")
+```python
+raw_score = "oops"
+try:
+    score = int(raw_score)
+except ValueError:
+    print("Invalid score")
+```
 
 **Expected output**
-    
-    Invalid score
+```text
+Invalid score
+```
 
 **Narration:**
 
@@ -88,17 +94,19 @@ This example demonstrates the conversion failure safely. The full toolkit should
 When a test fails, compare the expected result with the actual result before changing code. Try normal input, boundary input, empty input, and invalid input. A few focused tests can provide more confidence than one huge example.
 
 **Code**
-    
-    expected = 15
-        actual = average_score([10, 20])
-        print("Expected:", expected)
-        print("Actual:", actual)
-        assert actual == expected
+```python
+expected = 15
+actual = average_score([10, 20])
+print("Expected:", expected)
+print("Actual:", actual)
+assert actual == expected
+```
 
 **Expected output**
-    
-    Expected: 15
-        Actual: 15
+```text
+Expected: 15
+Actual: 15
+```
 
 **Narration:**
 
@@ -140,3 +148,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - [ ] Keep narration separate from production directions.
 - [ ] Do not show the required app exercise solution or hidden tests.
 - [ ] Watch the complete rendered video at normal speed before approval.
+
+
+**Visual transition rule for this lesson:** Show each assertion as a specific gate with its expected value visible before execution. On success, reveal the pass message only after the assertion completes; on failure, pause at the failed condition and compare expected versus actual. For invalid conversion, trace the text value into the exception path and show the handled message, not a fabricated successful conversion.
