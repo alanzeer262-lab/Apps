@@ -170,3 +170,11 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - **Avoid:** flashy glitch effects, unnecessary animation, tiny text, fake app screens, completed exercise answers, excessive neon, or using the same input → code → output card composition for every scene.
 
 This visual guide supplements the scene-specific directions in all 11 lesson scripts and 11 practice scripts. The scripts have been updated; the rendered videos still require production and review.
+
+
+## Mandatory production QA: input-to-output and real results
+- Build every visual transition in causal order: actual input/data → visible transformation → actual result. Never skip the operation that explains the result.
+- Run displayed Python examples against the displayed sample data and capture/verify the exact output before rendering. Do not invent metrics, report rows, or dashboard values. If a result has not been executed and verified, do not present it as real.
+- In toolkit lessons and capstone, show the genuine reproducible result a learner can achieve by implementing the tool. Keep data, code, and output synchronized.
+- Practice examples must be executed and verified too, while staying separate from the required PyLearn exercise solution.
+- This rule applies to all Track 2 lesson and practice scripts. It is a production requirement, not a decorative style preference.
