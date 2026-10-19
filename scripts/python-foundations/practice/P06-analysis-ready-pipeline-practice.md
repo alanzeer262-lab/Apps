@@ -53,3 +53,10 @@ The original row count belongs in the report even if some values are later rejec
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+## Production-critical rule — traceable transformation and truthful results
+- Show the sequence explicitly: **source/input → each meaningful transformation → final output**. Use the actual data and code from this script; keep transitions readable and in causal order. Do not jump-cut from input to a result without showing or explaining the operation that produced it.
+- Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
+- For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
+- For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
