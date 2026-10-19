@@ -1,18 +1,18 @@
 # PyLearn Python Basics — Runway Script Index
 
 **Purpose:** Canonical index for full narrated scripts intended for Runway production.  
-**Review status:** Lesson-by-lesson source/content review and the two identified script corrections are complete. Listing a file here does not mean it is approved for production; the exact voice ID, real app navigation, and final rendered-video watch-through remain required. Track details in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
+**Review status:** Lesson-by-lesson source/content review and the two identified script corrections are complete. The user has confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled. App UI footage is not a prerequisite: use simple narration to direct learners to the next practice video, then tell them to complete the exercise to unlock the next lesson. Final rendered-video watch-through remains required. Track details in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
 **Curriculum source:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.  
-**Navigation rule:** Every lesson video must end by directing learners to the exact required PyLearn coding exercise. Practice Drills are optional; passing the required exercise unlocks the next lesson. Project videos use the project-specific ending. The capstone ending directs the learner to Mini Gradebook Capstone, Milestone 1.
+**Learner-flow rule:** Each lesson video ends by directing learners to watch the matching practice video and encouraging them to watch it. Each practice video ends by telling learners to complete the exercise to unlock the next lesson; trying the exercise in the PyLearn app is optional extra practice. Do not describe unbuilt app screens or invent navigation paths.
 
 ## Mandatory voice lock
 
 - Voice name: **Kendrick**
 - Model: **ElevenLabs v3**
-- Voice ID: **Not recovered in the reviewed repository records.** Do not guess or substitute an ID. Insert the exact approved Kendrick voice ID from the original Runway setup before generating narration.
+- Voice setup: **Confirmed by the user as settled.** Use the existing approved Kendrick voice ID with ElevenLabs v3; do not substitute another voice. The repository need not contain the ID if it is already configured in the production tool.
 - Use the same approved voice identity across all parts and lessons.
 - Keep narration text separate from visual directions; never speak scene headings or production notes.
-- Do not spend narration-generation credits until the exact voice ID is verified.
+- Before generating narration, ensure the production tool is still configured to use the approved Kendrick voice and ElevenLabs v3.
 
 ## Full lesson-video scripts
 
@@ -46,10 +46,10 @@
 - Every code sample and stated output must be verified in Python before rendering.
 - Visual directions specify code reveal, run timing, output timing, highlights, and prediction pauses.
 - Required app exercise solutions and hidden tests are never shown.
-- Concept lessons end with the exact required-exercise navigation instruction.
+- Lesson videos end by recommending the matching practice video; practice videos tell learners to complete the exercise to unlock the next lesson.
 - Project videos explain the approach without giving the complete solution.
 - Capstone video explains the five milestones without revealing implementations or completed outputs.
-- The final screen uses verified PyLearn navigation; do not invent app UI.
+- No app UI footage is required while the app is unfinished; use neutral code/practice visuals and narration without inventing app screens.
 
 ## Guided-practice companion scripts
 
@@ -86,8 +86,8 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - [x] Script file exists for each of the 20 lesson videos (not equivalent to review approval).
 - [x] Source-by-source content review and revision completed for Lessons 1–20, one lesson at a time.
 - [x] Separate guided-practice script file exists and is listed for each of the 20 modules.
-- [ ] Exact approved Kendrick voice ID recovered and verified against the original Runway setup.
+- [x] User confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled.
 - [x] Runnable code examples and stated outputs checked during the lesson-by-lesson review; final rendered-video synchronization checks remain pending.
-- [ ] Real PyLearn navigation footage verified for every ending.
-- [ ] Narration generated only after voice ID verification and approval.
+- [x] Lesson/practice ending flow defined without requiring unfinished app UI.
+- [ ] Narration generated with the approved voice setup when production credits are available.
 - [ ] Every rendered video watched from beginning to end at normal speed before approval.
