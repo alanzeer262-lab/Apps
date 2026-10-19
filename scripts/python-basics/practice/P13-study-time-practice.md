@@ -41,14 +41,16 @@ print(total_minutes / sessions)
 
 **Narration:** Average session length is total minutes divided by the number of sessions. Before using this formula in a function, decide what should happen if the session count is zero.
 
-## Close
+## Close — Complete the exercise
 
-**Narration:** Open PyLearn and find the Study Time Calculator project task. This is a fresh example, not the required solution. Complete and pass the project exercise in PyLearn to unlock the next lesson.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
-- [ ] Verify exact approved Kendrick voice ID before generation.
-- [ ] Use ElevenLabs v3 with the same approved voice identity.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
+- [x] Use the approved Kendrick voice with ElevenLabs v3, as confirmed by the user.
 - [ ] Verify code and outputs in Python.
 - [ ] Keep code/output synchronized with narration.
 - [ ] Do not reveal required app exercise solutions.
-- [ ] End by directing the learner to the required PyLearn task.
+- [x] End by telling the learner to complete the exercise to unlock the next lesson; app practice is optional.
