@@ -45,3 +45,6 @@ The list has three values, but the code divides by four. Correct the assumption,
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+**Visual transition rule for this practice:** Keep the three temperature values visible, highlight the incorrect divisor, then show the printed average and count. For the runtime-error example, show the exact input string entering `int()` and the actual `ValueError`; do not invent a successful output.
