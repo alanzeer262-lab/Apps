@@ -24,11 +24,24 @@
 **Visual:** Show PyLearn app screen/card: **Mini Gradebook Capstone** with five milestone tiles, all shown as tasks to complete—not as completed. Button text: “Start Milestone 1”.
 **Narration:** “Now open the Mini Gradebook Capstone in PyLearn. Complete the five milestones in order. Read each prompt, write your own function, run the tests, and use the hints only when you need them. The app checks your work; watching this video does not complete the milestones for you.”
 
-**End card:** “Open PyLearn → Mini Gradebook Capstone → Start Milestone 1”
+## Final call to action — required for YouTube and in-app versions
+
+**Visual:** Show the PyLearn app's Practice section and the Mini Gradebook Capstone card. Show the milestone list, but do not show completed solution code or milestone answers.
+
+**Narration:**
+
+You've seen how the Mini Gradebook project is organized. Now it's time to build it yourself.
+
+Open PyLearn and go to the Practice section, then open the Mini Gradebook Capstone. If you're watching on YouTube, open the app and find the same capstone there.
+
+Work through the milestones one at a time. Write and run your own code, submit your work, and use the feedback to improve it. Don't skip the thinking part by copying a solution — the goal is to learn to build it yourself.
+
+Open PyLearn and start Milestone 1. Good luck!
+
+**End card:** “Open PyLearn → Practice → Mini Gradebook Capstone → Start Milestone 1”
 
 ## Release checklist
 - [ ] No completed solution code or milestone answer outputs are shown.
-- [ ] The sample records are readable and match the canonical capstone.
+- [ ] The final card directs both YouTube and in-app viewers to Practice in PyLearn.
 - [ ] The five milestone goals appear in the correct order.
-- [ ] Video clearly sends the learner into PyLearn to solve and submit.
 - [ ] Full render reviewed end-to-end before user review.
