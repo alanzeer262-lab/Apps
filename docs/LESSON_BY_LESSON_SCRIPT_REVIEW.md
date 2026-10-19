@@ -19,7 +19,7 @@
 
 **Canonical source:** `content/python-basics/modules/01-first-program.md`
 **Script:** `scripts/python-basics/01-your-first-python-program.md`
-**Review status:** Lesson and companion script content reviewed; runnable examples executed successfully and the intentionally broken quote was confirmed to raise a SyntaxError. Not approved for video production yet: the new practice-video handoff has been applied to Lesson 1; the rendered video watch-through must happen after production.
+**Review status:** Lesson and companion script content reviewed; runnable examples executed successfully and the intentionally broken quote was confirmed to raise a SyntaxError. The agreed learner handoff is applied. The rendered video still requires a full watch-through after production.
 
 ### Findings and actions
 
@@ -54,6 +54,10 @@ The runnable Lesson 1 and P01 companion examples were executed in Python during 
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Apply the agreed lesson-to-practice and practice-to-exercise endings consistently across the remaining scripts.
 2. When rendering is possible, review the complete video at normal speed and check code/output synchronization before approval.
 
@@ -62,7 +66,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 ## Guided Practice 01 — First Program
 
 **Script:** `scripts/python-basics/practice/P01-first-program-practice.md`
-**Review status:** Content reviewed against the Lesson 1 goals; runnable examples executed; corrected quote example now includes its exact expected output. Not production-approved while the voice ID and real app navigation remain unverified. The companion ending correctly states that it does not complete the required app exercise or unlock the next lesson.
+**Review status:** Content reviewed against the Lesson 1 goals; runnable examples executed; corrected quote example now includes its exact expected output. The voice setup is confirmed by the user, and no app UI footage is required. The rendered video still needs a full watch-through after production.
 
 ## Lesson 02 — Variables and Data Types
 
@@ -86,9 +90,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Executed the prediction example: `25`, `<class 'str'>`, `25`, `<class 'int'>`, `50`, each on its own line.
 - Executed the companion's type and conversion examples: output is the expected four type names and `30`.
 - Confirmed `int("hello")` and `int("twenty-five")` raise `ValueError`; these are deliberately failing demonstrations and must be run separately from valid examples.
-- The learner task does not show a completed solution. The video ending still requires verified real PyLearn navigation footage and the correct required exercise screen.
+- The learner task does not show a completed solution. The video ending now directs learners to the practice video; the practice ending tells them to complete the exercise to unlock the next lesson, with app practice optional.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Apply the agreed learner handoff consistently to this script: lesson video → practice video; practice video → exercise required to unlock next lesson, app practice optional.
 2. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -113,9 +121,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The separate 245-minute example outputs `4.083333333333333`, `4`, `5`, and `16.3`.
 - Companion outputs were verified: `4.083333333333333`, then `4` and `5`, and rounded result `4.1`.
 - The required exercise's value of 425 minutes is not used in the revised teaching examples; the full exercise answer is not shown.
-- Real PyLearn navigation still must be verified before video production.
+- App UI footage is not required; the agreed learner handoff is used instead.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
@@ -143,6 +155,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -165,6 +181,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The examples do not reveal the completed required app exercise. Real PyLearn navigation still must be verified before production.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
@@ -192,6 +212,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -212,9 +236,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Companion battery 18 example outputs `Low battery`; battery 55 example outputs `Medium`.
 - Companion boundary checks return: 20 → `Low`, 21 → `Medium`, 60 → `Medium`, 61 → `High`.
 - The main script preserves the required exercise as learner work and does not show the complete score-classifier solution.
-- The source-derived script is content-reviewed, but video production remains unapproved until the voice ID and actual PyLearn navigation are verified and the rendered video receives a full watch-through.
+- Content review is complete; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
@@ -241,6 +269,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -263,6 +295,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - No completed required-exercise solution is shown. Real PyLearn navigation and production prerequisites remain unverified.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
@@ -287,6 +323,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -310,6 +350,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The scripts do not complete the required safe-conversion exercise or expose its full solution. Real PyLearn navigation and production prerequisites remain unverified.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
@@ -338,6 +382,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -356,9 +404,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The companion example with 95 minutes outputs `1.5833333333333333`, `1`, and `35`; the average example outputs `20.0`.
 - The script correctly discusses zero sessions and tells learners to implement the specified message, without giving the complete required function.
 - The required project tests (360 minutes over 6 sessions, 65 minutes over 2 sessions, and zero sessions) are not presented as solved outputs.
-- Real PyLearn project-task navigation and production prerequisites remain unverified.
+- App UI footage is not required; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
@@ -380,9 +432,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Case-insensitive comparison outputs `True`.
 - Companion hobby example outputs `['hiking', ' cooking', ' hiking']`; normalizing one hobby outputs `cooking`; normalized membership outputs `True`.
 - The companion uses hobbies rather than the required project data and does not reveal the required function solution.
-- Real PyLearn project-task navigation and production prerequisites remain unverified.
+- App UI footage is not required; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
@@ -405,6 +461,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -422,9 +482,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The separate passing-rule example outputs `Mia passed` and `Iris passed`, matching the threshold of 70.
 - Companion accumulator outputs `7`; max example outputs `3`.
 - The main script explains empty input and preserving order without presenting the full analyzer solution or the canonical required records as a completed result.
-- Real PyLearn project-task navigation and production prerequisites remain unverified.
+- App UI footage is not required; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
@@ -447,6 +511,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -467,6 +535,10 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
+
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
@@ -485,9 +557,13 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The companion quantity example outputs `15`; its invalid-text example outputs `True` after safely representing the value as None.
 - The main script correctly distinguishes empty text from invalid non-empty text and says invalid scores must not be silently changed to zero.
 - **Script correction committed:** the invalid conversion is explicitly labeled as an intentional error example, marked “expected ValueError; run separately,” and includes the expected-error note.
-- Real PyLearn project-task navigation and production prerequisites remain unverified.
+- App UI footage is not required; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path and required project task screen.
@@ -506,12 +582,16 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The companion plant-record loop outputs `Basil 4` and `Mint 2`; its condition example outputs `True`.
 - **Script correction committed:** Scene 2 now defines a small, unrelated sample `records` list before the loop and states the expected output (`Mia 81`, `Noah 67`). This is an inspection example only; it does not reveal the capstone solution.
 - The capstone ending correctly instructs learners to start with Milestone 1, submit, read feedback, fix issues, and proceed one milestone at a time.
-- Real PyLearn navigation and production prerequisites remain unverified.
+- App UI footage is not required; final approval requires a full watch-through of the rendered video.
 
 ### Remaining production gates
+
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
+2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+
 
 1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
 2. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-**Status:** Source review and the two identified script corrections are complete. The user confirmed the approved voice setup. The agreed learner handoff removes the need for real app footage. Remaining work is to apply the handoff consistently, render when credits are available, and watch each finished video end to end.
+**Status:** Source review and the two identified script corrections are complete. The user confirmed the approved voice setup. The agreed learner handoff removes the need for real app footage. The handoff is now applied across all 20 lesson scripts and all 20 practice companions. Remaining work is to render when credits are available and watch each finished video end to end.
