@@ -197,3 +197,10 @@ This visual guide supplements the scene-specific directions in all 11 lesson scr
 - Run the remaining examples in a clean Python environment, including scenes that intentionally carry state between consecutive scenes.
 - Render and review the videos at normal speed, checking that transitions are readable, code is legible on mobile, and output is revealed only after execution.
 - The scripts and QA directions are updated; this does **not** mean the videos have been rendered or approved yet.
+
+
+### Verification note — 2026-10-19
+
+Core Track 2 example values were checked in Python: debugging arithmetic; CSV parsing/conversion; module averages and threshold counts; average boundary cases; table filtering/grouping; raw-score validation; loader parsing; summary metrics; the end-to-end mini pipeline; and the capstone reference-report logic. The capstone reference logic printed the documented result: 7 rows read, 3 valid, 4 excluded, average 85.0, top performer Mira, and grade counts A=1, B=1, C=1, D=0, F=0.
+
+Before final video approval, run the committed `capstone_reference_demo.py` file itself in the production environment and capture its stdout from that exact revision. Then confirm the rendered report matches the capture. The video assets remain unrendered/unapproved at this stage.
