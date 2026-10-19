@@ -60,7 +60,15 @@ print(minutes_value + 5)
 
 ## Scene 4 — Notice invalid input
 
-**Visual:** In a separate run, change the text to `"twenty-five"` and demonstrate the conversion error. Do not leave the error on screen without explanation.
+**Visual:** In a separate run, change the text to `"twenty-five"` and demonstrate the conversion error. Keep this failing example separate from the valid conversion code, and explain the error before moving on.
+
+**Code — expected ValueError**
+```python
+minutes_text = "twenty-five"
+minutes_value = int(minutes_text)
+```
+
+**Expected result:** Python raises a `ValueError` because the text is not a valid integer representation.
 
 **Narration:** Words such as twenty-five are not written as integer digits, so int cannot convert them directly. A real program needs a deliberate rule for invalid input.
 
