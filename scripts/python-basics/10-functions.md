@@ -100,7 +100,7 @@ These two functions may look similar, but they behave differently. The first dis
 Let's call the returning version.
 
 **Code**
-```result
+```python
 result = double(7)
 print(result)
 print(result + 3)
