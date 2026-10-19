@@ -10,8 +10,8 @@ This folder contains the **pre-audio phase** for the full Python Basics track. T
 - Never invent or guess the custom voice ID. If Runway cannot list it, stop and report the limitation rather than silently choosing another voice.
 
 ## Lesson order
-1. [Your First Python Program](../../docs/LESSON_01_FINAL_NARRATION_TEXT.md) — existing approved source script; check its voice lock before submission.
-2. [Variables and Data Types](../../docs/LESSON_02_VARIABLES_AND_DATA_TYPES_SCRIPT.md) — existing script; must be reviewed against the canonical module and the latest full-video defect log before audio generation.
+1. [Your First Python Program](01-your-first-python-program.md) — prepared Runway-ready copy with the required Kendrick voice lock.
+2. [Variables and Data Types](02-variables-and-data-types.md) — prepared copy with voice lock; review the script and source coverage before audio generation.
 3. [Numbers and Operators](03-numbers-and-operators.md)
 4. [Strings and f-strings](04-strings-and-f-strings.md)
 5. [Booleans and Comparisons](05-booleans-and-comparisons.md)
