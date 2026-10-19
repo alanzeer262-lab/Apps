@@ -96,3 +96,61 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - [x] No unfinished app UI or invented navigation is required.
 - [ ] Narration generated with the approved voice setup when production credits are available.
 - [ ] Every rendered video watched from beginning to end at normal speed before approval.
+
+
+---
+
+# Track 2 — Python Foundations: Build & Bridge
+
+**Canonical curriculum:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`, `content/python-foundations/track.yaml`.
+**Voice lock:** Kendrick / ElevenLabs v3, using the user's already-approved configuration. Do not substitute a voice.
+**Learner flow:** Lessons 1–10 direct to the matching practice video; practices 1–10 direct learners to complete the exercise to unlock the next lesson. The final capstone lesson directs to capstone practice; the final practice congratulates the learner on completing Python Foundations and does not mention unlocking another lesson.
+**App UI:** No unfinished app UI or invented navigation is required. Use neutral code and practice visuals.
+
+## Lesson video scripts
+
+| # | Lesson | Script |
+|---:|---|---|
+| 01 | Debugging: Ask Smaller Questions | [Open script](../scripts/python-foundations/01-01-debugging.md) |
+| 02 | Files and CSV Records | [Open script](../scripts/python-foundations/02-02-files-csv.md) |
+| 03 | Organize a Growing Program | [Open script](../scripts/python-foundations/03-03-modules-organization.md) |
+| 04 | Validation and Testing | [Open script](../scripts/python-foundations/04-04-validation-testing.md) |
+| 05 | Think in Tables Before pandas | [Open script](../scripts/python-foundations/05-05-data-shaped-python.md) |
+| 06 | From Raw Records to a Reliable Report | [Open script](../scripts/python-foundations/06-06-analysis-ready-pipeline.md) |
+| 07 | Build: Load a Scores CSV | [Open script](../scripts/python-foundations/07-07-build-loader.md) |
+| 08 | Build: Validate Intake | [Open script](../scripts/python-foundations/08-08-build-validate.md) |
+| 09 | Build: Summary Report | [Open script](../scripts/python-foundations/09-09-build-summary.md) |
+| 10 | Build: Run the Pipeline | [Open script](../scripts/python-foundations/10-10-build-pipeline.md) |
+| 11 | Learning Analytics Toolkit — Final Build | [Open script](../scripts/python-foundations/11-learning-analytics-toolkit-capstone.md) |
+
+## Guided-practice companion scripts
+
+| # | Practice | Script |
+|---:|---|---|
+| P01 | Debugging | [Open script](../scripts/python-foundations/practice/P01-debugging-practice.md) |
+| P02 | Files and CSV | [Open script](../scripts/python-foundations/practice/P02-files-csv-practice.md) |
+| P03 | Modules and Organization | [Open script](../scripts/python-foundations/practice/P03-modules-organization-practice.md) |
+| P04 | Validation and Testing | [Open script](../scripts/python-foundations/practice/P04-validation-testing-practice.md) |
+| P05 | Table-Shaped Data | [Open script](../scripts/python-foundations/practice/P05-data-shaped-python-practice.md) |
+| P06 | Analysis-Ready Pipeline | [Open script](../scripts/python-foundations/practice/P06-analysis-ready-pipeline-practice.md) |
+| P07 | Build: Loader | [Open script](../scripts/python-foundations/practice/P07-build-loader-practice.md) |
+| P08 | Build: Validate | [Open script](../scripts/python-foundations/practice/P08-build-validate-practice.md) |
+| P09 | Build: Summary | [Open script](../scripts/python-foundations/practice/P09-build-summary-practice.md) |
+| P10 | Build: Pipeline | [Open script](../scripts/python-foundations/practice/P10-build-pipeline-practice.md) |
+| P11 | Final Capstone | [Open script](../scripts/python-foundations/practice/P11-learning-analytics-toolkit-capstone-practice.md) |
+
+## Track 2 completion status
+
+- [x] Eleven lesson-video script files created, including the separate final capstone.
+- [x] Eleven separate practice-video script files created.
+- [x] Scripts use the approved Kendrick / ElevenLabs v3 voice lock.
+- [x] Lessons 1–10 use the standard practice-video handoff.
+- [x] The final capstone uses a distinct final-completion handoff.
+- [x] Examples use the Track 2 source topics and avoid revealing the required app exercise implementation.
+- [ ] Run every code example and verify every expected output in Python.
+- [ ] Compare each script line-by-line with its source exercise and hidden tests to ensure no solution leakage.
+- [ ] Generate narration with the approved voice when production credits are available.
+- [ ] Render all 22 videos and watch each from beginning to end at normal speed.
+- [ ] Approve final MP4s and place them in `public/videos/final/`.
+
+**Important:** Script authoring is complete for the initial production package; this is not a claim that narration or rendered videos are finished or approved.
