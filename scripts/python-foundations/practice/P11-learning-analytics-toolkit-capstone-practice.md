@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/projects/final-toolkit.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion; do not reveal the required exercise implementation or hidden evaluation answers.
+**Track 2 capstone-practice visuals:** Treat this as the final project room, distinct from regular practice videos. Use a milestone board, pipeline canvas, data-quality side lane, and blank report wireframe. Reveal a checklist one item at a time; do not fill in the final report or show the app's required solution. Close on a celebratory “Python Foundations Complete” end card. Do not say another lesson will unlock.
 
 ## Scene 1 — Inspect the data first
 
