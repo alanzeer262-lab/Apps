@@ -24,4 +24,25 @@
 **Visual:** App/project card: **Build 5 — Multi-record progress analyzer**. Checklist: loop through tuples; calculate summary; preserve order; test empty records.
 **Narration:** “Open Build 5 in PyLearn and build analyze_records yourself. Test the supplied records, then add a learner and check the changes. Finally, explain why a tuple containing a name and score is easier to process than two unrelated lists.”
 
-**End card:** “Open PyLearn → Build 5: Multi-record progress analyzer”
+## Final call to action — required for YouTube and in-app versions
+
+**Visual:** Show the PyLearn app's Practice section and the matching project card: **Build 5 — Progress analyzer**. Do not show the completed solution.
+
+**Narration:**
+
+Now it's your turn to build it yourself.
+
+Open the PyLearn app and go to the Practice section for this project. If you're watching on YouTube, open PyLearn and find Build 5 — Progress analyzer in the app.
+
+Write the code yourself, run it, and use the app's feedback to check your work. Try the required cases before moving on. Mistakes are part of learning, so read the feedback and try again.
+
+Watching the example is only the first step. Now open PyLearn and build it yourself!
+
+**End card:** “Open PyLearn → Practice → Build 5 — Progress analyzer”
+
+## Production checklist
+
+- [ ] The video demonstrates the problem and reasoning without giving away the complete app solution.
+- [ ] The final card explicitly points to Practice in PyLearn.
+- [ ] YouTube viewers are told to open PyLearn and find the matching project.
+- [ ] Review the full rendered video at normal speed before marking it complete.
