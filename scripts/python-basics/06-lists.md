@@ -291,19 +291,17 @@ Len counts items. Sum adds numeric values. Min and max find the smallest and lar
 
 Finally, remember edge cases. An empty list has no values to average, so a real program needs to handle that situation deliberately.
 
-## Final call to action — required for in-app and YouTube versions
+## Final call to action — watch the practice video
 
-**Visual:** Show the real PyLearn navigation path to Lesson 6 and highlight its required coding exercise. Do not show the completed exercise solution or unverified app screens. Hold the navigation screen long enough to read.
+**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens.
 
 **Narration:**
 
-Now it's your turn to write code yourself.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Open PyLearn and go to Lesson 6, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
-Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
-
-Pause this video and start coding.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
