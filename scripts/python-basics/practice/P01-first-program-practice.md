@@ -79,9 +79,11 @@ Hello
 
 **Narration:** This line has a missing closing quotation mark. Python can't tell where the string ends, so it reports a syntax error. Add the matching quote, run the corrected line, and check the result. Change one thing at a time when debugging.
 
-## Close — Navigate to the real task
+## Close — Complete the exercise
 
-**Narration:** Now open PyLearn and find the required coding exercise for Lesson 1. This video was extra practice; it does not complete the app exercise or unlock the next lesson. Complete the required exercise, run your code, and use the feedback to improve it.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
 - [ ] Verify the exact approved Kendrick voice ID before generating audio.
