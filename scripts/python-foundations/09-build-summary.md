@@ -6,6 +6,14 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/09-build-summary.md, branch ccr-c7f6fdd7-xpzi3g.
 **Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
 
+## Visual execution notes — keep the result traceable
+
+For Scene 1, show the actual input list `[88, 72, 95]` before revealing any metric. Animate the three values into the count calculation (3), the sum (255), and then the average calculation (255 ÷ 3 = 85.0). Highlight 95 as the maximum only after the `max(scores)` operation runs. The dashboard tiles must read **Count: 3**, **Average: 85.0**, and **Top score: 95** because these are the exact results of the displayed code.
+
+For Scene 2, start with an empty list and show the branch taken by `if not scores`; reveal “No valid scores” only after that branch runs. Do not display an average or top-score tile for an empty list.
+
+For Scene 3, reveal the dictionary only after the code runs. Keep its keys and values identical to the printed output. Never use placeholder dashboard values or animate numbers that do not come from the displayed variables.
+
 ## Scene 1 — Turn rows into answers
 
 **Narration:**
