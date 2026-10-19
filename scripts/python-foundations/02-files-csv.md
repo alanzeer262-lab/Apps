@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/02-files-csv.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use a refined data-workbench look: charcoal canvas, subtle grid, teal field labels, and warm amber for a selected row. Visualize a CSV as a sheet of records that flows into structured rows; highlight headers, one row, and the file boundary. Use a file-to-record transformation and row highlighting instead of another generic input/output box.
+
 ## Scene 1 — Data that survives the program
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
