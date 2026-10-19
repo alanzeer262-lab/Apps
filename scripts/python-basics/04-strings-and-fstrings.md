@@ -284,12 +284,12 @@ Now let's run it.
 ```text
 DATA, Python
 data, python
-  DATA, coding  
+DATA, coding
 ```
 
 **Narration:**
 
-The first output has no outer spaces because strip removed them. The second output is lowercase. The last output replaces Python with coding in the original raw string, so the original outer spaces remain.
+The first output has no outer spaces because strip removed them. The second output is lowercase. The last output replaces Python with coding in the cleaned string, so the outer spaces remain removed.
 
 That's a useful detail: each line starts with the value named in that line. We didn't assign the stripped value back to raw, so raw still contains the original text.
 
