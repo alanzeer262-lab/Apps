@@ -1,6 +1,6 @@
 # PyLearn Python Basics — Lesson-by-Lesson Script Review
 
-**Status:** Review in progress. Scripts are not approved for narration or rendering merely because files exist.
+**Status:** Content review is complete for lesson scripts 01–20 and guided-practice companions P01–P20. Scripts are not approved for narration or rendering merely because files exist; production gates remain open.
 **Source of truth:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.
 **Review rule:** Finish the source comparison, teaching-flow review, code/output checks, and navigation check for one lesson before treating that lesson as ready. Do not bulk-mark lessons complete.
 
