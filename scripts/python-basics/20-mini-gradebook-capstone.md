@@ -137,17 +137,17 @@ The next track can introduce tools such as pandas and Jupyter. Those tools make 
 
 The goal of Python Basics is not to memorize Python. It's to become capable of using Python to solve a problem.
 
-## Final call to action — watch the practice video
+## Final call to action — watch the capstone practice video
 
-**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project/capstone solution.
+**Visual:** Use a neutral end card reading “Next: Capstone Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project/capstone solution.
 
 **Narration:**
 
-Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
+Excellent work! You've reached the final lesson of Python Basics and built up the skills needed for this capstone. The next step is to watch the capstone practice video. I recommend watching it to reinforce the approach and prepare you to complete the final exercise.
 
-After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
+After the practice video, complete the capstone exercise. You can also try your code in the PyLearn app if you'd like extra hands-on practice.
 
-**Visual:** Hold the “Next: Practice Video” end card long enough to read.
+**Visual:** Hold the “Next: Capstone Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
