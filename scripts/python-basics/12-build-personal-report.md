@@ -1,31 +1,28 @@
 # PyLearn Video 12 — Build: My Learning Report
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/12-build-personal-report.md`
-**Target:** 5–7 minutes. Project lesson after Modules 1–2.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 12, Build 1. **Purpose:** introduce the project, teach the key idea, then send the learner into PyLearn to build it.
+**Target:** 3–4 minutes. This video is not a full solution walkthrough.
 
-### Scene 1 — From concepts to a useful program
-**Visual:** Start with an empty editor; title “My learning report”.
-**Narration:** “You've learned to give values names and display useful output. Now let's combine those skills into a small program: a learner report. It will include a name, a goal, weekly study hours, and whether the learner is active.”
+## Scene 1 — The mission
+**Visual:** Empty editor; show the four report fields as labels, not code: name, goal, weekly study hours, active status.
+**Narration:** “You've learned to name values and display useful output. Now you'll combine those skills in a small learner report. Your report needs four pieces of information: a name, a goal, weekly study hours, and whether the learner is active.”
 
-### Scene 2 — Build the data
-**Visual:** Reveal `name = "Ada"`, `goal = "Data Analyst"`, `weekly_hours = 6`, `active = True` one at a time.
-**Narration:** “Each variable has a clear purpose. The name and goal are text, weekly hours is numeric, and active is a Boolean. The variable names tell another programmer what each value means.”
+## Scene 2 — Choose the right kinds of values
+**Visual:** Show a small, partial example: text for name and goal, a number for hours, and True for active. Do not reveal the finished function.
+**Narration:** “Think about what kind of value each field needs. A name and a goal are text. Weekly study hours is a number. Active or inactive is a Boolean. Clear variable names make the program easier to read.”
 
-### Scene 3 — Create the report function
-**Visual:** Reveal `def build_learning_report(name, goal, weekly_hours, active):` and a return value with four lines using an f-string.
-**Narration:** “We'll put the formatting into a function called build_learning_report. It receives four inputs and returns a four-line report. Notice the word return: the function gives the text back to the caller. It does not print it by itself.”
-**Visual:** Call the function, save its result, then print the result. Show exact output:
-Learner: Ada
-Goal: Data Analyst
-Weekly study hours: 6
-Status: Active
+## Scene 3 — The key function idea
+**Visual:** Show only the function signature `build_learning_report(name, goal, weekly_hours, active)`. Beside it, contrast **returns text** with **prints text**; do not fill in the function body.
+**Narration:** “Your task is to write build_learning_report with these four inputs. It must return a four-line report, not print the report from inside the function. That distinction matters: returning gives the caller a value it can store, test, or display.”
 
-### Scene 4 — Test different cases
-**Visual:** Test a normal learner, zero weekly hours, and an inactive learner. Change one input at a time.
-**Narration:** “A useful function should work for more than one example. Test a learner who studies six hours, one who studies zero hours, and one whose status is inactive. The output should reflect the inputs without rewriting the function.”
+## Scene 4 — Predict before you build
+**Visual:** Show a hypothetical change: weekly hours changes from 6 to 0. Keep the output hidden.
+**Narration:** “Pause and predict: if weekly study hours changes to zero, which line of the report should change? What should happen when active is False?”
+**Hold:** 5 seconds of silence. Then show only the field labels changing, not a complete output.
 
-### Scene 5 — Practice and recap
-**Narration:** “Pause and build your own report. Change the name, goal, hours, and status. Then answer this: which values are measurements, and which values are descriptions?”
-**Hold:** 4 seconds.
-**Narration:** “You combined variables, readable names, f-strings, and a function that returns a formatted report. Next, we'll calculate study time from minutes and sessions.”
+## Scene 5 — Take it into PyLearn
+**Visual:** App/project card: **Build 1 — My learning report**. Checklist: implement function; return four lines; test normal learner, zero hours, inactive learner.
+**Narration:** “Now open Build 1 in PyLearn and implement the function yourself. Test a normal learner, a learner with zero study hours, and an inactive learner. Use the app's feedback to check your work. Then reflect: which values are measurements, and which are descriptions?”
+
+**End card:** “Open PyLearn → Build 1: My learning report”
