@@ -15,13 +15,15 @@
 Now we move from individual skills to a small toolkit. The loader's job is narrow: take raw CSV text and turn it into a consistent list of records. It should not calculate averages or decide which scores are valid.
 
 **Code**
-    
-    csv_text = "name,score\nAda,88\nLin,72\n"
-        print(csv_text.splitlines())
+```python
+csv_text = "name,score\nAda,88\nLin,72\n"
+print(csv_text.splitlines())
+```
 
 **Expected output**
-    
-    ['name,score', 'Ada,88', 'Lin,72']
+```text
+['name,score', 'Ada,88', 'Lin,72']
+```
 
 **Narration:**
 
@@ -36,18 +38,20 @@ The input is plain text. A loader parses the rows and trims stray spaces so late
 For this demonstration, we'll use Python's CSV reader with an in-memory text stream. That lets us show the parsing idea without needing a real file on screen.
 
 **Code**
-    
-    import csv
-        from io import StringIO
-    
-        text = "name,score\nAda,88\nLin,72\n"
-        reader = csv.DictReader(StringIO(text))
-        rows = list(reader)
-        print(rows[0]["name"], rows[0]["score"])
+```python
+import csv
+from io import StringIO
+
+text = "name,score\nAda,88\nLin,72\n"
+reader = csv.DictReader(StringIO(text))
+rows = list(reader)
+print(rows[0]["name"], rows[0]["score"])
+```
 
 **Expected output**
-    
-    Ada 88
+```text
+Ada 88
+```
 
 **Narration:**
 
@@ -62,16 +66,18 @@ The CSV reader recognizes the header fields. At this stage, the score is still t
 Real inputs may have extra spaces or a final blank line. A good loader trims fields and skips rows that contain no meaningful data. That makes its output more consistent without hiding invalid scores.
 
 **Code**
-    
-    raw_name = "  Ada  "
-        raw_score = " 88 "
-        print(raw_name.strip())
-        print(raw_score.strip())
+```python
+raw_name = "  Ada  "
+raw_score = " 88 "
+print(raw_name.strip())
+print(raw_score.strip())
+```
 
 **Expected output**
-    
-    Ada
-        88
+```text
+Ada
+88
+```
 
 **Narration:**
 
@@ -120,3 +126,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this lesson:** Keep the raw CSV text on screen first. Then highlight the header parsing, show each row becoming a record, and visibly trim whitespace only where the code calls `.strip()`. Keep scores as strings in the loader demonstration; do not visually convert them to numbers until the validation stage. Show the exact printed result only after executing the displayed snippet.
