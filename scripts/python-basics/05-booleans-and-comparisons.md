@@ -29,3 +29,9 @@
 
 ### Recap
 **Narration:** “Booleans are True or False. Comparisons produce them, and and, or, and not combine them. Remember the difference between assignment and comparison, and test threshold boundaries deliberately. Next, we'll store collections of values in lists.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 5 in PyLearn and complete the Boolean practice in the app. Predict the results first, then change the score to 69 and check the boundary behavior."
