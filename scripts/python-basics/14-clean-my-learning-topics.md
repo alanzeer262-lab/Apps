@@ -25,10 +25,15 @@ In this project, you'll build a topic cleaner. Before coding, let's understand t
 **Code**
 ```python
 raw = "  data, Python, data  "
-print(raw)
+print(repr(raw))
 ```
 
-**Expected output:** the text appears with its original spaces and capitalization.
+**Expected output**
+```text
+'  data, Python, data  '
+```
+
+Using `repr` makes the leading and trailing spaces visible in the editor output.
 
 **Narration:**
 
