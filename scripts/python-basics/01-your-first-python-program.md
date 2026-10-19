@@ -10,23 +10,31 @@ This is the full teaching video, not the practice video. Keep the lesson rich: e
 
 ## Scene 1 — First program
 
+**Visual:** Start with an empty editor. Reveal the code one line at a time. Highlight `print`, then the parentheses, then the quoted message. Run only after the full line is visible.
+
 Welcome to PyLearn. I'm glad you're here.
 
-In this lesson, we're going to write a tiny Python program together. You don't need to know anything about programming yet. We'll take it one step at a time.
+In this lesson, we'll write a small Python program together. You can start without knowing programming. We'll take it one step at a time.
 
-Imagine you want the computer to show you a message. In Python, we can use a command called print.
+Imagine you want the computer to introduce itself. What is the smallest program that can do that?
 
-Let's build the line slowly.
+**Code**
+```python
+print("Hello, I'm Python.")
+```
 
-Inside the parentheses, we put the message we want Python to display. The quotation marks tell Python that this message is text.
+In this line, `print` asks Python to display something. The parentheses contain what we want to display, and the quotation marks tell Python that the message is text.
 
-Now let's run it.
+**Visual:** Run the line. Reveal the output only after the run.
 
-Here it is: Hello, I'm Python.
+**Output**
+```text
+Hello, I'm Python.
+```
 
 You wrote a line of code, ran it, and saw the result. That's your first program.
 
-We'll use this same habit again and again: write a little code, run it, and look carefully at what happened.
+We'll use the same habit throughout the course: write a little code, run it, and observe what happened.
 
 ## Scene 2 — Python can calculate
 
@@ -46,17 +54,29 @@ That's all we need to learn from this example: print can display a message, or i
 
 ## Scene 3 — Numbers and text
 
-Look at these two lines. The first has the number ten. The second has the characters one and zero inside quotation marks.
+**Visual:** Show the two lines together, with no output yet.
 
-They look almost the same, don't they?
+Look at these two lines. The first contains the number ten. The second contains the characters one and zero inside quotation marks.
 
-Before we run them, make a prediction: will the output look different?
+They look almost the same, don't they? Before we run them, predict: will the output look different?
 
-On the screen, both lines show ten. So the visible result looks the same.
+**Code**
+```python
+print(10)
+print("10")
+```
 
-But the quotation marks matter. They tell Python that the second value is text, not a number.
+**Visual:** Run both lines and reveal the two output lines.
 
-Text in Python is called a string. You don't need to memorize every detail right now. Just notice the difference: quotation marks tell us that we're working with text.
+**Output**
+```text
+10
+10
+```
+
+The visible output looks the same, but Python treats the values differently. Quotation marks tell Python that the second value is text. Text in Python is called a string.
+
+You don't need to master data types yet. For now, remember that quotation marks matter; in the next lesson, you'll look more closely at how Python distinguishes different kinds of values.
 
 ## Scene 4 — Matching quotation marks
 
@@ -86,31 +106,45 @@ That's the whole idea. A comment is a note for people reading the code.
 
 ## Scene 6 — Make the message personal
 
-Let's make the message personal.
+**Visual:** Reveal the variables first; then reveal the print statements. Do not show the output until the code is run.
 
-First, we store a name in a variable called name. For now, think of a variable as a named place where a value is kept.
+Let's make the message personal. A variable is a name we use to refer to a value. Here, we'll store three pieces of information: a name, a learning goal, and the number of hours we plan to study each week.
 
-Here, the value is Ada. On the next line, we use that value in a greeting.
+**Code**
+```python
+name = "Ada"
+goal = "data analysis"
+hours = 6
 
-The letter f tells Python that we want to place a value inside this message. The curly braces show where the value should go.
+print(f"My name is {name}.")
+print(f"My goal is to learn {goal}.")
+print(f"I plan to study {hours} hours each week.")
+```
 
-Let's run it.
+The letter `f` before a string tells Python to place the values inside the curly braces into the message. Notice that each line is still a message, but the values come from our variables.
 
-Python puts Ada into the greeting.
+**Visual:** Run the code. Reveal each output line as it appears.
 
-Now let's change just one thing: the name.
+**Output**
+```text
+My name is Ada.
+My goal is to learn data analysis.
+I plan to study 6 hours each week.
+```
 
-Now the greeting says Sam. We didn't rewrite the whole message. We changed the value, and the result changed with it.
+Now change only the name from Ada to Sam and run it again. The name in the first sentence changes, while the goal and hours stay the same.
 
-That's a useful idea. A program can use a value in a message, and when the value changes, the message can change too.
+The same idea works for the other values. Change the goal or the number of hours and predict which sentence will change before you run the program.
+
+This is the point of variables and f-strings: store values once, then use them to make clear, readable messages.
 
 ## Scene 7 — Showing a value versus returning it
 
-**Visual:** Keep the same editor. Show both function definitions, then call them separately. Never show the output before the matching call is narrated.
+**Visual:** Put a small on-screen label beside the code: “You don't need to design functions from scratch yet.” Keep the editor simple. Show both function definitions, then run each example separately. Never show output before its matching call.
 
 **Narration:**
 
-There's one important distinction in Python: showing a value is not the same as returning a value.
+The app will sometimes give you a function starter to complete. You do not need to learn how to design whole functions from scratch in this lesson. But you do need to recognize one important distinction: showing a value is not the same as returning a value.
 
 The print command displays something on the screen. A return statement hands a value back to the part of the program that called the function, so the program can use it again.
 
@@ -166,7 +200,7 @@ None
 
 The first line displays fifty. But because show_total doesn't return a value, the variable saved receives None. That is why the next line displays None. Remember: print talks to the person looking at the screen; return gives a value back to the code.
 
-## Scene 8 — A placeholder in a function
+## Scene 8 — Recognize a placeholder in starter code
 
 **Visual:** Show an unfinished function with `pass`, then replace only that line with a real return statement.
 
@@ -178,7 +212,7 @@ def double(number):
 
 **Narration:**
 
-You may also see the word pass in starter code. Python needs a valid body inside a function. Pass is a placeholder that does nothing, allowing an unfinished function to run without a syntax error. When you complete the exercise, replace pass with your solution.
+You may also see the word `pass` in starter code. Python needs a valid body inside a function, and `pass` is a placeholder that does nothing. It lets the unfinished starter remain syntactically valid. When you work on an exercise, replace `pass` with your own solution. For now, this is recognition, not a requirement to design a function from scratch.
 
 **Visual:** Replace `pass` with `return number * 2`; call `double(7)` and display the result.
 
@@ -213,17 +247,13 @@ If the message doesn't look right, check the quotation marks first. Then check t
 
 You've just practiced changing a value and using it in a message.
 
-## Scene 10 — Debugging calmly
+## Scene 10 — Use a calm debugging routine
 
-Let's practice fixing the small mistake we saw earlier.
+**Visual:** Return briefly to the earlier line with the missing closing quote. Highlight the missing character, add it, and run again.
 
-This line is missing its closing quotation mark.
+Let's apply the routine to the quotation-mark mistake we saw earlier. The error tells us Python could not understand the line. We inspect the punctuation, add the missing closing quote, and run it again.
 
-When an error appears, don't change lots of things at once. Look at the line, find the likely problem, and change just one thing.
-
-Now it works.
-
-Remember this simple routine: read the error, check the line, change one thing, and run again. You don't have to panic when code doesn't work. You can investigate it step by step.
+When code doesn't work, change one thing at a time. That makes it easier to see which change fixed the problem. An error is information that helps you investigate.
 
 ## Scene 11 — Recap
 
@@ -231,7 +261,7 @@ Let's take a breath and review what you've done.
 
 You used print to display a message and a calculation. You saw that quotation marks tell Python when a value is text. You learned that comments are notes for people reading the code.
 
-Then you used a variable to store a name, and an f-string to place that name inside a message. You learned the difference between print and return, saw why a print-only function gives back None, and recognized pass as a placeholder. Finally, you practiced fixing a small error by changing one thing at a time.
+Then you used variables to store a name, a learning goal, and weekly study hours, and used f-strings to place those values inside readable messages. You learned the basic difference between `print` and `return`, saw why a print-only function gives back `None`, and recognized `pass` as a placeholder in starter code. Finally, you practiced fixing a small error by changing one thing at a time.
 
 You don't need to remember every detail perfectly today. The important thing is that you've written code, run it, observed the result, and made a change yourself.
 
@@ -259,6 +289,9 @@ Pause this video and start coding.
 
 ## Production checklist
 
+- [ ] The example includes name, learning goal, and weekly study hours, matching the canonical Lesson 1 source.
+- [ ] Function examples are explicitly framed as recognizing provided starter code, not learning to design functions from scratch.
+- [ ] Repeated debugging explanation is reduced; the second occurrence applies the earlier idea.
 - [ ] Lesson remains a full teaching video; do not trim concepts to make room for practice.
 - [ ] Code and output match exactly, and output is revealed only after the matching narration.
 - [ ] The final card explicitly names the PyLearn app's Practice section.
