@@ -1,6 +1,6 @@
 # PyLearn Video 01 — Your First Python Program
 
-**Voice lock — mandatory:** Kendrick voice; ElevenLabs v3; use the exact approved Kendrick voice ID; no substitution or preset; same voice throughout.
+**Voice lock — mandatory:** Kendrick voice; ElevenLabs v3; exact approved Kendrick voice ID must be inserted before narration generation; no substitution or preset; same voice throughout. **Voice ID status:** not present in the current repository files or voice-lock record reviewed; do not guess, select a similar voice, or generate narration until the approved ID is recovered from the original Runway setup.
 **Canonical source:** `Pylearn-build260/content/python-basics/modules/01-first-program.md`
 **Use:** Runway narration preparation. Do not send scene headings or stage directions to text-to-speech; send only the spoken narration. Review code/output against the source before generating audio.
 
@@ -245,15 +245,17 @@ Your first Python program is complete.
 
 **Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 1. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
 
-**Narration:**
+**Narration — preserve this navigation instruction in both the in-app and YouTube versions:**
 
 Now it's your turn to write code yourself.
 
-Open the PyLearn app and go to the Practice section for Lesson 1. If you're watching this on YouTube, you can do the same: open PyLearn and find the practice for this lesson.
+Open PyLearn and go to Lesson 1. Complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this same lesson there.
 
-Try the exercises yourself. Write the code, run it, and use the feedback to check your work. It's okay to make mistakes — that's how you learn.
+Write your code, run it, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
 
-The lesson showed you how the ideas work. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+Pause this video and start coding.
+
+**Visual:** Show the real PyLearn navigation path to Lesson 1 and highlight the required coding exercise. Do not show a completed answer or unverified UI. Hold the final screen long enough to read.
 
 ## Production checklist
 
