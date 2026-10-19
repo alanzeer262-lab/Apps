@@ -247,6 +247,29 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 09–20
+## Lesson 09 — Dictionaries, Tuples, and Sets
+
+**Canonical source:** `content/python-basics/modules/09-dict-tuple-set.md`
+**Scripts:** `scripts/python-basics/09-dictionaries-tuples-sets.md` and `scripts/python-basics/practice/P09-dictionaries-tuples-sets-practice.md`
+**Review status:** Compared both scripts with the canonical source and executed all runnable examples. The main lesson covers dictionary lookup/update, tuples and unpacking, looping over records, set uniqueness/membership, frequency counting with `dict.get()`, and choosing the right structure. The required app exercise remains learner work.
+
+### Findings and code/output QA
+
+- Dictionary lookup outputs `Ada` and `88`; updating and adding keys outputs `91` and `beginner`.
+- Tuple unpacking outputs `Ada` and `88`.
+- The record loop outputs `Ada: 88`, `Lin: 72`, and `Sam: 95`.
+- The set example has two unique values and membership returns `True`, producing `2` and `True`.
+- Frequency counting outputs `{'A': 3, 'B': 2, 'C': 1}`.
+- Companion dictionary outputs `The Little Prince` and `96`; tuple output is `The Hobbit: 310 pages`; set outputs `2` and `True`.
+- The lesson's example uses a set literal with a duplicate; Python collapses duplicate values as expected. The narration correctly warns not to rely on set order.
+- No completed required-exercise solution is shown. Real PyLearn navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 10–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
