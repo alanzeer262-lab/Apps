@@ -46,3 +46,7 @@ This folder contains the **pre-audio phase** for the full Python Basics track. T
 - Do not generate audio or spend Runway credits in this phase.
 - Do not publish a lesson automatically. The user must inspect and confirm the finished video before any final publication step.
 - The mandatory full-video checklist in `docs/VIDEO_PRODUCTION_WORKFLOW.md` applies to every lesson.
+
+
+## Production review standard
+Before any script is sent to Runway, follow [Review and Runway Standard](REVIEW_AND_RUNWAY_STANDARD.md). The script pack is being audited against the canonical source modules; treat drafts as not-yet-approved until the source audit is complete. Lesson 1 and 2 production lessons—especially missing visual states despite apparent timing alignment—are mandatory regression checks for every future video.
