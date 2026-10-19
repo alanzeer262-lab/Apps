@@ -30,3 +30,9 @@
 
 ### Recap
 **Narration:** “Use if, elif, and else to express decisions. Indentation defines each block, order matters, and boundary tests help verify the rules. Next, we'll repeat work efficiently with loops.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 7 in PyLearn and build the score classifier in the app. Test each grade boundary and print the required readable message. Watching the demonstration does not submit the exercise."
