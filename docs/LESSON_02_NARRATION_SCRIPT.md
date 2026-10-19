@@ -294,16 +294,14 @@ You don't need to master everything at once. Practice changing a value, predicti
 
 In the next lesson, we'll continue with numbers and operators. Nice work!
 
-## Final call to action — required for in-app and YouTube versions
+## Final call to action — watch the practice video
 
-**Visual direction:** Show the real PyLearn navigation path to Lesson 2 and highlight its required coding exercise. Do not display the exercise solution or unverified app screens. Keep the final navigation screen visible long enough to read.
+**Visual direction:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens.
 
 **Narration:**
 
-Now it's your turn to write code yourself.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Open PyLearn and go to Lesson 2, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
-Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
-
-Pause this video and start coding.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
