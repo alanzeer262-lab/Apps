@@ -43,3 +43,9 @@ Use arithmetic, division, floor division, remainder, powers, rounding, precedenc
 
 ### Recap
 **Narration:** “Today you used arithmetic, floor division for complete groups, remainder for what is left, powers, rounding, and parentheses. Most importantly, you learned to check the meaning and units of a result. Next, we'll work with text using strings and f-strings.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 3 in PyLearn and build the study-time report yourself. Include decimal hours, full hours, remaining minutes, and the rounded monthly estimate. Change the input and test your predictions in the app."
