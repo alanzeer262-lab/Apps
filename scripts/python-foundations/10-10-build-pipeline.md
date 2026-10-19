@@ -39,7 +39,7 @@ Loading turns CSV text into records. Validation checks the rules. Aggregation ca
 
 **Expected output**
 
-    Input received: 31 characters
+    Input received: 25 characters
 
 The pipeline starts with raw input. The final result should come from processing that input, not from hard-coded summary values.
 
