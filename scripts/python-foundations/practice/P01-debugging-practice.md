@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/01-debugging.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Use the same graphite/teal developer workspace as its lesson, but make this companion more interactive: pause cards that ask the learner to predict, magnify the suspicious line, and reveal the test result after a short beat. Amber marks the current hypothesis; teal marks the verified fix. Keep the teacher and voice unchanged.
 
 ## Scene 1 — Find the wrong assumption
 
