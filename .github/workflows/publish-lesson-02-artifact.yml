@@ -1,0 +1,43 @@
+name: Publish approved Lesson 02 render artifact
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/publish-lesson-02-artifact.yml'
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download the completed Lesson 02 render artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download 39159061361 --repo "${{ github.repository }}" --name pylearn-lesson-02-render --dir downloaded-artifact
+      - name: Verify artifact and publish to permanent folder
+        run: |
+          test -s downloaded-artifact/lesson-02-variables-and-data-types.mp4
+          mkdir -p public/videos/final
+          cp downloaded-artifact/lesson-02-variables-and-data-types.mp4 public/videos/final/lesson-02-variables-and-data-types.mp4
+          ffmpeg -v error -i public/videos/final/lesson-02-variables-and-data-types.mp4 -f null -
+      - name: Commit and push permanent MP4
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/videos/final/lesson-02-variables-and-data-types.mp4
+          if git diff --cached --quiet; then
+            echo "The exact artifact is already published."
+          else
+            git commit -m "Publish corrected PyLearn Lesson 02 video"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
