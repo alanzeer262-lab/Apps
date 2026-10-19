@@ -178,3 +178,22 @@ This visual guide supplements the scene-specific directions in all 11 lesson scr
 - In toolkit lessons and capstone, show the genuine reproducible result a learner can achieve by implementing the tool. Keep data, code, and output synchronized.
 - Practice examples must be executed and verified too, while staying separate from the required PyLearn exercise solution.
 - This rule applies to all Track 2 lesson and practice scripts. It is a production requirement, not a decorative style preference.
+
+
+## Track 2 production QA progress — input-to-output and reference results
+
+**Completed in scripts**
+- Corrected Python indentation and converted the early lesson examples into explicit runnable code blocks for debugging, CSV files, modules, testing, and table-shaped data.
+- In the CSV lesson, separated the source file, console output, and written `report.txt` contents so the visuals do not confuse file output with terminal output.
+- In the modules lesson and module practice, separated module definitions from runner calls and showed the actual import → call → output sequence.
+- Added scene-specific visual transition notes to show source values, the exact operation, accepted/rejected paths where relevant, and the result only after execution.
+- Replaced the pipeline practice's hard-coded illustrative report values with a report calculated from `["88", "72", "oops"]`; its verified result is 3 rows read, 2 valid, 1 invalid, average 80.0.
+- Replaced the pipeline lesson's stage-name-only demo with a small end-to-end example. The displayed result is generated from the code and CSV in that scene: 3 rows read, 2 valid, 1 invalid, average 80.0, top performer Ada.
+- Added `scripts/python-foundations/reference_runs/capstone_reference_demo.py` as the reproducible source for the capstone demonstration report. The reference dataset has 7 rows; after the documented duplicate, blank, non-numeric, and range checks, 3 records remain. The computed average is 85.0, top performer Mira, with grade distribution A:1, B:1, C:1, D:0, F:0.
+- Updated the capstone lesson to show the raw records → rejection reasons → accepted records → calculated report, rather than a fabricated dashboard.
+
+**Still required before video approval**
+- Run the committed reference script in the production environment and capture its stdout for the final render; keep the captured result matched to the exact commit.
+- Run the remaining examples in a clean Python environment, including scenes that intentionally carry state between consecutive scenes.
+- Render and review the videos at normal speed, checking that transitions are readable, code is legible on mobile, and output is revealed only after execution.
+- The scripts and QA directions are updated; this does **not** mean the videos have been rendered or approved yet.
