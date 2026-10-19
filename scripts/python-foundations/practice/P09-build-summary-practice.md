@@ -51,3 +51,6 @@ Each number answers a different question. The average summarizes the group; the 
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this practice:** Use the displayed scores `[61, 78, 91, 70]` as the only source for the metric tiles. Show the count calculation, the sum `300` divided by `4` to get `75.0`, and `91` selected by `max`. For the empty list, show the empty-state branch and no fabricated metric values.
