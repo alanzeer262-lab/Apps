@@ -1,26 +1,27 @@
 # PyLearn Video 18 — Build: Reusable Analysis Toolkit
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/18-build-toolkit.md`
-**Target:** 5–7 minutes.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 18, Build 7. **Target:** 3–4 minutes. Do not supply the complete function implementations.
 
-### Scene 1 — When a project grows
-**Visual:** Show a large block of repeated analysis code, then mark the two distinct jobs: average_score and top_scorer.
-**Narration:** “As a project grows, one large block of code becomes harder to understand and change. We don't need to turn every line into a function. Instead, look for a clear job that deserves a name and can be reused.”
+## Scene 1 — When code grows
+**Visual:** Show a crowded block of repeated analysis steps, then separate it into two labelled jobs: average_score(scores), top_scorer(records).
+**Narration:** “As a project grows, a large block of code becomes harder to understand and change. You don't need to turn every line into a function. Look for a clear job that deserves a name and might be reused.”
 
-### Scene 2 — Average function
-**Visual:** Build `average_score(scores)` returning the average; explicitly handle an empty list using a chosen return rule consistent with the project.
-**Narration:** “The average_score function receives scores and returns their average. The caller doesn't need to know every step inside the function; it only needs to know what input it expects and what result it returns. We also define what happens for an empty list.”
+## Scene 2 — Two different questions
+**Visual:** For `average_score(scores)`, show a list of numbers. For `top_scorer(records)`, show name-score pairs. Do not reveal function bodies.
+**Narration:** “The first function answers, ‘What is the average of these scores?’ The second answers, ‘Whose score is highest?’ They have different inputs and different jobs. A good function makes that contract clear.”
 
-### Scene 3 — Top scorer function
-**Visual:** Build `top_scorer(records)` over name/score tuples; show output for Ada, Lin, Sam. Handle empty records deliberately.
-**Narration:** “The top_scorer function answers a different question. It scans records and returns the learner with the highest score, following our chosen empty-case rule. Each function has one clear responsibility.”
+## Scene 3 — Return values and empty cases
+**Visual:** Show the words **input → one clear job → return value**. Then show an empty list and empty records as test cases, with no prescribed output.
+**Narration:** “Each function needs a useful return value and a deliberate rule for empty input, as the project brief requires. Don't guess at edge cases. Follow the task's specified behavior and test it.”
 
-### Scene 4 — Test and reflect
-**Visual:** Call both functions with normal data, one record, and empty data; show results.
-**Narration:** “Test each function independently. Try several records, then one record, then no records. A reusable function is easier to test because its job is narrow.”
-**Narration:** “Ask yourself: which function from your project would be useful in a completely different program? That's a good sign that you have found a reusable piece of logic.”
-**Hold:** 4 seconds.
+## Scene 4 — Make the design decision
+**Visual:** Ask: “Would naming this behavior make the program easier to understand or reuse?”
+**Narration:** “Pause and choose one piece of logic from a project that could be useful somewhere else. Would giving it a function name make the program clearer?”
+**Hold:** 5 seconds of silence.
 
-### Recap
-**Narration:** “A useful function has a clear input, a clear job, a useful return value, and a deliberate edge-case rule. Don't create functions just for the sake of it—create them when the name makes the program easier to understand. Next, we'll handle imperfect scores safely.”
+## Scene 5 — Build in PyLearn
+**Visual:** App/project card: **Build 7 — Reusable analysis toolkit**. Two empty function stubs labelled with their required signatures.
+**Narration:** “Open Build 7 in PyLearn and implement average_score and top_scorer yourself. Test normal input and the required empty cases. The goal is not to create the most functions; it is to give reusable behavior a clear name.”
+
+**End card:** “Open PyLearn → Build 7: Reusable analysis toolkit”
