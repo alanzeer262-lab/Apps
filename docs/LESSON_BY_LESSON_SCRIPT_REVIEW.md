@@ -270,6 +270,29 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 10–20
+## Lesson 10 — Functions
+
+**Canonical source:** `content/python-basics/modules/10-functions.md`
+**Scripts:** `scripts/python-basics/10-functions.md` and `scripts/python-basics/practice/P10-functions-practice.md`
+**Review status:** Compared both scripts with the canonical source and executed all runnable examples. Coverage includes defining and calling functions, parameters and arguments, print versus return, single-purpose functions, default parameters, local variables, decomposition, and edge-case testing. The required app exercise and full gradebook solution remain learner work.
+
+### Findings and code/output QA
+
+- The greeting function outputs `Hello, Ada!`; the alternate call outputs `Hello, Lin!`.
+- The returning double function outputs `14` and `17` when the returned value is reused.
+- The average of `[10, 20, 30]` outputs `20.0`; the local-variable example with `[12, 18, 30]` also outputs `20.0`.
+- Default cutoff example outputs `True` for `passed(80)` and `False` for `passed(80, 90)`.
+- The script correctly distinguishes the function that prints from the function that returns.
+- Companion conversion outputs `1.5`; reused value outputs `Hours: 1.5` and `3.0`; print-only function example outputs `8` followed by `None`.
+- Empty-list behavior is explicitly described as an edge case rather than incorrectly presented as a successful average.
+- No completed required-exercise solution is shown. Real PyLearn navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 11–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
