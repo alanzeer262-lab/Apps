@@ -31,3 +31,9 @@
 
 ### Recap
 **Narration:** “Functions organize programs into reusable pieces. You define and call them, pass inputs through parameters, and return useful results. Defaults make common choices convenient, and small functions make larger problems manageable. Next, we'll use comprehensions, imports, and safe conversion.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 10 in PyLearn and implement the requested functions yourself. Test normal inputs and the edge cases specified by the task. Make sure you return values when the exercise asks for a return value."
