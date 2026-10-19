@@ -344,6 +344,28 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 13–20
+## Lesson 13 — Project 2: Study Time Calculator
+
+**Canonical source:** `content/python-basics/modules/13-build-study-calculator.md`
+**Scripts:** `scripts/python-basics/13-study-time-calculator.md` and `scripts/python-basics/practice/P13-study-time-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all demonstration examples. The required `study_time_report(total_minutes, sessions)` solution is not shown.
+
+### Findings and code/output QA
+
+- The canonical brief requires total minutes, full hours, remaining minutes, average session length, deliberate use of division/floor division/modulo/rounding, and the exact zero-session message: `No study sessions recorded.`
+- The main example with 245 minutes outputs decimal hours `4.083333333333333`, rounded display `4.1`, full hours `4`, and leftover minutes `5`.
+- The separate average example (150 minutes over 5 sessions) outputs `30.0`.
+- The companion example with 95 minutes outputs `1.5833333333333333`, `1`, and `35`; the average example outputs `20.0`.
+- The script correctly discusses zero sessions and tells learners to implement the specified message, without giving the complete required function.
+- The required project tests (360 minutes over 6 sessions, 65 minutes over 2 sessions, and zero sessions) are not presented as solved outputs.
+- Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 14–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
