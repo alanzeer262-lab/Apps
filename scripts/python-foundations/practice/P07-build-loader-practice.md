@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/07-build-loader.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion; do not reveal the required exercise implementation or hidden evaluation answers.
+**Track 2 practice visuals:** Use a loader workbench: file card, field inspector, and a highlighted raw value. Keep “Load” active on a small toolkit progress rail. Pause to ask what type a value has before revealing the answer; don't rely on repeated input/output boxes.
 
 ## Scene 1 — Trim a field
 
