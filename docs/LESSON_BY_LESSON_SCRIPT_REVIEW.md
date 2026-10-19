@@ -222,6 +222,31 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 08–20
+## Lesson 08 — Loops: for and while
+
+**Canonical source:** `content/python-basics/modules/08-loops.md`
+**Scripts:** `scripts/python-basics/08-loops.md` and `scripts/python-basics/practice/P08-loops-practice.md`
+**Review status:** Compared both scripts with the canonical source and executed all runnable code examples. Coverage includes iteration, accumulators, filtering, unpacking records, while loops, break, and continue. The lesson's final exercise remains learner work; its full solution is not shown.
+
+### Findings and code/output QA
+
+- The name loop outputs Ada, Lin, Sam, and Omar, each on its own line.
+- The accumulator example totals the scores to `313`.
+- The filtering example outputs `[70, 95, 88]`.
+- The record loop outputs `Ada: 88`, `Lin: 72`, and `Sam: 95`.
+- The while loop outputs `3`, `2`, and `1`, then terminates.
+- The break example outputs `70` and `88`; the loop stops when it reaches 95.
+- The continue example outputs `70`, `88`, and `95`, skipping 60.
+- Companion examples output the durations `15`, `20`, `10`; total `45`; and filtered list `[20, 35]`.
+- The source's next topic is dictionaries, tuples, and sets; the video close does not incorrectly promise another topic beyond the app's lesson flow.
+- No required exercise solution is exposed. Real PyLearn navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 09–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
