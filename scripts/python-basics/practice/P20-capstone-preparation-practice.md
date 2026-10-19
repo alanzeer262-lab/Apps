@@ -3,7 +3,7 @@
 > **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
 > - Voice: Kendrick
 > - Model: ElevenLabs v3
-> - Voice ID: exact approved Kendrick voice ID is not recorded in the reviewed repository files; insert the verified ID from the original Runway setup before generation.
+> - Voice setup: user confirmed the approved Kendrick / ElevenLabs v3 setup is settled; use the existing approved configuration without substitution.
 > - No guessed ID, substitution, or preset; use the same approved voice identity throughout.
 > - Speak narration only; do not read headings or bracketed production notes aloud.
 
