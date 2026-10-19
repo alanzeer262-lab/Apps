@@ -53,3 +53,38 @@
 ## Remaining companion scripts
 
 Each lesson also has a separate guided-practice companion video (P01–P20). These must use fresh analogous examples and must not reveal the required app exercise solution. The companion script index and files should be added here as they are completed.
+
+
+## Guided-practice companion scripts
+
+| Companion | Focus | Script |
+|---:|---|---|
+| P01 | First Program | [Open script](../scripts/python-basics/practice/P01-first-program-practice.md) |
+| P02 | Variables and Types | [Open script](../scripts/python-basics/practice/P02-variables-types-practice.md) |
+| P03 | Numbers and Operators | [Open script](../scripts/python-basics/practice/P03-numbers-practice.md) |
+| P04 | Strings | [Open script](../scripts/python-basics/practice/P04-strings-practice.md) |
+| P05 | Booleans | [Open script](../scripts/python-basics/practice/P05-booleans-practice.md) |
+| P06 | Lists | [Open script](../scripts/python-basics/practice/P06-lists-practice.md) |
+| P07 | Conditionals | [Open script](../scripts/python-basics/practice/P07-conditionals-practice.md) |
+| P08 | Loops | [Open script](../scripts/python-basics/practice/P08-loops-practice.md) |
+| P09 | Dictionaries, Tuples, and Sets | [Open script](../scripts/python-basics/practice/P09-dictionaries-tuples-sets-practice.md) |
+| P10 | Functions | [Open script](../scripts/python-basics/practice/P10-functions-practice.md) |
+| P11 | Comprehensions and Safe Conversion | [Open script](../scripts/python-basics/practice/P11-comprehensions-safe-conversion-practice.md) |
+| P12 | Learning Report | [Open script](../scripts/python-basics/practice/P12-learning-report-practice.md) |
+| P13 | Study Time | [Open script](../scripts/python-basics/practice/P13-study-time-practice.md) |
+| P14 | Clean Topics | [Open script](../scripts/python-basics/practice/P14-clean-topics-practice.md) |
+| P15 | Score Summary | [Open script](../scripts/python-basics/practice/P15-score-summary-practice.md) |
+| P16 | Progress Analyzer | [Open script](../scripts/python-basics/practice/P16-progress-analyzer-practice.md) |
+| P17 | Category Counts | [Open script](../scripts/python-basics/practice/P17-category-counts-practice.md) |
+| P18 | Reusable Functions | [Open script](../scripts/python-basics/practice/P18-reusable-functions-practice.md) |
+| P19 | Imperfect Input | [Open script](../scripts/python-basics/practice/P19-imperfect-input-practice.md) |
+| P20 | Capstone Preparation | [Open script](../scripts/python-basics/practice/P20-capstone-preparation-practice.md) |
+
+## Production status
+
+- [x] Full script file created for each of the 20 lesson videos.
+- [x] Separate guided-practice script file created for each of the 20 modules.
+- [ ] Exact approved Kendrick voice ID recovered and inserted into every script.
+- [ ] All code samples and expected outputs executed in Python as a final QA pass.
+- [ ] Real PyLearn navigation footage verified for every ending.
+- [ ] Narration generated only after voice ID verification and approval.
