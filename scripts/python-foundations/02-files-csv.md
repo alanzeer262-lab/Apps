@@ -8,7 +8,7 @@
 
 ## Scene 1 — Data that survives the program
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Show `learners.csv` as a real sheet of text. Highlight the header row first, then trace Ada and Lin into the table. Ask the learner to identify the three fields before moving to the reader code in the next scene.
 
 **Narration:**
 
