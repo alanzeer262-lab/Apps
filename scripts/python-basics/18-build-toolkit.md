@@ -24,4 +24,25 @@
 **Visual:** App/project card: **Build 7 — Reusable analysis toolkit**. Two empty function stubs labelled with their required signatures.
 **Narration:** “Open Build 7 in PyLearn and implement average_score and top_scorer yourself. Test normal input and the required empty cases. The goal is not to create the most functions; it is to give reusable behavior a clear name.”
 
-**End card:** “Open PyLearn → Build 7: Reusable analysis toolkit”
+## Final call to action — required for YouTube and in-app versions
+
+**Visual:** Show the PyLearn app's Practice section and the matching project card: **Build 7 — Toolkit**. Do not show the completed solution.
+
+**Narration:**
+
+Now it's your turn to build it yourself.
+
+Open the PyLearn app and go to the Practice section for this project. If you're watching on YouTube, open PyLearn and find Build 7 — Toolkit in the app.
+
+Write the code yourself, run it, and use the app's feedback to check your work. Try the required cases before moving on. Mistakes are part of learning, so read the feedback and try again.
+
+Watching the example is only the first step. Now open PyLearn and build it yourself!
+
+**End card:** “Open PyLearn → Practice → Build 7 — Toolkit”
+
+## Production checklist
+
+- [ ] The video demonstrates the problem and reasoning without giving away the complete app solution.
+- [ ] The final card explicitly points to Practice in PyLearn.
+- [ ] YouTube viewers are told to open PyLearn and find the matching project.
+- [ ] Review the full rendered video at normal speed before marking it complete.
