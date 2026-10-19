@@ -453,6 +453,26 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 18–20
+## Lesson 18 — Project 7: Reusable Analysis Toolkit
+
+**Canonical source:** `content/python-basics/modules/18-build-toolkit.md`
+**Scripts:** `scripts/python-basics/18-reusable-analysis-toolkit.md` and `scripts/python-basics/practice/P18-reusable-functions-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all runnable examples. The required `average_score` and `top_scorer` functions remain learner work, including their deliberate empty-case rules.
+
+### Findings and code/output QA
+
+- The main independent helper `total_points([12, 18, 20])` outputs `50`.
+- Reusing `total_points([5, 10, 15])` and dividing by three outputs `10.0`.
+- Companion helper `total_pages([10, 20, 30])` outputs `60`; reuse with two inputs outputs `20` and `40`.
+- The scripts correctly distinguish the two required functions and emphasize clear inputs, useful return values, and explicit empty-case behavior.
+- The lesson does not invent the project's exact empty-case outputs or reveal the full required functions. Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 19–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
