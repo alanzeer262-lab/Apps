@@ -8,6 +8,8 @@ on:
     paths-ignore:
       - 'public/videos/final/**'
       - 'docs/**'
+      - 'incoming/audio/**'
+      - '.github/workflows/**'
 
 permissions:
   contents: read
