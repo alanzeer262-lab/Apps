@@ -95,6 +95,34 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 03–20
+## Lesson 03 — Numbers and Operators
+
+**Canonical source:** `content/python-basics/modules/03-numbers-operators.md`
+**Scripts:** `scripts/python-basics/03-numbers-and-operators.md` and `scripts/python-basics/practice/P03-numbers-practice.md`
+**Review status:** The lesson script had duplicated scene sections and two competing final call-to-action endings. It has been consolidated into one coherent ten-scene lesson with one final call to action. The earlier draft also used the required exercise's starting value in an example while later saying not to show that value; examples now use separate values. Runnable examples in the revised lesson and companion were executed in Python.
+
+### Findings and code/output QA
+
+- Coverage matches the canonical module: arithmetic, normal division, floor division, remainder, powers, rounding, operator precedence, parentheses, units, and a mini study report.
+- Scene 1 outputs `6.0` for 360 minutes divided by 60.
+- Basic operators output `13`, `7`, `30`, and `3.3333333333333335`.
+- Floor division and remainder output `3` and `1` for ten divided into groups of three.
+- 187 minutes produces `3` complete hours and `7` remaining minutes.
+- Normal division versus floor division outputs `3.3333333333333335` and `3`.
+- `2 ** 3` outputs `8`; rounding `79.8333333333` to two decimal places outputs `79.83`.
+- Precedence examples output `16` without parentheses and `36` with parentheses.
+- The 360-minute report outputs `Weekly hours: 6.0` and `Monthly estimate: 24.0`.
+- The separate 245-minute example outputs `4.083333333333333`, `4`, `5`, and `16.3`.
+- Companion outputs were verified: `4.083333333333333`, then `4` and `5`, and rounded result `4.1`.
+- The required exercise's value of 425 minutes is not used in the revised teaching examples; the full exercise answer is not shown.
+- Real PyLearn navigation still must be verified before video production.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 04–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
