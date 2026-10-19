@@ -4,6 +4,10 @@
 **Canonical source:** `Pylearn-build260/content/python-basics/modules/01-first-program.md`
 **Use:** Runway narration preparation. Do not send scene headings or stage directions to text-to-speech; send only the spoken narration. Review code/output against the source before generating audio.
 
+## Lesson video standard
+
+This is the full teaching video, not the practice video. Keep the lesson rich: explain the ideas, show code gradually, pause for predictions, demonstrate outputs and common mistakes, and recap. Do not shorten or remove teaching content to make room for practice. The ending must clearly direct learners to the Practice section in the PyLearn app, including people watching on YouTube.
+
 ## Scene 1 — First program
 
 Welcome to PyLearn. I'm glad you're here.
@@ -100,18 +104,17 @@ Now the greeting says Sam. We didn't rewrite the whole message. We changed the v
 
 That's a useful idea. A program can use a value in a message, and when the value changes, the message can change too.
 
-
 ## Scene 7 — Showing a value versus returning it
 
 **Visual:** Keep the same editor. Show both function definitions, then call them separately. Never show the output before the matching call is narrated.
 
 **Narration:**
 
-“There's one important distinction in Python: showing a value is not the same as returning a value.
+There's one important distinction in Python: showing a value is not the same as returning a value.
 
 The print command displays something on the screen. A return statement hands a value back to the part of the program that called the function, so the program can use it again.
 
-Let's compare two small functions.”
+Let's compare two small functions.
 
 **Code to reveal**
 ```python
@@ -124,7 +127,7 @@ def add_tip(bill):
 
 **Narration:**
 
-“These are function definitions, so nothing is displayed just by defining them. The first function prints the total. The second returns the total.”
+These are function definitions, so nothing is displayed just by defining them. The first function prints the total. The second returns the total.
 
 **Visual:** Run `total = add_tip(40)`, then reveal the print calls in order.
 
@@ -143,7 +146,7 @@ For a table of two: 100
 
 **Narration:**
 
-“The function returns fifty. We store that answer, print it, and then use it again to calculate one hundred. Returning a value lets the rest of the program keep working with the answer.”
+The function returns fifty. We store that answer, print it, and then use it again to calculate one hundred. Returning a value lets the rest of the program keep working with the answer.
 
 **Visual:** Now run the print-only version.
 
@@ -161,7 +164,7 @@ None
 
 **Narration:**
 
-“The first line displays fifty. But because show_total doesn't return a value, the variable saved receives None. That is why the next line displays None. Remember: print talks to the person looking at the screen; return gives a value back to the code.”
+The first line displays fifty. But because show_total doesn't return a value, the variable saved receives None. That is why the next line displays None. Remember: print talks to the person looking at the screen; return gives a value back to the code.
 
 ## Scene 8 — A placeholder in a function
 
@@ -175,7 +178,7 @@ def double(number):
 
 **Narration:**
 
-“You may also see the word pass in starter code. Python needs a valid body inside a function. Pass is a placeholder that does nothing, allowing an unfinished function to run without a syntax error. When you complete the exercise, replace pass with your solution.”
+You may also see the word pass in starter code. Python needs a valid body inside a function. Pass is a placeholder that does nothing, allowing an unfinished function to run without a syntax error. When you complete the exercise, replace pass with your solution.
 
 **Visual:** Replace `pass` with `return number * 2`; call `double(7)` and display the result.
 
@@ -194,8 +197,7 @@ print(double(7))
 
 **Narration:**
 
-“Now the function returns fourteen, and print displays it. You'll learn to write functions more fully later. For now, recognize pass as a placeholder, not the finished answer.”
-
+Now the function returns fourteen, and print displays it. You'll learn to write functions more fully later. For now, recognize pass as a placeholder, not the finished answer.
 
 ## Scene 9 — Your turn
 
@@ -239,8 +241,25 @@ In the next lesson, we'll explore variables and data types more carefully. For n
 
 Your first Python program is complete.
 
-## App practice handoff
+## Final call to action — required for YouTube and in-app versions
 
-**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 1. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
 
-**Narration:** "Open Lesson 1 in PyLearn and complete its introduction exercise yourself. Change the values, run the code, and use the app feedback to check your result. The video has introduced the ideas; your practice in the app is what completes the lesson."
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open the PyLearn app and go to the Practice section for Lesson 1. If you're watching this on YouTube, you can do the same: open PyLearn and find the practice for this lesson.
+
+Try the exercises yourself. Write the code, run it, and use the feedback to check your work. It's okay to make mistakes — that's how you learn.
+
+The lesson showed you how the ideas work. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+
+## Production checklist
+
+- [ ] Lesson remains a full teaching video; do not trim concepts to make room for practice.
+- [ ] Code and output match exactly, and output is revealed only after the matching narration.
+- [ ] The final card explicitly names the PyLearn app's Practice section.
+- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
+- [ ] The ending does not reveal exercise solutions.
+- [ ] Full video is reviewed at normal speed before it is marked complete.
