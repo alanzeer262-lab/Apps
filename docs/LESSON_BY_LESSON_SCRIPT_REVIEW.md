@@ -19,34 +19,41 @@
 
 **Canonical source:** `content/python-basics/modules/01-first-program.md`
 **Script:** `scripts/python-basics/01-your-first-python-program.md`
-**Review status:** Needs revision before production.
+**Review status:** First revision committed; still not approved for production. Remaining gates: execute all code examples, verify real app navigation footage, and recover the exact approved voice ID.
 
-### Findings
+### Findings and actions
 
-- **Coverage gap — learner profile:** the source asks the learner to store a name, a learning goal, and weekly study hours, then print all three as readable sentences. The script demonstrates a name greeting but does not teach the goal and weekly-hours parts of that source example. Add a small complete illustrative profile while keeping it separate from the required app exercise.
-- **Pacing / cognitive load:** the script contains 11 teaching scenes and introduces strings, comments, f-strings, functions, print-versus-return, `None`, `pass`, and debugging in one video. These concepts exist in the source, but the current video needs stronger signposting and shorter, clearly separated steps so the first lesson does not feel like several lessons combined.
-- **Prerequisite framing:** the source says learners do not need to design functions yet, while also introducing `return` because the first exercises check returned values. The script should make that distinction explicit: recognize and understand the provided function starter; do not imply that learners must already design functions from scratch.
-- **Repetition:** debugging is explained in the matching-quotes scene, again in “Your turn,” and again in a separate debugging scene. Keep the first explanation, then use the later moment as a short application rather than repeating the same lesson.
-- **Visual/code staging:** the script includes code/output for the function examples, but the editor instructions need to make each execution boundary explicit: defining functions alone produces no output; each call should be run separately; output must appear only after its call is explained.
-- **Navigation remains unverified:** the ending correctly states that the required exercise unlocks the next lesson and that Practice Drills are optional. The exact real PyLearn screen/path still needs a capture from the app; do not invent or approximate the UI in the final footage.
+- **Coverage gap — corrected in the first revision:** the script now includes a source-aligned illustrative profile using name, learning goal, and weekly study hours, with readable f-string output. The learner's turn also asks them to create their own profile. This is a separate example, not the required in-app exercise answer.
+- **Pacing / cognitive load — improved, not fully signed off:** scene transitions and visual staging are clearer. The extra completed `double(7)` example was removed so the `pass` section stays focused on recognizing a placeholder rather than adding another function-writing demonstration.
+- **Prerequisite framing — corrected:** the script explicitly says learners do not need to design whole functions from scratch yet; they need to recognize a provided starter and understand `return` because the app checks returned values.
+- **Repetition — reduced:** the final debugging scene now applies the missing-quote example instead of re-teaching the full routine.
+- **Code staging — improved:** scenes 1–6 now include explicit code/output examples and instructions for when to run them. Function definitions, return calls, and the print-only call remain separate so the output sequence is understandable.
+- **Source alignment:** the script covers `print`, numeric output, quoted text/strings, matching quotes and a deliberately broken quote example, comments, f-strings, print-versus-return, `None`, `pass`, debugging, and the learner profile task.
+- **Navigation remains unverified:** the ending states the required-exercise unlock rule and that Practice Drills are optional. The exact real PyLearn screen/path still needs capture from the app; do not invent or approximate UI in final footage.
 - **Voice blocker:** the approved Kendrick voice ID is not recorded in the reviewed repository. Do not generate narration until the exact ID is recovered.
 
 ### Code/output observations
 
-- `print("Hello, I'm Python.")` should display `Hello, I'm Python.`.
+- `print("Hello, I'm Python.")` displays `Hello, I'm Python.`.
 - `print(2 + 3)` displays `5`.
-- `print(10)` and `print("10")` look alike in output, but are different types; this lesson should state that type is explored in Lesson 2.
-- The return example is logically correct: `add_tip(40)` returns `50`, the two subsequent prints show `You pay: 50` and `For a table of two: 100`; `show_total(40)` displays `50` and its assigned result is `None`. These outputs still need execution in the final QA pass.
-- The script's `double(7)` example outputs `14`; consider whether this extra function example is worth the additional load in Lesson 1.
+- `print(10)` and `print("10")` both display `10`, while Python treats the values differently.
+- The profile example should display exactly:
+  ```text
+  My name is Ada.
+  My goal is to learn data analysis.
+  I plan to study 6 hours each week.
+  ```
+- The return example is logically correct: `add_tip(40)` returns `50`; the following prints show `You pay: 50` and `For a table of two: 100`. The print-only function displays `50`, and its assigned result is `None`.
+- The comments example displays only `The code still runs.`; the comment is not displayed.
+- These outputs have been checked by inspection but **have not yet been executed as a complete QA pass**. Run every runnable code sample before production approval. The intentionally malformed quote must be tested separately as an expected SyntaxError.
 
-### Required revision before approval
+### Remaining approval gates
 
-1. Add the source-aligned name/goal/study-hours example.
-2. Rework the lesson flow to distinguish “understand a provided return-based starter” from “learn to design functions later.”
-3. Reduce repeated debugging explanation and tighten scene transitions without removing required source concepts.
-4. Make the run/output sequence explicit for each function example.
-5. Keep the existing required-exercise unlock rule and optional-drills wording.
-6. Verify the actual Lesson 1 navigation footage and execute every code sample before marking the lesson approved.
+1. Execute every runnable code sample and confirm exact output; separately verify the expected syntax error.
+2. Confirm that the full narration does not imply learners must design functions from scratch.
+3. Capture and verify the real PyLearn navigation path and required exercise screen.
+4. Recover and verify the exact approved Kendrick voice ID; do not substitute a voice.
+5. Review the complete rendered video at normal speed before marking Lesson 1 approved.
 
 ## Lessons 02–20
 
