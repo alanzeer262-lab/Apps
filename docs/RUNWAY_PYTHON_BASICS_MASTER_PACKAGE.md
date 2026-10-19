@@ -1,5 +1,10 @@
 # PyLearn Python Basics — Runway Production Pack (Master Brief)
 
+> **Full script index:** [RUNWAY_READY_SCRIPT_INDEX.md](RUNWAY_READY_SCRIPT_INDEX.md) — 20 complete lesson-video scripts plus 20 separate guided-practice companion scripts.
+>
+> **Voice-ID gate:** The exact approved Kendrick voice ID is not present in the repository files reviewed. Verify it from the original Runway setup before generating any narration. Do not guess or substitute a voice.
+
+
 Status: **Draft 1 — source-aligned production instructions; do not spend generation credits until narration and screen text are approved.**
 
 Canonical curriculum: `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.
