@@ -35,3 +35,9 @@
 
 ### Recap
 **Narration:** “Lists keep values in order. You can access and slice items, append or replace values, and use len, sum, min, max, sorted, and membership checks. Always consider edge cases like an empty list. Next, we'll use conditions to make decisions.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 6 in PyLearn and complete the list exercise in the app. Calculate the requested summary values, change one score, and test the empty-list case thoughtfully."
