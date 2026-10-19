@@ -137,15 +137,17 @@ The next track can introduce tools such as pandas and Jupyter. Those tools make 
 
 The goal of Python Basics is not to memorize Python. It's to become capable of using Python to solve a problem.
 
-## Final call to action — capstone navigation
+## Final call to action — watch the practice video
 
-**Visual:** Show the real PyLearn navigation path to “Mini Gradebook Capstone.” Highlight Milestone 1 only. Do not show solutions, completed milestone outputs, hidden tests, or unverified app UI.
+**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project/capstone solution.
 
 **Narration:**
 
-Open PyLearn and enter Mini Gradebook Capstone.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Start with Milestone 1, submit your work, read the feedback, and fix what you need to fix before moving on. Work through the milestones one at a time. The solution is yours to build.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
+
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
