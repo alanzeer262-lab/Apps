@@ -147,17 +147,17 @@ Before you finish, answer this question: why use floor division when normal divi
 
 Normal division gives a decimal result. Floor division tells us how many complete units fit. Modulo tells us what remains. These operations are related, but they answer different questions.
 
-## Project closing — required for in-app and YouTube versions
+## Final call to action — watch the practice video
 
-**Visual:** Show the real PyLearn navigation path to the “Study Time Calculator” project task. Do not show the complete function or its finished solution.
+**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project solution.
 
 **Narration:**
 
-Now open PyLearn and find the Study Time Calculator task.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Build it yourself and run the tests. This video has shown the ideas, not the finished solution. Practice Drills, if shown, are optional; complete and pass the required project exercise to unlock the next lesson.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
-Pause the video and start building.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
