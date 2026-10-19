@@ -29,3 +29,9 @@
 **Narration:** “Your turn. Build a dictionary from the records, create a set of unique scores, and count the grades. Add a duplicate record and observe which structures keep duplicates and which remove them.”
 **Hold:** 4 seconds.
 **Narration:** “Use lists for ordered collections, tuples for grouped records, dictionaries for key-value lookup, and sets for uniqueness. Next, we'll give reusable pieces of logic a name with functions.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 9 in PyLearn and complete the data-structure exercise. Build the mapping and counts, create the unique-value set, and test what happens when a duplicate record is added."
