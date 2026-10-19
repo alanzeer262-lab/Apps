@@ -36,7 +36,7 @@ An assert stops the program if its condition is false. If execution reaches the 
 
 ## Scene 2 — Test more than the happy path
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Keep the `average_score` function from Scene 1 in the same editor session. Add these assertions beneath it, run them together, and reveal the pass message only after all assertions succeed.
 
 **Narration:**
 
