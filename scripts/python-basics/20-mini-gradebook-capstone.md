@@ -31,8 +31,19 @@ You'll build a small gradebook in five graded milestones. Each milestone has one
 
 **Code**
 ```python
+records = [
+    ("Mia", 81),
+    ("Noah", 67)
+]
+
 for name, score in records:
     print(name, score)
+```
+
+**Expected output**
+```text
+Mia 81
+Noah 67
 ```
 
 **Narration:**
