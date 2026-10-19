@@ -1,23 +1,27 @@
 # PyLearn Video 15 — Build: Score Summary
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/15-build-score-summary.md`
-**Target:** 6–7 minutes.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 15, Build 4. **Target:** 3–4 minutes. Demonstrate concepts without giving the complete solution.
 
-### Scene 1 — Ask useful questions
-**Visual:** `scores = [70, 95, 88, 60]`.
-**Narration:** “A list of scores is useful, but a summary makes it easier to understand. We'll build summarize_scores, which returns the count, average, highest score, lowest score, and how many scores meet a threshold.”
+## Scene 1 — The mission
+**Visual:** Show `scores = [70, 95, 88, 60]`. Display five output labels: count, average, highest, lowest, passed.
+**Narration:** “A list of scores holds the data, but a summary helps us understand it. Your task is to build summarize_scores with a threshold that defaults to seventy. It must return a dictionary containing the count, average, highest score, lowest score, and number of scores that pass.”
 
-### Scene 2 — Build the summary
-**Visual:** Function signature `def summarize_scores(scores, threshold=70):`; reveal count, average, max, min, passed count, and return dictionary one line at a time.
-**Narration:** “The threshold defaults to seventy, but the caller can change it. Count comes from the length of the list, average is total divided by count, and max and min find the extremes. The passed field counts scores at or above the threshold.”
-**Visual:** Run normal example; show returned dictionary.
+## Scene 2 — Match each question to an operation
+**Visual:** Reveal a simple concept map: count → length; extremes → highest/lowest; passed → compare each score with threshold. Leave average calculation as a question.
+**Narration:** “Each field answers a different question. Count tells us how many scores we have. Highest and lowest describe the extremes. Passed counts scores at or above the threshold. The average summarizes the values together. A dictionary gives each result a clear label.”
 
-### Scene 3 — Empty list and boundary
-**Visual:** Show empty list check before average; return a deliberate empty result. Then test scores 69, 70, 71 against threshold 70.
-**Narration:** “An empty list has no average, maximum, or minimum. Handle it deliberately instead of letting the program crash. Now test sixty-nine, seventy, and seventy-one. If seventy or higher passes, exactly seventy must count.”
+## Scene 3 — Test the boundary
+**Visual:** Three cards: 69, 70, 71; threshold 70. Initially hide the pass/fail marks.
+**Narration:** “The rule says seventy or higher passes. Predict which of these three scores should count before revealing the result.”
+**Hold:** 5 seconds of silence. Reveal: 69 does not pass; 70 and 71 pass.
 
-### Scene 4 — Practice
-**Narration:** “Your turn. Change the scores and run the summary again. Then pass a different threshold and predict how the passed count changes. Explain why a dictionary is a useful shape for the result: each summary value has a clear label.”
-**Hold:** 4 seconds.
-**Narration:** “You combined lists, functions, conditions, and a dictionary result into a reusable summary. Next, we'll analyze several learners rather than a single list of scores.”
+## Scene 4 — Empty input matters
+**Visual:** Show an empty list and the note: “Return a deliberate empty result; do not crash.” Do not prescribe an exact dictionary unless the app brief does.
+**Narration:** “The project also requires a deliberate empty result for an empty list. An empty list has no average, highest, or lowest value. Follow the behavior specified in the app task rather than guessing.”
+
+## Scene 5 — Build in PyLearn
+**Visual:** App/project card: **Build 4 — Score summary**. Test checklist: normal list, empty list, 69/70/71, changed threshold.
+**Narration:** “Open Build 4 in PyLearn and implement summarize_scores yourself. Test the normal list, the empty list, and the threshold boundary. Then change the threshold and predict how the passed count changes.”
+
+**End card:** “Open PyLearn → Build 4: Score summary”
