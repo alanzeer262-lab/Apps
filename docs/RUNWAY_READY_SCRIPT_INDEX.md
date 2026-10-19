@@ -51,9 +51,9 @@
 - Capstone video explains the five milestones without revealing implementations or completed outputs.
 - The final screen uses verified PyLearn navigation; do not invent app UI.
 
-## Remaining companion scripts
+## Guided-practice companion scripts
 
-Each lesson also has a separate guided-practice companion video (P01–P20). These must use fresh analogous examples and must not reveal the required app exercise solution. The companion script index and files should be added here as they are completed.
+All 20 separate guided-practice companion script files (P01–P20) exist and are listed below. They use analogous examples and must not reveal the required app exercise solution. File existence is not production approval.
 
 
 ## Guided-practice companion scripts
@@ -84,9 +84,10 @@ Each lesson also has a separate guided-practice companion video (P01–P20). The
 ## Production status
 
 - [x] Script file exists for each of the 20 lesson videos (not equivalent to review approval).
-- [ ] Complete source-by-source audit and revision of Lessons 1–20, one lesson at a time.
-- [x] Separate guided-practice script file created for each of the 20 modules.
-- [ ] Exact approved Kendrick voice ID recovered and inserted into every script.
-- [ ] All code samples and expected outputs executed in Python as a final QA pass.
+- [x] Source-by-source content review and revision completed for Lessons 1–20, one lesson at a time.
+- [x] Separate guided-practice script file exists and is listed for each of the 20 modules.
+- [ ] Exact approved Kendrick voice ID recovered and verified against the original Runway setup.
+- [x] Runnable code examples and stated outputs checked during the lesson-by-lesson review; final rendered-video synchronization checks remain pending.
 - [ ] Real PyLearn navigation footage verified for every ending.
 - [ ] Narration generated only after voice ID verification and approval.
+- [ ] Every rendered video watched from beginning to end at normal speed before approval.
