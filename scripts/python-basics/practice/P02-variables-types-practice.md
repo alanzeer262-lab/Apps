@@ -72,9 +72,11 @@ minutes_value = int(minutes_text)
 
 **Narration:** Words such as twenty-five are not written as integer digits, so int cannot convert them directly. A real program needs a deliberate rule for invalid input.
 
-## Close — Navigate to the real task
+## Close — Complete the exercise
 
-**Narration:** Now open PyLearn and find the required coding exercise for Lesson 2. This companion is extra practice, not the graded exercise. Complete the required exercise and pass it to unlock the next lesson.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
 - [ ] Verify the exact approved Kendrick voice ID before generating audio.
