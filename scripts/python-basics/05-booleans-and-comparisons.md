@@ -30,8 +30,25 @@
 ### Recap
 **Narration:** “Booleans are True or False. Comparisons produce them, and and, or, and not combine them. Remember the difference between assignment and comparison, and test threshold boundaries deliberately. Next, we'll store collections of values in lists.”
 
-## App practice handoff
+## Final call to action — required for YouTube and in-app versions
 
-**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 5. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
 
-**Narration:** "Open Lesson 5 in PyLearn and complete the Boolean practice in the app. Predict the results first, then change the score to 69 and check the boundary behavior."
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open the PyLearn app and go to the Practice section for Lesson 5. If you're watching this on YouTube, open PyLearn and find the practice for this lesson there.
+
+Try the exercises yourself. Write the code, run it, and use the app's feedback to check your work. It's okay to make mistakes — that's how you learn.
+
+The lesson showed you how Booleans and comparisons work. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+
+## Production checklist
+
+- [ ] Keep the lesson rich and complete; do not shorten teaching content to make room for practice.
+- [ ] The final card explicitly names the PyLearn app's Practice section.
+- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
+- [ ] The ending does not reveal exercise solutions.
+- [ ] Verify all exercise references against the current app before recording.
+- [ ] Review the full rendered video at normal speed before marking it complete.
