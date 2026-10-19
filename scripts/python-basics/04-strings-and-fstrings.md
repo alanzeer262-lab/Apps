@@ -293,7 +293,29 @@ The first output has no outer spaces because strip removed them. The second outp
 
 That's a useful detail: each line starts with the value named in that line. We didn't assign the stripped value back to raw, so raw still contains the original text.
 
-## Scene 9 — Recap
+## Scene 9 — Clean a comma-separated topic list
+
+**Visual:** Reveal the raw string and the split call. Highlight the outer whitespace separately from the spaces after commas.
+
+**Code**
+```python
+raw = " python, pandas, pandas, machine learning "
+parts = raw.strip().split(",")
+print(parts)
+```
+
+**Expected output**
+```text
+['python', ' pandas', ' pandas', ' machine learning']
+```
+
+**Narration:**
+
+Here is a realistic example: several topics arrive in one string. Strip removes whitespace from the very beginning and end of the whole string. Split then separates the text at each comma.
+
+Notice that the later items still begin with a space. Strip did not remove those spaces because they are now inside individual pieces. When a program processes each topic, it needs to clean each piece too. We will learn more tools for processing collections later. For now, notice the transformation: raw text becomes separate pieces that we can inspect and clean.
+
+## Scene 10 — Recap
 
 **Visual:** Reveal the recap terms one by one: indexing, slicing, strip, upper/lower/title, split, in, replace, f-strings.
 
