@@ -23,6 +23,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh run download 39159061361 --repo "${{ github.repository }}" --name pylearn-lesson-02-render --dir downloaded-artifact
+      - name: Install FFmpeg for MP4 validation
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - name: Verify artifact and publish to permanent folder
         run: |
           test -s downloaded-artifact/lesson-02-variables-and-data-types.mp4
