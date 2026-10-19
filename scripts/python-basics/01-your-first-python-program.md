@@ -100,7 +100,104 @@ Now the greeting says Sam. We didn't rewrite the whole message. We changed the v
 
 That's a useful idea. A program can use a value in a message, and when the value changes, the message can change too.
 
-## Scene 7 — Your turn
+
+## Scene 7 — Showing a value versus returning it
+
+**Visual:** Keep the same editor. Show both function definitions, then call them separately. Never show the output before the matching call is narrated.
+
+**Narration:**
+
+“There's one important distinction in Python: showing a value is not the same as returning a value.
+
+The print command displays something on the screen. A return statement hands a value back to the part of the program that called the function, so the program can use it again.
+
+Let's compare two small functions.”
+
+**Code to reveal**
+```python
+def show_total(bill):
+    print(bill + 10)
+
+def add_tip(bill):
+    return bill + 10
+```
+
+**Narration:**
+
+“These are function definitions, so nothing is displayed just by defining them. The first function prints the total. The second returns the total.”
+
+**Visual:** Run `total = add_tip(40)`, then reveal the print calls in order.
+
+**Code**
+```python
+total = add_tip(40)
+print(f"You pay: {total}")
+print(f"For a table of two: {total * 2}")
+```
+
+**Expected output**
+```text
+You pay: 50
+For a table of two: 100
+```
+
+**Narration:**
+
+“The function returns fifty. We store that answer, print it, and then use it again to calculate one hundred. Returning a value lets the rest of the program keep working with the answer.”
+
+**Visual:** Now run the print-only version.
+
+**Code**
+```python
+saved = show_total(40)
+print(saved)
+```
+
+**Expected output**
+```text
+50
+None
+```
+
+**Narration:**
+
+“The first line displays fifty. But because show_total doesn't return a value, the variable saved receives None. That is why the next line displays None. Remember: print talks to the person looking at the screen; return gives a value back to the code.”
+
+## Scene 8 — A placeholder in a function
+
+**Visual:** Show an unfinished function with `pass`, then replace only that line with a real return statement.
+
+**Code**
+```python
+def double(number):
+    pass
+```
+
+**Narration:**
+
+“You may also see the word pass in starter code. Python needs a valid body inside a function. Pass is a placeholder that does nothing, allowing an unfinished function to run without a syntax error. When you complete the exercise, replace pass with your solution.”
+
+**Visual:** Replace `pass` with `return number * 2`; call `double(7)` and display the result.
+
+**Code**
+```python
+def double(number):
+    return number * 2
+
+print(double(7))
+```
+
+**Expected output**
+```text
+14
+```
+
+**Narration:**
+
+“Now the function returns fourteen, and print displays it. You'll learn to write functions more fully later. For now, recognize pass as a placeholder, not the finished answer.”
+
+
+## Scene 9 — Your turn
 
 Now it's your turn.
 
@@ -114,7 +211,7 @@ If the message doesn't look right, check the quotation marks first. Then check t
 
 You've just practiced changing a value and using it in a message.
 
-## Scene 8 — Debugging calmly
+## Scene 10 — Debugging calmly
 
 Let's practice fixing the small mistake we saw earlier.
 
@@ -126,13 +223,13 @@ Now it works.
 
 Remember this simple routine: read the error, check the line, change one thing, and run again. You don't have to panic when code doesn't work. You can investigate it step by step.
 
-## Scene 9 — Recap
+## Scene 11 — Recap
 
 Let's take a breath and review what you've done.
 
 You used print to display a message and a calculation. You saw that quotation marks tell Python when a value is text. You learned that comments are notes for people reading the code.
 
-Then you used a variable to store a name, and an f-string to place that name inside a message. Finally, you practiced fixing a small error by changing one thing at a time.
+Then you used a variable to store a name, and an f-string to place that name inside a message. You learned the difference between print and return, saw why a print-only function gives back None, and recognized pass as a placeholder. Finally, you practiced fixing a small error by changing one thing at a time.
 
 You don't need to remember every detail perfectly today. The important thing is that you've written code, run it, observed the result, and made a change yourself.
 
