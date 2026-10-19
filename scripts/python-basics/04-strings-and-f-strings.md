@@ -41,3 +41,9 @@ Read, slice, clean, split, search, replace, and format strings.
 
 ### Recap
 **Narration:** “Strings are sequences of characters. You can index and slice them, clean them with methods, split them into pieces, search with in, replace text, and create readable output with f-strings. Next, we'll teach Python to answer true-or-false questions.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 4 in PyLearn and complete the topic-cleaning exercise yourself. Clean and split the supplied text, check membership, and test a changed input. Use the app feedback to verify the result."
