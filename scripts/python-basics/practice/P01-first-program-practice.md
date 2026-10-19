@@ -60,9 +60,24 @@ Ready to learn
 
 ## Scene 4 — Repair a small mistake
 
-**Visual:** Show `print("Hello)` as intentionally broken code, run it to show the syntax error, then correct the closing quote.
+**Visual:** Show the broken line first and run it separately. Then replace it with the corrected line and run again. Do not leave the broken and corrected versions in the same runnable code block.
 
-**Narration:** This line has a missing closing quotation mark. Python can't tell where the string ends, so it reports a syntax error. Fix the quote, run again, and check the result. Change one thing at a time when debugging.
+**Broken code — expected SyntaxError**
+```python
+print("Hello)
+```
+
+**Corrected code**
+```python
+print("Hello")
+```
+
+**Expected output**
+```text
+Hello
+```
+
+**Narration:** This line has a missing closing quotation mark. Python can't tell where the string ends, so it reports a syntax error. Add the matching quote, run the corrected line, and check the result. Change one thing at a time when debugging.
 
 ## Close — Navigate to the real task
 
