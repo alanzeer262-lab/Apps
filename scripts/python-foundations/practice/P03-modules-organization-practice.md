@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/03-modules-organization.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Use draggable-looking file cards and a simple module connection map. During each pause, highlight the responsibility the learner should assign to a function or module. Reveal import connections one at a time. Preserve the teacher and voice; the visual language alone signals the new level.
 
 ## Scene 1 — Give the function one job
 
