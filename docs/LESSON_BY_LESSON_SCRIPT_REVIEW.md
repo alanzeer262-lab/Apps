@@ -1,6 +1,6 @@
 # PyLearn Python Basics — Lesson-by-Lesson Script Review
 
-**Status:** Content review is complete for lesson scripts 01–20 and guided-practice companions P01–P20. Scripts are not approved for narration or rendering merely because files exist; production gates remain open.
+**Status:** Content review is complete for lesson scripts 01–20 and guided-practice companions P01–P20. The user confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled. App UI footage is not required while the app is unfinished. Lesson videos should hand off to their matching practice video; practice videos should tell learners to complete the exercise to unlock the next lesson, with app practice optional.
 **Source of truth:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.
 **Review rule:** Finish the source comparison, teaching-flow review, code/output checks, and navigation check for one lesson before treating that lesson as ready. Do not bulk-mark lessons complete.
 
@@ -11,15 +11,15 @@
 3. **Code/output correctness:** execute every example; verify exact output, whitespace, types, rounding, and error claims.
 4. **Example safety:** examples teach the concept without revealing required exercise answers, hidden tests, or a complete project/capstone solution.
 5. **Video usability:** readable phone-sized code, explicit reveal/run/output timing, no duplicate scenes or conflicting versions, narration separated from production notes.
-6. **Navigation:** exact lesson/task name and real app path verified; required exercise completion unlocks the next lesson; Practice Drills are optional; project and capstone endings follow their own rules.
-7. **Voice and delivery:** Kendrick, ElevenLabs v3, exact approved voice ID verified before narration generation; no guessed ID or substitute voice.
+6. **Learner handoff:** lesson video recommends watching the matching practice video; practice video tells learners to complete the exercise to unlock the next lesson and says app practice is optional. Do not invent app screens or navigation.
+7. **Voice and delivery:** use the approved Kendrick voice with ElevenLabs v3 as confirmed by the user; no substitute voice.
 8. **Final watch-through:** inspect the full rendered video at normal speed before approval.
 
 ## Lesson 01 — Your First Python Program
 
 **Canonical source:** `content/python-basics/modules/01-first-program.md`
 **Script:** `scripts/python-basics/01-your-first-python-program.md`
-**Review status:** Lesson and companion script content reviewed; runnable examples executed successfully and the intentionally broken quote was confirmed to raise a SyntaxError. Not approved for video production yet: real app navigation footage and the exact approved voice ID remain unverified, and the rendered video watch-through must happen after production.
+**Review status:** Lesson and companion script content reviewed; runnable examples executed successfully and the intentionally broken quote was confirmed to raise a SyntaxError. Not approved for video production yet: the new practice-video handoff has been applied to Lesson 1; the rendered video watch-through must happen after production.
 
 ### Findings and actions
 
@@ -29,8 +29,8 @@
 - **Repetition — reduced:** the final debugging scene now applies the missing-quote example instead of re-teaching the full routine.
 - **Code staging — improved:** scenes 1–6 now include explicit code/output examples and instructions for when to run them. Function definitions, return calls, and the print-only call remain separate so the output sequence is understandable.
 - **Source alignment:** the script covers `print`, numeric output, quoted text/strings, matching quotes and a deliberately broken quote example, comments, f-strings, print-versus-return, `None`, `pass`, debugging, and the learner profile task.
-- **Navigation remains unverified:** the ending states the required-exercise unlock rule and that Practice Drills are optional. The exact real PyLearn screen/path still needs capture from the app; do not invent or approximate UI in final footage.
-- **Voice blocker:** the approved Kendrick voice ID is not recorded in the reviewed repository. Do not generate narration until the exact ID is recovered.
+- **Learner handoff:** the ending now directs the learner to the matching practice video. After that video, the learner completes the exercise to unlock the next lesson; optional app practice is encouraged. No real app screen/path is required while the app is unfinished.
+- **Voice setup:** the user confirmed the approved Kendrick / ElevenLabs v3 setup is settled. Use the existing approved configuration without substitution.
 
 ### Code/output QA — executed
 
@@ -54,9 +54,8 @@ The runnable Lesson 1 and P01 companion examples were executed in Python during 
 
 ### Remaining production gates
 
-1. Capture and verify the real PyLearn navigation path and required exercise screen; do not invent the UI.
-2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-3. Once production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking the video approved.
+1. Apply the agreed lesson-to-practice and practice-to-exercise endings consistently across the remaining scripts.
+2. When rendering is possible, review the complete video at normal speed and check code/output synchronization before approval.
 
 The source comparison, teaching-flow review, and listed runnable-code QA are complete for this content pass. Video-production approval remains separate from script readiness.
 
@@ -91,9 +90,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ### Remaining production gates
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
-3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Apply the agreed learner handoff consistently to this script: lesson video → practice video; practice video → exercise required to unlock next lesson, app practice optional.
+2. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 03 — Numbers and Operators
 
@@ -239,7 +237,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The continue example outputs `70`, `88`, and `95`, skipping 60.
 - Companion examples output the durations `15`, `20`, `10`; total `45`; and filtered list `[20, 35]`.
 - The source's next topic is dictionaries, tuples, and sets; the video close does not incorrectly promise another topic beyond the app's lesson flow.
-- No required exercise solution is exposed. Real PyLearn navigation and production prerequisites remain unverified.
+- No required exercise solution is exposed. App UI footage is not a production prerequisite. Apply the agreed learner handoff and verify the finished render when production is possible.
 
 ### Remaining production gates
 
@@ -336,7 +334,7 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
   ```
 - The companion uses different fields and a fictional reading example, so it demonstrates multi-line returned strings without solving the required learner-report task.
 - The source asks learners to test a normal learner, zero study hours, and an inactive learner; the main script discusses those cases without revealing a completed answer.
-- Real PyLearn project-task navigation and production prerequisites remain unverified.
+- App UI footage is not a production prerequisite. Keep the learner handoff verbal and verify the finished render when production is possible.
 
 ### Remaining production gates
 
@@ -516,4 +514,4 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-**Status:** Source review and the two identified script corrections are complete. This does not mean the videos are production-approved: the exact voice ID and real app navigation still need verification, and every rendered video must pass a full normal-speed watch-through.
+**Status:** Source review and the two identified script corrections are complete. The user confirmed the approved voice setup. The agreed learner handoff removes the need for real app footage. Remaining work is to apply the handoff consistently, render when credits are available, and watch each finished video end to end.
