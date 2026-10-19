@@ -61,14 +61,16 @@ Now change the value to `18`, then `26`, then `27`, running after each change.
 
 **Narration:** Boundary values help us check whether the rule is correct. Eighteen and twenty-six are included because we used greater-than-or-equal and less-than-or-equal. Seventeen and twenty-seven are outside the range.
 
-## Close — Navigate to the real task
+## Close — Complete the exercise
 
-**Narration:** Now open PyLearn and find the required coding exercise for Lesson 5. This companion is extra practice, not a substitute for the required exercise that unlocks the next lesson.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
-- [ ] Verify the exact approved Kendrick voice ID before generating audio.
-- [ ] Use ElevenLabs v3 with the same approved voice identity.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
+- [x] Use the approved Kendrick voice with ElevenLabs v3, as confirmed by the user.
 - [ ] Verify all code and outputs in Python.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Do not reveal the required app exercise solution.
-- [ ] End by directing the learner to the required PyLearn exercise.
+- [x] End by telling the learner to complete the exercise to unlock the next lesson; app practice is optional.
