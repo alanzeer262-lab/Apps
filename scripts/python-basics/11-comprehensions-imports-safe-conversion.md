@@ -33,3 +33,9 @@
 
 ### Recap
 **Narration:** “Comprehensions transform collections, imports reuse existing tools, None represents absence of a value, and try/except handles expected conversion errors. You've completed the core Python Basics modules. Next, we'll apply these skills in small projects and then the Mini Gradebook capstone.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 11 in PyLearn and implement safe conversion yourself. Test a valid number, invalid text, and an empty string, then separate valid and invalid values according to the exercise instructions."
