@@ -238,3 +238,9 @@ That's a real first step into programming.
 In the next lesson, we'll explore variables and data types more carefully. For now, take a moment to be proud of what you've built.
 
 Your first Python program is complete.
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 1 in PyLearn and complete its introduction exercise yourself. Change the values, run the code, and use the app feedback to check your result. The video has introduced the ideas; your practice in the app is what completes the lesson."
