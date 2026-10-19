@@ -41,7 +41,7 @@ If the result changes unexpectedly, the assertion fails where the behavior is ch
 
 ## Close — Complete the exercise
 
-**Visual:** End card: “Your turn: Complete the exercise”. Do not show unfinished PyLearn app screens.
+**Visual:** Keep the `average` function from Scene 1 in the same editor session. Add the two assertions below it and reveal “Edge cases passed” only after both checks succeed.
 
 **Narration:** Good work. Now complete the exercise to unlock the next lesson. Use the habits from this practice: test small cases, check assumptions, and change one thing at a time. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
