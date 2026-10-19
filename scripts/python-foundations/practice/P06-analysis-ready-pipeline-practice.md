@@ -60,3 +60,6 @@ The original row count belongs in the report even if some values are later rejec
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this practice:** Show each record entering the pipeline, then visibly separate accepted and rejected rows according to the displayed cleaning rule. Keep the rejected lane visible when summarizing; every count and average must come from the current sample, not a generic dashboard template.
