@@ -9,18 +9,16 @@
 
 **Narration:** A function that reads a file and calculates an average in one block has two responsibilities. Imagine separating file loading from average calculation.
 
-**Code**
+**Module file — `calculations.py`**
 
-    def average_values(values):
-        if not values:
-            return 0.0
-        return sum(values) / len(values)
+```python
+def average_values(values):
+    if not values:
+        return 0.0
+    return sum(values) / len(values)
+```
 
-    print(average_values([4, 8, 12]))
-
-**Expected output**
-
-    8.0
+**Visual result:** The module defines a reusable calculation and prints nothing by itself. Show the function staying inside its own file tab.
 
 This calculation can be tested without reading a file. That clear boundary makes the code easier to maintain.
 
@@ -28,15 +26,20 @@ This calculation can be tested without reading a file. That clear boundary makes
 
 **Narration:** When a function lives in a module, another file can import it rather than copying its implementation. Keep the interface small and predictable.
 
-**Code**
+**Runner file — `main.py`**
 
-    values = [5, 10]
-    result = sum(values) / len(values)
-    print(result)
+```python
+from calculations import average_values
+
+values = [5, 10]
+print(average_values(values))
+```
 
 **Expected output**
 
-    7.5
+```text
+7.5
+```
 
 Use this example to decide which code belongs in a reusable calculation module and which belongs in the report layer.
 
@@ -52,3 +55,6 @@ Use this example to decide which code belongs in a reusable calculation module a
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+**Visual transition rule for this practice:** Show the function being defined in `calculations.py`, then draw the import connection to `main.py`, then show the call with `[5, 10]` and reveal `7.5` only after execution. Keep module contents separate from console output.
