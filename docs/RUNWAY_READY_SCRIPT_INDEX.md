@@ -90,8 +90,9 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - [x] Separate guided-practice script file exists and is listed for each of the 20 modules.
 - [x] User confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled.
 - [x] Runnable code examples and stated outputs checked during the lesson-by-lesson review; final rendered-video synchronization checks remain pending.
-- [x] Agreed lesson-to-practice handoff applied to all 20 lesson scripts.
-- [x] Agreed exercise-unlock ending applied to all 20 practice scripts; optional app practice is mentioned.
+- [x] Standard lesson-to-practice handoff applied to Lessons 1–19.
+- [x] Standard exercise-unlock ending applied to Practice 1–19; optional app practice is mentioned.
+- [x] Lesson 20 directs learners to the capstone practice video; Practice 20 ends with completing the final capstone and congratulating the learner. It does not mention unlocking another lesson.
 - [x] No unfinished app UI or invented navigation is required.
 - [ ] Narration generated with the approved voice setup when production credits are available.
 - [ ] Every rendered video watched from beginning to end at normal speed before approval.
