@@ -25,4 +25,25 @@
 **Visual:** App/project card: **Build 1 — My learning report**. Checklist: implement function; return four lines; test normal learner, zero hours, inactive learner.
 **Narration:** “Now open Build 1 in PyLearn and implement the function yourself. Test a normal learner, a learner with zero study hours, and an inactive learner. Use the app's feedback to check your work. Then reflect: which values are measurements, and which are descriptions?”
 
-**End card:** “Open PyLearn → Build 1: My learning report”
+## Final call to action — required for YouTube and in-app versions
+
+**Visual:** Show the PyLearn app's Practice section and the matching project card: **Build 1 — My learning report**. Do not show the completed solution.
+
+**Narration:**
+
+Now it's your turn to build it yourself.
+
+Open the PyLearn app and go to the Practice section for this project. If you're watching on YouTube, open PyLearn and find Build 1 — My learning report in the app.
+
+Write the code yourself, run it, and use the app's feedback to check your work. Try the required cases before moving on. Mistakes are part of learning, so read the feedback and try again.
+
+Watching the example is only the first step. Now open PyLearn and build it yourself!
+
+**End card:** “Open PyLearn → Practice → Build 1 — My learning report”
+
+## Production checklist
+
+- [ ] The video demonstrates the problem and reasoning without giving away the complete app solution.
+- [ ] The final card explicitly points to Practice in PyLearn.
+- [ ] YouTube viewers are told to open PyLearn and find the matching project.
+- [ ] Review the full rendered video at normal speed before marking it complete.
