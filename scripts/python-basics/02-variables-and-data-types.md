@@ -325,3 +325,9 @@ Hold for approximately 3 seconds after the final spoken word.
 - [ ] Visuals keep the Lesson 1 editor, terminal, typography, and palette.
 - [ ] Transcript-derived anchors are validated against the actual approved audio.
 - [ ] Full video is reviewed at normal speed before it is marked complete.
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 2 in PyLearn and complete the variable-profile exercise. Inspect the types, try the conversions, and test the invalid text case yourself. Use the app feedback to check your work."
