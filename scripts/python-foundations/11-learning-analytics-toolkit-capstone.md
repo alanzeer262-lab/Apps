@@ -1,5 +1,7 @@
 # PyLearn Video — Learning Analytics Toolkit — Final Build
 
+**Track 2 visual identity:** Keep the same teacher and pacing, but make the capstone feel like a final project workspace. Use a wide canvas with the six-stage pipeline, a milestone board, a data-quality lane, and a blank report wireframe. Reveal milestones one at a time and use progress markers to signal the learner is assembling a complete tool. Do not show a finished solution, finished report values, or unfinished app UI. End with a distinctive “Final Capstone Practice” card, not a next-lesson unlock prompt.
+
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3.
 **Canonical source:** Pylearn-build260/content/python-foundations/projects/final-toolkit.md, branch ccr-c7f6fdd7-xpzi3g.
 
