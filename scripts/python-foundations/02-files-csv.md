@@ -14,15 +14,15 @@
 
 Until now, many examples have kept data inside the code. A file lets a program read information saved outside the program. CSV stands for comma-separated values. Think of it as a simple table stored as text.
 
-**Code**
-    
-    name,topic,score
-        Ada,Python,88
-        Lin,Python,72
+**Input file — `learners.csv`**
+```csv
+name,topic,score
+Ada,Python,88
+Lin,Python,72
+```
 
-**Expected output**
-    
-This CSV has a header row and two records. The header names each column, and each following line contains one learner's values.
+**Visual result**
+A header row and two data records. The header names each column; each following line contains one learner’s values. This is the source file for Scene 2.
 
 **Narration:**
 
@@ -37,20 +37,22 @@ Pause and compare the output with your prediction. Change one thing at a time, r
 Python includes a csv module. DictReader uses the header names as keys, so each row behaves like a dictionary. The with statement ensures the file is closed when the block finishes.
 
 **Code**
-    
-    import csv
-    
-        with open("learners.csv", newline="") as file:
-            reader = csv.DictReader(file)
-            records = list(reader)
-    
-        print(records[0]["name"])
-        print(records[0]["score"])
+```python
+import csv
+
+with open("learners.csv", newline="") as file:
+    reader = csv.DictReader(file)
+    records = list(reader)
+
+print(records[0]["name"])
+print(records[0]["score"])
+```
 
 **Expected output**
-    
-    Ada
-        88
+```text
+Ada
+88
+```
 
 **Narration:**
 
@@ -65,16 +67,18 @@ There is an important detail: values read from CSV arrive as text. The score loo
 A normal row can be converted to an integer, but real files can contain blanks or unexpected text. A robust program decides how to handle conversion failures instead of assuming every value is valid.
 
 **Code**
-    
-    raw_score = "88"
-        score = int(raw_score)
-        print(score + 2)
-        print(type(score))
+```python
+raw_score = "88"
+score = int(raw_score)
+print(score + 2)
+print(type(score))
+```
 
 **Expected output**
-    
-    90
-        <class 'int'>
+```text
+90
+<class 'int'>
+```
 
 **Narration:**
 
@@ -89,15 +93,22 @@ This example uses a clean value. Later, the pipeline will separate loading from 
 Reading data is only half the story. Python can also write a result to a file. Opening a file with write mode creates it or replaces its previous contents, so use that mode intentionally.
 
 **Code**
-    
-    with open("report.txt", "w") as file:
-            file.write("Average score: 80.0\n")
-    
-        print("Report saved")
+```python
+with open("report.txt", "w") as file:
+    file.write("Average score: 80.0\n")
+
+print("Report saved")
+```
 
 **Expected output**
-    
-    Report saved
+```text
+Report saved
+```
+
+**File written — `report.txt`**
+```text
+Average score: 80.0
+```
 
 **Narration:**
 
@@ -139,3 +150,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - [ ] Keep narration separate from production directions.
 - [ ] Do not show the required app exercise solution or hidden tests.
 - [ ] Watch the complete rendered video at normal speed before approval.
+
+
+**Visual transition rule for this lesson:** Show the exact `learners.csv` file before the loader runs. Trace header names into dictionary keys and the first row into `records[0]`; show that the score is text before converting it in Scene 3. In Scene 4, show the write operation creating `report.txt`, then show the actual file contents separately from the console message. Never present a file's contents as console output.
