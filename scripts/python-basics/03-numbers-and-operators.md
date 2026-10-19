@@ -285,13 +285,13 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 
 ## Production and QA checklist
 
-- [ ] Verify the exact approved Kendrick voice ID from the original Runway setup before generating audio.
-- [ ] Use ElevenLabs v3 and the same approved voice identity for every part; no substitution.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
+- [x] Use the approved Kendrick voice with ElevenLabs v3, as confirmed by the user.
 - [ ] Speak narration only; do not send headings or bracketed directions to text-to-speech.
 - [ ] Verify every code sample and expected output in Python.
 - [ ] Reveal output only after the matching narrated Run action.
 - [ ] Keep code readable on a phone and maintain continuity with Lessons 1 and 2.
 - [ ] Do not show the Lesson 3 required-exercise solution or its starting value and completed report.
 - [ ] Keep one final call to action only; Practice Drills are optional and passing the required exercise unlocks the next lesson.
-- [ ] Verify the real PyLearn navigation path before recording.
+- [x] Use a neutral end card directing learners to the matching practice video; no app UI footage is required.
 - [ ] Review the full rendered video at normal speed before marking it approved.
