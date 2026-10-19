@@ -149,6 +149,29 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 05–20
+## Lesson 05 — Booleans and Comparisons
+
+**Canonical source:** `content/python-basics/modules/05-booleans.md`
+**Scripts:** `scripts/python-basics/05-booleans-and-comparisons.md` and `scripts/python-basics/practice/P05-booleans-practice.md`
+**Review status:** Source comparison completed and runnable examples executed in Python. The companion's boundary-testing scene was clarified so the learner sees the exact condition and the expected result for 17, 18, 26, and 27, rather than relying on narration alone.
+
+### Findings and code/output QA
+
+- Coverage matches the canonical source: Boolean values, comparison operators, `=` versus `==`, boundary values, `and`, `or`, `not`, and reading a condition as an English sentence.
+- Basic comparison examples output `True` and `False`; the six comparison operators output `True`, `True`, `True`, `False`, `True`, `True`.
+- Assignment/comparison example outputs `True` and `False`.
+- Boundary check outputs `False` for 69, `True` for 70, and `True` for 71.
+- The score and attendance conditions each output `True`, and their combined `and` condition outputs `True`.
+- The `or` and `not` examples output `True` and `False`; the readable condition example outputs `True`.
+- Companion temperature checks output `True`, `True`, and the combined condition `True`. Boundary results for 17, 18, 26, and 27 are respectively `False`, `True`, `True`, and `False`.
+- The examples do not reveal the completed required app exercise. Real PyLearn navigation still must be verified before production.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 06–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
