@@ -45,7 +45,19 @@ print(comfortable)
 
 ## Scene 3 — Test the boundary
 
-**Visual:** Run with 17, 18, 26, and 27 one at a time.
+**Visual:** Change only the temperature value and run each case separately. Keep the same comparison visible.
+
+**Code — start with 17**
+```python
+temperature = 17
+print(temperature >= 18 and temperature <= 26)
+```
+
+**Expected output:** `False`
+
+Now change the value to `18`, then `26`, then `27`, running after each change.
+
+**Expected results, in order:** `True`, `True`, `False`
 
 **Narration:** Boundary values help us check whether the rule is correct. Eighteen and twenty-six are included because we used greater-than-or-equal and less-than-or-equal. Seventeen and twenty-seven are outside the range.
 
