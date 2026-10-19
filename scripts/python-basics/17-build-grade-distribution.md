@@ -24,4 +24,25 @@
 **Visual:** App/project card: **Build 6 — Grade distribution**. Checklist: score-to-grade function; grade-count function; boundary tests.
 **Narration:** “Open Build 6 in PyLearn and implement both functions yourself. Test the sample scores and each boundary. Then reflect: why is a count such as ‘B: 3’ more useful for analysis than storing three separate B values?”
 
-**End card:** “Open PyLearn → Build 6: Grade distribution”
+## Final call to action — required for YouTube and in-app versions
+
+**Visual:** Show the PyLearn app's Practice section and the matching project card: **Build 6 — Grade distribution**. Do not show the completed solution.
+
+**Narration:**
+
+Now it's your turn to build it yourself.
+
+Open the PyLearn app and go to the Practice section for this project. If you're watching on YouTube, open PyLearn and find Build 6 — Grade distribution in the app.
+
+Write the code yourself, run it, and use the app's feedback to check your work. Try the required cases before moving on. Mistakes are part of learning, so read the feedback and try again.
+
+Watching the example is only the first step. Now open PyLearn and build it yourself!
+
+**End card:** “Open PyLearn → Practice → Build 6 — Grade distribution”
+
+## Production checklist
+
+- [ ] The video demonstrates the problem and reasoning without giving away the complete app solution.
+- [ ] The final card explicitly points to Practice in PyLearn.
+- [ ] YouTube viewers are told to open PyLearn and find the matching project.
+- [ ] Review the full rendered video at normal speed before marking it complete.
