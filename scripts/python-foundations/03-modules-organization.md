@@ -14,17 +14,16 @@
 
 A short program can live in one file. As it grows, loading data, validating it, calculating results, and formatting reports can become tangled. A module is simply a Python file that contains reusable code.
 
-**Code**
-    
-    # analysis.py
-        def average_score(scores):
-            if not scores:
-                return 0.0
-            return sum(scores) / len(scores)
+**Module file — `analysis.py`**
+```python
+def average_score(scores):
+    if not scores:
+        return 0.0
+    return sum(scores) / len(scores)
+```
 
-**Expected output**
-    
-This module has one clear responsibility: calculate an average. It also handles an empty list without dividing by zero.
+**Visual result**
+The module defines one reusable function. Defining the function does not print anything; the next scene imports and calls it.
 
 **Narration:**
 
@@ -38,15 +37,17 @@ Pause and compare the output with your prediction. Change one thing at a time, r
 
 Another Python file can import the function by its module name. The module name comes from the file name, without the .py ending.
 
-**Code**
-    
-    from analysis import average_score
-    
-        print(average_score([80, 90]))
+**Runner file — `main.py`**
+```python
+from analysis import average_score
+
+print(average_score([80, 90]))
+```
 
 **Expected output**
-    
-    85.0
+```text
+85.0
+```
 
 **Narration:**
 
@@ -60,17 +61,14 @@ The second file does not need to copy the average calculation. It uses the same 
 
 For a data toolkit, one module can load files, another can validate records, another can calculate summaries, and another can write reports. The goal is not to create as many files as possible. The goal is to make each responsibility easy to find.
 
-**Code**
-    
-    # summary.py
-        def passing_count(scores, threshold):
-            return sum(score >= threshold for score in scores)
-    
-        print(passing_count([60, 70, 90], 70))
+**Module file — `summary.py`**
+```python
+def passing_count(scores, threshold):
+    return sum(score >= threshold for score in scores)
+```
 
-**Expected output**
-    
-    2
+**Visual result**
+The function counts scores meeting the threshold. Keep the module focused on defining the function; call it from the runner in Scene 4.
 
 **Narration:**
 
@@ -84,15 +82,19 @@ This function answers one question: how many scores meet the threshold? A small,
 
 When a function takes a list and returns a result, that boundary can be tested without reading a file. When file loading has its own function, we can test it separately too.
 
-**Code**
-    
-    scores = [60, 70, 90]
-        count = passing_count(scores, 70)
-        print(f"Passing: {count}")
+**Runner file — `main.py`**
+```python
+from summary import passing_count
+
+scores = [60, 70, 90]
+count = passing_count(scores, 70)
+print(f"Passing: {count}")
+```
 
 **Expected output**
-    
-    Passing: 2
+```text
+Passing: 2
+```
 
 **Narration:**
 
@@ -134,3 +136,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - [ ] Keep narration separate from production directions.
 - [ ] Do not show the required app exercise solution or hidden tests.
 - [ ] Watch the complete rendered video at normal speed before approval.
+
+
+**Visual transition rule for this lesson:** Show separate file tabs for `analysis.py` or `summary.py` and `main.py`. First show the function definition living in its module; then draw the import connection; finally show the runner calling the function and reveal the exact returned/printed value. Do not show the function's return value as console output until a call actually prints it.
