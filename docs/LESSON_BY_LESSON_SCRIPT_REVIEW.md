@@ -411,6 +411,27 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 16–20
+## Lesson 16 — Project 5: Multi-Record Progress Analyzer
+
+**Canonical source:** `content/python-basics/modules/16-build-progress-analyzer.md`
+**Scripts:** `scripts/python-basics/16-multi-record-progress-analyzer.md` and `scripts/python-basics/practice/P16-progress-analyzer-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all demonstration examples. The required `analyze_records` function and complete returned summary remain learner work.
+
+### Findings and code/output QA
+
+- The source requires count, average, top scorer, passed, and needs_support; the learner lists must preserve input order and empty records must be handled.
+- The main record loop outputs `Mia: 81`, `Noah: 67`, and `Iris: 93`.
+- The separate passing-rule example outputs `Mia passed` and `Iris passed`, matching the threshold of 70.
+- Companion accumulator outputs `7`; max example outputs `3`.
+- The main script explains empty input and preserving order without presenting the full analyzer solution or the canonical required records as a completed result.
+- Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 17–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
