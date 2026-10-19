@@ -366,6 +366,30 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 14–20
+## Lesson 14 — Project 3: Clean My Learning Topics
+
+**Canonical source:** `content/python-basics/modules/14-build-topic-cleaner.md`
+**Scripts:** `scripts/python-basics/14-clean-my-learning-topics.md` and `scripts/python-basics/practice/P14-clean-topics-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed the demonstration examples. The main script's raw-text example now uses `repr()` so leading and trailing spaces are visibly verifiable. The full `clean_topics` implementation is not shown.
+
+### Findings and code/output QA
+
+- The source rules are preserved: split on commas, remove surrounding whitespace, normalize capitalization, ignore empty pieces, and search without case sensitivity.
+- The raw-text example outputs `'  data, Python, data  '`, making the spaces visible.
+- Splitting outputs `['data', ' Python', ' data']`; spaces inside individual pieces remain until they are cleaned.
+- Cleaning and lowercasing outputs `python`.
+- Repeated separators output `['python', '', 'pandas']`, correctly demonstrating the empty piece that the project must ignore.
+- Case-insensitive comparison outputs `True`.
+- Companion hobby example outputs `['hiking', ' cooking', ' hiking']`; normalizing one hobby outputs `cooking`; normalized membership outputs `True`.
+- The companion uses hobbies rather than the required project data and does not reveal the required function solution.
+- Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 15–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
