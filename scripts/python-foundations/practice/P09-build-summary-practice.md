@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/09-build-summary.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion; do not reveal the required exercise implementation or hidden evaluation answers.
+**Track 2 practice visuals:** Use a compact analytics dashboard with count, average, and maximum tiles plus a small distribution graphic. Pause before the figures appear. Demonstrate the empty case with an intentional empty-state panel. Keep “Summarize” active on the toolkit progress rail.
 
 ## Scene 1 — Calculate a compact summary
 
