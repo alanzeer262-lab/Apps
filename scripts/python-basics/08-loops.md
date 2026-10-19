@@ -30,3 +30,9 @@
 **Narration:** “Your turn. Process these records with a loop. Add one more learner and predict how the totals and counts change.”
 **Hold:** 4 seconds.
 **Narration:** “Loops repeat work over items or while a condition is true. You can accumulate totals, filter collections, and unpack records. Next, we'll choose the right data structure for different kinds of information.”
+
+## App practice handoff
+
+**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+
+**Narration:** "Open Lesson 8 in PyLearn and process the learner records yourself. Build the requested totals, counts, and filtered names, then add one record and check what changes."
