@@ -38,7 +38,7 @@ The quantity is text, so convert it before arithmetic.
 
 ## Close — Complete the exercise
 
-**Visual:** End card: “Your turn: Complete the exercise”. Do not show unfinished PyLearn app screens.
+**Visual:** Continue in the same session with `rows` created in Scene 1. Highlight each string quantity before `int()` conversion, then show the addition 12 + 4 = 16.
 
 **Narration:** Good work. Now complete the exercise to unlock the next lesson. Use the habits from this practice: test small cases, check assumptions, and change one thing at a time. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
