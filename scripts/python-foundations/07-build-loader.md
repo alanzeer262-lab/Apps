@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/07-build-loader.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Make this feel like the first build bench: a CSV file card opens into a row inspector, with headers and raw values highlighted. Use a persistent small progress rail for the toolkit stages, with “Load” highlighted and later stages muted. Avoid making the screen a generic input/output demonstration.
+
 ## Scene 1 — The loader's responsibility
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
