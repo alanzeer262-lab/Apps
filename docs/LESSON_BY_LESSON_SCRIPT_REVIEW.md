@@ -390,6 +390,27 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 15–20
+## Lesson 15 — Project 4: Score Summary
+
+**Canonical source:** `content/python-basics/modules/15-build-score-summary.md`
+**Scripts:** `scripts/python-basics/15-score-summary.md` and `scripts/python-basics/practice/P15-score-summary-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all demonstration examples. The required `summarize_scores` implementation and its complete returned dictionary remain learner work.
+
+### Findings and code/output QA
+
+- The source requires a returned dictionary with count, average, highest, lowest, and passed; the empty list must return a deliberate result rather than crash.
+- The main independent example outputs count `4`, average `78.75`, highest `91`, and lowest `62`.
+- The threshold example outputs `True` for score 70 and threshold 70, correctly including the boundary.
+- The companion ratings example outputs count `4`, average `3.5`, highest `5`, and lowest `2`; its threshold example outputs `True`.
+- The scripts explain empty-list handling without inventing a specific empty-result structure that the canonical brief does not define.
+- Required app test values and the completed solution are not shown as solved output. Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 16–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
