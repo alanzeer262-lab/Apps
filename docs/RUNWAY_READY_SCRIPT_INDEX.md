@@ -154,3 +154,19 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 - [ ] Approve final MP4s and place them in `public/videos/final/`.
 
 **Important:** Script authoring is complete for the initial production package; this is not a claim that narration or rendered videos are finished or approved.
+
+
+## Track 2 visual treatment — approved direction
+
+**Intent:** Make Python Foundations feel like the next level without changing the teacher, narration style, pacing, or approved Kendrick / ElevenLabs v3 voice. This is a visual evolution, not a new show.
+
+- **Base look:** Deep graphite / slate workspace, subtle grid or technical texture, restrained teal for active/verified elements, amber for focus or caution, and muted coral for rejected/failed cases.
+- **Keep continuity:** Same teacher, same voice, same clear code reveal and readable pacing. Do not redesign the teacher or make the lesson feel like a different presenter.
+- **Move beyond repeated input/output boxes:** Use concept-led visuals: debugging trails and code diffs; CSV row inspectors; module maps; validation gates and test matrices; data tables, filters and grouped bars; pipeline stages and rejected-record lanes; compact analytics tiles; report wireframes.
+- **Build lessons:** Show a small persistent toolkit-stage rail and highlight the current stage (Load, Validate, Summarize, Pipeline) when useful.
+- **Practice companions:** Add prediction pauses and reveal results after the learner has time to think. Use the same visual language, but make practice more interactive with highlights, checkpoints and test benches.
+- **Final capstone:** Give it a slightly more substantial project-workspace feel with a milestone board, pipeline canvas, data-quality lane and blank report wireframe. Do not reveal a completed solution.
+- **Final ending is different:** The capstone lesson hands off to capstone practice. Capstone practice closes with “Python Foundations Complete” and congratulations. Never say a later lesson unlocks.
+- **Avoid:** flashy glitch effects, unnecessary animation, tiny text, fake app screens, completed exercise answers, excessive neon, or using the same input → code → output card composition for every scene.
+
+This visual guide supplements the scene-specific directions in all 11 lesson scripts and 11 practice scripts. The scripts have been updated; the rendered videos still require production and review.
