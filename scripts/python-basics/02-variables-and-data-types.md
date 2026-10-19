@@ -22,7 +22,7 @@ By the end, the learner should be able to:
 4. inspect a value's type with `type()`.
 5. Predict what changes when a variable's value changes.
 
-Keep this lesson focused. Do not introduce lists, dictionaries, loops, functions, input(), or detailed type conversion.
+Keep this lesson focused on the canonical module. Include basic conversion with int(), float(), and str(), the failure of int("hello"), and clear snake_case names. Do not introduce lists, dictionaries, loops, or input().
 
 ## Production rules
 
@@ -237,13 +237,69 @@ You won't need to call `type()` every time you write a program, but it's a usefu
 
 “Think about the lines that use `age`. The value is assigned once, and the program reads that value when it runs. Try changing the age yourself, then run the program and compare the result with your prediction.”
 
+
+---
+
+## Scene 7 — Convert a value when you need a different type
+
+**Visual:** Extend the current example; reveal one conversion at a time. Do not show the error result until the failing line is run.
+
+**Code**
+```python
+age_text = "21"
+age = int(age_text)
+print(age + 1)
+
+price = float("19.99")
+score_text = str(95)
+print(price)
+print(score_text)
+```
+
+**Expected output**
+```text
+22
+19.99
+95
+```
+
+**Narration**
+
+“Sometimes a number arrives as text. Here, age_text contains the characters two and one, so it is a string. The int function converts that text to an integer, and now we can add one.
+
+Python also has float for converting suitable text to a decimal number, and str for converting a value to text. Choose the conversion that matches what you need to do next.”
+
+**Visual:** In a separate run, change the value to `int("hello")`; show the actual ValueError and do not invent a successful result.
+
+**Narration**
+
+“But not every piece of text can become a number. If we try to convert the word hello to an integer, Python raises an error. That's useful information: real programs need a plan for invalid input. We'll study safer handling later.”
+
+## Scene 8 — Choose names that explain the value
+
+**Visual:** Show `x = 19.99`, `p = 19.99`, then `price = 19.99`; finally show examples in snake_case.
+
+**Code**
+```python
+customer_name = "Ada"
+item_price = 19.99
+items_count = 3
+```
+
+**Narration**
+
+“Variable names should help a person understand the program. X and p are valid names, but price explains what the value means. When a name has multiple words, Python programmers commonly use snake case: lowercase words separated by underscores.
+
+Clear names reduce the amount you have to remember and make code easier to check.”
+
+
 ## Recap and close
 
 **Teacher narration**
 
 “Let's recap.
 
-A variable gives a value a name. You can use that name again, and when you assign a different value, the program can use the updated value.
+A variable gives a value a name. You can use that name again, and when you assign a different value, the program can use the updated value. You also practiced converting values with int(), float(), and str(), recognized that some conversions fail, and used clear snake_case names.
 
 Python has different types of values. Strings are text, integers are whole numbers, floats are numbers with decimal points, and Booleans are true-or-false values. The `type()` function can help you inspect them.
 
