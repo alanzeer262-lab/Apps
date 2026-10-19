@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/05-data-shaped-python.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use an analyst's data canvas: structured mini-table, field chips, filter lenses, and a compact grouping view. Highlight selected columns and filtered rows directly in the table; transition from records to a grouped summary. This should feel like inspecting real data, not another sequence of input/output boxes.
+
 ## Scene 1 — A table made from dictionaries
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
