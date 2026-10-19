@@ -1,142 +1,63 @@
-# PyLearn Video — 10 — Build: Run the Pipeline
+# PyLearn Video — Build: Run the Pipeline
 
-**Voice lock — mandatory:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice or preset.
+**Voice lock:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/10-build-pipeline.md, branch ccr-c7f6fdd7-xpzi3g.
-**Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
+**Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
 
 ## Scene 1 — Connect the parts
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
 **Narration:**
 
-A user of your toolkit should not need to remember every internal step. One public function can take raw CSV text and coordinate loading, validation, and aggregation. Internally, each stage still has one job.
+A user should not need to remember every internal step. One public function can take raw CSV text and coordinate loading, validation, and aggregation. Each internal stage still has one clear job.
+
+**Visual:** Show the sequence load → validate → summarize.
 
 **Code**
-    
-    raw_text = "name,score\nAda,88\nLin,72\n"
-        print("Pipeline input received")
-        print("Characters:", len(raw_text))
 
-**Expected output**
-    
-    Pipeline input received
-        Characters: 31
-
-**Narration:**
-
-We begin with the raw input. The full pipeline parses it, checks the values, and calculates the summary. The order matters because aggregation should use validated records.
-
-## Scene 2 — Preserve the stages
-
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
-**Narration:**
-
-The pipeline should load first, validate second, and summarize last. This keeps the code understandable and makes each part testable on its own.
-
-**Code**
-    
     stages = ["load", "validate", "summarize"]
-        for stage in stages:
-            print("Running:", stage)
+    for stage in stages:
+        print("Running:", stage)
 
 **Expected output**
-    
+
     Running: load
-        Running: validate
-        Running: summarize
+    Running: validate
+    Running: summarize
+
+This simple example illustrates the order. The actual toolkit must pass the output of each stage to the next.
+
+## Scene 2 — Keep the stages testable
 
 **Narration:**
 
-This short example illustrates the order without pretending to be the complete toolkit. Each stage should receive a clearly defined input and return a predictable result.
-
-## Scene 3 — One call, useful result
-
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
-**Narration:**
-
-A single entry point can hide the plumbing while still returning a structured summary. The caller can then display the result, save it, or test it.
+Loading turns CSV text into records. Validation checks the rules. Aggregation calculates the summary from records that passed validation. If one stage fails, you can test it on its own instead of debugging one giant function.
 
 **Code**
-    
-    result = {
-            "rows_read": 2,
-            "valid_rows": 2,
-            "invalid_rows": 0,
-            "average": 80.0,
-        }
-        print("Average:", result["average"])
-        print("Invalid rows:", result["invalid_rows"])
+
+    raw_text = "name,score\nAda,88\nLin,72\n"
+    print("Input received:", len(raw_text), "characters")
 
 **Expected output**
-    
-    Average: 80.0
-        Invalid rows: 0
+
+    Input received: 31 characters
+
+The pipeline starts with raw input. The final result should come from processing that input, not from hard-coded summary values.
+
+## Scene 3 — Design a useful report
 
 **Narration:**
 
-The numbers here are an illustrative report structure, not the output of the app's required exercise. Your toolkit must derive its own report from the supplied input and apply its validation rules.
+The capstone report must include rows read, valid rows, invalid rows, cleaning decisions, average score, top performer, grade distribution, and one warning or limitation. A report should explain what happened to the data, not just show a number.
 
-## Scene 4 — Ready for the final build
+**Visual:** Reveal the eight report requirements as an empty checklist. Do not show a completed solution.
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+## Recap and handoff
 
-**Narration:**
+You've connected the loading, validation, and summary stages into one pipeline concept. Next, watch the practice video, then complete the exercise to unlock the next lesson. Extra practice in the PyLearn app is optional.
 
-You now have the building blocks: load, validate, summarize, and connect. In the capstone, you will run the toolkit on a deliberately imperfect CSV and explain the cleaning decisions. Do not aim only for code that runs; aim for a report a person can trust.
+## Final production checklist
 
-**Code**
-    
-    required_sections = [
-            "rows read", "valid rows", "invalid rows",
-            "cleaning decisions", "average", "top performer",
-            "grade distribution", "warning or limitation",
-        ]
-        print("Report sections:", len(required_sections))
-
-**Expected output**
-    
-    Report sections: 8
-
-**Narration:**
-
-Use this list as a planning checklist. The capstone practice video will guide you through milestones without giving away the completed implementation.
-
-## Your turn — predict, run, explain
-
-**Visual:** Keep the editor uncluttered. Show a fresh, related prompt without using the app's required exercise code.
-
-**Narration:**
-
-Pause the video and try a small variation of the example. Predict the output before you run it. Then run the code, compare the result with your prediction, and explain why it happened. If the result surprises you, inspect the values and change one thing at a time.
-
-This is extra guided practice, not the required PyLearn exercise solution.
-
-## Recap
-
-**Narration:**
-
-Today, you learned the core idea behind one entry point. Keep the stages clear, test your assumptions, and make the program's behavior visible. In the next lesson, we'll build on this skill.
-
-## Final call to action — watch the practice video
-
-**Visual:** Neutral end card reading “Next: Practice Video”. Do not show unfinished app screens or invent navigation.
-
-**Narration:**
-
-Great work! You've finished Build: Run the Pipeline. Next, watch the practice video. I recommend watching it because we'll use a fresh example to reinforce the skill from this lesson.
-
-After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
-
-**Visual:** Hold the end card long enough to read.
-
-## Production checklist
-
-- [ ] Use the approved Kendrick voice with ElevenLabs v3.
-- [ ] Verify every example and expected output in Python before rendering.
-- [ ] Reveal code before running it; reveal output only after the run.
-- [ ] Keep narration separate from production directions.
-- [ ] Do not show the required app exercise solution or hidden tests.
+- [ ] Verify each code sample and stated output in Python.
+- [ ] Reveal code before running it and output only after the run.
+- [ ] Keep narration separate from visual directions.
 - [ ] Watch the complete rendered video at normal speed before approval.
