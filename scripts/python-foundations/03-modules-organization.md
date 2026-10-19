@@ -27,7 +27,7 @@ The module defines one reusable function. Defining the function does not print a
 
 **Narration:**
 
-Pause and compare the output with your prediction. Change one thing at a time, run the example again, and explain what changed.
+Pause and identify the function's input, its return value, and why defining it does not print anything by itself.
 
 ## Scene 2 — Import a reusable function
 
