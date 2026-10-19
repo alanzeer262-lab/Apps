@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/04-validation-testing.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use a quality-control dashboard aesthetic: dark slate, teal for passed checks, muted coral for rejected cases, and amber for edge cases. Show test cases moving through a gate, a compact pass/fail matrix, and boundary markers on a number line. Do not rely on input/output cards as the main visual metaphor.
+
 ## Scene 1 — One successful run is not proof
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
