@@ -65,6 +65,36 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 **Script:** `scripts/python-basics/practice/P01-first-program-practice.md`
 **Review status:** Content reviewed against the Lesson 1 goals; runnable examples executed; corrected quote example now includes its exact expected output. Not production-approved while the voice ID and real app navigation remain unverified. The companion ending correctly states that it does not complete the required app exercise or unlock the next lesson.
 
-## Lessons 02–20
+## Lesson 02 — Variables and Data Types
+
+**Canonical source:** `content/python-basics/modules/02-variables-types.md`
+**Scripts:** `docs/LESSON_02_NARRATION_SCRIPT.md` and `scripts/python-basics/practice/P02-variables-types-practice.md`
+**Review status:** Source comparison and content review completed for both scripts. Runnable examples executed in Python. Two script clarifications committed: the full `type()` output is shown in the lesson script, string repetition is explicitly described as output `2121`, and invalid conversions are labeled as expected `ValueError` examples that must be run separately. The companion now states the expected invalid-input error.
+
+### Findings and code/output QA
+
+- Coverage matches the canonical module: assignment and reassignment, `str`, `int`, `float`, `bool`, `type()`, behavior differences between numbers and strings, conversions, invalid conversion, clear names/snake_case, and prediction before running.
+- Executed reassignment examples: `print(name)` outputs `Ada` or `Sam` as shown; assigning `Sam` after `Ada` leaves `Sam` as the final value.
+- Executed type example output:
+  ```text
+  <class 'str'>
+  <class 'int'>
+  <class 'float'>
+  <class 'bool'>
+  ```
+- Executed `print(21 * 2)` and `print("21" * 2)`: outputs `42` and `2121`.
+- Executed `int("21")` followed by adding one: output `22`.
+- Executed the prediction example: `25`, `<class 'str'>`, `25`, `<class 'int'>`, `50`, each on its own line.
+- Executed the companion's type and conversion examples: output is the expected four type names and `30`.
+- Confirmed `int("hello")` and `int("twenty-five")` raise `ValueError`; these are deliberately failing demonstrations and must be run separately from valid examples.
+- The learner task does not show a completed solution. The video ending still requires verified real PyLearn navigation footage and the correct required exercise screen.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 03–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
