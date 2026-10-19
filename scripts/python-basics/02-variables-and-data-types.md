@@ -326,8 +326,25 @@ Hold for approximately 3 seconds after the final spoken word.
 - [ ] Transcript-derived anchors are validated against the actual approved audio.
 - [ ] Full video is reviewed at normal speed before it is marked complete.
 
-## App practice handoff
+## Final call to action — required for YouTube and in-app versions
 
-**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 2. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
 
-**Narration:** "Open Lesson 2 in PyLearn and complete the variable-profile exercise. Inspect the types, try the conversions, and test the invalid text case yourself. Use the app feedback to check your work."
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open the PyLearn app and go to the Practice section for Lesson 2. If you're watching this on YouTube, open PyLearn and find the practice for this lesson there.
+
+Try the exercises yourself. Write the code, run it, and use the app's feedback to check your work. It's okay to make mistakes — that's how you learn.
+
+The lesson showed you how variables and data types work. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+
+## Production checklist
+
+- [ ] Keep the lesson rich and complete; do not shorten teaching content to make room for practice.
+- [ ] The final card explicitly names the PyLearn app's Practice section.
+- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
+- [ ] The ending does not reveal exercise solutions.
+- [ ] Verify all exercise references against the current app before recording.
+- [ ] Review the full rendered video at normal speed before marking it complete.
