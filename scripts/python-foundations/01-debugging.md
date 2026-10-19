@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/01-debugging.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing, but frame the lesson as a developer's investigation. Use a deep graphite workspace, restrained teal highlights, and amber only for the line under investigation. Replace repeated input/output cards with a bug trail: symptom → isolate → test → verified fix. Use a magnified code line, a small stack trace, and a clean before/after diff. Avoid flashy glitch effects or changing the teacher's visual identity.
+
 ## Scene 1 — Three kinds of failure
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
