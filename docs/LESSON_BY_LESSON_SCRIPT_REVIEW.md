@@ -19,7 +19,7 @@
 
 **Canonical source:** `content/python-basics/modules/01-first-program.md`
 **Script:** `scripts/python-basics/01-your-first-python-program.md`
-**Review status:** First revision committed; still not approved for production. Remaining gates: execute all code examples, verify real app navigation footage, and recover the exact approved voice ID.
+**Review status:** Lesson and companion script content reviewed; runnable examples executed successfully and the intentionally broken quote was confirmed to raise a SyntaxError. Not approved for video production yet: real app navigation footage and the exact approved voice ID remain unverified, and the rendered video watch-through must happen after production.
 
 ### Findings and actions
 
@@ -32,29 +32,39 @@
 - **Navigation remains unverified:** the ending states the required-exercise unlock rule and that Practice Drills are optional. The exact real PyLearn screen/path still needs capture from the app; do not invent or approximate UI in final footage.
 - **Voice blocker:** the approved Kendrick voice ID is not recorded in the reviewed repository. Do not generate narration until the exact ID is recovered.
 
-### Code/output observations
+### Code/output QA — executed
 
-- `print("Hello, I'm Python.")` displays `Hello, I'm Python.`.
-- `print(2 + 3)` displays `5`.
-- `print(10)` and `print("10")` both display `10`, while Python treats the values differently.
-- The profile example should display exactly:
+The runnable Lesson 1 and P01 companion examples were executed in Python during this review.
+
+- Lesson Scene 1: displays `Hello, I'm Python.`.
+- Lesson Scene 2: displays `Hello, I'm Python.` then `5`.
+- Lesson Scene 3: both lines display `10`; the values remain different types.
+- Lesson Scene 4: the single- and double-quoted examples each display `Hello`. The intentionally malformed `print("Hello)` example raises a `SyntaxError` as expected.
+- Lesson Scene 5: displays only `The code still runs.`; the comment is not displayed.
+- Lesson Scene 6: displays exactly:
   ```text
   My name is Ada.
   My goal is to learn data analysis.
   I plan to study 6 hours each week.
   ```
-- The return example is logically correct: `add_tip(40)` returns `50`; the following prints show `You pay: 50` and `For a table of two: 100`. The print-only function displays `50`, and its assigned result is `None`.
-- The comments example displays only `The code still runs.`; the comment is not displayed.
-- These outputs have been checked by inspection but **have not yet been executed as a complete QA pass**. Run every runnable code sample before production approval. The intentionally malformed quote must be tested separately as an expected SyntaxError.
+- Lesson Scene 7: `add_tip(40)` returns `50`; output is `You pay: 50` and `For a table of two: 100`. The print-only function displays `50`, and the assigned result is `None`.
+- P01 Scene 1 displays `Welcome to my study desk!`; Scene 2 displays `10`; Scene 3 displays `Ready to learn`.
+- P01 Scene 4 was clarified to show both the broken code and the corrected `print("Hello")` with expected output `Hello`. The broken and corrected versions must be run separately.
+- These checks confirm code behavior and expected output for the listed examples. They do not substitute for checking every scene in the final rendered video.
 
-### Remaining approval gates
+### Remaining production gates
 
-1. Execute every runnable code sample and confirm exact output; separately verify the expected syntax error.
-2. Confirm that the full narration does not imply learners must design functions from scratch.
-3. Capture and verify the real PyLearn navigation path and required exercise screen.
-4. Recover and verify the exact approved Kendrick voice ID; do not substitute a voice.
-5. Review the complete rendered video at normal speed before marking Lesson 1 approved.
+1. Capture and verify the real PyLearn navigation path and required exercise screen; do not invent the UI.
+2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+3. Once production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking the video approved.
+
+The source comparison, teaching-flow review, and listed runnable-code QA are complete for this content pass. Video-production approval remains separate from script readiness.
+
+## Guided Practice 01 — First Program
+
+**Script:** `scripts/python-basics/practice/P01-first-program-practice.md`
+**Review status:** Content reviewed against the Lesson 1 goals; runnable examples executed; corrected quote example now includes its exact expected output. Not production-approved while the voice ID and real app navigation remain unverified. The companion ending correctly states that it does not complete the required app exercise or unlock the next lesson.
 
 ## Lessons 02–20
 
-Not yet reviewed in this pass. Each will receive its own source comparison and findings before its script is approved. File existence or a link in the index is not evidence of QA completion.
+Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
