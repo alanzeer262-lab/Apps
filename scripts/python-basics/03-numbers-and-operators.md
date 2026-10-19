@@ -1,11 +1,16 @@
 # PyLearn Video 03 — Numbers and Operators
 
-**Voice lock — mandatory:** Kendrick voice; ElevenLabs v3; use the exact approved Kendrick voice ID; no substitution or preset; same voice throughout.
+> **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
+> - Voice name: Kendrick
+> - Model: ElevenLabs v3
+> - Voice ID: the exact approved custom Kendrick ID is not present in the repository files reviewed so far. Insert the verified ID from the original Runway setup before generating audio.
+> - Do not guess, select a similar voice, or use a preset. Use the same approved voice for every part.
+> - Speak narration only; do not read headings, code labels, or bracketed production notes.
 **Source:** `Pylearn-build260/content/python-basics/modules/03-numbers-operators.md`
 **Target:** 6–8 minutes. Video complements the app lesson; do not change app content.
 
 ## Learning outcome
-Use arithmetic, division, floor division, remainder, powers, rounding, precedence, and units to build a small study-time report.
+Use arithmetic, division, floor division, remainder, powers, rounding, precedence, and units to reason about numerical results. This is the full lesson video, not the separate guided-practice video.
 
 ## Narration and visual plan
 
@@ -66,3 +71,127 @@ The lesson showed you the concepts. Now practise them yourself in PyLearn. Stop 
 - [ ] The ending does not reveal exercise solutions.
 - [ ] Verify all exercise references against the current app before recording.
 - [ ] Review the full rendered video at normal speed before marking it complete.
+
+
+## Scene 7 — Rounding and order of operations
+
+**Visual:** Reveal the average first, then add the round call. Keep the code large enough to read on a phone.
+
+**Code**
+```python
+average = 79.8333333333
+print(round(average, 2))
+```
+
+**Expected output**
+```text
+79.83
+```
+
+**Narration:** “Sometimes a calculation produces more decimal places than we want to show. Python has a built-in function called round. Here, we're asking it to round the value in average to two decimal places. The number two tells round how many decimal places to keep. The result is seventy-nine point eight three. Rounding can make a report easier to read, but remember that a rounded display is not the same as keeping every digit of the original value.”
+
+**Visual:** Replace the code with the first expression. Highlight multiplication before addition. Run only after asking for a prediction.
+
+**Code**
+```python
+result = 10 + 2 * 3
+print(result)
+```
+
+**Expected output**
+```text
+16
+```
+
+**Narration:** “What do you expect: ten plus two multiplied by three? Pause and make a prediction. Python follows the usual order of operations, so multiplication happens before addition. Two times three is six, then ten plus six gives sixteen.”
+
+**Visual:** Add parentheses and rerun.
+
+**Code**
+```python
+result = (10 + 2) * 3
+print(result)
+```
+
+**Expected output**
+```text
+36
+```
+
+**Narration:** “This time, the parentheses tell Python to add ten and two first. That gives twelve. Then twelve multiplied by three gives thirty-six. Parentheses are useful when you need a different order, and they can make your intention clearer to someone reading your code.”
+
+## Scene 8 — A number needs meaning
+
+**Visual:** Show the variables first, then the formula and output.
+
+**Code**
+```python
+weekly_minutes = 360
+monthly_hours = weekly_minutes * 4 / 60
+print(monthly_hours)
+```
+
+**Expected output**
+```text
+24.0
+```
+
+**Narration:** “This calculation estimates monthly study hours from a weekly total. We multiply the weekly minutes by four to estimate four weeks, then divide by sixty to convert minutes into hours. The arithmetic is straightforward, but always ask what a number represents. Is it minutes or hours? Items or prices? Points or percentages? Python can calculate a result even when we accidentally mix up the meaning of two values. Clear variable names and attention to units help prevent that kind of mistake.”
+
+## Scene 9 — Predict, run, and inspect
+
+**Visual:** Use this separate example. Do not use the required app exercise's starting value of 425 minutes or display its completed solution.
+
+**Code**
+```python
+study_minutes = 245
+complete_hours = study_minutes // 60
+leftover_minutes = study_minutes % 60
+print(complete_hours)
+print(leftover_minutes)
+print(round(study_minutes / 60, 1))
+```
+
+**Narration:** “Let's combine several ideas using a different example. Imagine the total is two hundred and forty-five minutes. Before running the program, predict the number of complete hours, the minutes left over, and the final value rounded to one decimal place. Take a few seconds to work it out.”
+
+[Leave a silent prediction pause of about four seconds.]
+
+**Expected output**
+```text
+4
+5
+4.1
+```
+
+**Narration:** “Two hundred and forty-five minutes contains four complete hours, with five minutes remaining. As a decimal number of hours rounded to one decimal place, it is four point one. Each line answers a different question about the same duration. That's why we choose operators based on the information we want. If your prediction was different, trace the calculation one step at a time. Check the operator, check the units, and run it again.”
+
+## Scene 10 — Recap
+
+**Visual:** Reveal each label one at a time: arithmetic, floor division, remainder, powers, rounding, parentheses, units.
+
+**Narration:** “Let's review. Plus adds, minus subtracts, the asterisk multiplies, and the forward slash divides. Two slashes give the number of complete groups. The percent sign gives the remainder. Two asterisks calculate a power. The round function helps you round a number to a chosen number of decimal places. Parentheses can change the order of a calculation and make your intention clearer. And finally, think about what a number means. Track its units and use variable names that explain the value. You don't need to memorize every example. Practice making a prediction, running the code, and checking whether the result makes sense.”
+
+## Final call to action — required for in-app and YouTube versions
+
+**Visual:** Show the real PyLearn navigation path to Lesson 3 and highlight its required coding exercise. Do not show the completed exercise, its answer, or unverified app screens. Hold the final navigation screen long enough to read.
+
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open PyLearn and go to Lesson 3, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
+
+Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
+
+Pause this video and start coding.
+
+## Production and QA checklist
+
+- [ ] Verify the exact approved Kendrick voice ID from the original Runway setup before generating audio.
+- [ ] Use ElevenLabs v3 and the same approved voice identity for every part; no substitution.
+- [ ] Speak narration only; do not send headings or bracketed directions to text-to-speech.
+- [ ] Verify every code sample and expected output in Python.
+- [ ] Reveal output only after the matching narrated Run action.
+- [ ] Keep code readable on a phone and maintain continuity with Lessons 1 and 2.
+- [ ] Do not show the Lesson 3 required-exercise solution.
+- [ ] Keep the navigation ending: required coding exercise unlocks the next lesson; Practice Drills are optional.
