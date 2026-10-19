@@ -107,17 +107,17 @@ Before you finish, ask why a dictionary is a useful shape for an analysis result
 
 A dictionary makes each result self-describing. Count, average, highest, lowest, and passed are named fields. That makes the result easier to read and reuse in another part of a program.
 
-## Project closing — required for in-app and YouTube versions
+## Final call to action — watch the practice video
 
-**Visual:** Show the real PyLearn navigation path to the “Score Summary” project task. Do not show the complete `summarize_scores` function or its full result.
+**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project solution.
 
 **Narration:**
 
-Now open PyLearn and find the Score Summary task.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Build it yourself and run the tests. This video has shown the ideas, not the finished solution. Practice Drills, if shown, are optional; complete and pass the required project exercise to unlock the next lesson.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
-Pause the video and start building.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
