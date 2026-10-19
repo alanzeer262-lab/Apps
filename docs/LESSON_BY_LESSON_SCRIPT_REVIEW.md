@@ -293,6 +293,30 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 11–20
+## Lesson 11 — Comprehensions, Imports, and Safe Conversion
+
+**Canonical source:** `content/python-basics/modules/11-comprehensions-imports.md`
+**Scripts:** `scripts/python-basics/11-comprehensions-imports-safe-conversion.md` and `scripts/python-basics/practice/P11-comprehensions-safe-conversion-practice.md`
+**Review status:** Compared both scripts with the canonical source and executed all runnable examples. The lesson's invalid conversion example is now explicitly labeled as an expected `ValueError` and must be run separately from the successful and safe-conversion examples.
+
+### Findings and code/output QA
+
+- The raw input list outputs `['88', '72', 'oops', '95']`.
+- Loop and comprehension versions both output `[140, 160, 180]`.
+- The filtering comprehension outputs `[70, 84, 92]`.
+- `math.sqrt(25)` outputs `5.0`; `statistics.mean([70, 80, 90])` outputs `80`.
+- The None example outputs `None` and `True`; it correctly distinguishes absence from zero, an empty string, and False.
+- `int("88")` outputs `88`; `int("oops")` raises `ValueError` as expected.
+- The safe-conversion example catches `ValueError`, then outputs `None` and `True`.
+- Companion comprehension outputs `[4, 8, 12]`; companion mean outputs `20`; `safe_int("42")` and `safe_int("oops")` output `42` and `None`.
+- The scripts do not complete the required safe-conversion exercise or expose its full solution. Real PyLearn navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 12–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
