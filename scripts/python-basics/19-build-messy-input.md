@@ -1,27 +1,30 @@
 # PyLearn Video 19 — Build: Handle Imperfect Scores
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/19-build-messy-input.md`
-**Target:** 6–8 minutes.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 19, Build 8. **Target:** 3–4 minutes. Explain the data-quality problem, but leave the implementation to the learner.
 
-### Scene 1 — Real input is imperfect
-**Visual:** Show records Ada "88", Lin "72", Sam "oops", Mia empty string.
-**Narration:** “Real data isn't always clean. Some scores arrive as text, one is not a number, and one is empty. We need to separate usable records from invalid ones without letting one bad value crash the whole program.”
+## Scene 1 — Real input is imperfect
+**Visual:** Show the exact records: `("Ada", "88")`, `("Lin", "72")`, `("Sam", "oops")`, `("Mia", "")`. Highlight numeric text, invalid text, and empty text separately.
+**Narration:** “Real data is not always ready to analyze. Some scores arrive as strings, one is not a valid number, and one is empty. Your task is to clean these records without letting bad input crash the program.”
 
-### Scene 2 — Define the output
-**Visual:** Show two empty collections labelled valid_records and invalid_records.
-**Narration:** “Our function clean_score_records returns two groups. Valid records keep the learner's name and convert the score to a number. Invalid records keep the name and a reason, such as invalid score or empty score. Keeping the reason makes the cleanup explainable.”
+## Scene 2 — Define the result
+**Visual:** Show two empty containers: valid_records and invalid_records. Add note: valid records become numeric tuples; invalid records keep the name and a reason.
+**Narration:** “Build clean_score_records with two outputs: valid records and invalid records. Convert usable scores to numbers. For invalid records, keep the learner's name and a reason, such as invalid score or empty score.”
 
-### Scene 3 — Convert safely
-**Visual:** Build loop; distinguish empty string from conversion failure; use try/except ValueError; append valid numeric tuples or invalid records with reason.
-**Narration:** “For each record, first check whether the score is empty. Otherwise, attempt integer conversion. If conversion succeeds, keep the numeric record. If it raises ValueError, record the failure instead of crashing. Don't silently turn bad input into zero.”
-**Visual:** Run; show valid Ada 88 and Lin 72; invalid Sam with invalid score and Mia with empty score.
+## Scene 3 — Safe conversion
+**Visual:** Show the decision sequence only: check empty input → attempt numeric conversion → keep valid record or record the failure. Do not reveal full code.
+**Narration:** “Check for an empty score, then attempt conversion safely. If conversion fails, record the problem rather than crashing. Don't silently change invalid input to zero. That would make the data look valid when it isn't.”
 
-### Scene 4 — Analyze only valid data
-**Visual:** Show valid scores going to analysis; invalid records displayed separately. Show note that invalid values are excluded from average.
-**Narration:** “The valid records can now be analyzed. Invalid records stay visible so someone can correct them. Replacing an invalid score with zero would change the average and could create a misleading conclusion. Excluding invalid values is a deliberate data-quality decision, not a rule built into Python.”
+## Scene 4 — What should happen to invalid scores?
+**Visual:** Show the pipeline: raw records → validate → valid + invalid → analyze valid records. Highlight that invalid scores are excluded from the average.
+**Narration:** “The project specifies that invalid scores are excluded from the average rather than changed to zero. Keep invalid records visible so they can be corrected. This is a data-quality decision, not a built-in Python rule.”
 
-### Scene 5 — Practice and recap
-**Narration:** “Add one more record: a valid numeric string, an invalid word, or an empty score. Predict which output group it belongs in, then run the function.”
-**Hold:** 4 seconds.
-**Narration:** “The pipeline is raw records, validation, valid and invalid groups, then analysis. You now have the foundations to combine Python features into the Mini Gradebook capstone.”
+## Scene 5 — Predict, then practice
+**Visual:** Ask where each new record belongs: `("Noor", "91")`, `("Rami", "oops")`, `("Maya", "")`. Keep answers hidden during the pause.
+**Narration:** “Pause and classify each example: valid or invalid, and why?”
+**Hold:** 5 seconds of silence. Reveal classification only after the hold.
+
+**Visual:** App/project card: **Build 8 — Handle imperfect scores**.
+**Narration:** “Now open Build 8 in PyLearn and implement clean_score_records yourself. Use the app's feedback to test valid input, invalid text, and an empty score. You're ready to combine these skills in the Mini Gradebook capstone.”
+
+**End card:** “Open PyLearn → Build 8: Handle imperfect scores”
