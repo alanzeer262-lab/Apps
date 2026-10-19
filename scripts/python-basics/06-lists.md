@@ -1,60 +1,315 @@
 # PyLearn Video 06 — Lists
 
-**Voice lock — mandatory:** Kendrick voice; ElevenLabs v3; exact approved Kendrick voice ID; no substitution or preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/06-lists.md`
-**Target:** 6–8 minutes.
+> **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
+> - Voice: Kendrick
+> - Model: ElevenLabs v3
+> - Voice ID: exact approved Kendrick voice ID not found in the reviewed repository records; insert the verified ID from the original Runway setup before generating narration.
+> - No voice substitution, guessed ID, or preset. Use the same approved voice for every part.
+> - Read narration only; scene titles and bracketed production notes are not spoken.
 
-### Scene 1 — Store many values
-**Visual:** Type `scores = [70, 95, 88, 60]`; highlight square brackets and each item.
-**Narration:** “A variable often stores one value, but a gradebook needs many scores. A list stores multiple values in order. Here, the scores are separated by commas and surrounded by square brackets.”
+**Canonical source:** `Pylearn-build260/content/python-basics/modules/06-lists.md`, branch `ccr-c7f6fdd7-xpzi3g`.  
+**Target runtime:** Approximately 7–8 minutes.
 
-### Scene 2 — Indexing and slicing
-**Visual:** Run `print(scores[0])`, `print(scores[2])`, `print(scores[-1])`; outputs 70, 88, 60.
-**Narration:** “Like strings, lists use zero-based positions. Index zero gives the first item, index two gives the third, and negative one gives the last item.”
-**Visual:** `print(scores[1:3])` → `[95, 88]`.
-**Narration:** “Slicing gives a smaller list. The start position is included; the end position is excluded.”
+## Scene 1 — Store a collection
 
-### Scene 3 — Change a list
-**Visual:** `scores.append(75)`, show list; then `scores[0] = 72`, show list.
-**Narration:** “Lists can change. Append adds one item at the end. Assignment to an index replaces an existing item. Because the contents can change after the list is created, we call lists mutable.”
+**Visual:** Continue the established editor layout. Show a short list and highlight the square brackets.
 
-### Scene 4 — Ask questions about a collection
-**Visual:** Show `len(scores)`, `sum(scores)`, `min(scores)`, `max(scores)`, and `sorted(scores)` in separate beats; run.
-**Narration:** “Python has built-in tools for common questions. Len counts items, sum adds them, min finds the smallest, max finds the largest, and sorted returns a sorted list. Choose the simplest operation that answers your question.”
-**Visual:** `average = sum(scores) / len(scores)`.
-**Narration:** “An average is the total divided by the number of scores. But what if the list is empty? Its length is zero, so this division would fail. Empty collections are an important edge case to think about.”
+**Narration:**
 
-### Scene 5 — Membership and sorting
-**Visual:** `print(95 in scores)`, `print(100 in scores)`; then compare original list with `ordered = sorted(scores)`.
-**Narration:** “The in operator checks whether a value appears. Sorted creates a new ordered result, leaving the original list unchanged. If you only need the highest score, max is simpler than sorting everything.”
+Welcome back to PyLearn.
 
-### Scene 6 — Your turn
-**Visual:** `scores = [70, 95, 88, 60, 80]`; show task list: count, total, average, highest, lowest, top two. Keep solution hidden.
-**Narration:** “Calculate the number of scores, total, average, highest, lowest, and top two scores. Predict which results change if you replace one score. Then consider an empty list and decide how a real program should handle it.”
-**Hold:** 4 seconds.
+So far, many of our variables have stored one value at a time. But what if we need to keep several related values together, such as a group of scores?
 
-### Recap
-**Narration:** “Lists keep values in order. You can access and slice items, append or replace values, and use len, sum, min, max, sorted, and membership checks. Always consider edge cases like an empty list. Next, we'll use conditions to make decisions.”
+Python has a tool for that: a list.
 
-## Final call to action — required for YouTube and in-app versions
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(scores)
+```
 
-**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 6. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
+**Expected output**
+```text
+[70, 95, 88, 60]
+```
+
+**Narration:**
+
+The square brackets mark the list, and commas separate the items. This list stores four numbers in a particular order.
+
+Lists are useful whenever we need a collection of values, such as scores, names, topics, or measurements. The list keeps those values together under one variable name.
+
+## Scene 2 — Access an item by index
+
+**Visual:** Label the positions 0, 1, 2, and 3 beneath the four values. Highlight one requested item at a time.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(scores[0])
+print(scores[2])
+```
+
+**Expected output**
+```text
+70
+88
+```
+
+**Narration:**
+
+Lists use zero-based indexing, just like strings. The first item is at index zero. The second item is at index one. The third is at index two.
+
+So scores at index zero gives seventy, and scores at index two gives eighty-eight.
+
+You can also count from the end using negative indexes.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(scores[-1])
+```
+
+**Expected output**
+```text
+60
+```
+
+**Narration:**
+
+Index negative one means the last item. That's useful when you want the end of a list and don't want to calculate its final index yourself.
+
+Before you run an index expression, point to the item you expect it to select. This is a good way to avoid choosing the wrong position.
+
+## Scene 3 — Select part of a list
+
+**Visual:** Highlight items at index 1 and 2 while showing the slice boundary. Keep the rule “start included, end excluded” visible.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(scores[1:3])
+```
+
+**Expected output**
+```text
+[95, 88]
+```
+
+**Narration:**
+
+A slice gives us part of a list. We start at index one and stop before index three. That means we include the items at indexes one and two, but not the item at index three.
+
+The result is a smaller list containing ninety-five and eighty-eight.
+
+Remember the same slicing rule we used for strings: the start position is included, and the end position is excluded. Slicing gives us a selection without removing items from the original list.
+
+## Scene 4 — Add and replace items
+
+**Visual:** Start with three values. Reveal append, then show the list after running. Next, change the first item.
+
+**Code**
+```python
+scores = [70, 95, 88]
+scores.append(60)
+print(scores)
+```
+
+**Expected output**
+```text
+[70, 95, 88, 60]
+```
+
+**Narration:**
+
+Lists can change after we create them. The append method adds one item to the end of the list. Here, sixty is added after the original three scores.
+
+We can also replace an item using its index.
+
+**Code**
+```python
+scores = [70, 95, 88]
+scores[0] = 75
+print(scores)
+```
+
+**Expected output**
+```text
+[75, 95, 88]
+```
+
+**Narration:**
+
+This time, we replace the value at index zero. The first score changes from seventy to seventy-five, while the other values stay the same.
+
+Because list contents can be changed, we say lists are mutable. You don't need to memorize the term immediately, but remember that you can append items and replace existing items.
+
+## Scene 5 — Ask questions about a list
+
+**Visual:** Reveal each built-in one at a time. Keep the output panel empty until each run.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(len(scores))
+print(sum(scores))
+print(min(scores))
+print(max(scores))
+```
+
+**Expected output**
+```text
+4
+313
+60
+95
+```
+
+**Narration:**
+
+Python provides useful built-in functions for lists.
+
+Len tells us how many items are in the list. There are four scores.
+
+Sum adds the values, giving three hundred and thirteen.
+
+Min finds the smallest value, which is sixty. Max finds the largest, which is ninety-five.
+
+These functions answer common questions without requiring us to write a loop ourselves.
+
+We can calculate an average by dividing the total by the number of items.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+average = sum(scores) / len(scores)
+print(average)
+```
+
+**Expected output**
+```text
+78.25
+```
+
+**Narration:**
+
+The average is seventy-eight point two five. Notice that we use the sum and length of the list, rather than typing the total and count manually. If the list changes, the calculation can use the updated values.
+
+But we must think about edge cases. What if the list is empty? Its length is zero, and dividing by zero causes an error. Later, when you build real programs, decide what the program should do when there are no values to calculate.
+
+## Scene 6 — Sort and check membership
+
+**Visual:** Show the original list, then the sorted result. Visually distinguish the original variable from the new variable.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+ordered = sorted(scores)
+print(ordered)
+print(scores)
+```
+
+**Expected output**
+```text
+[60, 70, 88, 95]
+[70, 95, 88, 60]
+```
+
+**Narration:**
+
+Sorted returns a new list with the values in order. Here, the new variable ordered contains the scores from lowest to highest. The original scores list remains in its original order.
+
+If all you need is the highest score, max is simpler than sorting the whole list. Choose the smallest tool that answers your question.
+
+We can also ask whether a value appears in a list.
+
+**Code**
+```python
+scores = [70, 95, 88, 60]
+print(95 in scores)
+print(100 in scores)
+```
+
+**Expected output**
+```text
+True
+False
+```
+
+**Narration:**
+
+The in operator returns True if the value appears in the list, and False if it doesn't. Here, ninety-five is present, but one hundred is not.
+
+## Scene 7 — Predict, then run
+
+**Visual:** Use a separate example that does not reproduce the app exercise list. Ask the learner to predict length, total, and highest value.
+
+**Code**
+```python
+pages = [12, 18, 15]
+print(len(pages))
+print(sum(pages))
+print(max(pages))
+print(18 in pages)
+```
+
+**Narration:**
+
+Let's test the same ideas with pages read across three sessions.
+
+Before running the code, predict how many values are in the list, their total, the highest value, and whether eighteen appears.
+
+Take a few seconds to think.
+
+[Leave a silent prediction pause of about four seconds.]
+
+**Expected output**
+```text
+3
+45
+18
+True
+```
+
+**Narration:**
+
+There are three values. Their total is forty-five. The highest value is eighteen, and eighteen is in the list, so the final result is True.
+
+If one of your predictions was different, look at the list and check one operation at a time.
+
+## Scene 8 — Recap
+
+**Visual:** Reveal: create, index, slice, append, replace, len/sum/min/max, sorted, membership, empty-list edge case.
+
+**Narration:**
+
+Let's recap.
+
+A list stores multiple values in order. Use an index to access one item, and a slice to select part of the list. Append adds an item, and assigning to an index replaces an item.
+
+Len counts items. Sum adds numeric values. Min and max find the smallest and largest values. Sorted returns a new ordered list, and in checks membership.
+
+Finally, remember edge cases. An empty list has no values to average, so a real program needs to handle that situation deliberately.
+
+## Final call to action — required for in-app and YouTube versions
+
+**Visual:** Show the real PyLearn navigation path to Lesson 6 and highlight its required coding exercise. Do not show the completed exercise solution or unverified app screens. Hold the navigation screen long enough to read.
 
 **Narration:**
 
 Now it's your turn to write code yourself.
 
-Open the PyLearn app and go to the Practice section for Lesson 6. If you're watching this on YouTube, open PyLearn and find the practice for this lesson there.
+Open PyLearn and go to Lesson 6, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
 
-Try the exercises yourself. Write the code, run it, and use the app's feedback to check your work. It's okay to make mistakes — that's how you learn.
+Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
 
-The lesson showed you the concepts. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+Pause this video and start coding.
 
-## Production checklist
+## Production and QA checklist
 
-- [ ] Keep the lesson rich and complete; do not shorten teaching content to make room for practice.
-- [ ] The final card explicitly names the PyLearn app's Practice section.
-- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
-- [ ] The ending does not reveal exercise solutions.
-- [ ] Verify all exercise references against the current app before recording.
-- [ ] Review the full rendered video at normal speed before marking it complete.
+- [ ] Verify the approved Kendrick voice ID before generating audio.
+- [ ] Use ElevenLabs v3 and the same voice identity throughout; no substitution.
+- [ ] Verify every code sample and expected output in Python.
+- [ ] Keep indexes and slices legible; visually emphasize zero-based indexing and the excluded end index.
+- [ ] Do not reveal the required Lesson 6 exercise solution.
+- [ ] Preserve the required PyLearn navigation ending and progression rule.
