@@ -473,6 +473,29 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 19–20
+## Lesson 19 — Project 8: Handle Imperfect Scores
 
-Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
+**Canonical source:** `content/python-basics/modules/19-build-messy-input.md`
+**Scripts:** `scripts/python-basics/19-handle-imperfect-scores.md` and `scripts/python-basics/practice/P19-imperfect-input-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all runnable examples. The complete `clean_score_records` implementation and required dataset output remain learner work.
+
+### Findings and code/output QA
+
+- The source requires valid records to become numeric tuples and invalid records to retain the name plus a reason such as invalid score or empty score.
+- The valid conversion example outputs `88` and `<class 'int'>`.
+- Converting `"oops"` directly to an integer raises `ValueError`; the safe example catches it and outputs `True` for the None check.
+- The companion quantity example outputs `15`; its invalid-text example outputs `True` after safely representing the value as None.
+- The main script correctly distinguishes empty text from invalid non-empty text and says invalid scores must not be silently changed to zero.
+- The invalid conversion scene narrates the expected ValueError, but should be made more explicit in the script markup before production by labeling it as an intentional failing example and stating the expected error directly.
+- Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining content and production gates
+
+1. Clarify the invalid-conversion scene with an explicit “expected ValueError; run separately” label and expected-error note.
+2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+3. Capture and verify the real PyLearn navigation path and required project task screen.
+4. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lesson 20 — Mini Gradebook Capstone
+
+Not yet reviewed in this pass. Its source and companion will be checked individually before the script is approved. File existence or a link in the index is not evidence of QA completion.
