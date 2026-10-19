@@ -343,10 +343,10 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 
 ## Production and QA checklist
 
-- [ ] Verify the approved Kendrick voice ID before generating audio; it is not recorded in the reviewed repository files.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
 - [ ] Use ElevenLabs v3 and the same approved voice identity throughout; no substitution.
 - [ ] Keep spoken narration separate from production notes.
 - [ ] Verify every code block and output in Python; confirm whitespace in displayed outputs.
 - [ ] Do not reveal the Lesson 4 required-exercise solution.
 - [ ] Keep code and index labels legible on a phone.
-- [ ] Preserve the required PyLearn navigation ending and progression rule.
+- [x] Use the agreed lesson-to-practice handoff; no app UI footage is required.
