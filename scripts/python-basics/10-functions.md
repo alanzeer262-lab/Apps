@@ -1,56 +1,263 @@
 # PyLearn Video 10 — Functions
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/10-functions.md`
-**Target:** 7–8 minutes.
+> **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
+> - Voice: Kendrick
+> - Model: ElevenLabs v3
+> - Voice ID: exact approved Kendrick voice ID is not recorded in the reviewed repository files; insert the verified ID from the original Runway setup before generating audio.
+> - No guessed ID, substitution, or preset. Use the same approved voice identity throughout.
+> - Speak narration only. Do not read headings or bracketed directions aloud.
 
-### Scene 1 — Give reusable logic a name
-**Visual:** Show the same average calculation repeated twice, then replace it with a function definition.
-**Narration:** “If the same calculation appears in several places, changing it becomes difficult. A function gives a piece of logic a name so you can reuse it. There are two separate actions: defining a function and calling it. Defining it doesn't run the body immediately.”
+**Canonical source:** `Pylearn-build260/content/python-basics/modules/10-functions.md`, branch `ccr-c7f6fdd7-xpzi3g`.  
+**Target runtime:** Approximately 7–8 minutes. Do not reveal the required app exercise solution.
 
-### Scene 2 — Parameters and arguments
-**Visual:** Type `def greet(name):` with `return f"Hello, {name}!"`; call `greet("Ada")` and print returned message.
-**Narration:** “The name inside the function definition is a parameter. When we call greet with Ada, Ada is the argument passed into that parameter. Think input, function, result.”
+## Scene 1 — Give reusable logic a name
 
-### Scene 3 — print versus return
-**Visual:** Compare `show_double(number)` that prints with `double(number)` that returns number * 2. Call `result = double(7)` then print result.
-**Narration:** “Print displays a result to the screen. Return gives a result back to the part of the program that called the function. The returned value can be saved, combined with another calculation, or passed to another function. For reusable logic, returning a value is often more useful than printing it.”
+**Visual:** Start with a small repeated calculation, then introduce a function definition. Maintain the established editor and output panel.
 
-### Scene 4 — One clear job
-**Visual:** Build `average_score(scores)` returning `sum(scores) / len(scores)`; show a call on [10, 20, 30] → 20.0.
-**Narration:** “A good function has one clear job, and its name helps explain that job. Small functions are easier to test, understand, and change. Also think about edge cases: what should average_score do when the list is empty? Decide a rule instead of letting an unexpected crash define the behavior.”
+**Narration:**
 
-### Scene 5 — Defaults and local variables
-**Visual:** `def passed(score, cutoff=70): return score >= cutoff`; show calls passed(80) and passed(80, 90). Then highlight local total inside average_score.
-**Narration:** “A default parameter provides a common value but lets the caller choose another. Here, the cutoff is seventy unless we supply a different one. Variables created inside a function normally belong to that function, so the caller only needs the returned result.”
+Welcome back to PyLearn.
 
-### Scene 6 — Practice
-**Visual:** Prompt: write study_hours(minutes), return minutes / 60 rounded to two decimals; then passed(score, cutoff=70). Do not reveal complete solution until after pause.
-**Narration:** “Your turn. Write a function that converts minutes to hours and returns the result rounded to two decimal places. Then write a passed function with a default cutoff. Test normal values and the edge cases you think matter.”
-**Hold:** 4 seconds.
+Imagine you calculate an average in three different places in a program. If the calculation changes, you might need to update it in all three places.
 
-### Recap
-**Narration:** “Functions organize programs into reusable pieces. You define and call them, pass inputs through parameters, and return useful results. Defaults make common choices convenient, and small functions make larger problems manageable. Next, we'll use comprehensions, imports, and safe conversion.”
+A function lets us give a piece of logic a name and reuse it. Instead of copying the same steps, we define them once and call them when we need them.
 
-## Final call to action — required for YouTube and in-app versions
+Let's start with a small example.
 
-**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 10. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
+**Code**
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+message = greet("Ada")
+print(message)
+```
+
+**Expected output**
+```text
+Hello, Ada!
+```
+
+**Narration:**
+
+The first line defines a function named greet. The indented line is the function body. Later, we call greet with Ada, store the returned message in a variable, and print it.
+
+Notice that defining a function and calling a function are two different actions. Python does not immediately run the body just because it has read the definition. The body runs when we call the function.
+
+## Scene 2 — Parameters and arguments
+
+**Visual:** Highlight `name` in the definition, then `"Ada"` in the call. Use two concise labels: parameter and argument.
+
+**Narration:**
+
+Let's look at the input to this function.
+
+In the definition, name is a parameter. It is a variable that receives a value when the function is called.
+
+In the call greet with Ada, the text Ada is the argument. It's the value we pass into the function.
+
+Think of the process as input, function, result. The argument provides the input, the function uses that input, and the return statement provides the result.
+
+Now change only the argument.
+
+**Code**
+```python
+print(greet("Lin"))
+```
+
+**Expected output**
+```text
+Hello, Lin!
+```
+
+**Narration:**
+
+The same function now greets Lin. We didn't rewrite the function. We supplied a different argument, and the function used that value.
+
+This is one of the main benefits of functions: one clear piece of logic can work with many different inputs.
+
+## Scene 3 — print and return are different
+
+**Visual:** Show two small functions separately. Do not reveal output before the call is run.
+
+**Code**
+```python
+def show_double(number):
+    print(number * 2)
+
+def double(number):
+    return number * 2
+```
+
+**Narration:**
+
+There is an important distinction between print and return.
+
+Print displays something on the screen. Return hands a value back to the code that called the function, so the program can store that value or use it in another calculation.
+
+These two functions may look similar, but they behave differently. The first displays the doubled number. The second returns the doubled number.
+
+Let's call the returning version.
+
+**Code**
+```result
+result = double(7)
+print(result)
+print(result + 3)
+```
+
+**Expected output**
+```text
+14
+17
+```
+
+**Narration:**
+
+The function returns fourteen. We store that value in result, print it, and then use it again by adding three.
+
+A returned value can continue through the program. A printed message is only displayed; it is not automatically handed back as a reusable result.
+
+For reusable logic, return is usually more useful than printing inside the function.
+
+## Scene 4 — Give a function one clear job
+
+**Visual:** Show the function name, input, and returned calculation. Reveal the call afterward.
+
+**Code**
+```python
+def average_score(scores):
+    return sum(scores) / len(scores)
+
+result = average_score([10, 20, 30])
+print(result)
+```
+
+**Expected output**
+```text
+20.0
+```
+
+**Narration:**
+
+This function calculates an average. Its name tells us what job it performs, and its parameter scores tells us what input it needs.
+
+Inside the function, sum adds the values and len counts them. The division produces the average, and return hands that answer back to the caller.
+
+A function is easier to understand when it has one clear job. Avoid combining several unrelated tasks into one large function. Small functions are easier to read, test, and change.
+
+## Scene 5 — Default parameters
+
+**Visual:** Highlight the default value in the function definition, then show one call that uses it and another that overrides it.
+
+**Code**
+```python
+def passed(score, cutoff=70):
+    return score >= cutoff
+
+print(passed(80))
+print(passed(80, 90))
+```
+
+**Expected output**
+```text
+True
+False
+```
+
+**Narration:**
+
+A parameter can have a default value. Here, cutoff defaults to seventy.
+
+When we call passed with only eighty, Python uses seventy as the cutoff, so the result is true.
+
+When we provide a second argument, ninety, that value replaces the default for this call. Eighty is not at least ninety, so the result is false.
+
+Defaults are useful when one choice is common but we still want callers to be able to choose something different.
+
+## Scene 6 — Local variables and small tests
+
+**Visual:** Show a local variable inside a function. Highlight that the caller uses the returned result, not the internal variable.
+
+**Code**
+```python
+def average_score(scores):
+    total = sum(scores)
+    return total / len(scores)
+
+average = average_score([12, 18, 30])
+print(average)
+```
+
+**Expected output**
+```text
+20.0
+```
+
+**Narration:**
+
+The variable total is created inside the function. It is an implementation detail used to calculate the result. The caller receives the returned average.
+
+Variables created inside a function normally belong to that function. Keeping internal details inside the function helps separate how the calculation works from how the rest of the program uses the answer.
+
+Before trusting a function on a large dataset, test it with small examples. Try a list with one value. Then ask what should happen for an empty list. In this average function, an empty list would lead to division by zero, so a real program needs a deliberate rule for that edge case.
+
+## Scene 7 — Break a large problem into smaller questions
+
+**Visual:** Display four example function names as separate cards or editor lines. Do not implement the complete gradebook or capstone solution.
+
+**Code**
+```python
+average_score(records)
+top_scorer(records)
+passed(records, cutoff=70)
+grade_map(records)
+```
+
+**Narration:**
+
+A larger program can be divided into functions that answer smaller questions.
+
+One function might calculate an average. Another might find the top scorer. Another might determine who passed using a cutoff. Another might map records to grades.
+
+We haven't implemented those examples here. They're examples of how to name the smaller jobs inside a bigger program.
+
+This process is called decomposition. When a program feels too large, ask what smaller questions it needs to answer. Give each clear task a name, and then combine the results.
+
+## Scene 8 — Recap
+
+**Visual:** Reveal: define, call, parameter, argument, return, default, local variable, decomposition.
+
+**Narration:**
+
+Let's recap.
+
+Defining a function creates a reusable block of logic. Calling it runs the function. Parameters are the named inputs in the definition, and arguments are the values supplied in a call.
+
+Print displays a result. Return gives a value back so the caller can use it. A default parameter provides a value when the caller doesn't supply one. Local variables help keep internal details inside a function.
+
+And remember: breaking a large task into small, clearly named functions is a problem-solving skill.
+
+## Final call to action — required for in-app and YouTube versions
+
+**Visual:** Show the real PyLearn navigation path to Lesson 10 and highlight its required coding exercise. Do not show the completed app exercise or a capstone solution.
 
 **Narration:**
 
 Now it's your turn to write code yourself.
 
-Open the PyLearn app and go to the Practice section for Lesson 10. If you're watching this on YouTube, open PyLearn and find the practice for this lesson there.
+Open PyLearn and go to Lesson 10, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
 
-Try the exercises yourself. Write the code, run it, and use the app's feedback to check your work. It's okay to make mistakes — that's how you learn.
+Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
 
-The lesson showed you the concepts. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+Pause this video and start coding.
 
-## Production checklist
+## Production and QA checklist
 
-- [ ] Keep the lesson rich and complete; do not shorten teaching content to make room for practice.
-- [ ] The final card explicitly names the PyLearn app's Practice section.
-- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
-- [ ] The ending does not reveal exercise solutions.
-- [ ] Verify all exercise references against the current app before recording.
-- [ ] Review the full rendered video at normal speed before marking it complete.
+- [ ] Verify the exact approved Kendrick voice ID before generating audio.
+- [ ] Use ElevenLabs v3 and the same approved voice identity throughout.
+- [ ] Keep headings and visual directions out of spoken narration.
+- [ ] Verify every code sample and output in Python.
+- [ ] Make parameter, argument, and return behavior visually clear.
+- [ ] Do not reveal the required Lesson 10 exercise solution or a full capstone solution.
+- [ ] Preserve the required PyLearn navigation ending and progression rule.
