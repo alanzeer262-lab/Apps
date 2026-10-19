@@ -3,7 +3,7 @@
 > **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
 > - Voice: Kendrick
 > - Model: ElevenLabs v3
-> - Voice ID: exact approved Kendrick voice ID is not recorded in the reviewed repository files; insert the verified ID from the original Runway setup before generation.
+ > - Voice setup: user confirmed the approved Kendrick / ElevenLabs v3 setup is settled; use the existing configured voice without substitution.
 > - No guessed ID, substitution, or preset; use the same approved voice identity throughout.
 > - Speak narration only; do not read scene headings or bracketed production notes aloud.
 
@@ -86,7 +86,7 @@ Hello
 **Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
-- [ ] Verify the exact approved Kendrick voice ID before generating audio.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
 - [ ] Use ElevenLabs v3 with the same approved voice identity.
 - [ ] Verify all code and outputs in Python.
 - [ ] Keep code and output synchronized with narration.
