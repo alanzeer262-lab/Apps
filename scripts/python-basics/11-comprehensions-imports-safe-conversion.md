@@ -194,11 +194,13 @@ The text eighty-eight can be converted to an integer because its contents are di
 
 But a value such as oops cannot be converted this way.
 
-**Code — invalid value**
+**Code — expected ValueError; run separately**
 ```python
 value = "oops"
 score = int(value)
 ```
+
+**Expected result:** Python raises `ValueError`. Do not present this as successful output or combine it with the valid conversion example.
 
 **Visual direction:** Run this separate example and show the ValueError. Do not leave the editor stuck on the error; transition to the safe version.
 
