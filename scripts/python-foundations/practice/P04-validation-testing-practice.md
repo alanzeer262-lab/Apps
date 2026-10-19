@@ -51,3 +51,6 @@ If the result changes unexpectedly, the assertion fails where the behavior is ch
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+**Visual transition rule for this practice:** Show the expected value before each assertion runs, then reveal the pass marker only after the assertion succeeds. Keep the same `average` function active between scenes; never display a pass result before execution.
