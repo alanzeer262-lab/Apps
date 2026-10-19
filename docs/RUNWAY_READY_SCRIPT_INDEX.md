@@ -84,6 +84,8 @@ All 20 separate guided-practice companion script files (P01–P20) exist and are
 ## Production status
 
 - [x] Script file exists for each of the 20 lesson videos (not equivalent to review approval).
+- [x] Final-folder MP4 files exist for Lessons 1 and 2 at `public/videos/final/lesson-01-first-python-program.mp4` and `public/videos/final/lesson-02-variables-and-data-types.mp4`.
+- [ ] Check those existing MP4s against the newly agreed practice-video ending; do not treat file presence as proof the current edit is included or the video is approved.
 - [x] Source-by-source content review and revision completed for Lessons 1–20, one lesson at a time.
 - [x] Separate guided-practice script file exists and is listed for each of the 20 modules.
 - [x] User confirmed the approved Kendrick / ElevenLabs v3 voice setup is settled.
