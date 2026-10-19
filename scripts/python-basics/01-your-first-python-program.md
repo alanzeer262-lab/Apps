@@ -1,6 +1,6 @@
 # PyLearn Video 01 — Your First Python Program
 
-**Voice lock — mandatory:** Kendrick voice; ElevenLabs v3; exact approved Kendrick voice ID must be inserted before narration generation; no substitution or preset; same voice throughout. **Voice ID status:** not present in the current repository files or voice-lock record reviewed; do not guess, select a similar voice, or generate narration until the approved ID is recovered from the original Runway setup.
+**Voice lock — mandatory:** Use the user-approved Kendrick voice with ElevenLabs v3. The user confirmed the voice setup is settled. Use the existing approved configuration; do not substitute another voice or preset.
 **Canonical source:** `Pylearn-build260/content/python-basics/modules/01-first-program.md`
 **Use:** Runway narration preparation. Do not send scene headings or stage directions to text-to-speech; send only the spoken narration. Review code/output against the source before generating audio.
 
@@ -295,7 +295,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - [ ] Repeated debugging explanation is reduced; the second occurrence applies the earlier idea.
 - [ ] Lesson remains a full teaching video; do not trim concepts to make room for practice.
 - [ ] Code and output match exactly, and output is revealed only after the matching narration.
-- [ ] The final card explicitly names the PyLearn app's Practice section.
-- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
-- [ ] The ending does not reveal exercise solutions.
+- [x] The final card directs learners to the matching practice video without relying on unfinished app UI.
+- [x] The ending does not reveal exercise solutions.
 - [ ] Full video is reviewed at normal speed before it is marked complete.
