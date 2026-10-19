@@ -8,7 +8,7 @@
 
 ## Scene 1 — When one file becomes hard to manage
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Open a file tab labelled `analysis.py`. Reveal the function definition line by line, label its input (`scores`) and return value, and show that defining the function produces no console output.
 
 **Narration:**
 
