@@ -432,6 +432,27 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required project task screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 17–20
+## Lesson 17 — Project 6: Grade Distribution
+
+**Canonical source:** `content/python-basics/17-build-grade-distribution.md`
+**Scripts:** `scripts/python-basics/17-grade-distribution.md` and `scripts/python-basics/practice/P17-category-counts-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed all demonstration examples. The required two-function solution remains learner work.
+
+### Findings and code/output QA
+
+- The source's category boundaries are preserved: 90+ → A, 80–89 → B, 70–79 → C, 60–69 → D, below 60 → F.
+- The independent score example (86) outputs `B`.
+- The separate frequency-count example outputs `{'A': 2, 'B': 2, 'C': 1}`.
+- Companion speed example outputs `Medium`; its category frequency table outputs `{'Fast': 2, 'Medium': 2, 'Slow': 1}`.
+- The main script describes testing boundary pairs and checking that category counts sum to the number of inputs, without revealing the source's required example distribution.
+- The required grade-conversion and grade-counting functions are not implemented in the script. Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 18–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
