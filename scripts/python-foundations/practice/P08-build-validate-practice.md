@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/08-build-validate.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion; do not reveal the required exercise implementation or hidden evaluation answers.
+**Track 2 practice visuals:** Use a validation gate and number-line boundaries. Pause while each value approaches the gate, then reveal whether it passes and why. Show rejection reasons in a side queue. Use the same teacher and restrained visual palette.
 
 ## Scene 1 — Apply a range rule
 
