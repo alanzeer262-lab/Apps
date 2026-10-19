@@ -20,23 +20,43 @@
 
 This reminds us of the intended sequence. Each step should receive predictable input and return a documented result.
 
-## Scene 2 — Make the report useful
+## Scene 2 — Make the report from real values
+
+**Visual:** Keep the raw score strings visible first. Trace “88” and “72” through integer conversion into the valid lane; route “oops” into the rejected lane. Run the code before revealing the report.
 
 **Code**
 
-    report = {
-        "rows_read": 4,
-        "valid_rows": 3,
-        "invalid_rows": 1,
-        "warning": "one score was not numeric",
-    }
-    print(report["rows_read"] - report["valid_rows"])
+```python
+raw_values = ["88", "72", "oops"]
+valid = []
+rejected = []
+for raw in raw_values:
+    try:
+        score = int(raw)
+    except ValueError:
+        rejected.append(raw)
+        continue
+    if 0 <= score <= 100:
+        valid.append(score)
+    else:
+        rejected.append(raw)
 
-**Expected output**
+report = {
+    "rows_read": len(raw_values),
+    "valid_rows": len(valid),
+    "invalid_rows": len(rejected),
+    "average": sum(valid) / len(valid) if valid else None,
+}
+print(report)
+```
 
-    1
+**Expected output — generated from the displayed input**
 
-**Narration:** These values illustrate the shape of a report; they are not the solution to the required app exercise. Use your own input and tests to check the completed toolkit.
+```text
+{'rows_read': 3, 'valid_rows': 2, 'invalid_rows': 1, 'average': 80.0}
+```
+
+**Narration:** The report is calculated from three actual input values. Two valid scores remain, one value is rejected because it is not numeric, and the average of eighty-eight and seventy-two is eighty. This is a separate practice example, not the required app exercise solution.
 
 ## Production checklist
 - [ ] Use approved Kendrick / ElevenLabs v3 voice.
