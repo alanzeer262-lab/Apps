@@ -87,7 +87,7 @@ The new field records a decision based on the score. In real analysis, we should
 
 ## Scene 4 — Count categories
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Continue with the same records, now including the `passed` field. Group each row by `topic`, increment the count, and reveal the dictionary only after the loop finishes.
 
 **Narration:**
 
