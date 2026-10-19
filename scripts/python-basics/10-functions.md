@@ -32,8 +32,25 @@
 ### Recap
 **Narration:** “Functions organize programs into reusable pieces. You define and call them, pass inputs through parameters, and return useful results. Defaults make common choices convenient, and small functions make larger problems manageable. Next, we'll use comprehensions, imports, and safe conversion.”
 
-## App practice handoff
+## Final call to action — required for YouTube and in-app versions
 
-**Visual:** End card showing the corresponding PyLearn lesson/exercise; do not show a completed solution.
+**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 10. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
 
-**Narration:** "Open Lesson 10 in PyLearn and implement the requested functions yourself. Test normal inputs and the edge cases specified by the task. Make sure you return values when the exercise asks for a return value."
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open the PyLearn app and go to the Practice section for Lesson 10. If you're watching this on YouTube, open PyLearn and find the practice for this lesson there.
+
+Try the exercises yourself. Write the code, run it, and use the app's feedback to check your work. It's okay to make mistakes — that's how you learn.
+
+The lesson showed you the concepts. Now practise them yourself in PyLearn. Stop watching, open the app, and start coding!
+
+## Production checklist
+
+- [ ] Keep the lesson rich and complete; do not shorten teaching content to make room for practice.
+- [ ] The final card explicitly names the PyLearn app's Practice section.
+- [ ] YouTube viewers are explicitly told to open PyLearn and find the matching lesson practice.
+- [ ] The ending does not reveal exercise solutions.
+- [ ] Verify all exercise references against the current app before recording.
+- [ ] Review the full rendered video at normal speed before marking it complete.
