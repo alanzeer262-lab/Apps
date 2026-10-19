@@ -1,27 +1,27 @@
 # PyLearn Video 13 — Build: Study Time Calculator
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/13-build-study-calculator.md`
-**Target:** 5–7 minutes.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 13, Build 2. **Target:** 3–4 minutes. Teach the ideas; do not show the complete project solution.
 
-### Scene 1 — Define the job
-**Visual:** Show input example 360 minutes, 6 sessions; label outputs: total minutes, full hours, remaining minutes, average session length.
-**Narration:** “Our next project is a study-time calculator. It takes total minutes and the number of sessions, then reports the total, complete hours, remaining minutes, and average length per session. We'll use the operators because each answers a different question.”
+## Scene 1 — The mission
+**Visual:** Show input labels: total minutes and number of sessions. Show required output labels: total minutes, full hours, remaining minutes, average session length.
+**Narration:** “This project turns study time into a useful report. You'll give it total minutes and the number of sessions. It must report the total, complete hours, remaining minutes, and average session length.”
 
-### Scene 2 — Build the function
-**Visual:** Type `def study_time_report(total_minutes, sessions):` and calculate `full_hours = total_minutes // 60`, `remaining_minutes = total_minutes % 60`, `average_session = total_minutes / sessions`.
-**Narration:** “Floor division gives complete hours. Modulo gives the remaining minutes. Normal division calculates the average session length. Rounding can make the average easier to read. The names also remind us what units each number represents.”
+## Scene 2 — Three operators, three jobs
+**Visual:** Reveal the expressions one at a time, without assembling the function: `total_minutes / sessions`, `total_minutes // 60`, `total_minutes % 60`.
+**Narration:** “Normal division can calculate an average. Floor division by sixty gives complete hours. Modulo by sixty gives the minutes left over. These operators are related, but they answer different questions. Keep the units clear as you work.”
 
-### Scene 3 — Handle zero sessions
-**Visual:** Before division, show a conditional for `sessions == 0` returning `"No study sessions recorded."`.
-**Narration:** “What if no sessions were recorded? Dividing by zero would fail, and the report should not pretend an average exists. We handle that case first and return the message specified by the project.”
-**Visual:** Run zero-session case and show message.
+## Scene 3 — Predict
+**Visual:** Show **360 minutes** and **6 sessions**. Hide all computed outputs.
+**Narration:** “Before running anything, predict the complete hours, the remaining minutes, and the average length of one session. Which operation answers each question?”
+**Hold:** 5 seconds of silence. Reveal the three answers only after the pause: 6 full hours, 0 remaining minutes, 60 minutes per session.
 
-### Scene 4 — Verify examples
-**Visual:** Run 360 minutes over 6 sessions, then 65 minutes over 2 sessions. Show each output and units.
-**Narration:** “For 360 minutes over six sessions, check the total and average. Then test sixty-five minutes over two sessions. Do not just check that the program runs—check that the result answers the question and uses the correct units.”
+## Scene 4 — A necessary edge case
+**Visual:** Show `sessions = 0`; highlight the required message: “No study sessions recorded.”
+**Narration:** “The app's project brief defines one special case: if sessions is zero, return the message ‘No study sessions recorded.’ You must check this before dividing, because division by zero fails.”
 
-### Scene 5 — Practice
-**Narration:** “Your turn. Add another test with a different number of minutes. Predict the complete hours, remainder, and average before running. Then explain why floor division is useful here when normal division is also available.”
-**Hold:** 4 seconds.
-**Narration:** “You built a calculator that combines arithmetic, units, functions, and an explicit edge-case rule. Next, we'll clean inconsistent topic text.”
+## Scene 5 — Build it in PyLearn
+**Visual:** App/project card: **Build 2 — Study time calculator**. Tests listed: 360 minutes / 6 sessions; 65 minutes / 2 sessions; 0 sessions.
+**Narration:** “Open Build 2 in PyLearn and write study_time_report yourself. Test all three cases, including zero sessions. Then explain in your own words why floor division is useful when normal division is also available.”
+
+**End card:** “Open PyLearn → Build 2: Study time calculator”
