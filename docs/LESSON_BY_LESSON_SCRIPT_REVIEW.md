@@ -498,4 +498,24 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 
 ## Lesson 20 — Mini Gradebook Capstone
 
-Not yet reviewed in this pass. Its source and companion will be checked individually before the script is approved. File existence or a link in the index is not evidence of QA completion.
+**Canonical source:** `content/python-basics/projects/capstone-gradebook.md`
+**Scripts:** `scripts/python-basics/20-mini-gradebook-capstone.md` and `scripts/python-basics/practice/P20-capstone-preparation-practice.md`
+**Review status:** Compared both scripts with the canonical capstone brief and executed the self-contained example snippets. The five milestone sequence and the source's tie/boundary rules are preserved; no completed milestone implementation or full solution is shown.
+
+### Findings and code/output QA
+
+- The capstone source requires five milestones in order: average score (rounded to two decimals), top scorer (keep the first person on a tie), passed names (preserve input order), letter-grade mapping, and grade distribution.
+- The current capstone script accurately narrates all five milestones, the tie rule, boundary testing, debugging, and the required start at Milestone 1.
+- The companion plant-record loop outputs `Basil 4` and `Mint 2`; its condition example outputs `True`.
+- **Content correction still required:** the main script's Scene 2 code loops over `records` without defining `records` in that code block. Before the capstone script is marked content-final, make the inspection example self-contained by defining a small, unrelated sample list first and stating its expected output. The update attempt was blocked, so this correction is not yet committed.
+- The capstone ending correctly instructs learners to start with Milestone 1, submit, read feedback, fix issues, and proceed one milestone at a time.
+- Real PyLearn navigation and production prerequisites remain unverified.
+
+### Remaining content and production gates
+
+1. Make Scene 2's record-inspection code self-contained and add the expected output.
+2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+3. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
+4. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+**Status:** Source review complete; not yet content-final or production-approved until the Scene 2 correction and external production gates are resolved.
