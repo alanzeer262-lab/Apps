@@ -58,7 +58,7 @@ The runnable Lesson 1 and P01 companion examples were executed in Python during 
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Apply the agreed lesson-to-practice and practice-to-exercise endings consistently across the remaining scripts.
+1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
 2. When rendering is possible, review the complete video at normal speed and check code/output synchronization before approval.
 
 The source comparison, teaching-flow review, and listed runnable-code QA are complete for this content pass. Video-production approval remains separate from script readiness.
@@ -129,8 +129,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 04 — Strings and f-Strings
@@ -159,8 +159,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 05 — Booleans and Comparisons
@@ -186,8 +186,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 06 — Lists
@@ -216,8 +216,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 07 — Conditionals: if / elif / else
@@ -244,8 +244,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 08 — Loops: for and while
@@ -273,8 +273,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 09 — Dictionaries, Tuples, and Sets
@@ -300,8 +300,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 10 — Functions
@@ -327,8 +327,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 11 — Comprehensions, Imports, and Safe Conversion
@@ -355,8 +355,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path and required exercise screen.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 12 — Project 1: My Learning Report
@@ -590,8 +590,8 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
-1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-2. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
+1. Use the approved Kendrick / ElevenLabs v3 setup confirmed by the user; do not substitute another voice.
+- App UI footage is not required; use the agreed lesson-to-practice handoff instead.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 **Status:** Source review and the two identified script corrections are complete. The user confirmed the approved voice setup. The agreed learner handoff removes the need for real app footage. The handoff is now applied across all 20 lesson scripts and all 20 practice companions. Remaining work is to render when credits are available and watch each finished video end to end.
