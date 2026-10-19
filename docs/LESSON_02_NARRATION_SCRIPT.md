@@ -3,7 +3,7 @@
 > **MANDATORY VOICE SETTINGS — DO NOT CHANGE**
 > - **Voice name:** Kendrick
 > - **Model:** ElevenLabs v3
-> - **Voice ID:** Use the exact approved custom Kendrick voice ID supplied/confirmed by the user. Do not guess or substitute another ID.
+> - **Voice ID:** Exact approved custom Kendrick voice ID is not recorded in the reviewed repository files. Insert the confirmed ID from the original Runway setup before generating narration. Do not guess or substitute another ID; generation is blocked until verified.
 > - **Voice substitution:** Not allowed. Do not use another voice or a preset.
 > - **Consistency:** Use the same voice identity for every part of this lesson.
 > - **Read-aloud rule:** Speak only the narration text. Do not read production notes in square brackets aloud.
@@ -284,3 +284,17 @@ Finally, choose variable names that explain what the values mean. Clear names ma
 You don't need to master everything at once. Practice changing a value, predicting what will happen, running the code, and checking the result.
 
 In the next lesson, we'll continue with numbers and operators. Nice work!
+
+## Final call to action — required for in-app and YouTube versions
+
+**Visual direction:** Show the real PyLearn navigation path to Lesson 2 and highlight its required coding exercise. Do not display the exercise solution or unverified app screens. Keep the final navigation screen visible long enough to read.
+
+**Narration:**
+
+Now it's your turn to write code yourself.
+
+Open PyLearn and go to Lesson 2, then complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this lesson there.
+
+Run your code, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
+
+Pause this video and start coding.
