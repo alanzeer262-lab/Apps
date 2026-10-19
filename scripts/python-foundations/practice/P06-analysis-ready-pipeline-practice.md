@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/06-analysis-ready-pipeline.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Show the data pipeline as connected stages with a visible rejected-record side lane. Pause on the row count and cleaning decision, then reveal the outcome. Use the toolkit progress rail and a restrained charcoal/teal palette; keep the teacher and voice unchanged.
 
 ## Scene 1 — Inspect first
 
