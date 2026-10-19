@@ -1,5 +1,8 @@
 # Lesson 01 Narration Voice Lock
 
+> **Current all-lesson production direction (supersedes the historical pilot setting for new scripts):** Kendrick voice, ElevenLabs v3, exact approved Kendrick voice ID required, no substitution. The exact Kendrick ID has not been recovered from repository records or the connected voice search. Do not generate new narration until the ID is verified. The Noah settings below document the earlier pilot and must not be silently reused for the new script set.
+
+
 Status: Noah voice approved by user for the revised pilot, with one text-markup correction required before using this approach for future narration.
 
 ## Original recording provenance
