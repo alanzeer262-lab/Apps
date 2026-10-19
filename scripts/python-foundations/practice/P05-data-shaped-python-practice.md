@@ -44,7 +44,7 @@ The list comprehension selects one field from each record.
 
 ## Close — Complete the exercise
 
-**Visual:** End card: “Your turn: Complete the exercise”. Do not show unfinished PyLearn app screens.
+**Visual:** Continue with the `books` list from Scene 1. Highlight books with at least 180 pages, then count the genre field from the original three records and reveal the two computed results.
 
 **Narration:** Good work. Now complete the exercise to unlock the next lesson. Use the habits from this practice: test small cases, check assumptions, and change one thing at a time. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
