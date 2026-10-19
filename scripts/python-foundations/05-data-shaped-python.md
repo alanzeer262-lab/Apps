@@ -63,7 +63,7 @@ The first operation extracts every score. The second keeps records with scores o
 
 ## Scene 3 — Create a derived field
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Continue with the same `records` list from Scenes 1–2. Add the `passed` field to each existing row, then highlight Lin's row and reveal `True` after the loop runs.
 
 **Narration:**
 
