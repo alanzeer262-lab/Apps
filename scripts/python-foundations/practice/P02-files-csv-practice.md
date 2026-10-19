@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/02-files-csv.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Use a data-workbench style with a scrollable-looking CSV sheet, header highlighting, row selection, and a small file-to-record animation. Pause on a selected row before revealing its fields. Avoid repeating the lesson's generic input/output framing; keep the same teacher.
 
 ## Scene 1 — Inspect a CSV row
 
