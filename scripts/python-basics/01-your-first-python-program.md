@@ -276,21 +276,17 @@ In the next lesson, we'll explore variables and data types more carefully. For n
 
 Your first Python program is complete.
 
-## Final call to action — required for YouTube and in-app versions
+## Final call to action — watch the practice video
 
-**Visual:** Show the PyLearn app and clearly highlight the Practice section for Lesson 1. Do not show completed exercise answers. Leave the call to action on screen long enough to read.
+**Visual:** Use a neutral end card with the words “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens.
 
-**Narration — preserve this navigation instruction in both the in-app and YouTube versions:**
+**Narration:**
 
-Now it's your turn to write code yourself.
+Great work! You've finished your first Python lesson. The next step is to watch the practice video. I recommend watching it because we'll use a fresh example to help you practise what you've just learned.
 
-Open PyLearn and go to Lesson 1. Complete its required coding exercise. If you're watching this on YouTube, open PyLearn and find this same lesson there.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app when you want.
 
-Write your code, run it, read the feedback, and fix mistakes as needed. Practice Drills are optional. Passing the required exercise is what unlocks the next lesson.
-
-Pause this video and start coding.
-
-**Visual:** Show the real PyLearn navigation path to Lesson 1 and highlight the required coding exercise. Do not show a completed answer or unverified UI. Hold the final screen long enough to read.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production checklist
 
