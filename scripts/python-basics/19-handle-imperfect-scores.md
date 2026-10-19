@@ -145,17 +145,17 @@ Before you finish, ask why replacing an invalid score with zero could create a m
 
 Zero is a real numeric value. An invalid score means the data could not be interpreted as a valid number. Treating both the same would hide a data-quality problem and lower the average for the wrong reason.
 
-## Project closing — required for in-app and YouTube versions
+## Final call to action — watch the practice video
 
-**Visual:** Show the real PyLearn navigation path to the “Handle Imperfect Scores” task. Do not show the full `clean_score_records` function or the completed required output.
+**Visual:** Use a neutral end card reading “Next: Practice Video”. Do not show or describe unfinished PyLearn app screens or reveal a completed project/capstone solution.
 
 **Narration:**
 
-Now open PyLearn and find the Handle Imperfect Scores task.
+Great work! You've finished this lesson. The next step is to watch the practice video. I recommend watching it because it will help you apply what you've learned with a fresh example.
 
-Build it yourself and run the tests. This video has shown the ideas, not the finished solution. Practice Drills, if shown, are optional; complete and pass the required project exercise to unlock the next lesson.
+After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
 
-Pause the video and start building.
+**Visual:** Hold the “Next: Practice Video” end card long enough to read.
 
 ## Production and QA checklist
 
