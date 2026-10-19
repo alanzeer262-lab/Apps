@@ -54,8 +54,9 @@ The runnable Lesson 1 and P01 companion examples were executed in Python during 
 
 ### Remaining production gates
 
-1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
-2. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
+1. Lessons 1–19 direct learners to their matching practice video; Practice 1–19 direct learners to complete the exercise to unlock the next lesson.
+2. Lesson 20 has a distinct ending directing learners to the capstone practice video. Practice 20 tells learners to complete the final capstone and congratulates them on completing Python Basics; it does not mention unlocking another lesson.
+3. When production credits are available, render the videos and watch each complete render at normal speed, checking code/output synchronization before approval.
 
 
 1. The agreed lesson-to-practice handoff and practice-to-exercise unlock instruction are now applied across all 20 lesson scripts and all 20 practice companions.
