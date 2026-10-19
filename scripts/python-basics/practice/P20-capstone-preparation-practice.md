@@ -49,11 +49,11 @@ print(leaves >= 3)
 
 **Narration:** In the capstone, inspect the records first, then solve one milestone at a time. Do not try to write the entire program in one pass. Make a prediction, test a small piece, and use feedback to refine your work.
 
-## Close — Complete the exercise
+## Close — Finish the Python Basics capstone
 
-**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens or reveal the capstone solution.
+**Visual:** Use a simple end card: “Complete the Final Capstone”. Do not show or describe unfinished PyLearn app screens or reveal the capstone solution.
 
-**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
+**Narration:** Great work! Now complete the final capstone exercise. Take it one milestone at a time, test your work, and use the feedback to improve it. If you'd like, you can also try your code in the PyLearn app. When you finish, congratulations — you've completed the Python Basics learning path!
 
 ## Production checklist
 - [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
@@ -61,4 +61,4 @@ print(leaves >= 3)
 - [ ] Verify code and expected outputs in Python.
 - [ ] Keep output synchronized with narration.
 - [ ] Do not reveal the required app exercise solution.
-- [x] End by telling the learner to complete the exercise to unlock the next lesson; app practice is optional.
+- [x] End by directing the learner to finish the final capstone; do not mention unlocking another lesson.
