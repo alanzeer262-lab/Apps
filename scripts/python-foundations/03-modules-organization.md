@@ -55,7 +55,7 @@ The second file does not need to copy the average calculation. It uses the same 
 
 ## Scene 3 — Give each part one job
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Show `summary.py` as a separate module tab containing only the focused `passing_count` function. Draw its responsibility label, “count scores meeting threshold”; do not show a console result until Scene 4 calls it.
 
 **Narration:**
 
