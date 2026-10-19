@@ -1,118 +1,78 @@
-# PyLearn Video — 09 — Build: Summary Report
+# PyLearn Video — Build: Summary Report
 
-**Voice lock — mandatory:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice or preset.
+**Voice lock:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/09-build-summary.md, branch ccr-c7f6fdd7-xpzi3g.
-**Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
+**Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
 
 ## Scene 1 — Turn rows into answers
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
 **Narration:**
 
-A pile of records is not yet a useful answer. A summary should tell us how many valid scores we have, what their average is, and who has the highest score. The function should receive validated records, not raw CSV text.
+A pile of records is not yet an answer. A useful summary tells us how many valid scores we have, what their average is, and who has the highest score. The summary function should receive validated records, not raw CSV text.
 
 **Code**
-    
+
     scores = [88, 72, 95]
-        print("Count:", len(scores))
-        print("Average:", sum(scores) / len(scores))
-        print("Top score:", max(scores))
+    print("Count:", len(scores))
+    print("Average:", sum(scores) / len(scores))
+    print("Top score:", max(scores))
 
 **Expected output**
-    
+
     Count: 3
-        Average: 85.0
-        Top score: 95
+    Average: 85.0
+    Top score: 95
 
-**Narration:**
-
-The count, average, and top score answer different questions. Keep the output clear and avoid rounding until you know how the report should display the result.
+Each statistic answers a different question. The count describes the size of the group, the average describes its central value, and the top score identifies its highest value.
 
 ## Scene 2 — Protect the empty case
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
 **Narration:**
 
-If there are no valid scores, there is no average and no top scorer. Calling max on an empty list raises an error, and dividing by zero does too. The summary should handle the empty case explicitly.
+What happens when there are no valid scores? There is no average and no top scorer. Dividing by zero or calling max on an empty list raises an error, so the function must handle the empty case explicitly.
 
 **Code**
-    
+
     scores = []
-        if not scores:
-            print("No valid scores")
-        else:
-            print(sum(scores) / len(scores))
-            print(max(scores))
+    if not scores:
+        print("No valid scores")
+    else:
+        print(sum(scores) / len(scores))
+        print(max(scores))
 
 **Expected output**
-    
+
     No valid scores
 
-**Narration:**
+A clear empty result is better than a crash. It tells the person reading the report why no statistic was produced.
 
-A good empty result is more useful than a crash. It also tells the person reading the report why no statistic was produced.
-
-## Scene 3 — Make the output interpretable
-
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
-
-**Narration:**
-
-A summary can report a count, average, and top score. For a real toolkit, it should also preserve the row counts and validation warnings from earlier stages.
+## Scene 3 — Return structured results
 
 **Code**
-    
+
     scores = [88, 72, 95]
-        summary = {
-            "count": len(scores),
-            "average": sum(scores) / len(scores),
-            "top_score": max(scores),
-        }
-        print(summary)
+    summary = {
+        "count": len(scores),
+        "average": sum(scores) / len(scores),
+        "top_score": max(scores),
+    }
+    print(summary)
 
 **Expected output**
-    
+
     {'count': 3, 'average': 85.0, 'top_score': 95}
 
 **Narration:**
 
-Returning a dictionary gives the rest of the program a structured result to format or write to a file. The function calculates; the report layer decides how to present it.
+Returning a dictionary gives the rest of the program a structured result to format or save. The summary function calculates; the report layer decides how to present it.
 
-## Your turn — predict, run, explain
+## Recap and handoff
 
-**Visual:** Keep the editor uncluttered. Show a fresh, related prompt without using the app's required exercise code.
+You've learned to summarize validated data and protect the empty case. Next, watch the practice video, then complete the exercise to unlock the next lesson. You can also practise in the PyLearn app for extra hands-on work.
 
-**Narration:**
+## Final production checklist
 
-Pause the video and try a small variation of the example. Predict the output before you run it. Then run the code, compare the result with your prediction, and explain why it happened. If the result surprises you, inspect the values and change one thing at a time.
-
-This is extra guided practice, not the required PyLearn exercise solution.
-
-## Recap
-
-**Narration:**
-
-Today, you learned the core idea behind summary and empty cases. Keep the stages clear, test your assumptions, and make the program's behavior visible. In the next lesson, we'll build on this skill.
-
-## Final call to action — watch the practice video
-
-**Visual:** Neutral end card reading “Next: Practice Video”. Do not show unfinished app screens or invent navigation.
-
-**Narration:**
-
-Great work! You've finished Build: Summary Report. Next, watch the practice video. I recommend watching it because we'll use a fresh example to reinforce the skill from this lesson.
-
-After the practice video, complete the exercise to unlock the next lesson. If you'd like extra hands-on practice, you can also try it in the PyLearn app.
-
-**Visual:** Hold the end card long enough to read.
-
-## Production checklist
-
-- [ ] Use the approved Kendrick voice with ElevenLabs v3.
-- [ ] Verify every example and expected output in Python before rendering.
-- [ ] Reveal code before running it; reveal output only after the run.
-- [ ] Keep narration separate from production directions.
-- [ ] Do not show the required app exercise solution or hidden tests.
+- [ ] Verify each code sample and stated output in Python.
+- [ ] Reveal code before running it and output only after the run.
+- [ ] Keep narration separate from visual directions.
 - [ ] Watch the complete rendered video at normal speed before approval.
