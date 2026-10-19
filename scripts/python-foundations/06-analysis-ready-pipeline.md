@@ -15,13 +15,15 @@
 A reliable data workflow moves through deliberate stages: inspect, validate, clean, transform, summarize, and report. Each stage answers a different question, and the order matters.
 
 **Code**
-    
-    raw_scores = ["80", "90", "oops", "70"]
-        print("Rows read:", len(raw_scores))
+```python
+raw_scores = ["80", "90", "oops", "70"]
+print("Rows read:", len(raw_scores))
+```
 
 **Expected output**
-    
-    Rows read: 4
+```text
+Rows read: 4
+```
 
 **Narration:**
 
@@ -36,22 +38,24 @@ We start by counting what arrived. We should not quietly discard rows before we 
 A score stored as text needs conversion. A word such as oops cannot be converted to an integer. We'll keep valid values separate from invalid values so the report can explain what happened.
 
 **Code**
-    
-    raw_scores = ["80", "90", "oops", "70"]
-        valid_scores = []
-        invalid_values = []
-        for raw in raw_scores:
-            try:
-                valid_scores.append(int(raw))
-            except ValueError:
-                invalid_values.append(raw)
-        print(valid_scores)
-        print(invalid_values)
+```python
+raw_scores = ["80", "90", "oops", "70"]
+valid_scores = []
+invalid_values = []
+for raw in raw_scores:
+    try:
+        valid_scores.append(int(raw))
+    except ValueError:
+        invalid_values.append(raw)
+print(valid_scores)
+print(invalid_values)
+```
 
 **Expected output**
-    
-    [80, 90, 70]
-        ['oops']
+```text
+[80, 90, 70]
+['oops']
+```
 
 **Narration:**
 
@@ -66,15 +70,18 @@ This is one explicit cleaning policy: retain valid numeric scores and record the
 Only after validation can we calculate the average for the valid scores. The report should state how many rows were read and how many were usable.
 
 **Code**
-    
-    average = sum(valid_scores) / len(valid_scores)
-        print("Valid rows:", len(valid_scores))
-        print("Average:", average)
+```python
+valid_scores = [80, 90, 70]
+average = sum(valid_scores) / len(valid_scores)
+print("Valid rows:", len(valid_scores))
+print("Average:", average)
+```
 
 **Expected output**
-    
-    Valid rows: 3
-        Average: 80.0
+```text
+Valid rows: 3
+Average: 80.0
+```
 
 **Narration:**
 
@@ -89,18 +96,30 @@ The average describes the three valid scores, not all four original rows. Report
 Missing values, duplicate records, inconsistent capitalization, and out-of-range scores all require decisions. There is no universal cleaning rule. Choose it, document it, and apply it consistently.
 
 **Code**
-    
-    print("Rows read: 4")
-        print("Valid rows: 3")
-        print("Invalid rows: 1")
-        print("Warning: one score could not be converted")
+```python
+raw_scores = ["80", "90", "oops", "70"]
+valid_scores = []
+invalid_values = []
+for raw in raw_scores:
+    try:
+        valid_scores.append(int(raw))
+    except ValueError:
+        invalid_values.append(raw)
+
+print("Rows read:", len(raw_scores))
+print("Valid rows:", len(valid_scores))
+print("Invalid rows:", len(invalid_values))
+if invalid_values:
+    print("Warning: one or more scores could not be converted")
+```
 
 **Expected output**
-    
-    Rows read: 4
-        Valid rows: 3
-        Invalid rows: 1
-        Warning: one score could not be converted
+```text
+Rows read: 4
+Valid rows: 3
+Invalid rows: 1
+Warning: one or more scores could not be converted
+```
 
 **Narration:**
 
@@ -149,3 +168,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this lesson:** In every scene, begin with the raw list, highlight the exact operation (count, convert, separate invalid values, calculate), then animate the resulting list or number into the report. Keep the same four input values visible across the sequence so learners can trace each change. The report numbers must be generated from the variables in the displayed code, never typed as decorative values.
