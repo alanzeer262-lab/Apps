@@ -1,5 +1,7 @@
 # PyLearn Video — Build: Run the Pipeline
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use an animated pipeline map with three connected stations—Load, Validate, Summarize—and show each station passing a small record bundle to the next. When introducing report requirements, use a checklist panel and report wireframe rather than a stack of input/output boxes. Highlight the active stage on the persistent toolkit rail.
+
 **Voice lock:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/10-build-pipeline.md, branch ccr-c7f6fdd7-xpzi3g.
 **Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
