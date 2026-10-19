@@ -26,7 +26,7 @@ A header row and two data records. The header names each column; each following 
 
 **Narration:**
 
-Pause and compare the output with your prediction. Change one thing at a time, run the example again, and explain what changed.
+Pause and identify the header fields and the values in each row before loading the file.
 
 ## Scene 2 — Read rows with the standard library
 
