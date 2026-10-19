@@ -1,7 +1,7 @@
 # PyLearn Python Basics — Runway Script Index
 
 **Purpose:** Canonical index for full narrated scripts intended for Runway production.  
-**Review status:** Scripts are under a lesson-by-lesson audit; a file being listed here does not mean it is approved. Track findings in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
+**Review status:** Lesson-by-lesson source/content review and the two identified script corrections are complete. Listing a file here does not mean it is approved for production; the exact voice ID, real app navigation, and final rendered-video watch-through remain required. Track details in [Lesson-by-Lesson Script Review](LESSON_BY_LESSON_SCRIPT_REVIEW.md).  
 **Curriculum source:** `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.  
 **Navigation rule:** Every lesson video must end by directing learners to the exact required PyLearn coding exercise. Practice Drills are optional; passing the required exercise unlocks the next lesson. Project videos use the project-specific ending. The capstone ending directs the learner to Mini Gradebook Capstone, Milestone 1.
 
