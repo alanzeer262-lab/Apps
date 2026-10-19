@@ -123,6 +123,32 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 04–20
+## Lesson 04 — Strings and f-Strings
+
+**Canonical source:** `content/python-basics/modules/04-strings.md`
+**Scripts:** `scripts/python-basics/04-strings-and-fstrings.md` and `scripts/python-basics/practice/P04-strings-practice.md`
+**Review status:** Source comparison completed. The main lesson covers strings, zero-based indexing, slicing, whitespace cleanup, capitalization methods, splitting, membership checks, replacement, and f-strings. A source-aligned topic-list example was added to make clear that splitting leaves spaces inside individual items. Runnable examples in the lesson and companion were executed in Python.
+
+### Findings and code/output QA
+
+- Indexing `"Python"` at positions 0 and 1 outputs `P` and `y`.
+- Slices output `Py`, `Py`, and `thon`, consistent with the inclusive start and exclusive end.
+- For `name = "  ada  "`, outputs are `ada`, `  ADA  `, `  ada  `, and `  Ada  `; only `strip()` removes the outer whitespace. The visual must make those spaces clear.
+- Chaining `strip().title()` outputs `Ada`.
+- Splitting `"python, pandas, machine learning"` at commas outputs `['python', ' pandas', ' machine learning']`; spaces after commas remain.
+- Membership checks output `True` and `False`; lowercasing before the search outputs `True`.
+- Replacement outputs `I like Python`; the f-string examples output `Ada scored 92.` and `Next target: 95`.
+- The transformation example outputs `DATA, Python`, `data, python`, and `DATA, coding`.
+- The added comma-separated list example outputs `['python', ' pandas', ' pandas', ' machine learning']`, confirming that outer stripping does not trim every item.
+- Companion outputs were verified: cleaned text `data science, python`; split list `['data science', ' python']`; normalized search outputs `python` and `True`.
+- The scripts do not display a completed required exercise solution. Real PyLearn navigation still must be verified before production.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 05–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
