@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/10-build-pipeline.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion; do not reveal the required exercise implementation or hidden evaluation answers.
+**Track 2 practice visuals:** Animate records through Load → Validate → Summarize. Pause at each handoff and ask what should happen next. Finish with a report wireframe showing categories of information, not the solution to the required app exercise.
 
 ## Scene 1 — Check the order
 
