@@ -48,3 +48,6 @@ The quantity is text, so convert it before arithmetic.
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+**Visual transition rule for this practice:** Show the exact CSV text, trace the first row into the dictionary with string values, then highlight the explicit `int()` conversion before totaling 12 + 4 = 16. Reveal each console output only after the corresponding code runs.
