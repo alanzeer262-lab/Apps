@@ -15,19 +15,21 @@
 Before using a data-analysis library, we can practice the underlying ideas with plain Python. A list can hold one dictionary per row, and each dictionary can use named fields.
 
 **Code**
-    
-    records = [
-            {"name": "Ada", "score": 88, "topic": "Python"},
-            {"name": "Lin", "score": 72, "topic": "Python"},
-            {"name": "Sam", "score": 95, "topic": "Pandas"},
-        ]
-        print(records[0]["name"])
-        print(records[0]["score"])
+```python
+records = [
+    {"name": "Ada", "score": 88, "topic": "Python"},
+    {"name": "Lin", "score": 72, "topic": "Python"},
+    {"name": "Sam", "score": 95, "topic": "Pandas"},
+]
+print(records[0]["name"])
+print(records[0]["score"])
+```
 
 **Expected output**
-    
-    Ada
-        88
+```text
+Ada
+88
+```
 
 **Narration:**
 
@@ -42,16 +44,18 @@ Named fields make the data easier to understand than relying on positions like r
 Selection asks for a field. Filtering keeps only rows that meet a condition. These are two common operations in data analysis.
 
 **Code**
-    
-    scores = [row["score"] for row in records]
-        strong = [row for row in records if row["score"] >= 80]
-        print(scores)
-        print(len(strong))
+```python
+scores = [row["score"] for row in records]
+strong = [row for row in records if row["score"] >= 80]
+print(scores)
+print(len(strong))
+```
 
 **Expected output**
-    
-    [88, 72, 95]
-        2
+```text
+[88, 72, 95]
+2
+```
 
 **Narration:**
 
@@ -66,14 +70,16 @@ The first operation extracts every score. The second keeps records with scores o
 A derived field is calculated from existing data. We can add a pass flag to each record using a consistent threshold.
 
 **Code**
-    
-    for row in records:
-            row["passed"] = row["score"] >= 70
-        print(records[1]["passed"])
+```python
+for row in records:
+    row["passed"] = row["score"] >= 70
+print(records[1]["passed"])
+```
 
 **Expected output**
-    
-    True
+```text
+True
+```
 
 **Narration:**
 
@@ -88,16 +94,18 @@ The new field records a decision based on the score. In real analysis, we should
 Grouping means collecting rows by a shared category. A dictionary can count how often each topic appears.
 
 **Code**
-    
-    counts = {}
-        for row in records:
-            topic = row["topic"]
-            counts[topic] = counts.get(topic, 0) + 1
-        print(counts)
+```python
+counts = {}
+for row in records:
+    topic = row["topic"]
+    counts[topic] = counts.get(topic, 0) + 1
+print(counts)
+```
 
 **Expected output**
-    
-    {'Python': 2, 'Pandas': 1}
+```text
+{'Python': 2, 'Pandas': 1}
+```
 
 **Narration:**
 
@@ -139,3 +147,6 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 - [ ] Keep narration separate from production directions.
 - [ ] Do not show the required app exercise solution or hidden tests.
 - [ ] Watch the complete rendered video at normal speed before approval.
+
+
+**Visual transition rule for this lesson:** Keep the same three-row table on screen. Show the exact operation on the relevant column or rows, then reveal the derived list/count only after the operation runs. When adding `passed`, update the visible row fields; when grouping, move each row into its topic group and derive the counts from the records. Do not show a chart or count that isn't computed from this table.
