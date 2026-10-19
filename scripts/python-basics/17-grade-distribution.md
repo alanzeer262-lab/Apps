@@ -147,8 +147,8 @@ After the practice video, complete the exercise to unlock the next lesson. If yo
 
 ## Production and QA checklist
 
-- [ ] Verify the exact approved Kendrick voice ID before generating audio.
-- [ ] Use ElevenLabs v3 and the same approved voice throughout.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
+- [x] Use the approved Kendrick voice with ElevenLabs v3, as confirmed by the user.
 - [ ] Keep production notes out of spoken narration.
 - [ ] Verify all demonstration code and outputs in Python.
 - [ ] Do not reveal the full required grade-distribution solution.
