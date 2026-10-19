@@ -1,5 +1,7 @@
 # PyLearn Video — Build: Summary Report
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Shift from code demonstration to a compact analytics dashboard: count, average, and top score become three metric tiles supported by a small bar or distribution graphic. Show the empty-data case as a clear empty state, not an error explosion. Keep the toolkit stage rail with “Summarize” highlighted.
+
 **Voice lock:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/09-build-summary.md, branch ccr-c7f6fdd7-xpzi3g.
 **Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
