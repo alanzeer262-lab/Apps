@@ -53,9 +53,11 @@ print(round(245 / 60, 1))
 
 **Narration:** Round displays the value to one decimal place. Now change the total to a different number of minutes and predict all three results before running it.
 
-## Close — Navigate to the real task
+## Close — Complete the exercise
 
-**Narration:** Now open PyLearn and find the required coding exercise for Lesson 3. This companion is separate practice and does not unlock the next lesson. Complete and pass the required app exercise.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
 - [ ] Verify the exact approved Kendrick voice ID before generating audio.
