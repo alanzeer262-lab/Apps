@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/03-modules-organization.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use a clean software-architecture canvas with connected file tabs and module cards. Animate one crowded file separating into focused modules, then show simple import connections. Use a small dependency map and color-coded responsibility labels instead of repeated input/output boxes; keep the layout calm and readable.
+
 ## Scene 1 — When one file becomes hard to manage
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
