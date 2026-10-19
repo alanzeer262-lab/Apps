@@ -5,7 +5,7 @@
 > **Voice-ID gate:** The exact approved Kendrick voice ID is not present in the repository files reviewed. Verify it from the original Runway setup before generating any narration. Do not guess or substitute a voice.
 
 
-Status: **Draft 1 — source-aligned production instructions; do not spend generation credits until narration and screen text are approved.**
+Status: **Script set authored — 20 lesson scripts and 20 guided-practice scripts are indexed. Production is not yet approved: the exact Kendrick voice ID is still missing, code/output QA and real navigation-footage verification remain required. Do not spend narration-generation credits until the voice ID is verified.**
 
 Canonical curriculum: `mohamedalnazeer262-coder/Pylearn-build260`, branch `ccr-c7f6fdd7-xpzi3g`.
 Video project: `mohamedalnazeer262-coder/pylearn-video-studio.`, branch `main`.
