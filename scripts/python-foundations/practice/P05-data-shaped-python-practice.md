@@ -54,3 +54,6 @@ The list comprehension selects one field from each record.
 - [ ] Keep examples distinct from the required app exercise.
 - [ ] Keep code and output synchronized with narration.
 - [ ] Watch the full render before approval.
+
+
+**Visual transition rule for this practice:** Keep the three-book table on screen. Highlight the `pages` column before revealing `[120, 240, 180]`, then highlight the two qualifying rows before revealing count `2`. Derive genre counts from the same rows; do not substitute unrelated chart values.
