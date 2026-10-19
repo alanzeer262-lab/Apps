@@ -1,27 +1,27 @@
 # PyLearn Video 16 — Build: Multi-Record Progress Analyzer
 
-**Voice lock — mandatory:** Kendrick; ElevenLabs v3; exact approved Kendrick voice ID; no substitution/preset; same voice throughout.
-**Source:** `Pylearn-build260/content/python-basics/modules/16-build-progress-analyzer.md`
-**Target:** 6–8 minutes.
+**Voice lock:** Kendrick · ElevenLabs v3 · exact user-approved Kendrick voice ID only; no preset or substitution.
+**Canonical source:** app Module 16, Build 5. **Target:** 3–4 minutes. Do not reveal the completed analyzer.
 
-### Scene 1 — Move from one list to many records
-**Visual:** Show records Ada 88, Lin 72, Sam 95, Omar 64 as tuples.
-**Narration:** “A score summary handles one list. Now we have multiple learners, each represented by a name and score. We'll build analyze_records to produce one summary across the records.”
+## Scene 1 — Several learners, one report
+**Visual:** Show the four source records, one at a time: `("Ada", 88)`, `("Lin", 72)`, `("Sam", 95)`, `("Omar", 64)`. Then show the requested function name `analyze_records(records, threshold=70)`.
+**Narration:** “A score summary works on one list of numbers. Now we have several learner records, each containing a name and a score. Your task is to analyze all the records together and return one summary.”
 
-### Scene 2 — Read records clearly
-**Visual:** Type the function signature with threshold 70; loop `for name, score in records:`; initialize totals and lists.
-**Narration:** “Each tuple contains two related fields. Unpacking gives us name and score directly. We'll loop over each record, updating the total, tracking the highest scorer, and placing each learner in the passed or needs-support list.”
+## Scene 2 — Read each record
+**Visual:** Highlight the name and score positions in one tuple. Show the pattern `for name, score in records:` only; do not reveal the function body.
+**Narration:** “Each tuple groups two related values. Tuple unpacking lets the loop work with the name and score directly. As you visit each record, you can update totals, compare scores, and decide which group the learner belongs to.”
 
-### Scene 3 — Return a summary
-**Visual:** Show count, average, top_scorer, passed, needs_support. Preserve input order in the lists.
-**Narration:** “The result includes the number of records, average score, top scorer, learners who passed, and learners who need support. We preserve the original order in the learner lists so the report stays predictable.”
-**Visual:** Run records; verify average 79.75 and top scorer Sam with 95; passed Ada, Lin, Sam; needs support Omar.
+## Scene 3 — Know the contract
+**Visual:** Display only the required output keys: count, average, top_scorer, passed, needs_support. Add note: “Keep learner lists in original input order.”
+**Narration:** “Your result must contain five things: count, average, top scorer, the learners who passed, and the learners who need support. Keep the learner lists in the same order as the input. The project also requires a deliberate empty-records case.”
 
-### Scene 4 — Empty records
-**Visual:** Run with empty records and show the deliberate empty result.
-**Narration:** “Now consider no records at all. There is no average and no top scorer. The function should return the empty-case result we chose rather than dividing by zero or inventing a learner.”
+## Scene 4 — Predict
+**Visual:** Highlight Omar's score of 64 with threshold 70. Keep the full result hidden.
+**Narration:** “With a threshold of seventy, where should Omar appear: in passed or needs support? And if you add one more record, which summary values might change?”
+**Hold:** 5 seconds of silence. Reveal only Omar's classification, not the complete report.
 
-### Scene 5 — Practice and recap
-**Narration:** “Add one record and predict how the count, average, and learner groups change. Why is a tuple like name and score easier to process than two unrelated lists?”
-**Hold:** 4 seconds.
-**Narration:** “The pattern is records, loop, rule, summary. Later, pandas can perform similar operations on tables, but the reasoning remains familiar. Next, we'll count grade categories.”
+## Scene 5 — Build in PyLearn
+**Visual:** App/project card: **Build 5 — Multi-record progress analyzer**. Checklist: loop through tuples; calculate summary; preserve order; test empty records.
+**Narration:** “Open Build 5 in PyLearn and build analyze_records yourself. Test the supplied records, then add a learner and check the changes. Finally, explain why a tuple containing a name and score is easier to process than two unrelated lists.”
+
+**End card:** “Open PyLearn → Build 5: Multi-record progress analyzer”
