@@ -116,6 +116,14 @@ print(type(is_student))
 
 [Run the code and reveal the output line by line.]
 
+**Expected output**
+```text
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'bool'>
+```
+
 Python reports str, int, float, and bool inside its type results. Those results match the values we assigned.
 
 You won't need to use type() every time you write a program. But when a calculation behaves strangely, checking the type is a useful debugging habit. Instead of guessing, ask: what type is this value?
@@ -133,7 +141,7 @@ print("21" * 2)
 
 [Pause briefly before running. Then show the exact output.]
 
-The first result is forty-two. The second result is twenty-one twenty-one, with the text repeated twice.
+The first result is forty-two. The second result is the text 21 repeated twice, so the output is 2121.
 
 Why are the results different?
 
@@ -172,13 +180,14 @@ score_text = str(95)
 
 But conversion is not magic. Python can only convert a value when its contents are suitable for that type.
 
-For example:
+For example, run this invalid conversion separately:
 
+**Code — expected ValueError**
 ```python
 score = int("hello")
 ```
 
-This fails because the word hello is not a valid integer. Python raises an error instead of guessing what number we meant.
+Python raises a `ValueError` because the word hello is not a valid integer. It does not guess what number we meant. Do not combine this deliberately failing line with the valid conversion examples.
 
 That error gives us useful information. Real programs need to think about invalid input and decide how to handle it safely. We'll build on that idea later.
 
