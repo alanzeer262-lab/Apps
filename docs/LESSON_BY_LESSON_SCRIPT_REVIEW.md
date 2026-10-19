@@ -317,6 +317,33 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 12–20
+## Lesson 12 — Project 1: My Learning Report
+
+**Canonical source:** `content/python-basics/modules/12-build-personal-report.md`
+**Scripts:** `scripts/python-basics/12-my-learning-report.md` and `scripts/python-basics/practice/P12-learning-report-practice.md`
+**Review status:** Compared both scripts with the canonical project brief and executed the demonstration code. The required function `build_learning_report(name, goal, weekly_hours, active)` is not implemented or revealed in the video script. The companion uses a separate reading-report example.
+
+### Findings and code/output QA
+
+- The main script preserves the source requirements: four-line report with name, goal, weekly study hours, and active/inactive status; the function must return the report, not print it.
+- The main script's separate Boolean-status demonstration outputs `Open`; the separate greeting function outputs `Welcome, Lin!`.
+- The required output is shown only as an unfilled field template, not as a completed solution.
+- The companion's reading-report function outputs:
+  ```text
+  Reader: Mia
+  Goal: Read more science
+  Books this month: 3
+  ```
+- The companion uses different fields and a fictional reading example, so it demonstrates multi-line returned strings without solving the required learner-report task.
+- The source asks learners to test a normal learner, zero study hours, and an inactive learner; the main script discusses those cases without revealing a completed answer.
+- Real PyLearn project-task navigation and production prerequisites remain unverified.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 13–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
