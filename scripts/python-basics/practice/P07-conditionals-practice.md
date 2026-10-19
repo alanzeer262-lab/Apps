@@ -46,9 +46,15 @@ print(status)
 
 ## Scene 3 — Test the boundaries
 
-**Visual:** Run 20, 21, 60, and 61 individually.
+**Visual:** Change only the battery value in Scene 2 and run each case separately. Show the value and result after each run.
 
-**Narration:** Test values just below, at, and above the thresholds. Boundary tests help you catch conditions that are too broad or too narrow.
+**Expected results**
+- `battery = 20` → `Low`
+- `battery = 21` → `Medium`
+- `battery = 60` → `Medium`
+- `battery = 61` → `High`
+
+**Narration:** Test values just below, at, and above the thresholds. Twenty is still Low because the condition uses less-than-or-equal. Twenty-one enters Medium. Sixty is still Medium, while sixty-one becomes High. Boundary tests help you catch conditions that are too broad or too narrow.
 
 ## Close — Navigate to the real task
 
