@@ -50,3 +50,33 @@ This folder contains the **pre-audio phase** for the full Python Basics track. T
 
 ## Production review standard
 Before any script is sent to Runway, follow [Review and Runway Standard](REVIEW_AND_RUNWAY_STANDARD.md). The script pack is being audited against the canonical source modules; treat drafts as not-yet-approved until the source audit is complete. Lesson 1 and 2 production lessons—especially missing visual states despite apparent timing alignment—are mandatory regression checks for every future video.
+
+
+## Guided-practice companion videos
+
+The separate companion scripts are now available. They use original illustrative examples and must not reveal the required app exercise answers:
+
+- [Practice 01 — Guided practice](practice-01-guided-practice.md)
+- [Practice 02 — Guided practice](practice-02-guided-practice.md)
+- [Practice 03 — Guided practice](practice-03-guided-practice.md)
+- [Practice 04 — Guided practice](practice-04-guided-practice.md)
+- [Practice 05 — Guided practice](practice-05-guided-practice.md)
+- [Practice 06 — Guided practice](practice-06-guided-practice.md)
+- [Practice 07 — Guided practice](practice-07-guided-practice.md)
+- [Practice 08 — Guided practice](practice-08-guided-practice.md)
+- [Practice 09 — Guided practice](practice-09-guided-practice.md)
+- [Practice 10 — Guided practice](practice-10-guided-practice.md)
+- [Practice 11 — Guided practice](practice-11-guided-practice.md)
+- [Practice 12 — Guided practice](practice-12-guided-practice.md)
+- [Practice 13 — Guided practice](practice-13-guided-practice.md)
+- [Practice 14 — Guided practice](practice-14-guided-practice.md)
+- [Practice 15 — Guided practice](practice-15-guided-practice.md)
+- [Practice 16 — Guided practice](practice-16-guided-practice.md)
+- [Practice 17 — Guided practice](practice-17-guided-practice.md)
+- [Practice 18 — Guided practice](practice-18-guided-practice.md)
+- [Practice 19 — Guided practice](practice-19-guided-practice.md)
+- [Practice 20 — Guided practice](practice-20-guided-practice.md)
+
+## Master Runway package
+
+See [Runway Python Basics Master Package](../../docs/RUNWAY_PYTHON_BASICS_MASTER_PACKAGE.md) for the shared visual rules, 20 lesson scene plans, all 20 guided-practice outlines, standard closing narration, and final QA checklist. The existing lesson scripts still need a final line-by-line audit against the canonical app modules before expensive final rendering.
