@@ -204,3 +204,15 @@ This visual guide supplements the scene-specific directions in all 11 lesson scr
 Core Track 2 example values were checked in Python: debugging arithmetic; CSV parsing/conversion; module averages and threshold counts; average boundary cases; table filtering/grouping; raw-score validation; loader parsing; summary metrics; the end-to-end mini pipeline; and the capstone reference-report logic. The capstone reference logic printed the documented result: 7 rows read, 3 valid, 4 excluded, average 85.0, top performer Mira, and grade counts A=1, B=1, C=1, D=0, F=0.
 
 Before final video approval, run the committed `capstone_reference_demo.py` file itself in the production environment and capture its stdout from that exact revision. Then confirm the rendered report matches the capture. The video assets remain unrendered/unapproved at this stage.
+
+
+## Runway upload-ready audio narration masters
+
+The `runway-audio/python-foundations/` directory contains **22 separate audio-only Markdown files**: one per Track 2 lesson and one per practice video. These contain only the spoken narration; visual directions, code, expected-output blocks, and production notes are excluded so they are not read aloud.
+
+- [Runway audio master instructions and complete file index](../runway-audio/README.md)
+- [Lesson 01 audio narration](../runway-audio/python-foundations/lesson-01-debugging.md)
+- [Lesson 11 final capstone audio narration](../runway-audio/python-foundations/lesson-11-final-capstone.md)
+- [Practice P11 final capstone audio narration](../runway-audio/python-foundations/practice-P11-final-capstone.md)
+
+Use the matching audio-only Markdown file for each Runway audio generation. Keep the approved Kendrick voice ID and ElevenLabs v3 selected in Runway; a Markdown file cannot force the tool's voice selector.
