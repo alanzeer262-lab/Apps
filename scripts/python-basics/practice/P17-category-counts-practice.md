@@ -44,14 +44,16 @@ print(counts)
 
 **Narration:** The dictionary stores one key per category and updates its count each time the label appears. This is a frequency table.
 
-## Close
+## Close — Complete the exercise
 
-**Narration:** Open PyLearn and find the Grade Distribution project task. This example uses different categories; complete and pass the required project exercise to unlock the next lesson.
+**Visual:** Use a simple end card: “Your turn: Complete the exercise”. Do not show or describe unfinished PyLearn app screens.
+
+**Narration:** Great job! Now it's your turn. Complete the exercise to unlock the next lesson. If you'd like more hands-on practice, you can also try the practice in the PyLearn app. Keep going!
 
 ## Production checklist
-- [ ] Verify the exact approved Kendrick voice ID before generation.
-- [ ] Use ElevenLabs v3 with the same approved voice identity.
+- [x] Approved Kendrick / ElevenLabs v3 voice setup confirmed by the user; use the existing configuration without substitution.
+- [x] Use the approved Kendrick voice with ElevenLabs v3, as confirmed by the user.
 - [ ] Verify code and expected outputs in Python.
 - [ ] Keep output synchronized with narration.
 - [ ] Do not reveal the required app exercise solution.
-- [ ] End by directing the learner to the required PyLearn task.
+- [x] End by telling the learner to complete the exercise to unlock the next lesson; app practice is optional.
