@@ -35,6 +35,46 @@ A report can look polished and still be wrong. Test normal records, empty data, 
 
 When the report works, make one deliberate modification: add a count by topic, change the pass threshold and update the report, or add a grade category. Rerun your tests. The goal is to prove you can change a working program without breaking its core behavior.
 
+## Scene 4 — See a real reference run
+
+**Reference source for production QA:** `scripts/python-foundations/reference_runs/capstone_reference_demo.py`. The output below comes from running that Python file against the exact demonstration CSV shown here. This is a separate teaching dataset, not the required PyLearn exercise data or its hidden solution.
+
+**Visual — input first:** Show the seven CSV records with the fields `name, topic, score, attempt_count, completion_status`. Highlight the imperfect rows as they enter validation:
+- Sam: blank score
+- Lin: exact duplicate row
+- Noor: score 150, outside the 0–100 rule
+- Ivy: score text “oops”, not numeric
+
+**Visual — transformation:** Keep accepted and rejected records in separate lanes. The three accepted scores are Ada 88, Lin 72, and Mira 95. Show topic capitalization being normalized; show the rejected rows and their reasons. Do not skip straight from the CSV to the dashboard.
+
+**Visual — actual report produced by the reference run:**
+
+```text
+Rows read: 7
+Valid rows: 3
+Invalid rows: 4
+Cleaning decisions:
+- Removed exact duplicate rows
+- Rejected blank and non-numeric scores
+- Rejected scores outside 0-100
+- Normalized topic capitalization
+Average score: 85.0
+Top performer: Mira
+Grade distribution:
+A (90-100): 1
+B (80-89): 1
+C (70-79): 1
+D (60-69): 0
+F (below 60): 0
+Warning: Average and grade distribution use only valid, deduplicated rows.
+```
+
+**Narration:**
+
+This is a real reference run, not a decorative mock-up. Seven rows entered the pipeline. Three remained valid after the documented rules, and four were excluded: one blank score, one duplicate, one out-of-range score, and one non-numeric score. The average is eighty-five, calculated from eighty-eight, seventy-two, and ninety-five. Mira is the top performer with ninety-five. The grade distribution also comes from those same three scores.
+
+Your own result will depend on your input data and the cleaning rules you choose. If you use this exact demonstration CSV and these same rules, your report should match these values. If your result differs, investigate it rather than changing the displayed numbers to make them match.
+
 ## Final call to action — watch capstone practice
 
 **Visual:** End card: “Next: Capstone Practice Video”. Do not show a completed report or unfinished app screens.
@@ -65,3 +105,6 @@ After the practice video, complete the final capstone exercise. Take it one stag
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this lesson:** The capstone must show the complete causal path: the exact raw rows → each cleaning/validation decision → the accepted records → calculations → report. Reveal the report only after the pipeline completes. Use the output from the committed reference Python file, and rerun it if the sample data or cleaning policy changes. Never fabricate or manually tune report values.
