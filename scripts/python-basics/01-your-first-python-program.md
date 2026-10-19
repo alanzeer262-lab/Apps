@@ -38,19 +38,27 @@ We'll use the same habit throughout the course: write a little code, run it, and
 
 ## Scene 2 — Python can calculate
 
-Our first program displayed a message. Let's ask Python to do something a little different.
+**Visual:** Keep the first example visible, then add a second line beneath it. Ask for a prediction before running the two lines.
 
-This time, we're giving it a small calculation: two plus three.
+Our first program displayed a message. Let's ask Python to do something a little different. This time, we're giving it a small calculation: two plus three.
+
+**Code**
+```python
+print("Hello, I'm Python.")
+print(2 + 3)
+```
 
 Before I run it, what number do you think Python will display? Take a moment to work it out.
 
-Let's check.
+**Visual:** Run both lines. Reveal the output line by line.
 
-First, we see the greeting. On the next line, we see five.
+**Output**
+```text
+Hello, I'm Python.
+5
+```
 
-Python did the calculation for us, and print displayed the answer.
-
-That's all we need to learn from this example: print can display a message, or it can display the result of a calculation.
+Python did the calculation for us, and `print` displayed the answer. That's all we need to learn from this example: `print` can display a message, or it can display the result of a calculation.
 
 ## Scene 3 — Numbers and text
 
@@ -80,29 +88,51 @@ You don't need to master data types yet. For now, remember that quotation marks 
 
 ## Scene 4 — Matching quotation marks
 
-Let's look at quotation marks a little more closely.
+**Visual:** Show valid examples first, then the broken example in a separate run so the error does not interrupt the valid code.
 
-Python lets us use single quotes or double quotes around text. Both of these examples are valid.
+Python lets us use single quotes or double quotes around text. Both are valid.
+
+**Code**
+```python
+print("Hello")
+print('Hello')
+```
+
+**Output**
+```text
+Hello
+Hello
+```
 
 Here's the rule to remember: the opening quote and the closing quote must match.
 
-Now I'll make one small mistake in a separate example. Notice that I haven't closed the quotation marks.
+Now let's make one small mistake in a separate example.
 
-Python reports an error because it can't understand where the text ends.
+**Broken code — run separately**
+```python
+print("Hello)
+```
 
-This is normal. Mistakes are part of programming. When you see an error, slow down and look at the line. Sometimes one small character is all that needs fixing.
+Python reports a syntax error because it can't tell where the text ends. This is normal. When you see an error, slow down and inspect the line. Sometimes one small character is all that needs fixing.
 
 ## Scene 5 — Comments
 
 Sometimes we want to leave a note for ourselves, or for the next person who reads our code.
 
-In Python, a comment starts with the hash symbol. Here, the first line is a comment.
+**Code**
+```python
+# This line explains the program
+print("The code still runs.")
+```
 
-Python ignores that line when it runs the program. The next line is a command, so Python displays the message.
+In Python, a comment starts with the hash symbol. Python ignores that line when it runs the program. The next line is a command, so Python displays the message.
 
-Notice the output: the message appears, but the comment does not.
+**Output**
+```text
+The code still runs.
+```
 
-That's the whole idea. A comment is a note for people reading the code.
+Notice that the message appears, but the comment does not. A comment is a note for people reading the code.
 
 ## Scene 6 — Make the message personal
 
@@ -202,7 +232,7 @@ The first line displays fifty. But because show_total doesn't return a value, th
 
 ## Scene 8 — Recognize a placeholder in starter code
 
-**Visual:** Show an unfinished function with `pass`, then replace only that line with a real return statement.
+**Visual:** Show a provided unfinished function starter. Do not reveal or complete the app exercise's actual code.
 
 **Code**
 ```python
@@ -210,42 +240,17 @@ def double(number):
     pass
 ```
 
-**Narration:**
-
-You may also see the word `pass` in starter code. Python needs a valid body inside a function, and `pass` is a placeholder that does nothing. It lets the unfinished starter remain syntactically valid. When you work on an exercise, replace `pass` with your own solution. For now, this is recognition, not a requirement to design a function from scratch.
-
-**Visual:** Replace `pass` with `return number * 2`; call `double(7)` and display the result.
-
-**Code**
-```python
-def double(number):
-    return number * 2
-
-print(double(7))
-```
-
-**Expected output**
-```text
-14
-```
-
-**Narration:**
-
-Now the function returns fourteen, and print displays it. You'll learn to write functions more fully later. For now, recognize pass as a placeholder, not the finished answer.
+You may see the word `pass` in starter code. Python needs a valid body inside a function, and `pass` is a placeholder that does nothing. It lets an unfinished function remain syntactically valid. In an exercise, you replace `pass` with your own solution. For now, the goal is simply to recognize what the placeholder means. You do not need to design a function from scratch.
 
 ## Scene 9 — Your turn
 
-Now it's your turn.
+Now it's your turn. Using the example from the previous scene as a guide, make a small introduction program of your own.
 
-Change the name to your own name. Before you run the program, predict what the message will say.
+Store your name, a learning goal, and the number of hours you plan to study each week. Print each value in a readable sentence using an f-string.
 
-Take your time.
+Before you run the program, predict what each sentence will say. Then run it and check your prediction. Change one value and predict which sentence will change.
 
-Now run it and check your prediction.
-
-If the message doesn't look right, check the quotation marks first. Then check the braces around the variable name.
-
-You've just practiced changing a value and using it in a message.
+If a message doesn't look right, check the quotation marks first, then check the braces around each variable name. Keep this example separate from the required in-app exercise: it is practice to help you prepare, not its answer.
 
 ## Scene 10 — Use a calm debugging routine
 
