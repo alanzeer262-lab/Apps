@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/05-data-shaped-python.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Use an analyst's canvas: mini-table, column highlights, filter chips, and grouped result bars. Let the viewer see rows being selected or filtered directly. Pause before the result to invite a prediction. Keep the same teacher and voice.
 
 ## Scene 1 — Select a field
 
