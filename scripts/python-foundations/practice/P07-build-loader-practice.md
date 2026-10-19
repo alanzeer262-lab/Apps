@@ -49,3 +49,6 @@ Trimming removes surrounding whitespace. It does not convert the score to a numb
 - Whenever a result is shown, it must be the exact output produced by running the displayed code against the displayed sample data. Verify it in Python before rendering. If it has not been run and verified, do not present it as a real result; mark it as a schematic illustration or omit the value.
 - For the toolkit-build and capstone scenes, show the real end-to-end result learners can reproduce by building the tool themselves. No fabricated dashboard metrics, invented report rows, decorative “success” values, or output inconsistent with the code/data. Keep the sample dataset, code, and displayed result synchronized.
 - For practice videos, use the script's own independent example and verify that example. Do not reveal the required PyLearn exercise solution.
+
+
+**Visual transition rule for this practice:** Start with the exact CSV text, trace the header into field names and each line into a record, then reveal the actual parsed values. Keep raw values as strings at the loader stage; do not visually convert them before validation.
