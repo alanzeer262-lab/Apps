@@ -4,6 +4,8 @@
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/06-analysis-ready-pipeline.md, branch ccr-c7f6fdd7-xpzi3g.
 **Use:** Full teaching video, not a short outline. Narrate only spoken text; keep scene headings, code labels, and visual directions out of text-to-speech. Do not show the app's required exercise solution.
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Show a living data pipeline across the screen: raw records enter, cleaned records continue, rejected records branch into a review lane, and a report emerges. Use thin connectors, stage labels, and small status indicators in a charcoal-and-teal palette. Make flow and transformation the main visual, not input/output boxes.
+
 ## Scene 1 — Follow the pipeline
 
 **Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
