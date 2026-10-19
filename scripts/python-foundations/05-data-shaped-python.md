@@ -37,7 +37,7 @@ Named fields make the data easier to understand than relying on positions like r
 
 ## Scene 2 — Select and filter
 
-**Visual:** Reveal the code gradually. Ask for a prediction before running it. Show the output only after the run.
+**Visual:** Keep the `records` table from Scene 1 in the same editor session. Highlight the `score` field to derive the list, then highlight rows with score at least 80 and count them.
 
 **Narration:**
 
