@@ -198,6 +198,30 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 07–20
+## Lesson 07 — Conditionals: if / elif / else
+
+**Canonical source:** `content/python-basics/modules/07-conditionals.md`
+**Scripts:** `scripts/python-basics/07-conditionals.md` and `scripts/python-basics/practice/P07-conditionals-practice.md`
+**Review status:** Compared both scripts with the canonical module and executed all runnable code examples. The companion's boundary-testing scene now includes the exact expected status for values 20, 21, 60, and 61.
+
+### Findings and code/output QA
+
+- The lesson covers the source concepts: if, else, elif, indentation, top-to-bottom branch order, translating rules from plain English, boundary tests, and combining conditions with `and`.
+- Lesson example with score 82 outputs `Passed`.
+- Lesson if/else example with score 62 outputs `Needs more practice`.
+- Ordered grade example with score 84 outputs `B`.
+- Combined score/attempts condition outputs `Passed`.
+- Companion battery 18 example outputs `Low battery`; battery 55 example outputs `Medium`.
+- Companion boundary checks return: 20 → `Low`, 21 → `Medium`, 60 → `Medium`, 61 → `High`.
+- The main script preserves the required exercise as learner work and does not show the complete score-classifier solution.
+- The source-derived script is content-reviewed, but video production remains unapproved until the voice ID and actual PyLearn navigation are verified and the rendered video receives a full watch-through.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 08–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
