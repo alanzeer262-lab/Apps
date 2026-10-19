@@ -486,15 +486,14 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - Converting `"oops"` directly to an integer raises `ValueError`; the safe example catches it and outputs `True` for the None check.
 - The companion quantity example outputs `15`; its invalid-text example outputs `True` after safely representing the value as None.
 - The main script correctly distinguishes empty text from invalid non-empty text and says invalid scores must not be silently changed to zero.
-- The invalid conversion scene narrates the expected ValueError, but should be made more explicit in the script markup before production by labeling it as an intentional failing example and stating the expected error directly.
+- **Script correction committed:** the invalid conversion is explicitly labeled as an intentional error example, marked “expected ValueError; run separately,” and includes the expected-error note.
 - Real PyLearn project-task navigation and production prerequisites remain unverified.
 
-### Remaining content and production gates
+### Remaining production gates
 
-1. Clarify the invalid-conversion scene with an explicit “expected ValueError; run separately” label and expected-error note.
-2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-3. Capture and verify the real PyLearn navigation path and required project task screen.
-4. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required project task screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
 ## Lesson 20 — Mini Gradebook Capstone
 
@@ -507,15 +506,14 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 - The capstone source requires five milestones in order: average score (rounded to two decimals), top scorer (keep the first person on a tie), passed names (preserve input order), letter-grade mapping, and grade distribution.
 - The current capstone script accurately narrates all five milestones, the tie rule, boundary testing, debugging, and the required start at Milestone 1.
 - The companion plant-record loop outputs `Basil 4` and `Mint 2`; its condition example outputs `True`.
-- **Content correction still required:** the main script's Scene 2 code loops over `records` without defining `records` in that code block. Before the capstone script is marked content-final, make the inspection example self-contained by defining a small, unrelated sample list first and stating its expected output. The update attempt was blocked, so this correction is not yet committed.
+- **Script correction committed:** Scene 2 now defines a small, unrelated sample `records` list before the loop and states the expected output (`Mia 81`, `Noah 67`). This is an inspection example only; it does not reveal the capstone solution.
 - The capstone ending correctly instructs learners to start with Milestone 1, submit, read feedback, fix issues, and proceed one milestone at a time.
 - Real PyLearn navigation and production prerequisites remain unverified.
 
-### Remaining content and production gates
+### Remaining production gates
 
-1. Make Scene 2's record-inspection code self-contained and add the expected output.
-2. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
-3. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
-4. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path to Capstone Milestone 1.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-**Status:** Source review complete; not yet content-final or production-approved until the Scene 2 correction and external production gates are resolved.
+**Status:** Source review and the two identified script corrections are complete. This does not mean the videos are production-approved: the exact voice ID and real app navigation still need verification, and every rendered video must pass a full normal-speed watch-through.
