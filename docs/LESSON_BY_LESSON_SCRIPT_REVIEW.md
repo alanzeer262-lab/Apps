@@ -172,6 +172,32 @@ The source comparison, teaching-flow review, and listed runnable-code QA are com
 2. Capture and verify the real PyLearn navigation path and required exercise screen.
 3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
 
-## Lessons 06–20
+## Lesson 06 — Lists
+
+**Canonical source:** `content/python-basics/modules/06-lists.md`
+**Scripts:** `scripts/python-basics/06-lists.md` and `scripts/python-basics/practice/P06-lists-practice.md`
+**Review status:** Source comparison completed and runnable examples executed in Python. Coverage includes list creation, indexing, negative indexing, slicing, appending, replacing items, built-in summary functions, averages, sorting without mutating the original list, membership, and empty-list edge cases.
+
+### Findings and code/output QA
+
+- Creating and printing the score list outputs `[70, 95, 88, 60]`.
+- Indexing outputs `70` and `88`; negative index `-1` outputs `60`.
+- Slice `scores[1:3]` outputs `[95, 88]`.
+- Appending 60 outputs `[70, 95, 88, 60]`; replacing index zero outputs `[75, 95, 88]`.
+- List summary outputs `4`, `313`, `60`, and `95`; average is `78.25`.
+- `sorted(scores)` outputs `[60, 70, 88, 95]` while the original remains `[70, 95, 88, 60]`.
+- Membership checks output `True` and `False`.
+- The separate pages example outputs `3`, `45`, `18`, and `True`.
+- Companion examples output `4`, `510`, `85`, and `210`; indexing/slicing/appending output `95`, `[85, 210]`, and `[120, 85, 210, 95, 160]`.
+- The empty-list division risk is correctly explained; no division-by-zero sample is presented as a successful run.
+- The required exercise solution is not displayed. Real PyLearn navigation still must be verified before production.
+
+### Remaining production gates
+
+1. Recover and verify the exact approved Kendrick voice ID; use ElevenLabs v3 and do not substitute a voice.
+2. Capture and verify the real PyLearn navigation path and required exercise screen.
+3. After production is possible, review the complete rendered video at normal speed and check code/output synchronization before marking it approved.
+
+## Lessons 07–20
 
 Not yet reviewed in this pass. Each lesson and its companion will receive an individual source comparison and findings before its scripts are approved. File existence or a link in the index is not evidence of QA completion.
