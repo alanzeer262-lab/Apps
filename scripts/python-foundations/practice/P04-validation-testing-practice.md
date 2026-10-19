@@ -3,6 +3,7 @@
 **Voice lock:** Use the approved Kendrick voice with ElevenLabs v3; do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/04-validation-testing.md, branch ccr-c7f6fdd7-xpzi3g.
 **Purpose:** Separate practice companion using fresh examples. Never reveal the required app exercise solution.
+**Track 2 practice visuals:** Use a test bench with a compact test matrix, boundary number line, and passed/rejected markers. Pause before each assertion result so the learner can predict it. Use teal for passing checks, coral for failures, and amber for edge cases; avoid a repetitive input/output-box layout.
 
 ## Scene 1 — Write a known test
 
