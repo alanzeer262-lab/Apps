@@ -48,13 +48,15 @@ But not every string contains a valid number. We need to handle those cases deli
 
 ## Scene 3 — Detect invalid input
 
-**Visual:** Run an invalid conversion in a separate example. Show the ValueError, then transition to a try/except example.
+**Visual:** Label this as an intentional error demonstration. Run it separately from the other examples. Show the expected `ValueError`, then transition to a try/except example.
 
-**Code**
+**Code — intentional error example (expected `ValueError`; run separately)**
 ```python
 raw_score = "oops"
 score = int(raw_score)
 ```
+
+**Expected result:** `ValueError` because `"oops"` is not a valid integer string.
 
 **Narration:**
 
