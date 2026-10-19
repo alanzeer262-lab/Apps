@@ -1,5 +1,7 @@
 # PyLearn Video — Build: Validate Intake
 
+**Track 2 visual identity:** Keep the same teacher and pacing. Use a validation gate motif: incoming records pass through visible rule checks, accepted rows continue in teal, rejected rows move to a side queue with concise reasons. Add a number-line boundary visual for range checks. Keep the stage rail visible with “Validate” highlighted.
+
 **Voice lock:** Use the user-approved Kendrick voice with ElevenLabs v3. Do not substitute another voice.
 **Canonical source:** Pylearn-build260/content/python-foundations/modules/08-build-validate.md, branch ccr-c7f6fdd7-xpzi3g.
 **Production rule:** Narrate only spoken text. Do not show the required app exercise solution or invent app screens.
